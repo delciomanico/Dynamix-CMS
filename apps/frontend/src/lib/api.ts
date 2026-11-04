@@ -24,7 +24,8 @@ export async function api<T = any>(path: string, opts: { method?: string; body?:
   const json = await res.json().catch(() => null);
   if (!res.ok) {
     if (res.status === 401 && t) { token.clear(); window.location.href = '/login'; }
-    const msg = Array.isArray(json?.message) ? json.message.join(', ') : json?.message ?? 'Erro inesperado';
+    const msg = res.status === 429 ? 'Demasiados pedidos. Aguarde um minuto e tente novamente.'
+      : Array.isArray(json?.message) ? json.message.join(', ') : json?.message ?? 'Erro inesperado';
     throw new ApiError(res.status, msg, json?.errors);
   }
   return json as T;

@@ -56,8 +56,8 @@ export function ${name}List() {
         <select className="input sm:!w-auto" value={c.slug} onChange={(e) => setSel(e.target.value)}>{data!.map((x) => <option key={x.id} value={x.slug}>{x.name}</option>)}</select>
       </PageHead>
 
-      <div className="grid lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-6 min-w-0">
           <section>
             <h2 className="hand text-3xl font-semibold mb-2">Endpoint</h2>
             <div className="rough-border bg-white p-3 flex items-center gap-2"><span className="mono text-[10px] font-bold bg-brand text-white px-2 py-1 rounded">GET</span><span className="mono text-xs break-all">{url}</span></div>
@@ -70,7 +70,7 @@ export function ${name}List() {
           </section>
           <p className="text-sm text-muted">Só conteúdos <b>publicados</b> aparecem aqui. Documentação completa: <a className="underline font-bold text-ink" target="_blank" rel="noreferrer" href={API_URL.replace('/api/v1', '/docs')}>Swagger ↗</a></p>
         </div>
-        <section>
+        <section className="min-w-0">
           <h2 className="hand text-3xl font-semibold mb-2">Resposta ao vivo</h2>
           <CodeBlock code={preview} />
         </section>

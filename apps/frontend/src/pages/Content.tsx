@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Empty, ErrorBox, Modal, PageHead, Pager, Spinner, StatusBadge } from '../components/ui';
 import { api, Component, Entry, Field, Media, Paginated, mediaUrl } from '../lib/api';
@@ -62,6 +62,8 @@ export function ContentList() {
   const [page, setPage] = useState(1);
   const entries = useFetch<Paginated<Entry>>(`/components/${cid}/entries?page=${page}&limit=20`);
   const media = useFetch<Paginated<Media>>(`/projects/${project.id}/media?limit=100`);
+  // se apagar o último item de uma página, recua para a última página existente
+  useEffect(() => { if (entries.data && !entries.data.data.length && page > 1) setPage(Math.max(1, entries.data.meta.pages)); }, [entries.data, page]);
   const [editing, setEditing] = useState<Entry | 'new' | null>(null);
   const [data, setData] = useState<Record<string, any>>({});
   const [err, setErr] = useState<string[]>([]);

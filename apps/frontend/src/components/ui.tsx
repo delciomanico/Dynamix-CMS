@@ -58,13 +58,14 @@ export function CodeBlock({ code }: { code: string }) {
 
 export function Pager({ page, pages, total, onPage }: { page: number; pages: number; total: number; onPage: (p: number) => void }) {
   if (pages <= 1) return null;
+  const go = (p: number) => { onPage(p); window.scrollTo({ top: 0, behavior: 'smooth' }); };
   return (
-    <div className="flex items-center justify-between gap-3 mt-5">
+    <nav aria-label="Paginação" className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 mt-5">
       <span className="mono text-xs text-muted">{total} registos · página {page} de {pages}</span>
-      <div className="flex gap-2">
-        <button className="btn-secondary btn-sm" disabled={page <= 1} onClick={() => onPage(page - 1)}>← Anterior</button>
-        <button className="btn-secondary btn-sm" disabled={page >= pages} onClick={() => onPage(page + 1)}>Seguinte →</button>
+      <div className="flex gap-2 ml-auto">
+        <button className="btn-secondary btn-sm whitespace-nowrap" disabled={page <= 1} onClick={() => go(page - 1)}>← Anterior</button>
+        <button className="btn-secondary btn-sm whitespace-nowrap" disabled={page >= pages} onClick={() => go(page + 1)}>Seguinte →</button>
       </div>
-    </div>
+    </nav>
   );
 }

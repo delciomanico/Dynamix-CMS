@@ -34,8 +34,8 @@ function Feature({ m }: { m: Member }) {
     null, 2,
   );
   return (
-    <article className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-stretch">
-      <div className="sketch-card rounded-3xl p-8 sm:p-10 relative overflow-hidden flex flex-col">
+    <article className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-stretch">
+      <div className="sketch-card rounded-3xl p-6 sm:p-10 relative overflow-hidden flex flex-col min-w-0">
         <div className="absolute inset-0 paper-grid opacity-50" />
         <div className="relative flex items-start gap-6 flex-wrap">
           <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl border-[1.5px] border-ink overflow-hidden bg-brand flex items-center justify-center shrink-0 -rotate-3 shadow-[5px_6px_0_#1A2233]">
@@ -45,7 +45,7 @@ function Feature({ m }: { m: Member }) {
           </div>
           <div className="pt-2">
             <p className="hand text-3xl font-semibold text-brandLight leading-none">Hi, I'm</p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.02] mt-1">{m.name}</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.02] mt-1 break-words">{m.name}</h2>
             <p className="mono text-xs uppercase tracking-wider text-muted mt-3">{m.role}</p>
           </div>
         </div>

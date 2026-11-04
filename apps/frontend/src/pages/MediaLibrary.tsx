@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Empty, ErrorBox, PageHead, Pager, Spinner } from '../components/ui';
 import { api, Media, Paginated, mediaUrl } from '../lib/api';
 import { useFetch } from '../lib/hooks';
@@ -8,6 +8,7 @@ export default function MediaLibrary() {
   const { project } = useProject();
   const [page, setPage] = useState(1);
   const { data, loading, reload } = useFetch<Paginated<Media>>(`/projects/${project.id}/media?page=${page}&limit=20`);
+  useEffect(() => { if (data && !data.data.length && page > 1) setPage(Math.max(1, data.meta.pages)); }, [data, page]);
   const input = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
