@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum EntryStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model User {
+  id           String      @id @default(cuid())
+  email        String      @unique
+  name         String
+  passwordHash String?
+  googleId     String?     @unique
+  createdAt    DateTime    @default(now())
+  workspaces   Workspace[]
+}
+
+model Workspace {
+  id        String    @id @default(cuid())
+  name      String
+  ownerId   String
+  owner     User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  projects  Project[]
+  createdAt DateTime  @default(now())
+
+  @@index([ownerId])
+}
+
+model Project {
+  id             String         @id @default(cuid())
+  workspaceId    String
+  workspace      Workspace      @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  name           String
+  slug           String         @unique
+  description    String?
+  frontendUrl    String?
+  allowedOrigins String[]       @default([])
+  components     Component[]
+  media          MediaAsset[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([workspaceId])
+}
+
+model Component {
+  id          String           @id @default(cuid())
+  projectId   String
+  project     Project          @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name        String
+  slug        String
+  description String?
+  fields      ComponentField[]
+  entries     ContentEntry[]
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@unique([projectId, slug])
+}
+
+model ComponentField {
+  id          String    @id @default(cuid())
+  componentId String
+  component   Component @relation(fields: [componentId], references: [id], onDelete: Cascade)
+  key         String
+  label       String
+  type        String
+  required    Boolean   @default(false)
+  options     String[]  @default([])
+  position    Int       @default(0)
+
+  @@unique([componentId, key])
+}
+
+model ContentEntry {
+  id          String      @id @default(cuid())
+  componentId String
+  component   Component   @relation(fields: [componentId], references: [id], onDelete: Cascade)
+  slug        String
+  data        Json
+  status      EntryStatus @default(DRAFT)
+  publishedAt DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@unique([componentId, slug])
+  @@index([componentId, status])
+}
+
+model MediaAsset {
+  id        String   @id @default(cuid())
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  key       String   @unique
+  filename  String
+  mimeType  String
+  size      Int
+  createdAt DateTime @default(now())
+
+  @@index([projectId])
+}

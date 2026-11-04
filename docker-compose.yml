@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: dynamix
+      POSTGRES_PASSWORD: dynamix
+      POSTGRES_DB: dynamix
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dynamix"]
+      interval: 5s
+      retries: 10
+
+  # Fork comunitário do MinIO (com a consola web restaurada)
+  minio:
+    image: pgsty/minio:RELEASE.2026-08-04T00-00-00Z
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: dynamix
+      MINIO_ROOT_PASSWORD: dynamix-secret
+    ports: ["9000:9000", "9001:9001"]
+    volumes: [miniodata:/data]
+
+volumes:
+  pgdata:
+  miniodata:

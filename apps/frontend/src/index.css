@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-paper text-ink font-sans antialiased overflow-x-hidden; }
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  .hand { @apply font-hand; }
+  .mono { @apply font-mono; }
+  .paper-grid {
+    background-image: linear-gradient(rgba(26,34,51,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(26,34,51,.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .sketch { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .sketch-thin { fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+  .hero-title { font-size: clamp(3.4rem, 7vw, 6.8rem); line-height: .94; letter-spacing: -.075em; }
+  .yellow-highlight { @apply relative inline-block z-0; }
+  .yellow-highlight::before {
+    content: ''; position: absolute; z-index: -1; left: -3%; right: -3%; bottom: 3%; height: 35%;
+    background: rgba(74,111,181,.28); transform: rotate(-1.5deg);
+  }
+  .rough-border { border: 1.5px solid #1A2233; border-radius: 18px 16px 20px 15px; }
+  .browser { transform: rotate(-1.5deg); box-shadow: 12px 16px 0 rgba(26,34,51,.06); }
+  .sketch-card { border: 1.5px solid #1A2233; box-shadow: 4px 5px 0 #1A2233; background: #fff; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold border-[1.5px] border-ink transition-all disabled:opacity-50 disabled:pointer-events-none; box-shadow: 3px 4px 0 #1A2233; }
+  .btn:hover { transform: translate(2px, 2px); box-shadow: 1px 2px 0 #1A2233; }
+  .btn-primary { @apply btn bg-brand text-white; }
+  .btn-secondary { @apply btn bg-white; }
+  .btn-secondary:hover { @apply bg-brand text-white; }
+  .btn-danger { @apply btn bg-white text-red-700; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; box-shadow: 2px 3px 0 #1A2233; }
+
+  .input { @apply w-full bg-white border-[1.5px] border-ink rounded-lg px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-brand; }
+  .label { @apply block mono text-[11px] uppercase tracking-wider text-muted mb-1.5; }
+  .badge { @apply mono text-[10px] font-medium px-2 py-0.5 rounded border border-ink/40; }
+}
+
+@keyframes float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-7px) rotate(1deg); } }
+.float { animation: float 5s ease-in-out infinite; }
+.float-delay { animation: float 5s ease-in-out 1.5s infinite; }
+@media (max-width: 767px) { .browser { transform: rotate(-.5deg); } }

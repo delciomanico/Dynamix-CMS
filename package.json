@@ -1,0 +1,10 @@
+{
+  "name": "dynamix-cms",
+  "private": true,
+  "scripts": {
+    "infra": "docker compose up -d",
+    "api": "npm --prefix apps/api run start:dev",
+    "web": "npm --prefix apps/frontend run dev",
+    "db:migrate": "npm --prefix apps/api run prisma:migrate"
+  }
+}
