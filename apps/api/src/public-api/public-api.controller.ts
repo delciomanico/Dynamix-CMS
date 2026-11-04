@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { ApiTags } from '@nestjs/swagger';
 import { Prisma } from '@prisma/client';
 import type { Response } from 'express';
+import { pageMeta, parsePage } from '../common/pagination';
 import { PrismaService } from '../prisma/prisma.service';
 import { StorageService } from '../storage/storage.service';
 
@@ -53,8 +54,7 @@ export class PublicApiController {
     });
     if (!comp) throw new NotFoundException('Componente não encontrado');
 
-    const page = Math.max(1, parseInt(query.page) || 1);
-    const limit = Math.min(100, Math.max(1, parseInt(query.limit) || 10));
+    const { page, limit, skip, take } = parsePage(query.page, query.limit, 10);
     const sortRaw = String(query.sort ?? '-publishedAt');
     const desc = sortRaw.startsWith('-');
     const sortKey = sortRaw.replace(/^-/, '');
@@ -82,11 +82,11 @@ export class PublicApiController {
 
     const [total, rows] = await Promise.all([
       this.prisma.contentEntry.count({ where }),
-      this.prisma.contentEntry.findMany({ where, orderBy, skip: (page - 1) * limit, take: limit }),
+      this.prisma.contentEntry.findMany({ where, orderBy, skip, take }),
     ]);
     return {
       data: rows.map((r) => this.shape(p.slug, comp.fields, r)),
-      meta: { total, page, limit, pages: Math.ceil(total / limit) },
+      meta: pageMeta(total, page, limit),
     };
   }
 

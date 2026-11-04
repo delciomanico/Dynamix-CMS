@@ -11,6 +11,10 @@ class RegisterDto {
   @IsEmail() email: string;
   @IsString() @MinLength(8) password: string;
 }
+class ChangePasswordDto {
+  @IsString() currentPassword: string;
+  @IsString() @MinLength(8) newPassword: string;
+}
 class LoginDto {
   @IsEmail() email: string;
   @IsString() password: string;
@@ -31,6 +35,14 @@ export class AuthController {
   @Post('login')
   login(@Body() d: LoginDto) {
     return this.auth.login(d.email, d.password);
+  }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Throttle({ default: { limit: 5, ttl: 60_000 } })
+  @Post('change-password')
+  changePassword(@CurrentUser() u: { id: string }, @Body() d: ChangePasswordDto) {
+    return this.auth.changePassword(u.id, d.currentPassword, d.newPassword);
   }
 
   @ApiBearerAuth()

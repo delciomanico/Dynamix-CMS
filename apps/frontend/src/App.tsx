@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Login, Register, AuthCallback } from './pages/Auth';
-import { Protected } from './pages/AppLayout';
+import Account from './pages/Account';
+import Admin from './pages/Admin';
+import { AdminOnly, Protected } from './pages/AppLayout';
 import { ComponentBuilder, ComponentList } from './pages/Components';
 import { ContentIndex, ContentList } from './pages/Content';
 import Integration from './pages/Integration';
@@ -23,6 +25,8 @@ export default function App() {
 
       <Route path="/app" element={<Protected />}>
         <Route index element={<Projects />} />
+        <Route path="account" element={<Account />} />
+        <Route path="admin" element={<AdminOnly><Admin /></AdminOnly>} />
         <Route path="p/:pid" element={<ProjectLayout />}>
           <Route index element={<Overview />} />
           <Route path="components" element={<ComponentList />} />

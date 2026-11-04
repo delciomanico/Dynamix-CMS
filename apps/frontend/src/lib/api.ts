@@ -39,3 +39,23 @@ export interface Media { id: string; filename: string; mimeType: string; size: n
 export const FIELD_TYPES = ['text', 'textarea', 'richtext', 'number', 'boolean', 'image', 'file', 'url', 'email', 'date', 'select', 'multiselect', 'reference'];
 export const publicBase = (slug: string) => `${API_URL}/public/${slug}`;
 export const mediaUrl = (slug: string, id: string) => `${publicBase(slug)}/media/${id}`;
+
+export interface Paginated<T> { data: T[]; meta: { total: number; page: number; limit: number; pages: number } }
+
+export interface AdminOverview {
+  totals: { users: number; admins: number; newUsers7d: number; workspaces: number; projects: number; components: number; entries: number; media: number; mediaBytes: number };
+  entries: { draft: number; published: number; archived: number };
+  recentUsers: { id: string; name: string; email: string; role: string; createdAt: string }[];
+  topProjects: { id: string; name: string; slug: string; entries: number }[];
+  signupsLast30d: { day: string; count: number }[];
+}
+export interface AdminUser { id: string; name: string; email: string; role: 'USER' | 'ADMIN'; google: boolean; createdAt: string; _count: { workspaces: number } }
+export interface AdminProject { id: string; name: string; slug: string; owner: string; createdAt: string; _count: { components: number; media: number } }
+
+export interface BackupItem { id: string; createdAt: string; trigger: string; label: string; dbBytes: number; mediaBytes: number; offsite: 'ok' | 'error' | 'disabled' | 'pending'; verified: boolean; version: string }
+export interface BackupStatus {
+  enabled: boolean; running?: boolean; schedule?: string[]; nextRun?: string; offsite?: boolean; totalBytes?: number; lastSuccessAt?: string | null;
+  retention?: { daily: number; weekly: number; monthly: number };
+  lastRun?: { id: string; ok: boolean; trigger: string; finishedAt: string; error?: string } | null;
+  backups?: BackupItem[];
+}

@@ -1,10 +1,11 @@
-import { BadRequestException, Controller, Delete, Get, Param, Post, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
+import { BadRequestException, Controller, Delete, Get, Param, Post, Query, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiBearerAuth, ApiConsumes, ApiTags } from '@nestjs/swagger';
 import { randomUUID } from 'crypto';
 import { extname } from 'path';
 import { AccessService } from '../common/access.service';
 import { CurrentUser, JwtAuthGuard } from '../auth/auth.guards';
+import { pageMeta, parsePage } from '../common/pagination';
 import { PrismaService } from '../prisma/prisma.service';
 import { StorageService } from '../storage/storage.service';
 
@@ -19,9 +20,15 @@ export class MediaController {
   constructor(private prisma: PrismaService, private access: AccessService, private storage: StorageService) {}
 
   @Get('projects/:pid/media')
-  async list(@CurrentUser() u: U, @Param('pid') pid: string) {
+  async list(@CurrentUser() u: U, @Param('pid') pid: string, @Query('page') page?: string, @Query('limit') limit?: string) {
     await this.access.project(u.id, pid);
-    return this.prisma.mediaAsset.findMany({ where: { projectId: pid }, orderBy: { createdAt: 'desc' } });
+    const pg = parsePage(page, limit);
+    const where = { projectId: pid };
+    const [total, data] = await Promise.all([
+      this.prisma.mediaAsset.count({ where }),
+      this.prisma.mediaAsset.findMany({ where, orderBy: { createdAt: 'desc' }, skip: pg.skip, take: pg.take }),
+    ]);
+    return { data, meta: pageMeta(total, pg.page, pg.limit) };
   }
 
   @Post('projects/:pid/media')

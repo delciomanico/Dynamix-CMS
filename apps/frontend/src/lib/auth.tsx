@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
 import { api, token } from './api';
 
-interface User { id: string; email: string; name: string }
+interface User { id: string; email: string; name: string; role: 'USER' | 'ADMIN' }
 interface AuthCtx {
   user: User | null; loading: boolean;
   login: (email: string, password: string) => Promise<void>;

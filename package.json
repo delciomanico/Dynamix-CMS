@@ -2,9 +2,17 @@
   "name": "dynamix-cms",
   "private": true,
   "scripts": {
-    "infra": "docker compose up -d",
+    "infra": "docker compose up -d postgres minio",
     "api": "npm --prefix apps/api run start:dev",
     "web": "npm --prefix apps/frontend run dev",
-    "db:migrate": "npm --prefix apps/api run prisma:migrate"
+    "db:migrate": "npm --prefix apps/api run prisma:migrate",
+    "test": "npm --prefix apps/api test && npm --prefix apps/backup test && node --test scripts/check-migrations.test.mjs",
+    "docker:up": "docker compose up -d --build",
+    "check:migrations": "node scripts/check-migrations.mjs",
+    "backup:run": "docker compose exec backup node src/backup.mjs run",
+    "backup:list": "docker compose exec backup node src/backup.mjs list"
+  },
+  "engines": {
+    "node": ">=24.22.1"
   }
 }

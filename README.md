@@ -9,7 +9,21 @@ Transforma websites estáticos em dinâmicos, sem reconstruir o frontend. Ver [v
 | Base de dados | PostgreSQL 16 (conteúdo dinâmico em JSONB) |
 | Ficheiros | `pgsty/minio` (fork comunitário do MinIO) via API S3 |
 
+## Documentação
+
+Ver [`docs/`](./docs/README.md): primeiros passos, arquitetura, referência da API (incl. paginação) e segurança.
+
+## Deploy
+
+Produção no Dokploy: [`docs/deploy-dokploy.md`](./docs/deploy-dokploy.md). Backups automáticos: [`docs/backups.md`](./docs/backups.md). Atualizações automáticas e seguras (CI/CD, rollback): [`docs/updates.md`](./docs/updates.md).
+
 ## Arranque
+
+Tudo em Docker: `docker compose up -d --build` → frontend em :5173, API em :3001.
+
+Ou em modo desenvolvimento:
+
+Requer **Node ≥ 24.22.1** (`nvm use`) — inclui as correções de segurança de outubro de 2026.
 
 ```bash
 npm run infra                                   # Postgres + MinIO (consola em :9001)

@@ -55,3 +55,16 @@ export function CodeBlock({ code }: { code: string }) {
     </div>
   );
 }
+
+export function Pager({ page, pages, total, onPage }: { page: number; pages: number; total: number; onPage: (p: number) => void }) {
+  if (pages <= 1) return null;
+  return (
+    <div className="flex items-center justify-between gap-3 mt-5">
+      <span className="mono text-xs text-muted">{total} registos · página {page} de {pages}</span>
+      <div className="flex gap-2">
+        <button className="btn-secondary btn-sm" disabled={page <= 1} onClick={() => onPage(page - 1)}>← Anterior</button>
+        <button className="btn-secondary btn-sm" disabled={page >= pages} onClick={() => onPage(page + 1)}>Seguinte →</button>
+      </div>
+    </div>
+  );
+}

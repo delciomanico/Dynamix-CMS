@@ -1,0 +1,7 @@
+# Override: constrói as imagens a partir do código em vez de as puxar do registry.
+#   docker compose -f docker-compose.prod.yml -f docker-compose.build.yml up -d --build
+services:
+  backup:   { build: { context: ./apps/backup, args: { APP_VERSION: "${IMAGE_TAG:-local}" } } }
+  migrate:  { build: { context: ./apps/api, args: { APP_VERSION: "${IMAGE_TAG:-local}" } } }
+  api:      { build: { context: ./apps/api, args: { APP_VERSION: "${IMAGE_TAG:-local}" } } }
+  frontend: { build: { context: ./apps/frontend, args: { VITE_API_URL: /api/v1 } } }

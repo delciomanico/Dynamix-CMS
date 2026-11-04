@@ -1,0 +1,134 @@
+name: CI/CD
+
+on:
+  push: { branches: [main] }
+  pull_request:
+
+# PRs: cancela execuções antigas. main: nunca cancela um deploy a meio.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  # ───────────────────────── 1. Testes e verificações (bloqueiam tudo o resto) ─────────────────────────
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env: { POSTGRES_USER: dynamix, POSTGRES_PASSWORD: dynamix, POSTGRES_DB: dynamix }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dynamix" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://dynamix:dynamix@localhost:5432/dynamix
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: .nvmrc, cache: npm, cache-dependency-path: "apps/*/package-lock.json" }
+
+      - name: API — instalar, tipos, testes
+        working-directory: apps/api
+        run: npm ci && npx prisma generate && npx tsc --noEmit -p . && npm test
+      - name: Frontend — tipos e build
+        working-directory: apps/frontend
+        run: npm ci && npm run build
+      - name: Backup — testes
+        working-directory: apps/backup
+        run: npm test
+      - name: Scripts — testes do lint de migrações
+        run: node --test scripts/check-migrations.test.mjs
+
+      # Migrações: seguras para rollback, aplicam-se do zero e o schema.prisma não tem drift
+      - name: Migrações — lint (expandir/contrair)
+        run: node scripts/check-migrations.mjs
+      - name: Migrações — aplicam-se numa BD vazia
+        working-directory: apps/api
+        run: npx prisma migrate deploy
+      - name: Migrações — schema.prisma == migrações (sem drift)
+        working-directory: apps/api
+        run: |
+          PGPASSWORD=dynamix psql -h localhost -U dynamix -d postgres -c 'CREATE DATABASE shadow'
+          npx prisma migrate diff --from-migrations prisma/migrations --to-schema-datamodel prisma/schema.prisma \
+            --shadow-database-url postgresql://dynamix:dynamix@localhost:5432/shadow --exit-code
+
+  # ───────────────────────── 2. Imagens (PR: só valida o build; main: publica por SHA) ─────────────────────────
+  images:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions: { contents: read, packages: write }
+    strategy:
+      matrix: { image: [api, frontend, backup] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Prefixo do registry em minúsculas
+        run: echo "PREFIX=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/dynamix-cms" >> "$GITHUB_ENV"
+      - if: github.event_name == 'push'
+        uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
+      - uses: docker/build-push-action@v6
+        with:
+          context: apps/${{ matrix.image }}
+          push: ${{ github.event_name == 'push' }}
+          tags: ${{ env.PREFIX }}-${{ matrix.image }}:${{ github.sha }}
+          build-args: |
+            APP_VERSION=${{ github.sha }}
+            VITE_API_URL=/api/v1
+          cache-from: type=gha,scope=${{ matrix.image }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.image }}
+
+  # ───────────────────────── 3. Deploy → smoke test → rollback automático ─────────────────────────
+  # Só corre em push para main e se o ambiente de produção estiver configurado (vars.PROD_URL).
+  deploy:
+    needs: images
+    if: github.event_name == 'push' && vars.PROD_URL != ''
+    runs-on: ubuntu-latest
+    environment: production        # opcional: exigir aprovação manual nas regras do environment
+    permissions: { contents: read, packages: write }
+    env:
+      PROD_URL: ${{ vars.PROD_URL }}
+      DOKPLOY_URL: ${{ secrets.DOKPLOY_URL }}
+      DOKPLOY_API_KEY: ${{ secrets.DOKPLOY_API_KEY }}
+      DOKPLOY_COMPOSE_ID: ${{ secrets.DOKPLOY_COMPOSE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Prefixo do registry em minúsculas
+        run: echo "PREFIX=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/dynamix-cms" >> "$GITHUB_ENV"
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
+
+      - name: Versão atualmente em produção (alvo de rollback)
+        id: prev
+        run: |
+          V="$(curl -fsS --max-time 15 "$PROD_URL/api/v1/health" | sed -n 's/.*"version":"\([^"]*\)".*/\1/p' || true)"
+          if echo "$V" | grep -Eq '^[0-9a-f]{40}$'; then echo "sha=$V" >> "$GITHUB_OUTPUT"; echo "produção: $V"
+          else echo "sha=" >> "$GITHUB_OUTPUT"; echo "sem versão anterior válida (primeiro deploy?) — rollback automático indisponível"; fi
+
+      - name: Promover imagens (latest → ${{ github.sha }})
+        run: |
+          for i in api frontend backup; do
+            docker buildx imagetools create -t "$PREFIX-$i:latest" "$PREFIX-$i:${{ github.sha }}"
+          done
+      - name: Pedir deploy ao Dokploy
+        run: |
+          curl -fsS -X POST "$DOKPLOY_URL/api/compose.deploy" -H "x-api-key: $DOKPLOY_API_KEY" \
+            -H 'content-type: application/json' -d "{\"composeId\":\"$DOKPLOY_COMPOSE_ID\"}"
+      - name: Smoke test (espera até 5 min pela versão nova)
+        run: scripts/smoke.sh "$PROD_URL" "${{ github.sha }}"
+
+      - name: ↩ ROLLBACK automático para a versão anterior
+        if: failure() && steps.prev.outputs.sha != ''
+        run: |
+          PREV="${{ steps.prev.outputs.sha }}"
+          for i in api frontend backup; do
+            docker buildx imagetools create -t "$PREFIX-$i:latest" "$PREFIX-$i:$PREV"
+          done
+          curl -fsS -X POST "$DOKPLOY_URL/api/compose.deploy" -H "x-api-key: $DOKPLOY_API_KEY" \
+            -H 'content-type: application/json' -d "{\"composeId\":\"$DOKPLOY_COMPOSE_ID\"}"
+          scripts/smoke.sh "$PROD_URL" "$PREV"
+          echo "::error::Deploy de ${{ github.sha }} falhou no smoke test; produção revertida para $PREV"

@@ -13,12 +13,19 @@ enum EntryStatus {
   ARCHIVED
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
 model User {
   id           String      @id @default(cuid())
   email        String      @unique
   name         String
   passwordHash String?
   googleId     String?     @unique
+  role         Role        @default(USER)
+  passwordChangedAt DateTime?
   createdAt    DateTime    @default(now())
   workspaces   Workspace[]
 }

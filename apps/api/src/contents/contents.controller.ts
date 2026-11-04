@@ -6,6 +6,7 @@ import { AccessService } from '../common/access.service';
 import { validateEntryData } from '../common/field-types';
 import { slugify } from '../common/slug';
 import { CurrentUser, JwtAuthGuard } from '../auth/auth.guards';
+import { pageMeta, parsePage } from '../common/pagination';
 import { PrismaService } from '../prisma/prisma.service';
 
 class EntryDto {
@@ -33,12 +34,21 @@ export class ContentsController {
   constructor(private prisma: PrismaService, private access: AccessService) {}
 
   @Get('components/:cid/entries')
-  async list(@CurrentUser() u: U, @Param('cid') cid: string, @Query('status') status?: EntryStatus) {
+  async list(
+    @CurrentUser() u: U,
+    @Param('cid') cid: string,
+    @Query('status') status?: EntryStatus,
+    @Query('page') page?: string,
+    @Query('limit') limit?: string,
+  ) {
     await this.access.component(u.id, cid);
-    return this.prisma.contentEntry.findMany({
-      where: { componentId: cid, ...(status ? { status } : {}) },
-      orderBy: { updatedAt: 'desc' },
-    });
+    const pg = parsePage(page, limit);
+    const where = { componentId: cid, ...(status && status in EntryStatus ? { status } : {}) };
+    const [total, data] = await Promise.all([
+      this.prisma.contentEntry.count({ where }),
+      this.prisma.contentEntry.findMany({ where, orderBy: { updatedAt: 'desc' }, skip: pg.skip, take: pg.take }),
+    ]);
+    return { data, meta: pageMeta(total, pg.page, pg.limit) };
   }
 
   @Post('components/:cid/entries')

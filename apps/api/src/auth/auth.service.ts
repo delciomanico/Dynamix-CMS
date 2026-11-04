@@ -1,4 +1,4 @@
-import { ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 import { PrismaService } from '../prisma/prisma.service';
@@ -11,8 +11,8 @@ export class AuthService {
     return this.jwt.sign({ sub: user.id, email: user.email });
   }
 
-  private publicUser(u: { id: string; email: string; name: string }) {
-    return { id: u.id, email: u.email, name: u.name };
+  private publicUser(u: { id: string; email: string; name: string; role: string }) {
+    return { id: u.id, email: u.email, name: u.name, role: u.role };
   }
 
   async register(name: string, email: string, password: string) {
@@ -51,6 +51,21 @@ export class AuthService {
       user = await this.prisma.user.update({ where: { id: user.id }, data: { googleId: profile.googleId } });
     }
     return this.sign(user);
+  }
+
+  /** Altera a password e devolve um token novo; os tokens anteriores deixam de ser aceites (ver JwtStrategy). */
+  async changePassword(userId: string, current: string, next: string) {
+    const user = await this.prisma.user.findUniqueOrThrow({ where: { id: userId } });
+    if (!user.passwordHash) throw new BadRequestException('Esta conta usa login Google e não tem password');
+    // 400 (não 401): o frontend trata 401 como sessão expirada
+    if (!(await bcrypt.compare(current, user.passwordHash))) throw new BadRequestException('Password atual incorreta');
+    if (current === next) throw new BadRequestException('A nova password tem de ser diferente da atual');
+    if (user.role === 'ADMIN' && next.length < 12) throw new BadRequestException('Administradores precisam de uma password com pelo menos 12 caracteres');
+    const updated = await this.prisma.user.update({
+      where: { id: userId },
+      data: { passwordHash: await bcrypt.hash(next, 12), passwordChangedAt: new Date() },
+    });
+    return { token: this.sign(updated), user: this.publicUser(updated) };
   }
 
   async me(userId: string) {

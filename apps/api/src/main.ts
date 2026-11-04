@@ -1,12 +1,16 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import type { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import helmet from 'helmet';
 import { AppModule } from './app.module';
 import { PrismaService } from './prisma/prisma.service';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  // Atrás de proxies (Traefik/Dokploy + nginx): nº de saltos confiáveis, para rate limit por IP real.
+  const hops = Number(process.env.TRUST_PROXY_HOPS ?? 0);
+  if (hops > 0) app.set('trust proxy', hops);
   const prisma = app.get(PrismaService);
   const webUrl = process.env.WEB_URL ?? 'http://localhost:5173';
 
@@ -15,7 +19,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
   // CORS: API de gestão só aceita o dashboard; API pública usa os domínios autorizados de cada projeto.
-  app.enableCors((req: any, cb: (err: Error | null, opts?: object) => void) => {
+  app.enableCors((req: any, cb: (err: Error | null, opts: object) => void) => {
     const origin = req.headers.origin as string | undefined;
     const base = { methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'], allowedHeaders: ['Content-Type', 'Authorization'] };
     const m = /^\/api\/v1\/public\/([^/?]+)/.exec(req.originalUrl ?? req.url ?? '');

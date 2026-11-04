@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { Navigate, NavLink, Outlet, useLocation, useMatch } from 'react-router-dom';
 import { Icon } from '../components/icons';
 import { Logo } from '../components/Logo';
@@ -29,6 +29,13 @@ function SidebarBody({ pid }: { pid?: string }) {
       <nav className="flex-1 space-y-1 overflow-y-auto">
         <p className="mono text-[10px] uppercase tracking-widest text-muted px-3.5 mb-2">Workspace</p>
         <NavLink to="/app" end className={({ isActive }) => item(isActive)}><Icon name="folder" /> Projetos</NavLink>
+        <NavLink to="/app/account" className={({ isActive }) => item(isActive)}><Icon name="gear" /> Conta</NavLink>
+        {user!.role === 'ADMIN' && (
+          <>
+            <p className="mono text-[10px] uppercase tracking-widest text-muted px-3.5 pt-6 mb-2">Plataforma</p>
+            <NavLink to="/app/admin" className={({ isActive }) => item(isActive)}><Icon name="home" /> Administração</NavLink>
+          </>
+        )}
         {pid && (
           <>
             <p className="mono text-[10px] uppercase tracking-widest text-muted px-3.5 pt-6 mb-2">Projeto</p>
@@ -103,4 +110,10 @@ function AppShell() {
       )}
     </div>
   );
+}
+
+/** Rota só para administradores (o servidor valida sempre; isto é apenas UX). */
+export function AdminOnly({ children }: { children: ReactNode }) {
+  const { user } = useAuth();
+  return user?.role === 'ADMIN' ? <>{children}</> : <Navigate to="/app" replace />;
 }

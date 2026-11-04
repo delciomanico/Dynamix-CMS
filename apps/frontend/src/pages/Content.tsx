@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Empty, ErrorBox, Modal, PageHead, Spinner, StatusBadge } from '../components/ui';
-import { api, Component, Entry, Field, Media, mediaUrl } from '../lib/api';
+import { Empty, ErrorBox, Modal, PageHead, Pager, Spinner, StatusBadge } from '../components/ui';
+import { api, Component, Entry, Field, Media, Paginated, mediaUrl } from '../lib/api';
 import { useFetch } from '../lib/hooks';
 import { useProject } from './ProjectLayout';
 
@@ -59,13 +59,14 @@ export function ContentList() {
   const { cid } = useParams();
   const nav = useNavigate();
   const comp = useFetch<Component>(`/components/${cid}`);
-  const entries = useFetch<Entry[]>(`/components/${cid}/entries`);
-  const media = useFetch<Media[]>(`/projects/${project.id}/media`);
+  const [page, setPage] = useState(1);
+  const entries = useFetch<Paginated<Entry>>(`/components/${cid}/entries?page=${page}&limit=20`);
+  const media = useFetch<Paginated<Media>>(`/projects/${project.id}/media?limit=100`);
   const [editing, setEditing] = useState<Entry | 'new' | null>(null);
   const [data, setData] = useState<Record<string, any>>({});
   const [err, setErr] = useState<string[]>([]);
 
-  if (comp.loading || entries.loading) return <Spinner />;
+  if (comp.loading || (entries.loading && !entries.data)) return <Spinner />;
   if (!comp.data) return <ErrorBox msg={comp.error ?? 'Componente não encontrado'} />;
   const c = comp.data;
 
@@ -90,9 +91,9 @@ export function ContentList() {
         <button className="btn-primary" onClick={() => open('new')}>+ Novo conteúdo</button>
       </PageHead>
 
-      {!entries.data?.length ? <Empty title="Sem conteúdos" hint="Cria o primeiro registo e publica-o para aparecer na API pública." /> : (
+      {!entries.data?.data.length ? <Empty title="Sem conteúdos" hint="Cria o primeiro registo e publica-o para aparecer na API pública." /> : (
         <div className="sketch-card rounded-2xl divide-y divide-ink/10 overflow-hidden">
-          {entries.data.map((e) => (
+          {entries.data.data.map((e) => (
             <div key={e.id} className="p-4 flex flex-wrap items-center gap-x-4 gap-y-3">
               {thumb(e) ? <img src={thumb(e)!} className="w-12 h-12 rounded-lg object-cover border border-ink/30" /> : <div className="w-12 h-12 rounded-lg bg-brand/40 border border-ink/30" />}
               <div className="flex-1 min-w-[140px] basis-[160px]">
@@ -112,6 +113,7 @@ export function ContentList() {
           ))}
         </div>
       )}
+      {entries.data && <Pager {...entries.data.meta} onPage={setPage} />}
 
       {editing && (
         <Modal title={editing === 'new' ? `Novo ${c.name}` : `Editar ${c.name}`} onClose={() => setEditing(null)}>
@@ -119,7 +121,7 @@ export function ContentList() {
             {c.fields.map((f) => (
               <div key={f.key}>
                 <label className="label">{f.label}{f.required && ' *'} <span className="normal-case tracking-normal">· {f.type}</span></label>
-                <FieldInput f={f} value={data[f.key]} onChange={(v) => setData({ ...data, [f.key]: v })} media={media.data ?? []} />
+                <FieldInput f={f} value={data[f.key]} onChange={(v) => setData({ ...data, [f.key]: v })} media={media.data?.data ?? []} />
               </div>
             ))}
             {err.length > 0 && <ErrorBox msg={err.join(' · ')} />}
