@@ -1,5 +1,6 @@
 # Desenvolvimento local (build das imagens a partir do código; portas publicadas).
 # Produção/Dokploy: docker-compose.prod.yml
+# Configuração via ficheiro .env (cp .env.example .env). Arranque: docker compose --env-file .env up -d --build
 services:
   postgres:
     image: postgres:16-alpine
@@ -27,6 +28,7 @@ services:
   # Backups automáticos de Postgres + MinIO (ver docs/backups.md)
   backup:
     build: ./apps/backup
+    env_file: [.env]
     depends_on:
       postgres: { condition: service_healthy }
       minio: { condition: service_started }
@@ -44,6 +46,7 @@ services:
     volumes: [backups:/backups]
 
   api:
+    env_file: [.env]
     build:
       context: ./apps/api
       args: { APP_VERSION: dev }
@@ -66,6 +69,7 @@ services:
       ADMIN_NAME: ${ADMIN_NAME:-Administrador}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
       GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      SEED_SITES: ${SEED_SITES:-bchiwale}
       BACKUP_URL: http://backup:8081
       BACKUP_TOKEN: ${BACKUP_TOKEN:-dev-backup-token-change-me}
       APP_VERSION: dev
@@ -77,6 +81,7 @@ services:
 
   # One-shot: [backup se há migrações pendentes] → prisma migrate deploy → seed. A API só arranca se isto terminar OK.
   migrate:
+    env_file: [.env]
     build:
       context: ./apps/api
       args: { APP_VERSION: dev }
@@ -85,6 +90,7 @@ services:
     depends_on:
       postgres: { condition: service_healthy }
       backup: { condition: service_started }
+      minio: { condition: service_started }  # o seed envia imagens/vídeo para a Media Library
     environment:
       <<: *api-env
       PREDEPLOY_BACKUP: ${PREDEPLOY_BACKUP:-auto}

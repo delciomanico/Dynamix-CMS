@@ -57,3 +57,30 @@ describe('PublicApiController.list', () => {
     await expect(ctrl.list('site', 'x', {})).rejects.toThrow(NotFoundException);
   });
 });
+
+import { parseRange, resolveMediaRefs } from './public-api.controller';
+
+describe('parseRange', () => {
+  it('sem header → null', () => expect(parseRange(undefined, 100)).toBeNull());
+  it('a-b, a-, -n', () => {
+    expect(parseRange('bytes=0-9', 100)).toEqual({ start: 0, end: 9 });
+    expect(parseRange('bytes=90-', 100)).toEqual({ start: 90, end: 99 });
+    expect(parseRange('bytes=-10', 100)).toEqual({ start: 90, end: 99 });
+    expect(parseRange('bytes=50-500', 100)).toEqual({ start: 50, end: 99 });
+  });
+  it('inválidos → 416', () => {
+    expect(parseRange('bytes=100-', 100)).toBe('invalid');
+    expect(parseRange('bytes=9-2', 100)).toBe('invalid');
+    expect(parseRange('bytes=0-1,5-6', 100)).toBe('invalid');
+  });
+});
+
+describe('resolveMediaRefs', () => {
+  const url = (id: string) => `U/${id}`;
+  it('resolve em qualquer profundidade e ignora o resto', () => {
+    expect(resolveMediaRefs({ a: 'media://x1', b: [{ c: 'media://y-2' }, 'texto', 3], d: '/images/a.jpg' }, url))
+      .toEqual({ a: 'U/x1', b: [{ c: 'U/y-2' }, 'texto', 3], d: '/images/a.jpg' });
+    expect(resolveMediaRefs('media://v', url)).toBe('U/v');
+  });
+  it('não mexe em strings que apenas contêm media://', () => expect(resolveMediaRefs('ver media://x', url)).toBe('ver media://x'));
+});

@@ -2,6 +2,20 @@
 
 Usa `docker-compose.prod.yml`: imagens pré-construídas pelo CI (ver [Atualizações](./updates.md)), sem portas no host (o Traefik do Dokploy encaminha o domínio). O serviço `frontend` (nginx) serve o site e faz proxy de `/api` e `/docs` para a API, por isso **um único domínio** serve tudo e não há CORS entre origens.
 
+## Caminho simples (recomendado): build no servidor
+
+Sem registry, sem GitHub secrets, sem CI de deploy: o Dokploy constrói as imagens a partir do repositório.
+
+1. **Create Service → Compose** → repositório Git, branch `main`.
+2. **Compose Path:** `./docker-compose.dokploy.yml` · **Auto Deploy: ligado**.
+3. **Environment:** variáveis de [`.env.production.example`](../.env.production.example) (inclui `SEED_BCHIWALE_ORIGINS`, o domínio do site).
+4. **Domains:** `<cms>` → serviço `frontend`, porta `80`, HTTPS.
+5. Deploy. Cada push a `main` reconstrói e atualiza (sem rollback automático; para isso use o caminho com CI abaixo).
+
+`docker-compose.dokploy.yml` é o `docker-compose.prod.yml` com `build:` no lugar de `image:`; manter os dois em sincronia ao mudar serviços.
+
+## Caminho com CI e rollback (imagens por SHA)
+
 ## Passos
 
 1. **Create Service → Compose** e ligar ao repositório Git (branch `main`).
@@ -48,7 +62,7 @@ Depois do primeiro login, altere a password em **/app/account**; o seed nunca a 
 - Nem o Postgres nem o MinIO são expostos publicamente.
 - Healthcheck da API em `/api/v1/health`; o frontend só arranca depois de a API estar `healthy`.
 - `TRUST_PROXY_HOPS=2` (Traefik + nginx) faz o rate limit usar o IP real do cliente. Se alterares a cadeia de proxies, ajusta este valor.
-- Upload máximo: 10 MB (nginx aceita até 11 MB).
+- Upload máximo: 10 MB (vídeos 50 MB; nginx aceita até 51 MB).
 
 ## Testar localmente
 

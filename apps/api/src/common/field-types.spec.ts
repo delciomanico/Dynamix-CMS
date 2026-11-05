@@ -18,6 +18,12 @@ describe('validateEntryData', () => {
   it('date', () => { expect(ok(f('date'), '2026-10-21')).toEqual({ k: '2026-10-21' }); bad(f('date'), 'ontem'); });
   it('select', () => { const d = f('select', { options: ['a', 'b'] }); expect(ok(d, 'a')).toEqual({ k: 'a' }); bad(d, 'c'); });
   it('multiselect', () => { const d = f('multiselect', { options: ['a', 'b'] }); expect(ok(d, ['a', 'b'])).toEqual({ k: ['a', 'b'] }); bad(d, ['a', 'z']); bad(d, 'a'); });
+  it('json aceita listas/objetos/texto e faz parse de strings JSON', () => {
+    expect(ok(f('json'), [1, { a: 2 }])).toEqual({ k: [1, { a: 2 }] });
+    expect(ok(f('json'), '/video.mp4')).toEqual({ k: '/video.mp4' });
+    expect(ok(f('json'), '{"a":1}')).toEqual({ k: { a: 1 } });
+    bad(f('json'), '{oops');
+  });
   it('tipo desconhecido falha', () => bad(f('xyz'), 'v'));
   it('ignora chaves não definidas no componente', () => expect(validateEntryData([f('text')], { k: 'x', extra: 1 })).toEqual({ k: 'x' }));
   it('agrega vários erros', () => {

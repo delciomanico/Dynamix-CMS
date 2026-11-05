@@ -50,7 +50,7 @@ Uma página além do fim devolve `data: []` com `meta` correto. A ordenação da
 | GET/PATCH/DELETE | `/entries/:id` | Entrada |
 | POST | `/entries/:id/publish \| unpublish \| archive` | Mudar estado |
 | GET 📄 | `/projects/:pid/media?page=&limit=` | Media (paginado) |
-| POST | `/projects/:pid/media` | Upload `multipart` (campo `file`, ≤ 10 MB; png/jpeg/gif/webp/avif/pdf/txt) |
+| POST | `/projects/:pid/media` | Upload `multipart` (campo `file`, ≤ 10 MB (vídeo mp4/webm ≤ 50 MB); png/jpeg/gif/webp/avif/svg/pdf/txt) |
 | DELETE | `/media/:id` | Eliminar |
 
 ## Administração (JWT + papel ADMIN)

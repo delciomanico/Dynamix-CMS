@@ -47,8 +47,8 @@ export class StorageService implements OnModuleInit {
     await this.s3.send(new PutObjectCommand({ Bucket: this.bucket, Key: key, Body: body, ContentType: contentType }));
   }
 
-  async get(key: string) {
-    const res = await this.s3.send(new GetObjectCommand({ Bucket: this.bucket, Key: key }));
+  async get(key: string, range?: { start: number; end: number }) {
+    const res = await this.s3.send(new GetObjectCommand({ Bucket: this.bucket, Key: key, ...(range ? { Range: `bytes=${range.start}-${range.end}` } : {}) }));
     return { stream: res.Body as Readable, contentType: res.ContentType, length: res.ContentLength };
   }
 

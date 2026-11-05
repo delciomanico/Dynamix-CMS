@@ -25,6 +25,10 @@ x-api-env: &api-env
   GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
   BACKUP_URL: http://backup:8081
   BACKUP_TOKEN: ${BACKUP_TOKEN:?defina BACKUP_TOKEN (>= 16 caracteres)}
+  # Seed de sites (ver docs/seeds.md)
+  SEED_SITES: ${SEED_SITES:-bchiwale}
+  SEED_BCHIWALE_ORIGINS: ${SEED_BCHIWALE_ORIGINS:-}
+  SEED_BCHIWALE_URL: ${SEED_BCHIWALE_URL:-}
 
 services:
   postgres:
@@ -90,6 +94,7 @@ services:
     depends_on:
       postgres: { condition: service_healthy }
       backup: { condition: service_started }
+      minio: { condition: service_started }  # o seed envia imagens/vídeo para a Media Library
     environment:
       <<: *api-env
       PREDEPLOY_BACKUP: ${PREDEPLOY_BACKUP:-required}

@@ -1,0 +1,2679 @@
+{
+  "services": [
+    {
+      "slug": "geologia-prospeccao",
+      "title_pt": "Geologia e Prospecção Mineral",
+      "title_en": "Geology & Mineral Prospecting",
+      "description_pt": "Campanhas de prospecção com metodologias rigorosas de amostragem, mapeamento e análise laboratorial.",
+      "description_en": "Prospecting campaigns with rigorous sampling, mapping and laboratory analysis methodologies.",
+      "tags_pt": [
+        {
+          "label": "Cartografia",
+          "type": "cyan"
+        },
+        {
+          "label": "Depósitos Metálicos",
+          "type": "cyan"
+        },
+        {
+          "label": "JORC/NI 43-101",
+          "type": "gray"
+        }
+      ],
+      "tags_en": [
+        {
+          "label": "Cartography",
+          "type": "cyan"
+        },
+        {
+          "label": "Metallic Deposits",
+          "type": "cyan"
+        },
+        {
+          "label": "JORC/NI 43-101",
+          "type": "gray"
+        }
+      ],
+      "subtechniques_pt": [
+        "Cartografia geológica de detalhe",
+        "Prospecção de depósitos metálicos",
+        "Amostragem e análise geoquímica",
+        "Estimativa de recursos minerais"
+      ],
+      "subtechniques_en": [
+        "Detailed geological mapping",
+        "Metallic deposit prospecting",
+        "Sampling and geochemical analysis",
+        "Mineral resource estimation"
+      ],
+      "icon_id": "geology",
+      "image": "/images/project1.jpg",
+      "methodology_pt": [
+        {
+          "step": "01",
+          "title": "Diagnóstico",
+          "desc": "Análise bibliográfica, revisão de dados existentes e definição do programa de trabalho com base nos objectivos da campanha."
+        },
+        {
+          "step": "02",
+          "title": "Campo",
+          "desc": "Mapeamento geológico, amostragem de solo/rocha, levantamento estrutural e colheita de dados geoquímicos em pontos GPS."
+        },
+        {
+          "step": "03",
+          "title": "Análise",
+          "desc": "Processamento de amostras em laboratório, modelagem de dados geoquímicos e integração com interpretação cartográfica."
+        },
+        {
+          "step": "04",
+          "title": "Relatório",
+          "desc": "Elaboração de relatório técnico conforme padrões JORC / NI 43-101, com mapas, secções e estimativa de recursos."
+        }
+      ],
+      "norms_pt": [
+        "Código JORC 2012",
+        "NI 43-101 (CSA Canada)",
+        "ABNT NBR 6502",
+        "ISO 9001:2015"
+      ],
+      "faqs_pt": [
+        {
+          "q": "Quanto tempo demora uma campanha de prospecção?",
+          "a": "Depende da área e dos métodos. Uma campanha básica de reconhecimento pode durar 2–4 semanas. Campanhas detalhadas com análise laboratorial podem levar 3–6 meses."
+        },
+        {
+          "q": "Que documentos são necessários para iniciar?",
+          "a": "Licença de prospecção ou alvará emitido pelo MIREMPET, coordenadas da área de interesse e objectivos técnicos definidos pelo cliente."
+        },
+        {
+          "q": "Os resultados são confidenciais?",
+          "a": "Sim. Todos os dados e relatórios são tratados com total confidencialidade e protegidos por acordo de não-divulgação (NDA)."
+        },
+        {
+          "q": "A B-CHIWALE faz estimativa de recursos JORC?",
+          "a": "Sim. Possuímos técnicos certificados para elaboração e assinatura de relatórios de recursos segundo o código JORC 2012."
+        }
+      ]
+    },
+    {
+      "slug": "geofisica-aplicada",
+      "title_pt": "Geofísica Aplicada",
+      "title_en": "Applied Geophysics",
+      "description_pt": "Levantamentos multi-método para detecção de anomalias subsuperficiais, exploração de aquíferos e caracterização do subsolo.",
+      "description_en": "Multi-method surveys for subsurface anomaly detection, aquifer exploration and ground characterisation.",
+      "tags_pt": [
+        {
+          "label": "Magnetometria",
+          "type": "cyan"
+        },
+        {
+          "label": "ERT",
+          "type": "cyan"
+        },
+        {
+          "label": "Sísmica",
+          "type": "gray"
+        }
+      ],
+      "tags_en": [
+        {
+          "label": "Magnetometry",
+          "type": "cyan"
+        },
+        {
+          "label": "ERT",
+          "type": "cyan"
+        },
+        {
+          "label": "Seismics",
+          "type": "gray"
+        }
+      ],
+      "subtechniques_pt": [
+        "Magnetometria aerotransportada",
+        "Resistividade eléctrica ERT",
+        "Métodos electromagnéticos TEM",
+        "Sísmica de refracção e reflexão"
+      ],
+      "subtechniques_en": [
+        "Airborne magnetometry",
+        "Electrical resistivity ERT",
+        "Electromagnetic methods TEM",
+        "Refraction and reflection seismics"
+      ],
+      "icon_id": "geophysics",
+      "image": "/images/geofisico.jpg",
+      "methodology_pt": [
+        {
+          "step": "01",
+          "title": "Diagnóstico",
+          "desc": "Definição dos métodos geofísicos adequados ao objectivo — aquíferos, mineralização, fundações — com base em geologia prévia."
+        },
+        {
+          "step": "02",
+          "title": "Campo",
+          "desc": "Aquisição de dados com equipamentos ERT, magnetómetros, sismógrafos ou electromagnetismo conforme o método seleccionado."
+        },
+        {
+          "step": "03",
+          "title": "Análise",
+          "desc": "Inversão e interpretação dos dados com software especializado (Res2DInv, Geosoft, Seisee). Secções 2D/3D."
+        },
+        {
+          "step": "04",
+          "title": "Relatório",
+          "desc": "Relatório técnico com perfis, mapas de anomalias, secções geofísicas e recomendações para furos ou investigação complementar."
+        }
+      ],
+      "norms_pt": [
+        "ISO 9001:2015",
+        "ASTM D7400",
+        "IEEE Std 81",
+        "ABNT NBR 13653"
+      ],
+      "faqs_pt": [
+        {
+          "q": "Qual o método mais adequado para localizar água subterrânea?",
+          "a": "A tomografia eléctrica de resistividade (ERT) é o método mais eficaz para localização de aquíferos, complementada por métodos EM quando necessário."
+        },
+        {
+          "q": "A geofísica pode substituir as sondagens?",
+          "a": "Não substitui, mas optimiza significativamente — reduindo o número de furos necessários ao identificar previamente as zonas com maior potencial."
+        },
+        {
+          "q": "Qual a profundidade máxima de investigação?",
+          "a": "Depende do método e da resistividade do terreno. Com ERT alcançamos tipicamente 50–200m. Sísmica de reflexão pode atingir várias centenas de metros."
+        }
+      ]
+    },
+    {
+      "slug": "engenharia-geotecnica",
+      "title_pt": "Engenharia Geotécnica",
+      "title_en": "Geotechnical Engineering",
+      "description_pt": "Investigação e soluções geotécnicas para construção civil, mineração e infraestrutura — da viabilidade à instrumentação.",
+      "description_en": "Geotechnical investigation and solutions for civil construction, mining and infrastructure — from feasibility to instrumentation.",
+      "tags_pt": [
+        {
+          "label": "SPT/CPT",
+          "type": "cyan"
+        },
+        {
+          "label": "Estabilidade",
+          "type": "cyan"
+        },
+        {
+          "label": "Fundações",
+          "type": "gray"
+        }
+      ],
+      "tags_en": [
+        {
+          "label": "SPT/CPT",
+          "type": "cyan"
+        },
+        {
+          "label": "Stability",
+          "type": "cyan"
+        },
+        {
+          "label": "Foundations",
+          "type": "gray"
+        }
+      ],
+      "subtechniques_pt": [
+        "Sondagens e ensaios SPT/CPT/PMT",
+        "Estabilidade de taludes",
+        "Fundações especiais (estacas)",
+        "Instrumentação e monitoramento"
+      ],
+      "subtechniques_en": [
+        "Boreholes and SPT/CPT/PMT tests",
+        "Slope stability",
+        "Special foundations (piles)",
+        "Instrumentation and monitoring"
+      ],
+      "icon_id": "geotechnics",
+      "image": "/images/project3.jpg",
+      "methodology_pt": [
+        {
+          "step": "01",
+          "title": "Diagnóstico",
+          "desc": "Revisão de documentação, visita ao local e definição do programa de investigação baseado no tipo de obra e requisitos normativos."
+        },
+        {
+          "step": "02",
+          "title": "Campo",
+          "desc": "Execução de sondagens, ensaios SPT/CPT/PMT, colheita de amostras indeformadas e ensaios in situ (ensaio de placa, permeabilidade)."
+        },
+        {
+          "step": "03",
+          "title": "Análise",
+          "desc": "Ensaios laboratoriais (granulometria, limites de Atterberg, compressão simples, triaxial). Modelagem de estabilidade e capacidade de carga."
+        },
+        {
+          "step": "04",
+          "title": "Relatório",
+          "desc": "Relatório geotécnico com perfis de sondagem, parâmetros do solo, análise de capacidade de carga, assentamentos e recomendações de fundação."
+        }
+      ],
+      "norms_pt": [
+        "ABNT NBR 6484",
+        "ABNT NBR 6122",
+        "Eurocode 7",
+        "ISO 22476",
+        "ISO 45001:2018"
+      ],
+      "faqs_pt": [
+        {
+          "q": "Quantas sondagens são necessárias para um projecto?",
+          "a": "Depende da dimensão e tipo de obra. Para edifícios de médio porte, geralmente 4–8 sondagens. Para infraestruturas lineares, 1 sondagem por 25–50m."
+        },
+        {
+          "q": "O que é o SPT e para que serve?",
+          "a": "Standard Penetration Test — ensaio que mede a resistência do solo à penetração. Fundamental para dimensionamento de fundações e análise de liquidefacção."
+        },
+        {
+          "q": "A B-CHIWALE faz acompanhamento da construção?",
+          "a": "Sim. Prestamos serviços de direcção técnica geotécnica, instrumentação e monitoramento durante todas as fases da obra."
+        }
+      ]
+    },
+    {
+      "slug": "topografia-geodesia",
+      "title_pt": "Topografia e Geodesia",
+      "title_en": "Topography & Geodesy",
+      "description_pt": "Levantamentos de alta precisão com GNSS de dupla frequência, estações totais robóticas e fotogrametria por drone UAV.",
+      "description_en": "High-precision surveys with dual-frequency GNSS, robotic total stations and UAV drone photogrammetry.",
+      "tags_pt": [
+        {
+          "label": "GNSS",
+          "type": "cyan"
+        },
+        {
+          "label": "UAV/Drone",
+          "type": "cyan"
+        },
+        {
+          "label": "Cadastral",
+          "type": "gray"
+        }
+      ],
+      "tags_en": [
+        {
+          "label": "GNSS",
+          "type": "cyan"
+        },
+        {
+          "label": "UAV/Drone",
+          "type": "cyan"
+        },
+        {
+          "label": "Cadastral",
+          "type": "gray"
+        }
+      ],
+      "subtechniques_pt": [
+        "Levantamentos planialtimétricos",
+        "Fotogrametria por drone UAV",
+        "Implantação de obras",
+        "Cadastro fundiário"
+      ],
+      "subtechniques_en": [
+        "Planimetric surveys",
+        "UAV drone photogrammetry",
+        "Construction layout",
+        "Land cadastre"
+      ],
+      "icon_id": "topography",
+      "image": "/images/project4.jpg",
+      "methodology_pt": [
+        {
+          "step": "01",
+          "title": "Diagnóstico",
+          "desc": "Análise dos requisitos de precisão, escala e finalidade do levantamento. Definição do sistema de coordenadas e datum de referência."
+        },
+        {
+          "step": "02",
+          "title": "Campo",
+          "desc": "Implantação de rede de apoio geodésico, levantamento planialtimétrico com GNSS RTK ou estação total robótica, e/ou voo UAV."
+        },
+        {
+          "step": "03",
+          "title": "Análise",
+          "desc": "Processamento dos dados GNSS, restituição fotogramétrica, geração de nuvens de pontos LiDAR e ortofotomapas de alta resolução."
+        },
+        {
+          "step": "04",
+          "title": "Relatório",
+          "desc": "Entrega de cartografia digital (DWG, SHP, PDF), modelo digital de terreno (MDT/MDS), plantas e relatório técnico com precisão declarada."
+        }
+      ],
+      "norms_pt": [
+        "ABNT NBR 13133",
+        "SIRGAS 2000",
+        "OGC Standards",
+        "ISO 19157 (Qualidade de dados geográficos)"
+      ],
+      "faqs_pt": [
+        {
+          "q": "Que precisão é possível com GNSS RTK?",
+          "a": "Com equipamento de dupla frequência em condições normais, alcançamos 1–3cm em planimétria e 2–5cm em altimetria."
+        },
+        {
+          "q": "O drone (UAV) pode substituir o levantamento terrestre?",
+          "a": "Depende do objectivo. Para ortofotomapas e MDT em áreas extensas, o UAV é muito mais eficiente. Para cadastro urbano detalhado, é complementado por levantamento terrestre."
+        },
+        {
+          "q": "Quanto tempo demora um levantamento cadastral de 100ha?",
+          "a": "Com UAV e processamento, geralmente 2–4 dias de campo mais 3–5 dias de processamento. Depende do terreno e da resolução exigida."
+        }
+      ]
+    },
+    {
+      "slug": "ambiente-gestao",
+      "title_pt": "Ambiente e Gestão Territorial",
+      "title_en": "Environment & Land Management",
+      "description_pt": "Avaliação, monitoramento e recuperação ambiental. EIA conforme legislação angolana e padrões internacionais.",
+      "description_en": "Environmental assessment, monitoring and rehabilitation. EIA under Angolan legislation and international standards.",
+      "tags_pt": [
+        {
+          "label": "EIA",
+          "type": "cyan"
+        },
+        {
+          "label": "Licenciamento",
+          "type": "cyan"
+        },
+        {
+          "label": "Recuperação",
+          "type": "gray"
+        }
+      ],
+      "tags_en": [
+        {
+          "label": "EIA",
+          "type": "cyan"
+        },
+        {
+          "label": "Licensing",
+          "type": "cyan"
+        },
+        {
+          "label": "Rehabilitation",
+          "type": "gray"
+        }
+      ],
+      "subtechniques_pt": [
+        "Estudos de Impacto Ambiental",
+        "Planos de gestão ambiental",
+        "Monitoramento ar/água/solo",
+        "Mapeamento territorial"
+      ],
+      "subtechniques_en": [
+        "Environmental Impact Assessments",
+        "Environmental management plans",
+        "Air/water/soil monitoring",
+        "Territorial mapping"
+      ],
+      "icon_id": "environment",
+      "image": "/images/about-main.jpg",
+      "methodology_pt": [
+        {
+          "step": "01",
+          "title": "Diagnóstico",
+          "desc": "Caracterização da área de estudo — meio físico, biótico e socioeconómico. Identificação das actividades com potencial impacto."
+        },
+        {
+          "step": "02",
+          "title": "Campo",
+          "desc": "Colheita de amostras de ar, água e solo. Inventário de fauna e flora. Entrevistas com populações locais. Monitoramento de parâmetros ambientais."
+        },
+        {
+          "step": "03",
+          "title": "Análise",
+          "desc": "Identificação, avaliação e hierarquização de impactos (magnitude, probabilidade, reversibilidade). Definição de medidas de mitigação."
+        },
+        {
+          "step": "04",
+          "title": "Relatório",
+          "desc": "Estudo de Impacto Ambiental (EIA/RIMA) conforme legislação angolana. Plano de Gestão Ambiental (PGA). Submetido ao MINAMB para aprovação."
+        }
+      ],
+      "norms_pt": [
+        "Lei do Ambiente (Lei 5/98, Angola)",
+        "Decreto 51/04 (EIA Angola)",
+        "ISO 14001",
+        "IFC Performance Standards"
+      ],
+      "faqs_pt": [
+        {
+          "q": "O EIA é obrigatório para todos os projectos?",
+          "a": "Em Angola, sim para projectos de mineração, construção de infraestrutura, exploração de recursos naturais e outros com potencial impacto significativo."
+        },
+        {
+          "q": "Quanto tempo demora a aprovação do EIA pelo MINAMB?",
+          "a": "Tipicamente 60–120 dias úteis após submissão completa. A B-CHIWALE gere todo o processo de submissão e acompanhamento."
+        },
+        {
+          "q": "A B-CHIWALE faz monitoramento pós-aprovação?",
+          "a": "Sim. Prestamos serviços de monitoramento ambiental contínuo (ar, água, solo, ruído) durante a fase de operação dos projectos."
+        }
+      ]
+    },
+    {
+      "slug": "aguas-subterraneas",
+      "title_pt": "Exploração de Águas Subterrâneas",
+      "title_en": "Groundwater Exploration",
+      "description_pt": "Prospecção, pesquisa e exploração de recursos hídricos subterrâneos para comunidades, indústrias e agricultura.",
+      "description_en": "Prospecting, research and exploitation of underground water resources for communities, industries and agriculture.",
+      "tags_pt": [
+        {
+          "label": "Aquíferos",
+          "type": "cyan"
+        },
+        {
+          "label": "Furos Tubulares",
+          "type": "cyan"
+        },
+        {
+          "label": "Hidrogeologia",
+          "type": "gray"
+        }
+      ],
+      "tags_en": [
+        {
+          "label": "Aquifers",
+          "type": "cyan"
+        },
+        {
+          "label": "Boreholes",
+          "type": "cyan"
+        },
+        {
+          "label": "Hydrogeology",
+          "type": "gray"
+        }
+      ],
+      "subtechniques_pt": [
+        "Prospecção geofísica de aquíferos",
+        "Furos e poços tubulares",
+        "Ensaios de caudal",
+        "Sistemas de bombeamento"
+      ],
+      "subtechniques_en": [
+        "Geophysical aquifer prospecting",
+        "Boreholes and tubular wells",
+        "Flow tests",
+        "Pumping systems"
+      ],
+      "icon_id": "water",
+      "image": "/images/project2.jpg",
+      "methodology_pt": [
+        {
+          "step": "01",
+          "title": "Diagnóstico",
+          "desc": "Análise hidrogeológica regional — tipo de aquífero, profundidade esperada, condutividade hidráulica. Revisão de furos existentes na área."
+        },
+        {
+          "step": "02",
+          "title": "Campo",
+          "desc": "Levantamento geofísico ERT/EM para localização de zonas saturadas. Selecção de ponto de furo. Execução de furo tubular com sonda rotativa."
+        },
+        {
+          "step": "03",
+          "title": "Análise",
+          "desc": "Ensaio de caudal (step-test, bombeamento prolongado). Análise físico-química e bacteriológica da água. Avaliação de viabilidade do aquífero."
+        },
+        {
+          "step": "04",
+          "title": "Relatório",
+          "desc": "Relatório hidrogeológico com perfil construtivo do furo, parâmetros hidráulicos, qualidade da água e recomendações de sistema de aproveitamento."
+        }
+      ],
+      "norms_pt": [
+        "ABNT NBR 12212",
+        "OMS Directrizes para qualidade da água",
+        "ISO 5667 (Amostragem de água)",
+        "ISO 9001:2015"
+      ],
+      "faqs_pt": [
+        {
+          "q": "Qual a profundidade típica dos furos em Angola?",
+          "a": "Varia muito por região e tipo de aquífero. Na bacia do Congo podem ser 30–80m; em formações cristalinas podem atingir 100–200m."
+        },
+        {
+          "q": "A água do furo é sempre potável?",
+          "a": "Nem sempre. É obrigatória análise físico-química e bacteriológica antes do consumo humano. A B-CHIWALE faz estas análises e recomenda tratamento quando necessário."
+        },
+        {
+          "q": "Quantos furos são precisos para uma comunidade de 500 pessoas?",
+          "a": "Depende do caudal do aquífero. Geralmente 1–2 furos com caudal de 3–8 m³/h são suficientes para comunidades desta dimensão."
+        }
+      ]
+    },
+    {
+      "slug": "consultoria-tramitacao",
+      "title_pt": "Consultoria, Tramitação e Acompanhamento",
+      "title_en": "Consulting, Processing & Monitoring",
+      "description_pt": "Assistência técnica e jurídica completa para aquisição de direitos mineiros em Angola junto do MIREMPET.",
+      "description_en": "Complete technical and legal assistance for acquiring mining rights in Angola through MIREMPET.",
+      "tags_pt": [
+        {
+          "label": "MIREMPET",
+          "type": "cyan"
+        },
+        {
+          "label": "Direitos Mineiros",
+          "type": "cyan"
+        },
+        {
+          "label": "Regulatório",
+          "type": "gray"
+        }
+      ],
+      "tags_en": [
+        {
+          "label": "MIREMPET",
+          "type": "cyan"
+        },
+        {
+          "label": "Mining Rights",
+          "type": "cyan"
+        },
+        {
+          "label": "Regulatory",
+          "type": "gray"
+        }
+      ],
+      "subtechniques_pt": [
+        "Título de Prospecção",
+        "Título de Exploração",
+        "Alvará Mineiro",
+        "Senha Mineira"
+      ],
+      "subtechniques_en": [
+        "Prospecting Title",
+        "Exploration Title",
+        "Mining Permit",
+        "Mining Pass"
+      ],
+      "icon_id": "consultancy",
+      "image": "/images/project-main.jpg",
+      "methodology_pt": [
+        {
+          "step": "01",
+          "title": "Diagnóstico",
+          "desc": "Análise dos objectivos do cliente, tipo de direito mineiro pretendido e verificação da disponibilidade da área junto do MIREMPET."
+        },
+        {
+          "step": "02",
+          "title": "Preparação",
+          "desc": "Elaboração de toda a documentação técnica e jurídica exigida. Preparação do Plano de Trabalho Mínimo (PTM) e demais anexos."
+        },
+        {
+          "step": "03",
+          "title": "Submissão",
+          "desc": "Entrega formal do processo no MIREMPET. Acompanhamento activo junto dos serviços competentes. Resposta a pedidos de informação adicional."
+        },
+        {
+          "step": "04",
+          "title": "Acompanhamento",
+          "desc": "Monitoramento do processo até à emissão do título. Assessoria pós-emissão para cumprimento de obrigações regulatórias."
+        }
+      ],
+      "norms_pt": [
+        "Lei Mineira de Angola (Lei 31/11)",
+        "Decreto 26/12 (Regulamento Geral)",
+        "Decreto 3/12 (Taxas Mineiras)",
+        "Regulamento do MIREMPET"
+      ],
+      "faqs_pt": [
+        {
+          "q": "Quanto tempo demora a emissão de uma Licença de Prospecção?",
+          "a": "O prazo legal é 60 dias úteis, mas na prática pode ser 3–6 meses dependendo da complexidade e volume de processos no MIREMPET."
+        },
+        {
+          "q": "A B-CHIWALE pode representar empresas estrangeiras?",
+          "a": "Sim. Auxiliamos empresas estrangeiras a constituir-se em Angola e a obter todos os direitos mineiros necessários."
+        },
+        {
+          "q": "Qual a diferença entre Licença de Prospecção e de Exploração?",
+          "a": "A Licença de Prospecção autoriza estudos e pesquisa. A Licença de Exploração autoriza extracção comercial. São fases distintas do processo mineiro angolano."
+        },
+        {
+          "q": "É possível tramitar múltiplas áreas simultaneamente?",
+          "a": "Sim, e é nossa especialidade. Gerimos múltiplos processos em paralelo para optimizar o tempo total de licenciamento."
+        }
+      ]
+    }
+  ],
+  "team": [
+    {
+      "initials": "BC",
+      "photo": "/images/team1.jpg",
+      "linkedin": "#",
+      "years_exp": 10,
+      "name_pt": "B. Chiwale",
+      "name_en": "B. Chiwale",
+      "role_pt": "Director-Geral",
+      "role_en": "General Director",
+      "bio_pt": "Fundador da B-CHIWALE, lidera a empresa com mais de 10 anos de experiência em geologia exploratória e mineração em Angola.",
+      "bio_en": "Founder of B-CHIWALE, leading the company with over 10 years of experience in exploratory geology and mining in Angola.",
+      "specialties_pt": [
+        "Geologia Exploratória",
+        "Gestão de Projectos Minerais",
+        "Direitos Mineiros Angola"
+      ],
+      "specialties_en": [
+        "Exploratory Geology",
+        "Mineral Project Management",
+        "Angolan Mining Rights"
+      ],
+      "education_pt": "Licenciatura em Geologia — Universidade Agostinho Neto",
+      "education_en": "BSc Geology — Agostinho Neto University",
+      "languages_pt": [
+        "Português",
+        "Inglês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English"
+      ]
+    },
+    {
+      "initials": "DG",
+      "photo": "/images/team2.jpg",
+      "linkedin": "#",
+      "years_exp": 12,
+      "name_pt": "Dir. Técnico de Geologia",
+      "name_en": "Technical Director of Geology",
+      "role_pt": "Dir. Técnico",
+      "role_en": "Technical Director",
+      "bio_pt": "Especialista em prospecção e depósitos minerais, responsável pela qualidade técnica dos relatórios geológicos.",
+      "bio_en": "Specialist in prospecting and mineral deposits, responsible for the technical quality of geological reports.",
+      "specialties_pt": [
+        "Prospecção Mineral",
+        "Depósitos Metálicos e Diamantíferos",
+        "Estimativa de Recursos JORC"
+      ],
+      "specialties_en": [
+        "Mineral Prospecting",
+        "Metallic and Diamond Deposits",
+        "JORC Resource Estimation"
+      ],
+      "education_pt": "Mestrado em Geologia Económica — Universidade Agostinho Neto",
+      "education_en": "MSc Economic Geology — Agostinho Neto University",
+      "languages_pt": [
+        "Português",
+        "Inglês",
+        "Francês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English",
+        "French"
+      ]
+    },
+    {
+      "initials": "GF",
+      "photo": "/images/team3.jpg",
+      "linkedin": "#",
+      "years_exp": 9,
+      "name_pt": "Dir. Geofísica Aplicada",
+      "name_en": "Dir. Applied Geophysics",
+      "role_pt": "Dir. Geofísica",
+      "role_en": "Dir. Geophysics",
+      "bio_pt": "Coordena todos os levantamentos geofísicos, com foco em métodos eléctricos, sísmicos e electromagnéticos.",
+      "bio_en": "Coordinates all geophysical surveys, with a focus on electrical, seismic and electromagnetic methods.",
+      "specialties_pt": [
+        "Tomografia Eléctrica ERT",
+        "Magnetometria e Gravimetria",
+        "Métodos Electromagnéticos TEM"
+      ],
+      "specialties_en": [
+        "Electrical Tomography ERT",
+        "Magnetometry and Gravimetry",
+        "Electromagnetic Methods TEM"
+      ],
+      "education_pt": "Licenciatura em Geofísica — Instituto Superior Politécnico de Angola",
+      "education_en": "BSc Geophysics — Higher Polytechnic Institute of Angola",
+      "languages_pt": [
+        "Português",
+        "Inglês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English"
+      ]
+    },
+    {
+      "initials": "GT",
+      "photo": "/images/team4.jpg",
+      "linkedin": "#",
+      "years_exp": 11,
+      "name_pt": "Dir. Engenharia Geotécnica",
+      "name_en": "Dir. Geotechnical Engineering",
+      "role_pt": "Dir. Geotecnia",
+      "role_en": "Dir. Geotechnics",
+      "bio_pt": "Lidera os estudos de fundações e estabilidade de terrenos para projectos de infraestrutura em todo o país.",
+      "bio_en": "Leads foundation and ground stability studies for infrastructure projects across the country.",
+      "specialties_pt": [
+        "Ensaios SPT/CPT/PMT",
+        "Estabilidade de Taludes",
+        "Fundações Especiais e Estacas"
+      ],
+      "specialties_en": [
+        "SPT/CPT/PMT Tests",
+        "Slope Stability",
+        "Special Foundations and Piles"
+      ],
+      "education_pt": "Licenciatura em Engenharia Civil — Universidade Agostinho Neto",
+      "education_en": "BSc Civil Engineering — Agostinho Neto University",
+      "languages_pt": [
+        "Português",
+        "Inglês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English"
+      ]
+    },
+    {
+      "initials": "TA",
+      "photo": "/images/team5.jpg",
+      "linkedin": "#",
+      "years_exp": 8,
+      "name_pt": "Dir. Topografia e Ambiente",
+      "name_en": "Dir. Topography & Environment",
+      "role_pt": "Dir. Topografia",
+      "role_en": "Dir. Topography",
+      "bio_pt": "Responsável pelos levantamentos GNSS de precisão, fotogrametria UAV e estudos de impacto ambiental.",
+      "bio_en": "Responsible for precision GNSS surveys, UAV photogrammetry and environmental impact studies.",
+      "specialties_pt": [
+        "Fotogrametria UAV e Drones",
+        "GNSS de Alta Precisão",
+        "Estudos de Impacto Ambiental"
+      ],
+      "specialties_en": [
+        "UAV Drone Photogrammetry",
+        "High-Precision GNSS",
+        "Environmental Impact Studies"
+      ],
+      "education_pt": "Licenciatura em Engenharia de Topografia — Universidade Lusíada de Angola",
+      "education_en": "BSc Topographic Engineering — Lusíada University of Angola",
+      "languages_pt": [
+        "Português",
+        "Inglês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English"
+      ]
+    },
+    {
+      "initials": "AF",
+      "photo": "/images/team6.jpg",
+      "linkedin": "#",
+      "years_exp": 7,
+      "name_pt": "Dir. Administrativo e Financeiro",
+      "name_en": "Dir. Administrative & Financial",
+      "role_pt": "Dir. Administrativo",
+      "role_en": "Dir. Administrative",
+      "bio_pt": "Garante a solidez financeira e operacional da empresa, supervisionando contratos e gestão de recursos.",
+      "bio_en": "Ensures the financial and operational soundness of the company, overseeing contracts and resource management.",
+      "specialties_pt": [
+        "Gestão Financeira e Orçamental",
+        "Contratos e Procurement",
+        "Gestão de Recursos Humanos"
+      ],
+      "specialties_en": [
+        "Financial and Budget Management",
+        "Contracts and Procurement",
+        "Human Resources Management"
+      ],
+      "education_pt": "Licenciatura em Gestão de Empresas — Universidade Católica de Angola",
+      "education_en": "BSc Business Management — Catholic University of Angola",
+      "languages_pt": [
+        "Português",
+        "Inglês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English"
+      ]
+    },
+    {
+      "initials": "CM",
+      "photo": "/images/team7.jpg",
+      "linkedin": "#",
+      "years_exp": 5,
+      "name_pt": "Coord. de Projecto",
+      "name_en": "Project Coordinator",
+      "role_pt": "Coordenação",
+      "role_en": "Coordination",
+      "bio_pt": "Assegura a execução dos projectos dentro do prazo e orçamento, mantendo a comunicação com os clientes.",
+      "bio_en": "Ensures project execution within time and budget, maintaining client communication.",
+      "specialties_pt": [
+        "Coordenação de Projectos Técnicos",
+        "Relação e Reporting a Clientes",
+        "Controlo de Qualidade"
+      ],
+      "specialties_en": [
+        "Technical Project Coordination",
+        "Client Relations and Reporting",
+        "Quality Control"
+      ],
+      "education_pt": "Licenciatura em Engenharia de Minas — Instituto Superior Politécnico de Angola",
+      "education_en": "BSc Mining Engineering — Higher Polytechnic Institute of Angola",
+      "languages_pt": [
+        "Português",
+        "Inglês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English"
+      ]
+    },
+    {
+      "initials": "GL",
+      "photo": "/images/team16.jpg",
+      "linkedin": "#",
+      "years_exp": 7,
+      "name_pt": "Geólogo Sénior",
+      "name_en": "Senior Geologist",
+      "role_pt": "Geologia",
+      "role_en": "Geology",
+      "bio_pt": "Conduz campanhas de cartografia geológica e amostragem geoquímica nas diversas províncias angolanas.",
+      "bio_en": "Leads geological mapping campaigns and geochemical sampling across the various Angolan provinces.",
+      "specialties_pt": [
+        "Cartografia Geológica de Campo",
+        "Amostragem e Análise Geoquímica",
+        "SIG e Teledetecção"
+      ],
+      "specialties_en": [
+        "Field Geological Mapping",
+        "Sampling and Geochemical Analysis",
+        "GIS and Remote Sensing"
+      ],
+      "education_pt": "Licenciatura em Geologia — Universidade Agostinho Neto",
+      "education_en": "BSc Geology — Agostinho Neto University",
+      "languages_pt": [
+        "Português",
+        "Inglês"
+      ],
+      "languages_en": [
+        "Portuguese",
+        "English"
+      ]
+    }
+  ],
+  "portfolio": [
+    {
+      "slug": "prospeccao-mineral-bacia-norte",
+      "service_pt": "Geologia",
+      "service_en": "Geology",
+      "province": "Luanda",
+      "year": "2024",
+      "image": "/images/project1.jpg",
+      "title_pt": "Prospecção Mineral — Bacia Sedimentar Norte",
+      "title_en": "Mineral Prospecting — Northern Sedimentary Basin",
+      "description_pt": "Campanha de cartografia geológica e amostragem geoquímica em 1.200 km².",
+      "description_en": "Geological mapping and geochemical sampling campaign over 1,200 km².",
+      "client_pt": "Confidencial",
+      "client_en": "Confidential",
+      "area_pt": "1.200 km²",
+      "area_en": "1,200 km²",
+      "duration_pt": "6 meses",
+      "duration_en": "6 months",
+      "challenge_pt": "A campanha decorreu numa área de 1.200 km² com cobertura sedimentar espessa e difícil acessibilidade na bacia sedimentar norte de Luanda. O cliente necessitava de uma caracterização geológica de detalhe para avaliar o potencial de depósitos de minerais industriais associados a formações cratónicas do Pré-Câmbrico, numa área com escassa informação prévia.",
+      "challenge_en": "The campaign covered 1,200 km² with thick sedimentary cover and difficult accessibility. The client needed detailed geological characterisation to assess industrial mineral potential.",
+      "solution_pt": "A equipa aplicou cartografia geológica sistemática à escala 1:25.000, complementada por amostragem geoquímica de solos e sedimentos em malha 500×500m. Utilizaram-se métodos de sensoriamento remoto com imagens SRTM e Landsat 8 para modelagem estrutural prévia ao trabalho de campo, o que permitiu optimizar as áreas de maior prioridade e reduzir os custos de mobilização.",
+      "solution_en": "Systematic geological mapping at 1:25,000 scale, complemented by soil/sediment geochemical sampling on a 500×500m grid. Remote sensing with SRTM and Landsat 8 for pre-field structural modelling.",
+      "results_pt": [
+        "Identificação de 4 zonas anómalas com potencial confirmado para minerais de base",
+        "Cartografia completa de 18 unidades litológicas distintas nos 1.200 km² de área",
+        "Relatório técnico conforme padrão JORC 2012 entregue dentro do prazo e orçamento contratados"
+      ],
+      "results_en": [
+        "Identification of 4 anomalous zones with confirmed potential for base metals",
+        "Complete mapping of 18 distinct lithological units across the 1,200 km² area",
+        "JORC 2012-compliant technical report delivered on time and within budget"
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "levantamento-ert-aquifero-malanje",
+      "service_pt": "Geofísica",
+      "service_en": "Geophysics",
+      "province": "Malanje",
+      "year": "2023",
+      "image": "/images/project2.jpg",
+      "title_pt": "Levantamento ERT — Aquífero Regional",
+      "title_en": "ERT Survey — Regional Aquifer",
+      "description_pt": "Identificação e mapeamento de 3 aquíferos principais a 80–180m de profundidade.",
+      "description_en": "Identification and mapping of 3 main aquifers at 80–180m depth.",
+      "client_pt": "Empresa Agroindustrial (Confidencial)",
+      "client_en": "Agroindustrial Company (Confidential)",
+      "area_pt": "85 km²",
+      "area_en": "85 km²",
+      "duration_pt": "3 meses",
+      "duration_en": "3 months",
+      "challenge_pt": "A empresa cliente necessitava de identificar e caracterizar recursos hídricos subterrâneos para suportar um projecto agroindustrial de grande escala em Malanje. A área de estudo apresentava geologia complexa com alternância de rochas cristalinas e depósitos aluvionares, com características hidrogeológicas distintas que dificultavam a localização de captações produtivas.",
+      "challenge_en": "The client needed to identify groundwater resources for a large-scale agroindustrial project in Malanje, in geologically complex terrain with mixed crystalline and alluvial deposits.",
+      "solution_pt": "A B-CHIWALE executou 42 perfis de tomografia de resistividade eléctrica (ERT) perfazendo 38 km de linhas, com equipamento SYSCAL Pro de 48 eléctrodos. Os dados foram processados e invertidos em 2D com software RES2DINV, integrando os resultados com informação geológica de superfície para identificar as principais unidades aquíferas em profundidade.",
+      "solution_en": "42 ERT profiles totalling 38 km executed with SYSCAL Pro (48 electrodes). Data inverted with RES2DINV, integrated with surface geology to identify aquifer units at depth.",
+      "results_pt": [
+        "Identificação e mapeamento de 3 aquíferos principais a profundidades entre 80 e 180 metros",
+        "Definição de 7 locais prioritários para execução de furos de captação de água",
+        "Taxa de sucesso de 86% nos furos executados com base nas recomendações da B-CHIWALE"
+      ],
+      "results_en": [
+        "Identification and mapping of 3 main aquifers at depths between 80 and 180 metres",
+        "Definition of 7 priority sites for water capture borehole drilling",
+        "86% success rate in boreholes drilled based on B-CHIWALE recommendations"
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "geotecnica-corredor-infraestrutura",
+      "service_pt": "Geotecnia",
+      "service_en": "Geotechnics",
+      "province": "Benguela",
+      "year": "2023",
+      "image": "/images/project3.jpg",
+      "title_pt": "Estudo Geotécnico — Corredor de Infraestrutura",
+      "title_en": "Geotechnical Study — Infrastructure Corridor",
+      "description_pt": "Investigação do subsolo para implantação de 45km de infraestrutura rodoviária.",
+      "description_en": "Subsurface investigation for a 45 km road infrastructure corridor.",
+      "client_pt": "Consórcio de Construção (Confidencial)",
+      "client_en": "Construction Consortium (Confidential)",
+      "area_pt": "45 km de corredor",
+      "area_en": "45 km corridor",
+      "duration_pt": "5 meses",
+      "duration_en": "5 months",
+      "challenge_pt": "A implantação de um corredor rodoviário de 45 km em Benguela exigia uma investigação geotécnica abrangente para caracterizar a capacidade de carga do subsolo, identificar zonas de terreno instável e definir as soluções de fundação mais adequadas para obras de arte ao longo de um traçado com múltiplos perfis geológicos distintos.",
+      "challenge_en": "The 45 km road corridor required comprehensive geotechnical investigation to characterise subsurface bearing capacity and identify unstable zones along a route with multiple distinct geological profiles.",
+      "solution_pt": "Foram executadas 28 sondagens com ensaios SPT a intervalos regulares de 200m, 15 ensaios de penetração dinâmica DPL em zonas de solo superficial e análises laboratoriais de 186 amostras de solo. A equipa efectuou ainda mapeamento geomorfológico detalhado do traçado para identificação de zonas de risco de instabilidade e áreas com potencial de subsidência.",
+      "solution_en": "28 boreholes with SPT tests at 200m intervals, 15 DPL penetration tests and laboratory analysis of 186 soil samples. Detailed geomorphological mapping to identify instability risk zones.",
+      "results_pt": [
+        "Caracterização geotécnica completa dos 45 km de corredor rodoviário em 5 meses",
+        "Identificação de 3 zonas de terreno problemático com soluções de reforço e estabilização propostas",
+        "Relatório geotécnico aprovado pela Direcção Nacional de Vias de Angola sem pedidos de rectificação"
+      ],
+      "results_en": [
+        "Complete geotechnical characterisation of the 45 km corridor in 5 months",
+        "Identification of 3 problematic ground zones with proposed reinforcement solutions",
+        "Geotechnical report approved by Angola's National Roads Directorate without correction requests"
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "cadastral-zona-industrial-huambo",
+      "service_pt": "Topografia",
+      "service_en": "Topography",
+      "province": "Huambo",
+      "year": "2022",
+      "image": "/images/project4.jpg",
+      "title_pt": "Levantamento Cadastral — Zona Industrial",
+      "title_en": "Cadastral Survey — Industrial Zone",
+      "description_pt": "Levantamento GNSS de precisão e fotogrametria UAV em 320 hectares.",
+      "description_en": "Precision GNSS survey and UAV photogrammetry over 320 hectares.",
+      "client_pt": "Governo Provincial de Huambo",
+      "client_en": "Government of Huambo Province",
+      "area_pt": "320 hectares",
+      "area_en": "320 hectares",
+      "duration_pt": "4 meses",
+      "duration_en": "4 months",
+      "challenge_pt": "O Governo Provincial de Huambo necessitava de um levantamento topográfico de precisão e cadastro fundiário actualizado de uma zona industrial em expansão, abrangendo 320 hectares com limites de parcelas sobrepostos, registos prediais desactualizados e ausência de uma base cartográfica fiável para suporte ao planeamento territorial.",
+      "challenge_en": "The Provincial Government required a precision topographic survey and updated land cadastre of a 320 ha expanding industrial zone with overlapping plot boundaries and outdated land records.",
+      "solution_pt": "A equipa utilizou 4 estações base GNSS de dupla frequência em modo RTK para levantamento planialtimétrico de alta precisão, complementadas com missões de fotogrametria UAV cobrindo toda a área em 6 voos. Foram processados 4.200 pontos de campo e gerada nuvem de pontos densa para produção do MDT e ortofotomapa a 2 cm/pixel.",
+      "solution_en": "4 dual-frequency GNSS base stations in RTK mode + UAV photogrammetry missions in 6 flights. 4,200 field points processed; dense point cloud for DTM and orthophoto at 2 cm/pixel.",
+      "results_pt": [
+        "Levantamento GNSS com precisão de ±2 cm em planimetria e ±3 cm em altimetria em toda a área",
+        "Ortofotomapa de 320 ha a resolução de 2 cm/pixel e MDT com curvas de nível a 0,5 m de equidistância",
+        "Cadastro georreferenciado de 147 parcelas industriais entregue ao Governo Provincial em formato SHP e DWG"
+      ],
+      "results_en": [
+        "GNSS survey with ±2 cm planimetric and ±3 cm altimetric precision",
+        "320 ha orthophoto at 2 cm/pixel and DTM with 0.5 m contours",
+        "Georeferenced cadastre of 147 industrial plots delivered in SHP and DWG format"
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "eia-mineracao-aluvionar-cabinda",
+      "service_pt": "Ambiente",
+      "service_en": "Environment",
+      "province": "Cabinda",
+      "year": "2024",
+      "image": "/images/about-main.jpg",
+      "title_pt": "EIA — Projecto de Mineração Aluvionar",
+      "title_en": "EIA — Alluvial Mining Project",
+      "description_pt": "Estudo de impacto ambiental e plano de recuperação para operação de mineração aluvionar.",
+      "description_en": "Environmental impact study and recovery plan for an alluvial mining operation.",
+      "client_pt": "Empresa de Mineração Aluvionar (Confidencial)",
+      "client_en": "Alluvial Mining Company (Confidential)",
+      "area_pt": "280 hectares",
+      "area_en": "280 hectares",
+      "duration_pt": "8 meses",
+      "duration_en": "8 months",
+      "challenge_pt": "O projecto de mineração aluvionar em Cabinda localizava-se numa área sensível próxima de floresta tropical densa e cursos de água permanentes, exigindo um Estudo de Impacto Ambiental de elevado rigor, conforme a legislação angolana e os Padrões de Desempenho Ambiental e Social do IFC, num contexto de forte escrutínio das comunidades locais.",
+      "challenge_en": "The project in Cabinda was located in a sensitive area near dense tropical forest and permanent watercourses, requiring a rigorous EIA under Angolan law and IFC Performance Standards.",
+      "solution_pt": "A B-CHIWALE conduziu levantamentos de linha de base ambiental durante 6 meses, cobrindo qualidade da água, ar e solo, biodiversidade (flora e fauna) e componente socioeconómica. O EIA completo incluiu plano de gestão ambiental e social com 28 medidas de mitigação e um plano de recuperação pós-lavra, submetido ao MINAMB acompanhado de 4 consultas públicas.",
+      "solution_en": "6-month baseline environmental surveys covering water, air and soil quality, biodiversity (flora/fauna) and socioeconomic components. Full EIA with 28 mitigation measures and post-mining recovery plan.",
+      "results_pt": [
+        "EIA aprovado pelo MINAMB em prazo recorde de 45 dias úteis, contra a média sectorial de 90–120 dias",
+        "Plano de gestão ambiental integrado com 28 medidas de mitigação e programa de monitoramento contínuo",
+        "Quatro consultas públicas realizadas com aceitação unânime das comunidades locais ao projecto"
+      ],
+      "results_en": [
+        "EIA approved by MINAMB in a record 45 working days vs sector average of 90–120 days",
+        "Integrated environmental management plan with 28 mitigation measures and monitoring programme",
+        "Four public consultations held with unanimous community acceptance of the project"
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "tramitacao-mirempet-lunda-norte",
+      "service_pt": "Consultoria",
+      "service_en": "Consulting",
+      "province": "Lunda Norte",
+      "year": "2024",
+      "image": "/images/project-main.jpg",
+      "title_pt": "Tramitação MIREMPET — Licença de Lavra",
+      "title_en": "MIREMPET Processing — Mining Licence",
+      "description_pt": "Acompanhamento completo do processo de licenciamento de exploração diamantífera junto do MIREMPET.",
+      "description_en": "Full accompaniment of the diamond mining licensing process with MIREMPET.",
+      "client_pt": "Confidencial",
+      "client_en": "Confidential",
+      "area_pt": "Lunda Norte",
+      "area_en": "Lunda Norte",
+      "duration_pt": "10 meses",
+      "duration_en": "10 months",
+      "challenge_pt": "Uma empresa do sector diamantífero pretendia converter a sua Licença de Prospecção numa Licença de Lavra na Lunda Norte, processo que envolve múltiplas entidades reguladoras — MIREMPET, ENDIAMA, MINAMB — e documentação técnica e legal exigente, num contexto regulatório em constante evolução com prazos imprevisíveis e requisitos não publicados.",
+      "challenge_en": "A diamond sector company sought to convert its Prospecting Licence into a Mining Licence in Lunda Norte — a process involving MIREMPET, ENDIAMA and MINAMB, in a constantly evolving regulatory environment.",
+      "solution_pt": "A equipa de consultoria da B-CHIWALE coordenou integralmente o processo: preparação do relatório de prospecção conforme requisitos técnicos do MIREMPET, elaboração do plano de lavra e do plano de recuperação ambiental pós-lavra, gestão da comunicação com todas as entidades reguladoras e acompanhamento presencial de todas as auditorias técnicas e reuniões institucionais.",
+      "solution_en": "B-CHIWALE's consulting team fully coordinated the process: prospecting report, mining plan and post-mining recovery plan, plus all communications with regulatory bodies and attendance at technical audits.",
+      "results_pt": [
+        "Licença de Lavra emitida em 10 meses, face ao prazo habitual de 18 a 24 meses para processos similares",
+        "Zero pedidos de rectificação ou informações adicionais por parte do MIREMPET durante todo o processo",
+        "Modelo de processo documentado e reutilizável para futuras tramitações de direitos mineiros da empresa"
+      ],
+      "results_en": [
+        "Mining Licence issued in 10 months vs the usual 18–24 months for similar processes",
+        "Zero correction requests from MIREMPET throughout the entire process",
+        "Documented reusable process model for future mining rights applications"
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "levantamento-magnetometrico-bie",
+      "service_pt": "Geofísica",
+      "province": "Bié",
+      "year": "2024",
+      "title_pt": "Levantamento Magnetométrico — Área Mineira",
+      "description_pt": "Interpretação de anomalias magnéticas para identificação de targets de cobre e ferro em 350 km²."
+    },
+    {
+      "slug": "cartografia-uav-concessao-agraria-huila",
+      "service_pt": "Topografia",
+      "province": "Huíla",
+      "year": "2023",
+      "title_pt": "Cartografia UAV — Concessão Agrária",
+      "description_pt": "Fotogrametria de alta resolução por drone em 850 ha com MDT e ortofotomapa para delimitação de parcelas."
+    },
+    {
+      "slug": "prospeccao-diamantifera-lunda-sul",
+      "service_pt": "Geologia",
+      "province": "Lunda Sul",
+      "year": "2024",
+      "title_pt": "Prospecção Diamantífera — Zona Aluvionar",
+      "description_pt": "Amostragem e mapeamento de depósitos aluvionares em área de 400 km² na bacia diamantífera angolana."
+    },
+    {
+      "slug": "eia-central-hidroelectrica-moxico",
+      "service_pt": "Ambiente",
+      "province": "Moxico",
+      "year": "2023",
+      "title_pt": "EIA — Central Hidroeléctrica Mini-Hídrica",
+      "description_pt": "Estudo completo de impacto ambiental para projecto de geração de energia hídrica de 5 MW."
+    },
+    {
+      "slug": "furos-tubulares-cunene",
+      "service_pt": "Águas Subterrâneas",
+      "province": "Cunene",
+      "year": "2022",
+      "title_pt": "Furos Tubulares — Programa de Abastecimento Rural",
+      "description_pt": "Prospecção e execução de 12 furos tubulares para abastecimento de comunidades rurais do Cunene."
+    },
+    {
+      "slug": "investigacao-geotecnica-urbanizacao-luanda",
+      "service_pt": "Geotecnia",
+      "province": "Luanda",
+      "year": "2024",
+      "title_pt": "Investigação Geotécnica — Urbanização de Grande Porte",
+      "description_pt": "Estudo completo do subsolo para projecto residencial de 48 edifícios em terreno de 32 ha."
+    }
+  ],
+  "blog": [
+    {
+      "slug": "estimativa-recursos-jorc",
+      "cat_type": "tecnico",
+      "featured": true,
+      "category_pt": "Geologia",
+      "category_en": "Geology",
+      "date_pt": "Junho 2025",
+      "date_en": "June 2025",
+      "date_time": "2025-06",
+      "title_pt": "Como funciona a estimativa de recursos minerais segundo o padrão JORC",
+      "title_en": "How mineral resource estimation works under the JORC standard",
+      "excerpt_pt": "Uma análise das etapas técnicas e documentais para classificação de recursos segundo o código JORC.",
+      "excerpt_en": "An analysis of the technical and documentary steps for resource classification under JORC 2012, the international reference standard for mineral resource and reserve reports.",
+      "image": "/images/service1.jpg",
+      "author_pt": "Equipa Técnica B-CHIWALE",
+      "author_en": "B-CHIWALE Technical Team",
+      "read_time_pt": "8 min",
+      "read_time_en": "8 min",
+      "tags_pt": [
+        "JORC",
+        "Recursos Minerais",
+        "Geologia"
+      ],
+      "tags_en": [
+        "JORC",
+        "Mineral Resources",
+        "Geology"
+      ],
+      "body_pt": [
+        {
+          "type": "paragraph",
+          "content": "O Código JORC (Joint Ore Reserves Committee) é o padrão australiano de referência global para a comunicação pública de resultados de prospecção, recursos minerais e reservas de minério. Em Angola, projectos que envolvem investimento internacional ou listagem em bolsa exigem frequentemente relatórios conformes com o JORC 2012."
+        },
+        {
+          "type": "heading",
+          "content": "O que é o JORC 2012?"
+        },
+        {
+          "type": "paragraph",
+          "content": "O JORC 2012 é a versão mais recente do código, que estabelece requisitos mínimos para a comunicação de informação relativa a recursos minerais. O código define dois grandes grupos de estimativas: Recursos Minerais (Inferred, Indicated e Measured) e Reservas de Minério (Probable e Proved), cada um com níveis de confiança geológica e técnica distintos."
+        },
+        {
+          "type": "heading",
+          "content": "As três categorias de Recursos Minerais"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Recurso Inferido: estimativa com baixo nível de confiança, baseada em evidências geológicas limitadas e amostragem escassa",
+            "Recurso Indicado: baseado em dados suficientes para assumir continuidade geológica com razoável confiança geométrica e de teores",
+            "Recurso Medido: o nível mais elevado de confiança, com dados suficientes para suportar um estudo de viabilidade técnica e económica"
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "O papel da Pessoa Competente"
+        },
+        {
+          "type": "paragraph",
+          "content": "O JORC exige que todos os relatórios de recursos sejam assinados por uma Pessoa Competente — um profissional com mínimo de 5 anos de experiência relevante no tipo de depósito em questão, membro de uma organização profissional reconhecida pelo JORC Committee. Esta figura é pessoalmente responsável pela qualidade e rigor de todas as estimativas comunicadas."
+        },
+        {
+          "type": "heading",
+          "content": "O processo de estimativa na prática"
+        },
+        {
+          "type": "paragraph",
+          "content": "A estimativa começa com a compilação e validação de todos os dados de sondagem, amostragem e análise química mediante um processo rigoroso de QAQC (controlo de qualidade e qualidade analítica). Segue-se a modelagem geológica 3D do depósito, a análise estatística exploratória e variográfica, e finalmente a estimativa por kriging ordinário ou simulação gaussiana sequencial."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Validação e QAQC de todos os dados analíticos (brancos, duplicados, padrões certificados)",
+            "Modelagem geológica 3D e definição de domínios estatísticos por tipo de minério",
+            "Análise variográfica e selecção do método de estimativa mais adequado ao depósito",
+            "Estimativa por kriging ordinário ou simulação gaussiana e geração do modelo de blocos",
+            "Validação independente do modelo e elaboração do relatório técnico conforme Tabela 1 do JORC"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "licenca-prospeccao-mineira-angola",
+      "cat_type": "noticias",
+      "featured": false,
+      "category_pt": "Legislação",
+      "category_en": "Legislation",
+      "date_pt": "Maio 2025",
+      "date_en": "May 2025",
+      "date_time": "2025-05",
+      "title_pt": "Guia prático: como obter uma Licença de Prospecção Mineira em Angola",
+      "title_en": "Practical guide: how to obtain a Mining Prospecting Licence in Angola",
+      "excerpt_pt": "O processo junto do MIREMPET passo a passo, com os documentos necessários e prazos esperados.",
+      "excerpt_en": "The MIREMPET process step by step, with required documents, expected timelines and the most common mistakes to avoid.",
+      "image": "/images/service-baner.jpg",
+      "author_pt": "Equipa Técnica B-CHIWALE",
+      "author_en": "B-CHIWALE Technical Team",
+      "read_time_pt": "11 min",
+      "read_time_en": "11 min",
+      "tags_pt": [
+        "MIREMPET",
+        "Licenciamento",
+        "Legislação Mineira"
+      ],
+      "tags_en": [
+        "MIREMPET",
+        "Licensing",
+        "Mining Legislation"
+      ],
+      "body_pt": [
+        {
+          "type": "paragraph",
+          "content": "Em Angola, o exercício de actividades de prospecção mineral está sujeito a licenciamento obrigatório junto do Ministério dos Recursos Minerais, Petróleo e Gás (MIREMPET). A Lei Mineira (Lei n.º 31/11, de 23 de Setembro) e o seu Regulamento Geral definem o quadro legal aplicável, estabelecendo os tipos de direitos mineiros, os requisitos de acesso e os prazos de vigência."
+        },
+        {
+          "type": "heading",
+          "content": "O que autoriza a Licença de Prospecção?"
+        },
+        {
+          "type": "paragraph",
+          "content": "A Licença de Prospecção Mineira (LPM) autoriza o titular a realizar trabalhos de pesquisa e prospecção mineral numa área delimitada por coordenadas geográficas, sem direito de extracção comercial. Tem validade inicial de 2 anos, renovável por dois períodos adicionais de 2 anos, até um máximo de 6 anos de vigência total."
+        },
+        {
+          "type": "heading",
+          "content": "Documentos necessários"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Requerimento dirigido ao Ministro do MIREMPET, conforme modelo oficial",
+            "Certidão de registo comercial actualizada e estatutos sociais da empresa requerente",
+            "Programa de trabalhos de prospecção detalhado com cronograma e orçamento estimado",
+            "Curriculum vitae e habilitações académicas da equipa técnica responsável pela prospecção",
+            "Comprovativo de capacidade financeira adequada (extrato bancário ou carta de garantia bancária)",
+            "Mapa com delimitação precisa da área pretendida em formato SHP georreferenciado e PDF"
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Prazos esperados"
+        },
+        {
+          "type": "paragraph",
+          "content": "O MIREMPET dispõe por lei de um prazo de 90 dias úteis para emitir decisão após a entrega completa e válida do dossier de candidatura. Na prática, processos bem instruídos e acompanhados por consultores com experiência na tramitação tendem a ser apreciados mais rapidamente. A B-CHIWALE tem obtido aprovações com uma média de 45 dias úteis nos processos que acompanha desde 2022."
+        },
+        {
+          "type": "heading",
+          "content": "Erros mais comuns a evitar"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Dossier incompleto ou com documentos fora do prazo de validade exigido",
+            "Programa de trabalhos demasiado genérico, sem objectivos técnicos mensuráveis ou cronograma detalhado",
+            "Sobreposição da área pretendida com concessões mineiras já atribuídas ou reservas do Estado",
+            "Equipa técnica responsável sem habilitações académicas reconhecidas ou sem experiência demonstrável em Angola"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "A tramitação de direitos mineiros é um processo técnico e burocrático que exige conhecimento profundo da legislação angolana e das exigências específicas e não publicadas do MIREMPET. A B-CHIWALE oferece um serviço completo de assessoria e acompanhamento, da preparação do dossier até à recepção da licença, com histórico de zero recusas formais nos processos geridos."
+        }
+      ]
+    },
+    {
+      "slug": "tomografia-electrica-ert-aquiferos",
+      "cat_type": "tecnico",
+      "featured": false,
+      "category_pt": "Geofísica",
+      "category_en": "Geophysics",
+      "date_pt": "Abril 2025",
+      "date_en": "April 2025",
+      "date_time": "2025-04",
+      "title_pt": "Tomografia Eléctrica (ERT): aplicações na exploração de aquíferos subterrâneos",
+      "title_en": "Electrical Resistivity Tomography (ERT): applications in groundwater exploration",
+      "excerpt_pt": "A resistividade eléctrica como método principal na localização de recursos hídricos subterrâneos.",
+      "excerpt_en": "Electrical resistivity as the primary method for locating underground water resources — fundamentals, equipment and result interpretation.",
+      "image": "/images/geofisico.jpg",
+      "author_pt": "Equipa Técnica B-CHIWALE",
+      "author_en": "B-CHIWALE Technical Team",
+      "read_time_pt": "9 min",
+      "read_time_en": "9 min",
+      "tags_pt": [
+        "ERT",
+        "Geofísica",
+        "Aquíferos"
+      ],
+      "tags_en": [
+        "ERT",
+        "Geophysics",
+        "Aquifers"
+      ],
+      "body_pt": [
+        {
+          "type": "paragraph",
+          "content": "A Tomografia de Resistividade Eléctrica (ERT — Electrical Resistivity Tomography) é hoje um dos métodos geofísicos mais utilizados na prospecção de recursos hídricos subterrâneos. A sua capacidade de gerar imagens 2D e 3D do subsolo com alta resolução torna-a especialmente eficaz em terrenos geológicamente complexos como os que caracterizam grande parte do território angolano."
+        },
+        {
+          "type": "heading",
+          "content": "Fundamentos do método ERT"
+        },
+        {
+          "type": "paragraph",
+          "content": "O princípio do ERT baseia-se na medição da resistividade eléctrica do subsolo — a propriedade que exprime a capacidade dos materiais geológicos de resistir à passagem de corrente eléctrica. Rochas cristalinas compactas têm resistividade elevada; argilas saturadas e zonas aquíferas têm resistividade baixa. Esta diferença contraste permite delimitar geometricamente os aquíferos."
+        },
+        {
+          "type": "heading",
+          "content": "Equipamento e aquisição de dados"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Electrodos metálicos de injecção de corrente e medição de potencial, em configuração multielectrodo",
+            "Resistivímetro automático multicanal (ex: SYSCAL Pro Switch 48, Terrameter LS 4) com GPS integrado",
+            "Cabos de ligação resistentes a condições tropicais e unidade de controlo de campo",
+            "Software de controlo para verificação de qualidade dos dados em tempo real durante a aquisição"
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Interpretação dos resultados"
+        },
+        {
+          "type": "paragraph",
+          "content": "Os dados adquiridos em campo são processados em escritório através de algoritmos de inversão pelo método dos mínimos quadrados com suavização. O resultado é uma secção 2D de resistividade aparente que representa a distribuição das propriedades eléctricas do subsolo. Zonas com resistividade entre 10 e 80 Ω.m em contexto de rochas cristalinas são frequentemente associadas a fracturas saturadas em água — os principais aquíferos produtivos em Angola."
+        },
+        {
+          "type": "heading",
+          "content": "Vantagens face a outros métodos"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Alta resolução espacial lateral e em profundidade, comparada com sondagens eléctricas verticais (SEV) convencionais",
+            "Combinação eficaz com métodos electromagnéticos TEM para investigação a maior profundidade",
+            "Ideal para caracterização de aquíferos em terreno fracturado, dominante no território angolano",
+            "Custo-eficaz: reduz significativamente o número de furos de sondagem mecânica necessários"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "A B-CHIWALE possui equipa especializada e equipamento de última geração para levantamentos ERT em todo o território angolano. Os nossos levantamentos têm registado taxas de sucesso superiores a 85% na localização de captações de água produtivas, gerando economias significativas para os nossos clientes em programas de pesquisa hidrogeológica."
+        }
+      ]
+    },
+    {
+      "slug": "spt-vs-cpt-ensaios-geotecnicos",
+      "cat_type": "tecnico",
+      "featured": false,
+      "category_pt": "Geotecnia",
+      "date_pt": "Março 2025",
+      "date_time": "2025-03",
+      "title_pt": "SPT vs CPT: qual o ensaio geotécnico adequado para o seu projecto?",
+      "excerpt_pt": "Comparação técnica entre os dois principais ensaios de investigação do subsolo — quando usar cada um, vantagens e limitações em diferentes tipos de solo.",
+      "read_time_pt": "7 min"
+    },
+    {
+      "slug": "recuperacao-areas-mineiras-angola",
+      "cat_type": "guias",
+      "featured": false,
+      "category_pt": "Sustentabilidade",
+      "date_pt": "Fevereiro 2025",
+      "date_time": "2025-02",
+      "title_pt": "Recuperação de áreas mineiras degradadas: boas práticas em Angola",
+      "excerpt_pt": "Um guia sobre as etapas de recuperação ambiental pós-lavra exigidas pela legislação angolana e padrões IFC, com exemplos práticos de projectos recentes.",
+      "read_time_pt": "12 min"
+    },
+    {
+      "slug": "prospeccao-1200km2-lunda-sul",
+      "cat_type": "noticias",
+      "featured": false,
+      "category_pt": "Notícias",
+      "date_pt": "Janeiro 2025",
+      "date_time": "2025-01",
+      "title_pt": "B-CHIWALE conclui campanha de prospecção de 1.200 km² na Lunda Sul",
+      "excerpt_pt": "A nossa equipa concluiu com êxito uma das maiores campanhas de mapeamento geológico da empresa, cobrindo 1.200 km² de área diamantífera no Leste de Angola.",
+      "read_time_pt": "4 min"
+    },
+    {
+      "slug": "fotogrametria-drone-uav-5-etapas",
+      "cat_type": "tecnico",
+      "featured": false,
+      "category_pt": "Topografia",
+      "date_pt": "Dezembro 2024",
+      "date_time": "2024-12",
+      "title_pt": "Fotogrametria por drone UAV: da missão ao ortofotomapa em 5 etapas",
+      "excerpt_pt": "Processo completo de um levantamento fotogramétrico UAV — planeamento de voo, aquisição de imagens, georreferenciação e processamento em software especializado.",
+      "read_time_pt": "10 min"
+    },
+    {
+      "slug": "direitos-mineiros-angola-lei-31-11",
+      "cat_type": "guias",
+      "featured": false,
+      "category_pt": "Legislação",
+      "date_pt": "Novembro 2024",
+      "date_time": "2024-11",
+      "title_pt": "Direitos mineiros em Angola: tipos, prazos e condições segundo a Lei 31/11",
+      "excerpt_pt": "Explicação clara dos diferentes títulos mineiros angolanos — Licença de Prospecção, Licença de Exploração, Licença de Lavra — e o que cada um autoriza.",
+      "read_time_pt": "13 min"
+    }
+  ],
+  "gallery": [
+    {
+      "cat": "Campo",
+      "province": "Lunda Norte",
+      "accent": "#00AEEF",
+      "bg": "#0d1829",
+      "image": "/images/gallery1.jpg",
+      "title_pt": "Amostragem Geoquímica — Lunda Norte"
+    },
+    {
+      "cat": "Equipamentos",
+      "province": "Malanje",
+      "accent": "#F5C200",
+      "bg": "#1a1a0d",
+      "image": "/images/geofisico.jpg",
+      "title_pt": "Equipamento ERT em Operação"
+    },
+    {
+      "cat": "Campo",
+      "province": "Bié",
+      "accent": "#00AEEF",
+      "bg": "#0d1a1a",
+      "image": "/images/chiwale-section.jpg",
+      "title_pt": "Mapeamento Geológico de Detalhe"
+    },
+    {
+      "cat": "Laboratório",
+      "province": "Luanda",
+      "accent": "#F5C200",
+      "bg": "#1a0d0d",
+      "image": "/images/gallery4.jpg",
+      "title_pt": "Análise de Amostras de Solo"
+    },
+    {
+      "cat": "UAV",
+      "province": "Huambo",
+      "accent": "#00AEEF",
+      "bg": "#0d1829",
+      "image": "/images/caminion.jpg",
+      "title_pt": "Levantamento Fotogramétrico UAV"
+    },
+    {
+      "cat": "Furos",
+      "province": "Cunene",
+      "accent": "#F5C200",
+      "bg": "#0d1a0d",
+      "image": "/images/gallery6.jpg",
+      "title_pt": "Execução de Furo Tubular — 120m"
+    },
+    {
+      "cat": "Campo",
+      "province": "Lunda Sul",
+      "accent": "#00AEEF",
+      "bg": "#1a1a2e",
+      "image": "/images/gallery7.jpg",
+      "title_pt": "Campanha de Prospecção Diamantífera"
+    },
+    {
+      "cat": "Equipamentos",
+      "province": "Benguela",
+      "accent": "#F5C200",
+      "bg": "#1a1a0a",
+      "image": "/images/gallery8.jpg",
+      "title_pt": "Estação Total Robótica em Uso"
+    },
+    {
+      "cat": "Campo",
+      "province": "Luanda",
+      "accent": "#00AEEF",
+      "bg": "#0d1520",
+      "image": "/images/about-main.jpg",
+      "title_pt": "Ensaio SPT em Obra Civil"
+    },
+    {
+      "cat": "Laboratório",
+      "province": "Benguela",
+      "accent": "#F5C200",
+      "bg": "#1a0d1a",
+      "image": "/images/home-about.jpg",
+      "title_pt": "Ensaio de Granulometria de Solo"
+    },
+    {
+      "cat": "UAV",
+      "province": "Huíla",
+      "accent": "#00AEEF",
+      "bg": "#0a1a15",
+      "image": "/images/mission.jpg",
+      "title_pt": "Ortofotomapa — Zona Industrial"
+    },
+    {
+      "cat": "Furos",
+      "province": "Cabinda",
+      "accent": "#F5C200",
+      "bg": "#1a0a0a",
+      "image": "/images/gallery12.jpg",
+      "title_pt": "Sondagem Geotécnica — 60m"
+    }
+  ],
+  "testimonials": [
+    {
+      "initials": "DO",
+      "text_pt": "\"A B-CHIWALE entregou o estudo geotécnico dentro do prazo e com qualidade técnica que não esperávamos encontrar em Angola. Profissionalismo de nível internacional.\"",
+      "text_en": "\"B-CHIWALE delivered the geotechnical study on time and with technical quality we did not expect to find in Angola. International-level professionalism.\"",
+      "name_pt": "Director de Operações",
+      "name_en": "Director of Operations",
+      "meta_pt": "Empresa de Construção Civil · Luanda",
+      "meta_en": "Civil Construction Company · Luanda"
+    },
+    {
+      "initials": "GP",
+      "text_pt": "\"O levantamento geofísico realizado pela equipa foi determinante para identificarmos a localização exacta do aquífero. Resultado preciso e relatório impecável.\"",
+      "text_en": "\"The geophysical survey carried out by the team was decisive in identifying the exact location of the aquifer. Precise results and an impeccable report.\"",
+      "name_pt": "Gestor de Projecto",
+      "name_en": "Project Manager",
+      "meta_pt": "Empresa Agroindustrial · Malanje",
+      "meta_en": "Agroindustrial Company · Malanje"
+    },
+    {
+      "initials": "SG",
+      "text_pt": "\"Acompanharam todo o processo de tramitação mineira junto do MIREMPET. Sem eles, o processo teria demorado o dobro do tempo.\"",
+      "text_en": "\"They accompanied the entire mining rights processing with MIREMPET. Without them, the process would have taken twice as long.\"",
+      "name_pt": "Sócio-Gerente",
+      "name_en": "Managing Partner",
+      "meta_pt": "Empresa de Mineração · Huambo",
+      "meta_en": "Mining Company · Huambo"
+    }
+  ],
+  "jobs": [
+    {
+      "dept_pt": "Geologia",
+      "title_pt": "Geólogo de Campo Sénior",
+      "location_pt": "Luanda / Campo (Angola)",
+      "type_pt": "Tempo Inteiro",
+      "level_pt": "Sénior",
+      "posted_pt": "Jun 2025",
+      "description_pt": "Liderança de campanhas de prospecção mineral e mapeamento geológico em diversas províncias angolanas. Elaboração de relatórios técnicos segundo padrões JORC.",
+      "requirements_pt": [
+        "Licenciatura em Geologia ou área afim (Mestrado preferencial)",
+        "Mínimo 5 anos de experiência em prospecção mineral",
+        "Experiência em amostragem geoquímica e mapeamento estrutural",
+        "Capacidade de trabalho em condições de campo remoto",
+        "Inglês técnico (nível profissional)"
+      ]
+    },
+    {
+      "dept_pt": "Geofísica",
+      "title_pt": "Técnico de Geofísica Aplicada",
+      "location_pt": "Luanda / Campo (Angola)",
+      "type_pt": "Tempo Inteiro",
+      "level_pt": "Júnior a Médio",
+      "posted_pt": "Jun 2025",
+      "description_pt": "Aquisição e processamento de dados geofísicos (ERT, magnetometria, sísmica) em projectos de exploração mineral e de recursos hídricos.",
+      "requirements_pt": [
+        "Licenciatura em Geofísica, Geologia ou Engenharia Geológica",
+        "2+ anos de experiência em levantamentos geofísicos de campo",
+        "Conhecimento de software de inversão (Res2DInv, Geosoft)",
+        "Carta de condução válida"
+      ]
+    },
+    {
+      "dept_pt": "Geotecnia",
+      "title_pt": "Engenheiro Geotécnico",
+      "location_pt": "Luanda",
+      "type_pt": "Tempo Inteiro",
+      "level_pt": "Médio a Sénior",
+      "posted_pt": "Mai 2025",
+      "description_pt": "Planeamento e execução de campanhas de investigação geotécnica, análise de resultados de ensaios de laboratório e campo, elaboração de relatórios geotécnicos.",
+      "requirements_pt": [
+        "Licenciatura em Engenharia Civil (especialização Geotecnia)",
+        "3+ anos de experiência em geotecnia de campo",
+        "Conhecimento de ensaios SPT, CPT, PMT e triaxial",
+        "Experiência com software de modelagem (Plaxis ou semelhante)",
+        "Membro de ordem profissional (preferencial)"
+      ]
+    },
+    {
+      "dept_pt": "Topografia",
+      "title_pt": "Topógrafo / Técnico de GNSS e UAV",
+      "location_pt": "Luanda / Campo (Angola)",
+      "type_pt": "Tempo Inteiro",
+      "level_pt": "Médio",
+      "posted_pt": "Mai 2025",
+      "description_pt": "Execução de levantamentos topográficos com GNSS de dupla frequência e estações totais. Operação de drones para fotogrametria UAV. Processamento de dados cartográficos.",
+      "requirements_pt": [
+        "Curso técnico ou licenciatura em Topografia / Geodesia / Geomática",
+        "Experiência com GNSS RTK (Leica, Trimble ou similar)",
+        "Competências em fotogrametria UAV (certificado de piloto preferencial)",
+        "Domínio de AutoCAD Civil 3D ou ArcGIS"
+      ]
+    },
+    {
+      "dept_pt": "Ambiente",
+      "title_pt": "Especialista em Ambiente e EIA",
+      "location_pt": "Luanda",
+      "type_pt": "Tempo Inteiro",
+      "level_pt": "Sénior",
+      "posted_pt": "Abr 2025",
+      "description_pt": "Coordenação e redacção de Estudos de Impacto Ambiental (EIA/RIMA) para projectos de mineração, infraestrutura e energia segundo legislação angolana e padrões IFC.",
+      "requirements_pt": [
+        "Licenciatura em Engenharia do Ambiente, Biologia ou afim (Mestrado preferencial)",
+        "Mínimo 4 anos de experiência em elaboração de EIA em Angola",
+        "Conhecimento aprofundado da legislação ambiental angolana (Lei 5/98, Decreto 51/04)",
+        "Capacidade de articulação com o MINAMB",
+        "Inglês técnico fluente"
+      ]
+    },
+    {
+      "dept_pt": "Administração",
+      "title_pt": "Assistente Administrativo e de Projecto",
+      "location_pt": "Luanda",
+      "type_pt": "Tempo Inteiro",
+      "level_pt": "Júnior",
+      "posted_pt": "Jun 2025",
+      "description_pt": "Apoio administrativo aos directores de projecto. Gestão de agenda, documentação técnica e contractual, controlo de despesas de campo e comunicação institucional.",
+      "requirements_pt": [
+        "Licenciatura em Gestão, Administração ou área afim",
+        "Excelente domínio do Microsoft Office (Word, Excel, PowerPoint)",
+        "Organização rigorosa e capacidade de trabalho sob pressão",
+        "Bom nível de inglês escrito"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "slug": "nav_items",
+      "label": "Menu de Navegação",
+      "value_pt": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Sobre Nós",
+          "href": "/sobre-nos",
+          "dropdown": [
+            {
+              "label": "História & Marcos",
+              "href": "/sobre-nos#historia"
+            },
+            {
+              "label": "Missão, Visão e Valores",
+              "href": "/sobre-nos#missao"
+            },
+            {
+              "label": "Equipa de Liderança",
+              "href": "/sobre-nos#equipa"
+            },
+            {
+              "label": "Organograma",
+              "href": "/sobre-nos#organograma"
+            },
+            {
+              "label": "Certificações",
+              "href": "/sobre-nos#certificacoes"
+            },
+            {
+              "label": "Responsabilidade Social",
+              "href": "/sobre-nos#rse"
+            }
+          ]
+        },
+        {
+          "label": "Serviços",
+          "href": "/servicos",
+          "dropdown": [
+            {
+              "label": "Geologia e Prospecção Mineral",
+              "href": "/servicos/geologia-prospeccao"
+            },
+            {
+              "label": "Geofísica Aplicada",
+              "href": "/servicos/geofisica-aplicada"
+            },
+            {
+              "label": "Engenharia Geotécnica",
+              "href": "/servicos/engenharia-geotecnica"
+            },
+            {
+              "label": "Topografia e Geodesia",
+              "href": "/servicos/topografia-geodesia"
+            },
+            {
+              "label": "Ambiente e Gestão Territorial",
+              "href": "/servicos/ambiente-gestao"
+            },
+            {
+              "label": "Exploração de Águas Subterrâneas",
+              "href": "/servicos/aguas-subterraneas"
+            },
+            {
+              "label": "Consultoria, Tramitação e Acompanhamento",
+              "href": "/servicos/consultoria-tramitacao"
+            }
+          ]
+        },
+        {
+          "label": "Portfolio",
+          "href": "/portfolio",
+          "dropdown": [
+            {
+              "label": "Todos os Projectos",
+              "href": "/portfolio"
+            },
+            {
+              "label": "Por Serviço",
+              "href": "/portfolio?filter=servico"
+            },
+            {
+              "label": "Por Região / Província",
+              "href": "/portfolio?filter=provincia"
+            },
+            {
+              "label": "Por Período",
+              "href": "/portfolio?filter=periodo"
+            }
+          ]
+        },
+        {
+          "label": "Galeria",
+          "href": "/galeria"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog",
+          "dropdown": [
+            {
+              "label": "Artigos Técnicos",
+              "href": "/blog?cat=tecnico"
+            },
+            {
+              "label": "Webinars",
+              "href": "/blog?cat=webinars"
+            },
+            {
+              "label": "Guias e Whitepapers",
+              "href": "/blog?cat=guias"
+            },
+            {
+              "label": "Notícias do Sector",
+              "href": "/blog?cat=noticias"
+            }
+          ]
+        },
+        {
+          "label": "Recursos",
+          "href": "/recursos"
+        },
+        {
+          "label": "Contacto",
+          "href": "/contacto"
+        }
+      ]
+    },
+    {
+      "slug": "stats",
+      "label": "Estatísticas (Faixa de Números)",
+      "value_pt": [
+        {
+          "value": 50,
+          "suffix": "+",
+          "label": "Projectos Concluídos",
+          "detail": "Em múltiplas províncias"
+        },
+        {
+          "value": 100,
+          "suffix": "+",
+          "label": "Profissionais",
+          "detail": "Equipa multidisciplinar"
+        },
+        {
+          "value": 8,
+          "suffix": "+",
+          "label": "Anos de Experiência",
+          "detail": "Desde 2017"
+        },
+        {
+          "value": 5,
+          "suffix": "",
+          "label": "Certificações",
+          "detail": "ISO 9001 · ISO 45001 · ABNT"
+        },
+        {
+          "value": 21,
+          "suffix": "",
+          "label": "Províncias",
+          "detail": "Cobertura nacional"
+        }
+      ],
+      "value_en": [
+        {
+          "value": 50,
+          "suffix": "+",
+          "label": "Completed Projects",
+          "detail": "Across multiple provinces"
+        },
+        {
+          "value": 100,
+          "suffix": "+",
+          "label": "Professionals",
+          "detail": "Multidisciplinary team"
+        },
+        {
+          "value": 8,
+          "suffix": "+",
+          "label": "Years of Experience",
+          "detail": "Since 2017"
+        },
+        {
+          "value": 5,
+          "suffix": "",
+          "label": "Certifications",
+          "detail": "ISO 9001 · ISO 45001 · ABNT"
+        },
+        {
+          "value": 21,
+          "suffix": "",
+          "label": "Provinces",
+          "detail": "National coverage"
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "label": "Contacto",
+      "value_pt": {
+        "phone": "+244 924 073 147",
+        "email": "geral@bchiwale.ao",
+        "whatsapp": "https://wa.me/244924073147",
+        "address": "Centralidade do Kilamba, Quarteirão Z, Prédio Z28, 4.º Andar, Luanda, Angola",
+        "addressShort": "Kilamba, Quarteirão Z, Luanda",
+        "website": "bchiwale.ao",
+        "hours": "Segunda–Sexta, 08h00–17h00"
+      }
+    },
+    {
+      "slug": "hero_slides",
+      "label": "Slides do Banner Principal",
+      "value_pt": [
+        {
+          "id": 1,
+          "src": "/images/banner1.jpg",
+          "alt": "Paisagem geológica angolana",
+          "line1": "A terra fala.",
+          "line2": "Nós lemos.",
+          "primary": {
+            "label": "Os Nossos Serviços",
+            "href": "/servicos"
+          },
+          "secondary": {
+            "label": "Contacto",
+            "href": "/contacto"
+          }
+        },
+        {
+          "id": 2,
+          "src": "/images/banner2.jpg",
+          "alt": "Formação rochosa — Angola",
+          "line1": "Do subsolo à",
+          "line2": "superfície.",
+          "primary": {
+            "label": "Geologia & Geofísica",
+            "href": "/servicos"
+          },
+          "secondary": {
+            "label": "Ver Portfólio",
+            "href": "/portfolio"
+          }
+        },
+        {
+          "id": 3,
+          "src": "/images/banner3.jpg",
+          "alt": "Vista aérea — terreno angolano",
+          "line1": "Angola vista",
+          "line2": "de perto.",
+          "primary": {
+            "label": "Topografia & Geotecnia",
+            "href": "/servicos"
+          },
+          "secondary": {
+            "label": "Ver Portfólio",
+            "href": "/portfolio"
+          }
+        },
+        {
+          "id": 4,
+          "src": "/images/banner1.jpg",
+          "alt": "Território angolano",
+          "line1": "Rigor técnico.",
+          "line2": "Raízes locais.",
+          "primary": {
+            "label": "Sobre Nós",
+            "href": "/sobre"
+          },
+          "secondary": {
+            "label": "Contacto",
+            "href": "/contacto"
+          }
+        },
+        {
+          "id": 5,
+          "src": "/images/banner3.jpg",
+          "alt": "Levantamento de campo — Angola",
+          "line1": "50+ projectos.",
+          "line2": "21 províncias.",
+          "primary": {
+            "label": "Ver Portfólio",
+            "href": "/portfolio"
+          },
+          "secondary": {
+            "label": "Solicitar Proposta",
+            "href": "/contacto"
+          }
+        }
+      ],
+      "value_en": [
+        {
+          "id": 1,
+          "src": "/images/banner1.jpg",
+          "alt": "Angola geological landscape",
+          "line1": "The earth speaks.",
+          "line2": "We read it.",
+          "primary": {
+            "label": "Our Services",
+            "href": "/servicos"
+          },
+          "secondary": {
+            "label": "Contact",
+            "href": "/contacto"
+          }
+        },
+        {
+          "id": 2,
+          "src": "/images/banner2.jpg",
+          "alt": "Rock formation — Angola",
+          "line1": "From subsurface",
+          "line2": "to surface.",
+          "primary": {
+            "label": "Geology & Geophysics",
+            "href": "/servicos"
+          },
+          "secondary": {
+            "label": "View Portfolio",
+            "href": "/portfolio"
+          }
+        },
+        {
+          "id": 3,
+          "src": "/images/banner3.jpg",
+          "alt": "Aerial view — Angola terrain",
+          "line1": "Angola seen",
+          "line2": "up close.",
+          "primary": {
+            "label": "Topography & Geotechnics",
+            "href": "/servicos"
+          },
+          "secondary": {
+            "label": "View Portfolio",
+            "href": "/portfolio"
+          }
+        },
+        {
+          "id": 4,
+          "src": "/images/banner1.jpg",
+          "alt": "Angola territory",
+          "line1": "Technical precision.",
+          "line2": "Local roots.",
+          "primary": {
+            "label": "About Us",
+            "href": "/sobre-nos"
+          },
+          "secondary": {
+            "label": "Contact",
+            "href": "/contacto"
+          }
+        },
+        {
+          "id": 5,
+          "src": "/images/banner3.jpg",
+          "alt": "Field survey — Angola",
+          "line1": "50+ projects.",
+          "line2": "21 provinces.",
+          "primary": {
+            "label": "View Portfolio",
+            "href": "/portfolio"
+          },
+          "secondary": {
+            "label": "Request a Proposal",
+            "href": "/contacto"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "timeline",
+      "label": "Linha do Tempo / História",
+      "value_pt": [
+        {
+          "year": "2017",
+          "text": "Constituição da B-CHIWALE — foco inicial em geologia exploratória e prospecção mineral.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2018",
+          "text": "Expansão para geofísica aplicada e topografia. Primeiros equipamentos GNSS de alta precisão adquiridos.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2019",
+          "text": "Certificações ISO 9001:2015 e ISO 45001:2018 obtidas. Primeiros contratos de grande dimensão.",
+          "badge": "✦ ISO",
+          "type": "milestone"
+        },
+        {
+          "year": "2020",
+          "text": "Software de modelagem 3D geológica e análise geotécnica avançada. Expansão significativa da equipa.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2021",
+          "text": "Projectos de referência em 3 províncias angolanas. Parcerias académicas estabelecidas com universidades.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2022",
+          "text": "Lançamento do serviço de Exploração de Águas Subterrâneas. Área de Ambiente expandida.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2023",
+          "text": "Consultoria completa de direitos mineiros junto do MIREMPET. Equipa ultrapassa 50 profissionais.",
+          "badge": "✦ 50+",
+          "type": "milestone"
+        },
+        {
+          "year": "2024",
+          "text": "Consolidação como empresa de referência nacional. Expansão para 21 províncias.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2025 →",
+          "text": "Expansão para mercados regionais africanos. Novo website lançado. A história continua.",
+          "badge": "ACTIVO",
+          "type": "active"
+        }
+      ],
+      "value_en": [
+        {
+          "year": "2017",
+          "text": "B-CHIWALE founded — initial focus on exploratory geology and mineral prospecting.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2018",
+          "text": "Expansion into applied geophysics and topography. First high-precision GNSS equipment acquired.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2019",
+          "text": "ISO 9001:2015 and ISO 45001:2018 certifications obtained. First large-scale contracts.",
+          "badge": "✦ ISO",
+          "type": "milestone"
+        },
+        {
+          "year": "2020",
+          "text": "3D geological modelling and advanced geotechnical analysis software introduced. Significant team expansion.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2021",
+          "text": "Reference projects across 3 Angolan provinces. Academic partnerships established with universities.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2022",
+          "text": "Launch of Groundwater Exploration service. Environmental division expanded.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2023",
+          "text": "Complete mining rights consultancy with MIREMPET. Team exceeds 50 professionals.",
+          "badge": "✦ 50+",
+          "type": "milestone"
+        },
+        {
+          "year": "2024",
+          "text": "Consolidation as national reference company. Expansion to 21 provinces.",
+          "badge": null,
+          "type": "normal"
+        },
+        {
+          "year": "2025 →",
+          "text": "Expansion into African regional markets. New website launched. The story continues.",
+          "badge": "ACTIVE",
+          "type": "active"
+        }
+      ]
+    },
+    {
+      "slug": "footer_services",
+      "label": "Rodapé — Serviços",
+      "value_pt": [
+        {
+          "label": "Geologia e Prospecção",
+          "href": "/servicos/geologia-prospeccao"
+        },
+        {
+          "label": "Geofísica Aplicada",
+          "href": "/servicos/geofisica-aplicada"
+        },
+        {
+          "label": "Engenharia Geotécnica",
+          "href": "/servicos/engenharia-geotecnica"
+        },
+        {
+          "label": "Topografia e Geodesia",
+          "href": "/servicos/topografia-geodesia"
+        },
+        {
+          "label": "Ambiente e Gestão",
+          "href": "/servicos/ambiente-gestao"
+        },
+        {
+          "label": "Exploração de Águas",
+          "href": "/servicos/aguas-subterraneas"
+        },
+        {
+          "label": "Consultoria Mineira",
+          "href": "/servicos/consultoria-tramitacao"
+        }
+      ],
+      "value_en": [
+        {
+          "label": "Geology & Prospecting",
+          "href": "/servicos/geologia-prospeccao"
+        },
+        {
+          "label": "Applied Geophysics",
+          "href": "/servicos/geofisica-aplicada"
+        },
+        {
+          "label": "Geotechnical Engineering",
+          "href": "/servicos/engenharia-geotecnica"
+        },
+        {
+          "label": "Topography & Geodesy",
+          "href": "/servicos/topografia-geodesia"
+        },
+        {
+          "label": "Environment & Management",
+          "href": "/servicos/ambiente-gestao"
+        },
+        {
+          "label": "Groundwater Exploration",
+          "href": "/servicos/aguas-subterraneas"
+        },
+        {
+          "label": "Mining Consultancy",
+          "href": "/servicos/consultoria-tramitacao"
+        }
+      ]
+    },
+    {
+      "slug": "footer_company",
+      "label": "Rodapé — Empresa",
+      "value_pt": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Sobre Nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Portfolio",
+          "href": "/portfolio"
+        },
+        {
+          "label": "Galeria",
+          "href": "/galeria"
+        },
+        {
+          "label": "Blog & Conhecimento",
+          "href": "/blog"
+        },
+        {
+          "label": "Recursos",
+          "href": "/recursos"
+        },
+        {
+          "label": "Carreiras",
+          "href": "/carreiras"
+        },
+        {
+          "label": "Contacto",
+          "href": "/contacto"
+        }
+      ],
+      "value_en": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About Us",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Portfolio",
+          "href": "/portfolio"
+        },
+        {
+          "label": "Gallery",
+          "href": "/galeria"
+        },
+        {
+          "label": "Blog & Knowledge",
+          "href": "/blog"
+        },
+        {
+          "label": "Resources",
+          "href": "/recursos"
+        },
+        {
+          "label": "Careers",
+          "href": "/carreiras"
+        },
+        {
+          "label": "Contact",
+          "href": "/contacto"
+        }
+      ]
+    },
+    {
+      "slug": "org_chart",
+      "label": "Organograma",
+      "value_pt": {
+        "cargo": "Presidente do Conselho de Administração",
+        "nome": "Severino Nambuengue Chiwale",
+        "iniciais": "SC",
+        "photo": "/images/team1.jpg",
+        "subordinados": [
+          {
+            "cargo": "Administradora Executiva — Área Administrativa e Financeira",
+            "nome": "Bernadeth de Nazaré",
+            "iniciais": "BN",
+            "photo": "/images/team/bernadeth-nazare.jpg",
+            "subordinados": [
+              {
+                "cargo": "Direcção de R.H",
+                "nome": null,
+                "subordinados": [
+                  {
+                    "cargo": "Coord. Pessoal",
+                    "nome": null,
+                    "subordinados": []
+                  },
+                  {
+                    "cargo": "Coord. Recrutamento",
+                    "nome": null,
+                    "subordinados": []
+                  }
+                ]
+              },
+              {
+                "cargo": "Direcção Administrativa e Financeira",
+                "nome": null,
+                "subordinados": [
+                  {
+                    "cargo": "Depart. Conta a Receber e a Pagar",
+                    "nome": null,
+                    "subordinados": []
+                  },
+                  {
+                    "cargo": "Direcção de Logística",
+                    "nome": null,
+                    "subordinados": []
+                  },
+                  {
+                    "cargo": "Depart. de Tesouraria",
+                    "nome": null,
+                    "subordinados": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cargo": "Administradora Executiva — Área de Geociências",
+            "nome": "Samba Clotilde Franga Eduardo André",
+            "iniciais": "SA",
+            "photo": "/images/team/samba-clotilde.jpg",
+            "subordinados": [
+              {
+                "cargo": "Director para Área de Geociências",
+                "nome": "Gilberto Armando Viegas",
+                "iniciais": "GV",
+                "photo": "/images/team/gilberto-viegas.jpg",
+                "subordinados": []
+              },
+              {
+                "cargo": "Coordenador para Área de Geociências",
+                "nome": "Sebastião Malungo Miguel António",
+                "iniciais": "SM",
+                "photo": "/images/team/sebastiao-antonio.jpg",
+                "subordinados": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mvv_cards",
+      "label": "Missão, Visão e Valores",
+      "value_pt": [
+        {
+          "label": "Missão",
+          "title": "Excelência Técnica",
+          "text": "Prestar serviços de excelência em geologia e engenharia geotécnica, transformando recursos minerais em progresso sustentável para Angola.",
+          "accent": "#00AEEF"
+        },
+        {
+          "label": "Visão",
+          "title": "Liderança Africana",
+          "text": "Ser a empresa de referência em consultoria geológica e mineração em África, reconhecida pela excelência técnica e compromisso com a sustentabilidade.",
+          "accent": "#F5C200"
+        },
+        {
+          "label": "Valores",
+          "title": "Princípios",
+          "text": "Excelência técnica · Inovação contínua · Sustentabilidade · Integridade · Responsabilidade social",
+          "accent": "#1A1A2E"
+        }
+      ],
+      "value_en": [
+        {
+          "label": "Mission",
+          "title": "Technical Excellence",
+          "text": "To deliver excellent services in geology and geotechnical engineering, transforming mineral resources into sustainable progress for Angola.",
+          "accent": "#00AEEF"
+        },
+        {
+          "label": "Vision",
+          "title": "African Leadership",
+          "text": "To be the reference company in geological consultancy and mining in Africa, recognised for technical excellence and commitment to sustainability.",
+          "accent": "#F5C200"
+        },
+        {
+          "label": "Values",
+          "title": "Principles",
+          "text": "Technical excellence · Continuous innovation · Sustainability · Integrity · Social responsibility",
+          "accent": "#1A1A2E"
+        }
+      ]
+    },
+    {
+      "slug": "certifications",
+      "label": "Certificações",
+      "value_pt": [
+        {
+          "code": "ISO 9001",
+          "label": "Gestão da Qualidade",
+          "year": "2019",
+          "logo": "/images/certifications/iso9001.svg"
+        },
+        {
+          "code": "ISO 45001",
+          "label": "Saúde e Segurança",
+          "year": "2019",
+          "logo": "/images/certifications/iso45001.svg"
+        },
+        {
+          "code": "ABNT",
+          "label": "Normas Técnicas",
+          "year": "2020",
+          "logo": "/images/certifications/abnt.png"
+        },
+        {
+          "code": "JORC",
+          "label": "Recursos Minerais",
+          "year": "2021",
+          "logo": null
+        },
+        {
+          "code": "NI 43-101",
+          "label": "Divulgação Mineral",
+          "year": "2021",
+          "logo": null
+        }
+      ]
+    },
+    {
+      "slug": "cert_badges",
+      "label": "Selos de Certificação",
+      "value_pt": [
+        "ISO 9001",
+        "ISO 45001",
+        "ABNT",
+        "JORC",
+        "NI 43-101"
+      ]
+    },
+    {
+      "slug": "gallery_categories",
+      "label": "Galeria — Categorias",
+      "value_pt": [
+        "Todos",
+        "Campo",
+        "Laboratório",
+        "UAV",
+        "Equipamentos",
+        "Furos"
+      ]
+    },
+    {
+      "slug": "blog_categories",
+      "label": "Blog — Categorias",
+      "value_pt": [
+        "Todos",
+        "Geologia",
+        "Geofísica",
+        "Geotecnia",
+        "Topografia",
+        "Legislação",
+        "Sustentabilidade",
+        "Notícias"
+      ]
+    },
+    {
+      "slug": "portfolio_service_filters",
+      "label": "Portfólio — Filtro de Serviço",
+      "value_pt": [
+        "Todos",
+        "Geologia",
+        "Geofísica",
+        "Geotecnia",
+        "Topografia",
+        "Ambiente",
+        "Consultoria",
+        "Águas Subterrâneas"
+      ]
+    },
+    {
+      "slug": "portfolio_province_filters",
+      "label": "Portfólio — Filtro de Província",
+      "value_pt": [
+        "Todas",
+        "Bengo",
+        "Benguela",
+        "Bié",
+        "Cabinda",
+        "Cuando",
+        "Cuanza Norte",
+        "Cuanza Sul",
+        "Cubango",
+        "Cunene",
+        "Huambo",
+        "Huíla",
+        "Icolo e Bengo",
+        "Luanda",
+        "Lunda Norte",
+        "Lunda Sul",
+        "Malanje",
+        "Moxico",
+        "Moxico Leste",
+        "Namibe",
+        "Uíge",
+        "Zaire"
+      ]
+    },
+    {
+      "slug": "portfolio_period_filters",
+      "label": "Portfólio — Filtro de Período",
+      "value_pt": [
+        "Todos",
+        "2024",
+        "2023",
+        "2022"
+      ]
+    },
+    {
+      "slug": "job_departments",
+      "label": "Vagas — Departamentos",
+      "value_pt": [
+        "Todos",
+        "Geologia",
+        "Geofísica",
+        "Geotecnia",
+        "Topografia",
+        "Ambiente",
+        "Administração"
+      ]
+    },
+    {
+      "slug": "downloads",
+      "label": "Recursos — Downloads",
+      "value_pt": [
+        {
+          "id": 1,
+          "type": "PDF",
+          "cat": "Técnico",
+          "title": "Guia de Prospecção Mineral em Angola",
+          "desc": "Metodologias, normas JORC e enquadramento legal.",
+          "size": "2.4 MB",
+          "accentColor": "#00AEEF"
+        },
+        {
+          "id": 2,
+          "type": "PDF",
+          "cat": "Legislação",
+          "title": "Resumo da Lei Mineira 31/11",
+          "desc": "Principais artigos, tipos de títulos mineiros e prazos.",
+          "size": "1.1 MB",
+          "accentColor": "#F5C200"
+        },
+        {
+          "id": 3,
+          "type": "XLSX",
+          "cat": "Técnico",
+          "title": "Template: Relatório de Recursos JORC",
+          "desc": "Estrutura base para relatório de recursos JORC 2012.",
+          "size": "380 KB",
+          "accentColor": "#00AEEF"
+        },
+        {
+          "id": 4,
+          "type": "PDF",
+          "cat": "Técnico",
+          "title": "Ficha Técnica: Levantamento ERT",
+          "desc": "Parâmetros, equipamentos e metodologia dos levantamentos de resistividade.",
+          "size": "900 KB",
+          "accentColor": "#00AEEF"
+        },
+        {
+          "id": 5,
+          "type": "PDF",
+          "cat": "Legislação",
+          "title": "Decreto 51/04 — EIA em Angola",
+          "desc": "Texto integral do decreto regulamentador de estudos de impacto ambiental.",
+          "size": "1.8 MB",
+          "accentColor": "#F5C200"
+        },
+        {
+          "id": 6,
+          "type": "DOCX",
+          "cat": "Template",
+          "title": "Modelo de Contrato de Serviços Geotécnicos",
+          "desc": "Modelo base ajustável para contratos de investigação geotécnica.",
+          "size": "210 KB",
+          "accentColor": "#00AEEF"
+        }
+      ]
+    },
+    {
+      "slug": "tools",
+      "label": "Recursos — Ferramentas",
+      "value_pt": [
+        {
+          "title": "Tabela Periódica Geoquímica",
+          "desc": "Referência rápida para análise de elementos em amostras de solo e rocha.",
+          "icon": "⬡",
+          "href": "#ferramentas"
+        },
+        {
+          "title": "Classificação de Solos (USCS/HRB)",
+          "desc": "Classificação visual de solos segundo sistemas USCS e HRB para geotécnicos.",
+          "icon": "▦",
+          "href": "#ferramentas"
+        },
+        {
+          "title": "Calculadora de Escala Topográfica",
+          "desc": "Converta medidas de campo para escala cartográfica e vice-versa.",
+          "icon": "⊞",
+          "href": "#ferramentas"
+        },
+        {
+          "title": "Conversor de Coordenadas UTM ↔ WGS84",
+          "desc": "Converta coordenadas geográficas entre sistemas de referência comuns.",
+          "icon": "⊕",
+          "href": "#ferramentas"
+        }
+      ]
+    },
+    {
+      "slug": "about_video",
+      "label": "Vídeo da Secção Sobre (Homepage)",
+      "value_pt": "/about-video.mp4"
+    },
+    {
+      "slug": "site_images",
+      "label": "Imagens do site (logo, banners das páginas…)",
+      "value_pt": {
+        "logo": "/logo.png",
+        "icon": "/icone-chiwale.png",
+        "hero_sobre": "/images/project-main.jpg",
+        "hero_servicos": "/images/geofisico.jpg",
+        "hero_portfolio": "/images/caminion.jpg",
+        "hero_galeria": "/images/chiwale-section.jpg",
+        "hero_blog": "/images/service1.jpg",
+        "hero_recursos": "/images/gallery4.jpg",
+        "hero_carreiras": "/images/gallery7.jpg",
+        "hero_contacto": "/images/project2.jpg",
+        "hero_default": "/images/mission.jpg",
+        "director_photo": "/images/team/severino-escritorio.jpg"
+      }
+    }
+  ]
+}

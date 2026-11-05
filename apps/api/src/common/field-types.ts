@@ -2,7 +2,7 @@ import { BadRequestException } from '@nestjs/common';
 
 export const FIELD_TYPES = [
   'text', 'textarea', 'richtext', 'number', 'boolean', 'image', 'file',
-  'url', 'email', 'date', 'select', 'multiselect', 'reference',
+  'url', 'email', 'date', 'select', 'multiselect', 'reference', 'json',
 ] as const;
 export type FieldType = (typeof FIELD_TYPES)[number];
 
@@ -15,6 +15,10 @@ export interface FieldDef {
 }
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function parseJson(raw: string, label: string, errors: string[]) {
+  try { return JSON.parse(raw); } catch { errors.push(`"${label}" não é JSON válido`); return undefined; }
+}
 
 function isEmpty(v: unknown) {
   return v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0);
@@ -35,6 +39,9 @@ export function validateEntryData(fields: FieldDef[], data: Record<string, unkno
     switch (f.type) {
       case 'text': case 'textarea': case 'richtext': case 'image': case 'file': case 'reference':
         if (typeof v !== 'string') errors.push(`"${f.label}" deve ser texto`); else out[f.key] = v;
+        break;
+      case 'json': // qualquer valor JSON (objeto, lista, texto, número…) — conteúdo estruturado/aninhado
+        out[f.key] = typeof v === 'string' && /^\s*[[{]/.test(v) ? parseJson(v, f.label, errors) : v;
         break;
       case 'number': {
         const n = typeof v === 'string' ? Number(v) : v;

@@ -10,7 +10,7 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
     "test": "jest",
-    "seed": "node dist/seed.js"
+    "seed": "node dist/seed.js && node dist/seeds/site-seed.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3",

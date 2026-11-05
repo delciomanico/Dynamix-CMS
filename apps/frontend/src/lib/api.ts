@@ -37,7 +37,7 @@ export interface Component { id: string; name: string; slug: string; description
 export interface Entry { id: string; slug: string; data: Record<string, any>; status: 'DRAFT' | 'PUBLISHED' | 'ARCHIVED'; updatedAt: string; publishedAt?: string }
 export interface Media { id: string; filename: string; mimeType: string; size: number; createdAt: string }
 
-export const FIELD_TYPES = ['text', 'textarea', 'richtext', 'number', 'boolean', 'image', 'file', 'url', 'email', 'date', 'select', 'multiselect', 'reference'];
+export const FIELD_TYPES = ['text', 'textarea', 'richtext', 'number', 'boolean', 'image', 'file', 'url', 'email', 'date', 'select', 'multiselect', 'reference', 'json'];
 export const publicBase = (slug: string) => `${API_URL}/public/${slug}`;
 export const mediaUrl = (slug: string, id: string) => `${publicBase(slug)}/media/${id}`;
 

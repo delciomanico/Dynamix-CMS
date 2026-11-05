@@ -22,7 +22,7 @@ docs/           esta documentação
 - O conteúdo dinâmico fica em `ContentEntry.data` (JSONB), validado contra os `ComponentField` do componente.
 - `ContentEntry.status`: `DRAFT | PUBLISHED | ARCHIVED`; só `PUBLISHED` aparece na API pública.
 - `slug` é único por componente (`componentId + slug`) e por projeto (`Project.slug`).
-- Tipos de campo: text, textarea, richtext, number, boolean, image, file, url, email, date, select, multiselect, reference.
+- Tipos de campo: text, textarea, richtext, number, boolean, image, file, url, email, date, select, multiselect, reference, json (qualquer valor JSON — listas/objetos aninhados).
 
 ## Fluxos
 

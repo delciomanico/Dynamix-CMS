@@ -27,20 +27,23 @@ export default function MediaLibrary() {
   return (
     <>
       <PageHead title="Media Library" note="Imagens e ficheiros — guardados em MinIO">
-        <input ref={input} type="file" multiple hidden accept="image/*,application/pdf,text/plain" onChange={(e) => upload(e.target.files)} />
+        <input ref={input} type="file" multiple hidden accept="image/*,video/mp4,video/webm,application/pdf,text/plain" onChange={(e) => upload(e.target.files)} />
         <button className="btn-primary" disabled={busy} onClick={() => input.current?.click()}>{busy ? 'A enviar…' : '+ Upload'}</button>
       </PageHead>
       {err && <div className="mb-4"><ErrorBox msg={err} /></div>}
-      {!data?.data.length ? <Empty title="Biblioteca vazia" hint="Faz upload de imagens (máx. 10 MB) para usar nos conteúdos." /> : (
+      {!data?.data.length ? <Empty title="Biblioteca vazia" hint="Faz upload de imagens (máx. 10 MB; vídeos 50 MB) para usar nos conteúdos." /> : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
           {data.data.map((m) => (
             <div key={m.id} className="sketch-card rounded-xl overflow-hidden">
               <div className="aspect-square bg-paper paper-grid flex items-center justify-center">
-                {m.mimeType.startsWith('image/') ? <img src={mediaUrl(project.slug, m.id)} alt={m.filename} className="w-full h-full object-cover" /> : <span className="mono text-xs">{m.mimeType.split('/')[1]}</span>}
+                {m.mimeType.startsWith('image/') ? <img src={mediaUrl(project.slug, m.id)} alt={m.filename} className="w-full h-full object-cover" />
+                  : m.mimeType.startsWith('video/') ? <video src={mediaUrl(project.slug, m.id)} className="w-full h-full object-cover" preload="metadata" muted />
+                  : <span className="mono text-xs">{m.mimeType.split('/')[1]}</span>}
               </div>
               <div className="p-3">
                 <div className="text-xs font-bold truncate" title={m.filename}>{m.filename}</div>
                 <div className="mono text-[10px] text-muted">{(m.size / 1024).toFixed(1)} KB</div>
+                <button onClick={() => navigator.clipboard?.writeText(`media://${m.id}`)} className="text-xs font-bold mt-2 mr-3" title="Para usar em campos JSON">Copiar media://</button>
                 <button onClick={() => del(m)} className="text-xs text-red-700 font-bold mt-2">Eliminar</button>
               </div>
             </div>

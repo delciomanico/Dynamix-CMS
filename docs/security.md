@@ -21,7 +21,7 @@ O projeto fixa isto em `.nvmrc` (`24.22.1`) e em `engines.node` (`>=24.22.1`) no
 - `helmet` ativo; `ValidationPipe` com `whitelist`; rate limit global de 300 req/min.
 - Sessões: alterar a password termina as outras sessões; tokens de utilizadores apagados são rejeitados.
 - Backups: API interna com token (≥ 16 caracteres), nunca exposta; os ficheiros contêm todos os dados — proteja o volume e o offsite.
-- Uploads: lista branca de tipos MIME e limite de 10 MB.
+- Uploads: lista branca de tipos MIME e limite de 10 MB (vídeos 50 MB); SVG servido com CSP `sandbox`.
 
 ## Checklist de produção
 

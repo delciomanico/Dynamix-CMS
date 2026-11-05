@@ -15,6 +15,8 @@ COPY --from=build /app/package*.json ./
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/prisma ./prisma
+# Ficheiros dos seeds de sites (carregados para a Media Library no 1.º deploy)
+COPY --from=build /app/seed-assets ./seed-assets
 USER node
 EXPOSE 3001
 # As migrações/seed correm no serviço one-shot `migrate` (node dist/predeploy.js) antes de a API arrancar

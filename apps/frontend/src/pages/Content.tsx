@@ -31,10 +31,26 @@ export function ContentIndex() {
   );
 }
 
+function JsonInput({ value, onChange }: { value: any; onChange: (v: any) => void }) {
+  const [text, setText] = useState(() => (value === undefined ? '' : JSON.stringify(value, null, 2)));
+  const [bad, setBad] = useState(false);
+  return (
+    <>
+      <textarea className="input mono text-xs" rows={8} value={text} onChange={(e) => {
+        setText(e.target.value);
+        if (!e.target.value.trim()) { setBad(false); return onChange(undefined); }
+        try { onChange(JSON.parse(e.target.value)); setBad(false); } catch { setBad(true); }
+      }} />
+      {bad && <p className="text-xs text-red-600 mt-1">JSON inválido — as alterações deste campo não são guardadas até ser corrigido.</p>}
+    </>
+  );
+}
+
 function FieldInput({ f, value, onChange, media }: { f: Field; value: any; onChange: (v: any) => void; media: Media[] }) {
   const v = value ?? '';
   switch (f.type) {
     case 'textarea': case 'richtext': return <textarea className="input" rows={f.type === 'richtext' ? 6 : 3} value={v} onChange={(e) => onChange(e.target.value)} />;
+    case 'json': return <JsonInput value={value} onChange={onChange} />;
     case 'number': return <input className="input" type="number" step="any" value={v} onChange={(e) => onChange(e.target.value === '' ? '' : Number(e.target.value))} />;
     case 'boolean': return <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={!!value} onChange={(e) => onChange(e.target.checked)} /> Ativo</label>;
     case 'date': return <input className="input" type="date" value={String(v).slice(0, 10)} onChange={(e) => onChange(e.target.value)} />;

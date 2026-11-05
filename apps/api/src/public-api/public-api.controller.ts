@@ -1,14 +1,35 @@
-import { Controller, Get, Header, NotFoundException, Param, Query, Res } from '@nestjs/common';
+import { Controller, Get, Header, NotFoundException, Param, Query, Req, Res } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApiTags } from '@nestjs/swagger';
+import { Throttle } from '@nestjs/throttler';
 import { Prisma } from '@prisma/client';
-import type { Response } from 'express';
+import type { Request, Response } from 'express';
 import { pageMeta, parsePage } from '../common/pagination';
 import { PrismaService } from '../prisma/prisma.service';
 import { StorageService } from '../storage/storage.service';
 
 const SORTABLE = new Set(['publishedAt', 'createdAt', 'updatedAt', 'slug']);
 const CACHE = 'public, max-age=30, stale-while-revalidate=60';
+
+/** `bytes=a-b` | `bytes=a-` | `bytes=-n` → intervalo; null = sem Range; 'invalid' = 416. Só um intervalo. */
+export function parseRange(header: string | undefined, size: number): { start: number; end: number } | null | 'invalid' {
+  if (!header) return null;
+  const m = /^bytes=(\d*)-(\d*)$/.exec(header.trim());
+  if (!m || (m[1] === '' && m[2] === '')) return header.startsWith('bytes=') ? 'invalid' : null;
+  let start: number, end: number;
+  if (m[1] === '') { start = Math.max(0, size - Number(m[2])); end = size - 1; }
+  else { start = Number(m[1]); end = m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1); }
+  return start > end || start >= size ? 'invalid' : { start, end };
+}
+
+const MEDIA_REF = /^media:\/\/([A-Za-z0-9_-]+)$/;
+/** Em campos `json`, strings `media://<id>` (em qualquer profundidade) passam a URLs públicas. */
+export function resolveMediaRefs(value: unknown, toUrl: (id: string) => string): unknown {
+  if (typeof value === 'string') { const m = MEDIA_REF.exec(value); return m ? toUrl(m[1]) : value; }
+  if (Array.isArray(value)) return value.map((v) => resolveMediaRefs(v, toUrl));
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, resolveMediaRefs(v, toUrl)]));
+  return value;
+}
 
 function coerce(v: string): string | number | boolean {
   if (v === 'true') return true;
@@ -17,6 +38,8 @@ function coerce(v: string): string | number | boolean {
   return v;
 }
 
+// Leitura pública (site + imagens, dezenas de pedidos por visita): limite por IP bem acima do global de 300/min da gestão.
+@Throttle({ default: { limit: 3000, ttl: 60_000 } })
 @ApiTags('public')
 @Controller('public/:project')
 export class PublicApiController {
@@ -106,14 +129,25 @@ export class PublicApiController {
   }
 
   @Get('media/:id')
-  async media(@Param('project') slug: string, @Param('id') id: string, @Res() res: Response) {
+  async media(@Param('project') slug: string, @Param('id') id: string, @Req() req: Request, @Res() res: Response) {
     const p = await this.project(slug);
     const m = await this.prisma.mediaAsset.findFirst({ where: { id, projectId: p.id } });
     if (!m) throw new NotFoundException('Ficheiro não encontrado');
-    const obj = await this.storage.get(m.key);
     res.setHeader('Content-Type', m.mimeType);
     res.setHeader('Cache-Control', 'public, max-age=86400');
     res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+    res.setHeader('Accept-Ranges', 'bytes');
+    // SVG/HTML nunca executam scripts quando abertos diretamente
+    res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; sandbox");
+    // Range (necessário para seek/Safari em vídeo)
+    const r = parseRange(req.headers.range, m.size);
+    if (r === 'invalid') { res.status(416).setHeader('Content-Range', `bytes */${m.size}`); return res.end(); }
+    const obj = await this.storage.get(m.key, r ?? undefined);
+    if (r) {
+      res.status(206);
+      res.setHeader('Content-Range', `bytes ${r.start}-${r.end}/${m.size}`);
+      res.setHeader('Content-Length', r.end - r.start + 1);
+    } else res.setHeader('Content-Length', m.size);
     obj.stream.pipe(res);
   }
 
@@ -124,6 +158,8 @@ export class PublicApiController {
     for (const f of fields) {
       if ((f.type === 'image' || f.type === 'file') && typeof data[f.key] === 'string') {
         data[f.key] = `${base}/api/v1/public/${projectSlug}/media/${data[f.key]}`;
+      } else if (f.type === 'json' && data[f.key] !== undefined) {
+        data[f.key] = resolveMediaRefs(data[f.key], (id) => `${base}/api/v1/public/${projectSlug}/media/${id}`);
       }
     }
     return { id: e.id, slug: e.slug, ...data, publishedAt: e.publishedAt };

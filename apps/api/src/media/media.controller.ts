@@ -9,7 +9,9 @@ import { pageMeta, parsePage } from '../common/pagination';
 import { PrismaService } from '../prisma/prisma.service';
 import { StorageService } from '../storage/storage.service';
 
-const ALLOWED = /^(image\/(png|jpe?g|gif|webp|avif)|application\/pdf|text\/plain)$/;
+const ALLOWED = /^(image\/(png|jpe?g|gif|webp|avif|svg\+xml)|video\/(mp4|webm)|application\/pdf|text\/plain)$/;
+export const MAX_FILE = 10 * 1024 * 1024;
+export const MAX_VIDEO = 50 * 1024 * 1024;
 type U = { id: string };
 
 @ApiTags('management')
@@ -33,11 +35,12 @@ export class MediaController {
 
   @Post('projects/:pid/media')
   @ApiConsumes('multipart/form-data')
-  @UseInterceptors(FileInterceptor('file', { limits: { fileSize: 10 * 1024 * 1024 } }))
+  @UseInterceptors(FileInterceptor('file', { limits: { fileSize: MAX_VIDEO } }))
   async upload(@CurrentUser() u: U, @Param('pid') pid: string, @UploadedFile() file?: Express.Multer.File) {
     await this.access.project(u.id, pid);
     if (!file) throw new BadRequestException('Ficheiro em falta (campo "file")');
     if (!ALLOWED.test(file.mimetype)) throw new BadRequestException(`Tipo não permitido: ${file.mimetype}`);
+    if (!file.mimetype.startsWith('video/') && file.size > MAX_FILE) throw new BadRequestException('Ficheiro acima de 10 MB (vídeos: 50 MB)');
     const key = `${pid}/${randomUUID()}${extname(file.originalname).toLowerCase()}`;
     await this.storage.put(key, file.buffer, file.mimetype);
     return this.prisma.mediaAsset.create({

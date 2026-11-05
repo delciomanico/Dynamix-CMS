@@ -47,6 +47,12 @@ GET /api/v1/public/{project}/media/{id}
 
 CORS por projeto (Settings → domínios autorizados; vazio = qualquer origem). A API de gestão exige JWT e aceita apenas a origem do dashboard.
 
+## Seeds de sites
+
+No arranque (`predeploy`) o Dynamix cria, de forma idempotente, o admin e os sites listados em `SEED_SITES`
+(defeito `bchiwale`): projeto + componentes + conteúdo publicado, com os endpoints públicos prontos.
+Ver [`docs/seeds.md`](./docs/seeds.md).
+
 ## Âmbito do MVP
 
 Implementado: auth (email+password, Google opcional), workspaces/projetos, Component Builder (13 tipos de campo),

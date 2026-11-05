@@ -9,6 +9,7 @@
 import { PrismaClient } from '@prisma/client';
 import { execFileSync } from 'child_process';
 import { seedAdmin } from './seed';
+import { seedSites } from './seeds/site-seed';
 
 export const hasPending = (statusOutput: string) => /have not yet been applied|not yet been applied/i.test(statusOutput);
 
@@ -57,6 +58,7 @@ async function main() {
     } else console.log(pending ? '[predeploy] BD nova: sem backup necessário' : '[predeploy] sem migrações pendentes');
     prismaCli(['migrate', 'deploy']);
     console.log(`[predeploy] seed admin: ${await seedAdmin(prisma)}`);
+    for (const r of await seedSites(prisma)) console.log(`[predeploy] seed site ${r.project}: ${r.status}${r.components.length ? ` (${r.components.join(', ')})` : ''}`);
   } finally {
     await prisma.$disconnect();
   }
