@@ -8,7 +8,10 @@ import { useProject } from './ProjectLayout';
 export function ContentIndex() {
   const { project } = useProject();
   const { data, loading } = useFetch<Component[]>(`/projects/${project.id}/components`);
+  const [filter, setFilter] = useState('');
   if (loading) return <Spinner />;
+  const norm = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const shown = (data ?? []).filter((c) => !filter.trim() || norm(`${c.name} ${c.slug} ${c.description ?? ''}`).includes(norm(filter.trim())));
   return (
     <>
       <PageHead title="Content" note="Escolhe um componente" />
@@ -17,8 +20,11 @@ export function ContentIndex() {
           <Link to={`/app/p/${project.id}/components/new`} className="btn-primary">Criar componente</Link>
         </Empty>
       ) : (
+        <>
+        {data.length > 6 && <input className="input mb-5 max-w-sm" type="search" placeholder="Pesquisar componentes…" value={filter} onChange={(e) => setFilter(e.target.value)} />}
+        {!shown.length && <Empty title="Nenhum componente encontrado" hint="Tenta outra pesquisa." />}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {data.map((c, i) => (
+          {shown.map((c, i) => (
             <Link key={c.id} to={c.id} className={`rounded-2xl border-[1.5px] border-ink shadow-[4px_5px_0_#1A2233] p-5 block hover:-translate-y-1 transition ${i % 3 === 0 ? 'bg-brand text-white' : i % 3 === 1 ? 'bg-white' : 'bg-brand/10'}`}>
               <span className="mono text-[10px] uppercase tracking-wider opacity-60">{c.fields.length} campos</span>
               <h3 className="font-extrabold text-xl mt-1">{c.name}</h3>
@@ -26,6 +32,7 @@ export function ContentIndex() {
             </Link>
           ))}
         </div>
+        </>
       )}
     </>
   );
@@ -76,7 +83,15 @@ export function ContentList() {
   const nav = useNavigate();
   const comp = useFetch<Component>(`/components/${cid}`);
   const [page, setPage] = useState(1);
-  const entries = useFetch<Paginated<Entry>>(`/components/${cid}/entries?page=${page}&limit=20`);
+  const [q, setQ] = useState('');
+  const [qd, setQd] = useState(''); // pesquisa com debounce
+  const [section, setSection] = useState('');
+  useEffect(() => { const t = setTimeout(() => { setQd(q.trim()); setPage(1); }, 300); return () => clearTimeout(t); }, [q]);
+  const sections = useFetch<{ section: string; count: number }[]>(`/components/${cid}/sections`);
+  const hasSections = (sections.data?.length ?? 0) > 1;
+  const entries = useFetch<Paginated<Entry>>(
+    `/components/${cid}/entries?page=${page}&limit=${hasSections ? 50 : 20}${qd ? `&q=${encodeURIComponent(qd)}` : ''}${section ? `&section=${encodeURIComponent(section)}` : ''}${hasSections ? '&sort=slug' : ''}`,
+  );
   const media = useFetch<Paginated<Media>>(`/projects/${project.id}/media?limit=100`);
   // se apagar o último item de uma página, recua para a última página existente
   useEffect(() => { if (entries.data && !entries.data.data.length && page > 1) setPage(Math.max(1, entries.data.meta.pages)); }, [entries.data, page]);
@@ -100,16 +115,30 @@ export function ContentList() {
   const act = async (id: string, a: 'publish' | 'unpublish' | 'archive') => { await api(`/entries/${id}/${a}`, { method: 'POST' }); entries.reload(); };
   const del = async (id: string) => { if (confirm('Eliminar este conteúdo?')) { await api(`/entries/${id}`, { method: 'DELETE' }); entries.reload(); } };
   const title = (e: Entry) => e.data[c.fields.find((f) => f.type === 'text')?.key ?? ''] ?? e.slug;
+  // 1.º campo de texto longo preenchido (ex.: o texto PT), para reconhecer a entrada sem abrir
+  const preview = (e: Entry) => { const f = c.fields.find((f) => (f.type === 'textarea' || f.type === 'richtext') && typeof e.data[f.key] === 'string' && e.data[f.key]); return f ? String(e.data[f.key]).slice(0, 120) : ''; };
   const thumb = (e: Entry) => { const f = c.fields.find((f) => f.type === 'image'); return f && e.data[f.key] ? mediaUrl(project.slug, e.data[f.key]) : null; };
 
   return (
     <>
-      <PageHead title={c.name} note="Conteúdos">
+      <PageHead title={c.name} note={entries.data ? `${entries.data.meta.total} conteúdos${qd || section ? ' (filtrado)' : ''}` : 'Conteúdos'}>
         <button className="btn-secondary" onClick={() => nav(`/app/p/${project.id}/content`)}>← Componentes</button>
         <button className="btn-primary" onClick={() => open('new')}>+ Novo conteúdo</button>
       </PageHead>
 
-      {!entries.data?.data.length ? <Empty title="Sem conteúdos" hint="Cria o primeiro registo e publica-o para aparecer na API pública." /> : (
+      <input className="input mb-4 max-w-md" type="search" placeholder="Pesquisar por título, chave ou texto…" value={q} onChange={(e) => setQ(e.target.value)} />
+      {hasSections && (
+        <div className="flex flex-wrap gap-2 mb-5" role="group" aria-label="Filtrar por secção">
+          {[{ section: '', count: sections.data!.reduce((n, x) => n + x.count, 0) }, ...sections.data!].map((x) => (
+            <button key={x.section || 'all'} type="button" onClick={() => { setSection(x.section); setPage(1); }}
+              className={`mono text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border-[1.5px] border-ink ${section === x.section ? 'bg-ink text-white' : 'bg-white hover:bg-brand/20'}`}>
+              {x.section || 'Todas'} <span className="opacity-60">{x.count}</span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {!entries.data?.data.length ? <Empty title={qd || section ? 'Nada encontrado' : 'Sem conteúdos'} hint={qd || section ? 'Tenta outra pesquisa ou secção.' : 'Cria o primeiro registo e publica-o para aparecer na API pública.'} /> : (
         <div className="sketch-card rounded-2xl divide-y divide-ink/10 overflow-hidden">
           {entries.data.data.map((e) => (
             <div key={e.id} className="p-4 flex flex-wrap items-center gap-x-4 gap-y-3">
@@ -117,6 +146,7 @@ export function ContentList() {
               <div className="flex-1 min-w-[140px] basis-[160px]">
                 <div className="font-bold">{String(title(e))}</div>
                 <div className="mono text-xs text-muted">{e.slug}</div>
+                {preview(e) && <div className="text-xs text-muted mt-0.5 line-clamp-1">{preview(e)}</div>}
               </div>
               <StatusBadge s={e.status} />
               <div className="flex flex-wrap gap-2 w-full sm:w-auto">

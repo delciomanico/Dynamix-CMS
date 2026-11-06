@@ -47,3 +47,7 @@ A definição dos campos está em `apps/api/src/seeds/bchiwale/definition.ts`. P
 ## Ligar o site
 
 No site (`bchiwale`) definir `VITE_DYNAMIX_API_URL=https://<dominio-do-dynamix>/api/v1` e `VITE_DYNAMIX_PROJECT=bchiwale` (build-time).
+
+## Encontrar e editar muitos conteúdos
+
+Na lista de conteúdos de um componente há **pesquisa** (slug e todos os valores, sem distinguir maiúsculas) e **filtros por secção**. A secção vem do campo `section` ou `group` do conteúdo ou, se não existir, do prefixo do campo `key` (`nav.home` → `nav`). Cada linha mostra uma prévia do primeiro texto longo. API: `GET /components/:id/entries?q=…&section=…&sort=slug` e `GET /components/:id/sections`.

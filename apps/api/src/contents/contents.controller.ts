@@ -7,6 +7,7 @@ import { validateEntryData } from '../common/field-types';
 import { slugify } from '../common/slug';
 import { CurrentUser, JwtAuthGuard } from '../auth/auth.guards';
 import { pageMeta, parsePage } from '../common/pagination';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 
 class EntryDto {
@@ -33,6 +34,11 @@ function defaultSlug(fields: { key: string; type: string }[], data: Record<strin
 export class ContentsController {
   constructor(private prisma: PrismaService, private access: AccessService) {}
 
+  /**
+   * Lista conteúdos. `q` pesquisa (sem distinguir maiúsculas) no slug e em todos os valores;
+   * `section` filtra pelo campo `section`/`group` ou, em falta, pelo prefixo do campo `key` (`nav.home` → `nav`) (convenção para organizar componentes grandes);
+   * `sort=slug` ordena por slug (defeito: mais recentes).
+   */
   @Get('components/:cid/entries')
   async list(
     @CurrentUser() u: U,
@@ -40,15 +46,42 @@ export class ContentsController {
     @Query('status') status?: EntryStatus,
     @Query('page') page?: string,
     @Query('limit') limit?: string,
+    @Query('q') q?: string,
+    @Query('section') section?: string,
+    @Query('sort') sort?: string,
   ) {
     await this.access.component(u.id, cid);
     const pg = parsePage(page, limit);
-    const where = { componentId: cid, ...(status && status in EntryStatus ? { status } : {}) };
+    const where: Prisma.ContentEntryWhereInput = { componentId: cid, ...(status && status in EntryStatus ? { status } : {}) };
+    const term = (q ?? '').trim().slice(0, 100);
+    const sec = (section ?? '').trim().slice(0, 100);
+    if (term || sec) {
+      const like = `%${term.replace(/[\\%_]/g, '\\$&')}%`;
+      const rows = await this.prisma.$queryRaw<{ id: string }[]>`
+        SELECT id FROM "ContentEntry"
+        WHERE "componentId" = ${cid}
+          AND (${term} = '' OR slug ILIKE ${like} OR data::text ILIKE ${like})
+          AND (${sec} = '' OR COALESCE(data->>'section', data->>'group', NULLIF(split_part(data->>'key', '.', 1), '')) = ${sec})`;
+      where.id = { in: rows.map((r) => r.id) };
+    }
+    const orderBy = sort === 'slug' ? { slug: 'asc' as const } : { updatedAt: 'desc' as const };
     const [total, data] = await Promise.all([
       this.prisma.contentEntry.count({ where }),
-      this.prisma.contentEntry.findMany({ where, orderBy: { updatedAt: 'desc' }, skip: pg.skip, take: pg.take }),
+      this.prisma.contentEntry.findMany({ where, orderBy, skip: pg.skip, take: pg.take }),
     ]);
     return { data, meta: pageMeta(total, pg.page, pg.limit) };
+  }
+
+  /** Valores distintos do campo `section`/`group` com contagem (para os filtros por secção). */
+  @Get('components/:cid/sections')
+  async sections(@CurrentUser() u: U, @Param('cid') cid: string) {
+    await this.access.component(u.id, cid);
+    const rows = await this.prisma.$queryRaw<{ section: string; count: bigint }[]>`
+      SELECT COALESCE(data->>'section', data->>'group', NULLIF(split_part(data->>'key', '.', 1), '')) AS section, COUNT(*) AS count
+      FROM "ContentEntry" WHERE "componentId" = ${cid}
+        AND COALESCE(data->>'section', data->>'group', NULLIF(split_part(data->>'key', '.', 1), '')) IS NOT NULL
+      GROUP BY 1 ORDER BY 1`;
+    return rows.map((r) => ({ section: r.section, count: Number(r.count) }));
   }
 
   @Post('components/:cid/entries')
