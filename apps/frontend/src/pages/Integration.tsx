@@ -4,19 +4,22 @@ import { API_URL, Component, publicBase } from '../lib/api';
 import { useFetch } from '../lib/hooks';
 import { useProject } from './ProjectLayout';
 
+const PREVIEW_LIMIT = 1;
+
 export default function Integration() {
   const { project } = useProject();
   const { data, loading } = useFetch<Component[]>(`/projects/${project.id}/components`);
   const [sel, setSel] = useState('');
   const [tab, setTab] = useState<'js' | 'react' | 'curl'>('js');
   const [preview, setPreview] = useState('');
+  const [total, setTotal] = useState<number | null>(null);
   const c = data?.find((x) => x.slug === sel) ?? data?.[0];
   const url = c ? `${publicBase(project.slug)}/content/${c.slug}` : '';
 
   useEffect(() => {
     if (!url) return;
     setPreview('…');
-    fetch(url).then((r) => r.json()).then((j) => setPreview(JSON.stringify(j, null, 2))).catch(() => setPreview('Erro ao consultar a API'));
+    fetch(`${url}?limit=${PREVIEW_LIMIT}`).then((r) => r.json()).then((j) => { setTotal(j?.meta?.total ?? null); setPreview(JSON.stringify(j, null, 2)); }).catch(() => setPreview('Erro ao consultar a API'));
   }, [url]);
 
   if (loading) return <Spinner />;
@@ -68,11 +71,12 @@ export function ${name}List() {
             <div className="flex gap-2 mb-3">{(['js', 'react', 'curl'] as const).map((t) => <button key={t} onClick={() => setTab(t)} className={`btn-sm btn ${tab === t ? 'bg-brand text-white' : 'bg-white'}`}>{t === 'js' ? 'JavaScript' : t === 'react' ? 'React' : 'cURL'}</button>)}</div>
             <CodeBlock code={snippets[tab]} />
           </section>
-          <p className="text-sm text-muted">Só conteúdos <b>publicados</b> aparecem aqui. Documentação completa: <a className="underline font-bold text-ink" target="_blank" rel="noreferrer" href={API_URL.replace('/api/v1', '/docs')}>Swagger ↗</a></p>
+          <p className="text-sm text-muted">Só conteúdos <b>publicados</b> aparecem aqui.{import.meta.env.DEV && <> Documentação completa: <a className="underline font-bold text-ink" target="_blank" rel="noreferrer" href={API_URL.replace('/api/v1', '/docs')}>Swagger ↗</a></>}</p>
         </div>
         <section className="min-w-0">
           <h2 className="hand text-3xl font-semibold mb-2">Resposta ao vivo</h2>
-          <CodeBlock code={preview} />
+          <p className="text-sm text-muted mb-2">Mostra só {PREVIEW_LIMIT === 1 ? "o primeiro registo" : `os primeiros ${PREVIEW_LIMIT} registos`}{total != null && total > PREVIEW_LIMIT ? <> (de {total})</> : null} — <span className="mono">?limit={PREVIEW_LIMIT}</span>. Usa <span className="mono">page</span> e <span className="mono">limit</span> (máx. 100) para paginar.</p>
+          <div className="[&_pre]:max-h-[70vh] [&_pre]:overflow-y-auto"><CodeBlock code={preview} /></div>
         </section>
       </div>
     </>
