@@ -8,7 +8,7 @@
  *  - componente existe         → só acrescenta campos novos em falta; o conteúdo NUNCA é reescrito
  *                                (edições feitas no dashboard sobrevivem a novos deploys);
  *  - componente não existe     → cria componente + campos + entradas publicadas (numa transação).
- * O dono é um utilizador dedicado do site (ex. gerab@bchiwale.ao, criado com SEED_<KEY>_OWNER_PASSWORD) ou,
+ * O dono é um utilizador dedicado do site (ex. geral@bchiwale.ao, criado com SEED_<KEY>_OWNER_PASSWORD) ou,
  * se o site não definir dono, o ADMIN_EMAIL (que precisa de já existir — corre depois de seedAdmin).
  *
  * Env: SEED_SITES (lista separada por vírgulas; defeito "bchiwale"; "none" desativa),

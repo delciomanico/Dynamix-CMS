@@ -155,6 +155,6 @@ export const bchiwaleSeed: SiteSeed = {
   name: 'Bchiwale',
   description: 'Website institucional da Bchiwale (geologia, geofísica, geotecnia, ambiente…).',
   components,
-  owner: { email: 'gerab@bchiwale.ao', name: 'Bchiwale' },
+  owner: { email: 'geral@bchiwale.ao', name: 'Bchiwale' },
   assetsDir: 'bchiwale',
 };

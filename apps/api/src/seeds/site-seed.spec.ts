@@ -36,7 +36,7 @@ describe('seedSite (bchiwale)', () => {
     p.user.create = jest.fn().mockResolvedValue({ id: 'u9', name: 'Bchiwale', workspaces: [{ id: 'w9' }] });
     await seedSite(p, bchiwaleSeed, { ...env, SEED_BCHIWALE_OWNER_PASSWORD: 'uma-password-longa-1' } as any, storage());
     const data = p.user.create.mock.calls[0][0].data;
-    expect(data).toMatchObject({ email: 'gerab@bchiwale.ao', role: 'USER' });
+    expect(data).toMatchObject({ email: 'geral@bchiwale.ao', role: 'USER' });
     expect(data.passwordHash).toMatch(/^\$2[aby]\$/);
     expect(p.project.create.mock.calls[0][0].data.workspaceId).toBe('w9');
   });
