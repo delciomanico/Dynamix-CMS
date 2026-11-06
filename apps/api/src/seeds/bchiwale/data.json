@@ -1,4 +1,941 @@
 {
+  "hero-slides": [
+    {
+      "slug": "slide-01",
+      "image": "/images/banner1.jpg",
+      "line1_pt": "A terra fala.",
+      "line1_en": "The earth speaks.",
+      "line2_pt": "Nós lemos.",
+      "line2_en": "We read it.",
+      "alt_pt": "Paisagem geológica angolana",
+      "alt_en": "Angola geological landscape",
+      "primary_label_pt": "Os Nossos Serviços",
+      "primary_label_en": "Our Services",
+      "primary_href": "/servicos",
+      "secondary_label_pt": "Contacto",
+      "secondary_label_en": "Contact",
+      "secondary_href": "/contacto"
+    },
+    {
+      "slug": "slide-02",
+      "image": "/images/banner2.jpg",
+      "line1_pt": "Do subsolo à",
+      "line1_en": "From subsurface",
+      "line2_pt": "superfície.",
+      "line2_en": "to surface.",
+      "alt_pt": "Formação rochosa — Angola",
+      "alt_en": "Rock formation — Angola",
+      "primary_label_pt": "Geologia & Geofísica",
+      "primary_label_en": "Geology & Geophysics",
+      "primary_href": "/servicos",
+      "secondary_label_pt": "Ver Portfólio",
+      "secondary_label_en": "View Portfolio",
+      "secondary_href": "/portfolio"
+    },
+    {
+      "slug": "slide-03",
+      "image": "/images/banner3.jpg",
+      "line1_pt": "Angola vista",
+      "line1_en": "Angola seen",
+      "line2_pt": "de perto.",
+      "line2_en": "up close.",
+      "alt_pt": "Vista aérea — terreno angolano",
+      "alt_en": "Aerial view — Angola terrain",
+      "primary_label_pt": "Topografia & Geotecnia",
+      "primary_label_en": "Topography & Geotechnics",
+      "primary_href": "/servicos",
+      "secondary_label_pt": "Ver Portfólio",
+      "secondary_label_en": "View Portfolio",
+      "secondary_href": "/portfolio"
+    },
+    {
+      "slug": "slide-04",
+      "image": "/images/banner1.jpg",
+      "line1_pt": "Rigor técnico.",
+      "line1_en": "Technical precision.",
+      "line2_pt": "Raízes locais.",
+      "line2_en": "Local roots.",
+      "alt_pt": "Território angolano",
+      "alt_en": "Angola territory",
+      "primary_label_pt": "Sobre Nós",
+      "primary_label_en": "About Us",
+      "primary_href": "/sobre-nos",
+      "secondary_label_pt": "Contacto",
+      "secondary_label_en": "Contact",
+      "secondary_href": "/contacto"
+    },
+    {
+      "slug": "slide-05",
+      "image": "/images/banner3.jpg",
+      "line1_pt": "50+ projectos.",
+      "line1_en": "50+ projects.",
+      "line2_pt": "21 províncias.",
+      "line2_en": "21 provinces.",
+      "alt_pt": "Levantamento de campo — Angola",
+      "alt_en": "Field survey — Angola",
+      "primary_label_pt": "Ver Portfólio",
+      "primary_label_en": "View Portfolio",
+      "primary_href": "/portfolio",
+      "secondary_label_pt": "Solicitar Proposta",
+      "secondary_label_en": "Request a Proposal",
+      "secondary_href": "/contacto"
+    }
+  ],
+  "stats": [
+    {
+      "slug": "numero-01",
+      "value": 50,
+      "suffix": "+",
+      "label_pt": "Projectos Concluídos",
+      "label_en": "Completed Projects",
+      "detail_pt": "Em múltiplas províncias",
+      "detail_en": "Across multiple provinces"
+    },
+    {
+      "slug": "numero-02",
+      "value": 100,
+      "suffix": "+",
+      "label_pt": "Profissionais",
+      "label_en": "Professionals",
+      "detail_pt": "Equipa multidisciplinar",
+      "detail_en": "Multidisciplinary team"
+    },
+    {
+      "slug": "numero-03",
+      "value": 8,
+      "suffix": "+",
+      "label_pt": "Anos de Experiência",
+      "label_en": "Years of Experience",
+      "detail_pt": "Desde 2017",
+      "detail_en": "Since 2017"
+    },
+    {
+      "slug": "numero-04",
+      "value": 5,
+      "label_pt": "Certificações",
+      "label_en": "Certifications",
+      "detail_pt": "ISO 9001 · ISO 45001 · ABNT",
+      "detail_en": "ISO 9001 · ISO 45001 · ABNT"
+    },
+    {
+      "slug": "numero-05",
+      "value": 21,
+      "label_pt": "Províncias",
+      "label_en": "Provinces",
+      "detail_pt": "Cobertura nacional",
+      "detail_en": "National coverage"
+    }
+  ],
+  "timeline": [
+    {
+      "slug": "marco-01",
+      "year": "2017",
+      "text_pt": "Constituição da B-CHIWALE — foco inicial em geologia exploratória e prospecção mineral.",
+      "text_en": "B-CHIWALE founded — initial focus on exploratory geology and mineral prospecting.",
+      "type": "normal"
+    },
+    {
+      "slug": "marco-02",
+      "year": "2018",
+      "text_pt": "Expansão para geofísica aplicada e topografia. Primeiros equipamentos GNSS de alta precisão adquiridos.",
+      "text_en": "Expansion into applied geophysics and topography. First high-precision GNSS equipment acquired.",
+      "type": "normal"
+    },
+    {
+      "slug": "marco-03",
+      "year": "2019",
+      "text_pt": "Certificações ISO 9001:2015 e ISO 45001:2018 obtidas. Primeiros contratos de grande dimensão.",
+      "text_en": "ISO 9001:2015 and ISO 45001:2018 certifications obtained. First large-scale contracts.",
+      "badge_pt": "✦ ISO",
+      "badge_en": "✦ ISO",
+      "type": "milestone"
+    },
+    {
+      "slug": "marco-04",
+      "year": "2020",
+      "text_pt": "Software de modelagem 3D geológica e análise geotécnica avançada. Expansão significativa da equipa.",
+      "text_en": "3D geological modelling and advanced geotechnical analysis software introduced. Significant team expansion.",
+      "type": "normal"
+    },
+    {
+      "slug": "marco-05",
+      "year": "2021",
+      "text_pt": "Projectos de referência em 3 províncias angolanas. Parcerias académicas estabelecidas com universidades.",
+      "text_en": "Reference projects across 3 Angolan provinces. Academic partnerships established with universities.",
+      "type": "normal"
+    },
+    {
+      "slug": "marco-06",
+      "year": "2022",
+      "text_pt": "Lançamento do serviço de Exploração de Águas Subterrâneas. Área de Ambiente expandida.",
+      "text_en": "Launch of Groundwater Exploration service. Environmental division expanded.",
+      "type": "normal"
+    },
+    {
+      "slug": "marco-07",
+      "year": "2023",
+      "text_pt": "Consultoria completa de direitos mineiros junto do MIREMPET. Equipa ultrapassa 50 profissionais.",
+      "text_en": "Complete mining rights consultancy with MIREMPET. Team exceeds 50 professionals.",
+      "badge_pt": "✦ 50+",
+      "badge_en": "✦ 50+",
+      "type": "milestone"
+    },
+    {
+      "slug": "marco-08",
+      "year": "2024",
+      "text_pt": "Consolidação como empresa de referência nacional. Expansão para 21 províncias.",
+      "text_en": "Consolidation as national reference company. Expansion to 21 provinces.",
+      "type": "normal"
+    },
+    {
+      "slug": "marco-09",
+      "year": "2025 →",
+      "text_pt": "Expansão para mercados regionais africanos. Novo website lançado. A história continua.",
+      "text_en": "Expansion into African regional markets. New website launched. The story continues.",
+      "badge_pt": "ACTIVO",
+      "badge_en": "ACTIVE",
+      "type": "active"
+    }
+  ],
+  "mvv": [
+    {
+      "slug": "mvv-01",
+      "label_pt": "Missão",
+      "label_en": "Mission",
+      "title_pt": "Excelência Técnica",
+      "title_en": "Technical Excellence",
+      "text_pt": "Prestar serviços de excelência em geologia e engenharia geotécnica, transformando recursos minerais em progresso sustentável para Angola.",
+      "text_en": "To deliver excellent services in geology and geotechnical engineering, transforming mineral resources into sustainable progress for Angola.",
+      "accent": "#00AEEF"
+    },
+    {
+      "slug": "mvv-02",
+      "label_pt": "Visão",
+      "label_en": "Vision",
+      "title_pt": "Liderança Africana",
+      "title_en": "African Leadership",
+      "text_pt": "Ser a empresa de referência em consultoria geológica e mineração em África, reconhecida pela excelência técnica e compromisso com a sustentabilidade.",
+      "text_en": "To be the reference company in geological consultancy and mining in Africa, recognised for technical excellence and commitment to sustainability.",
+      "accent": "#F5C200"
+    },
+    {
+      "slug": "mvv-03",
+      "label_pt": "Valores",
+      "label_en": "Values",
+      "title_pt": "Princípios",
+      "title_en": "Principles",
+      "text_pt": "Excelência técnica · Inovação contínua · Sustentabilidade · Integridade · Responsabilidade social",
+      "text_en": "Technical excellence · Continuous innovation · Sustainability · Integrity · Social responsibility",
+      "accent": "#1A1A2E"
+    }
+  ],
+  "org-chart": [
+    {
+      "slug": "org-01",
+      "cargo": "Presidente do Conselho de Administração",
+      "nome": "Severino Nambuengue Chiwale",
+      "iniciais": "SC",
+      "photo": "/images/team1.jpg"
+    },
+    {
+      "slug": "org-02",
+      "cargo": "Administradora Executiva — Área Administrativa e Financeira",
+      "nome": "Bernadeth de Nazaré",
+      "iniciais": "BN",
+      "photo": "/images/team/bernadeth-nazare.jpg",
+      "parent": "org-01"
+    },
+    {
+      "slug": "org-03",
+      "cargo": "Direcção de R.H",
+      "parent": "org-02"
+    },
+    {
+      "slug": "org-04",
+      "cargo": "Coord. Pessoal",
+      "parent": "org-03"
+    },
+    {
+      "slug": "org-05",
+      "cargo": "Coord. Recrutamento",
+      "parent": "org-03"
+    },
+    {
+      "slug": "org-06",
+      "cargo": "Direcção Administrativa e Financeira",
+      "parent": "org-02"
+    },
+    {
+      "slug": "org-07",
+      "cargo": "Depart. Conta a Receber e a Pagar",
+      "parent": "org-06"
+    },
+    {
+      "slug": "org-08",
+      "cargo": "Direcção de Logística",
+      "parent": "org-06"
+    },
+    {
+      "slug": "org-09",
+      "cargo": "Depart. de Tesouraria",
+      "parent": "org-06"
+    },
+    {
+      "slug": "org-10",
+      "cargo": "Administradora Executiva — Área de Geociências",
+      "nome": "Samba Clotilde Franga Eduardo André",
+      "iniciais": "SA",
+      "photo": "/images/team/samba-clotilde.jpg",
+      "parent": "org-01"
+    },
+    {
+      "slug": "org-11",
+      "cargo": "Director para Área de Geociências",
+      "nome": "Gilberto Armando Viegas",
+      "iniciais": "GV",
+      "photo": "/images/team/gilberto-viegas.jpg",
+      "parent": "org-10"
+    },
+    {
+      "slug": "org-12",
+      "cargo": "Coordenador para Área de Geociências",
+      "nome": "Sebastião Malungo Miguel António",
+      "iniciais": "SM",
+      "photo": "/images/team/sebastiao-antonio.jpg",
+      "parent": "org-10"
+    }
+  ],
+  "certifications": [
+    {
+      "slug": "cert-01",
+      "code": "ISO 9001",
+      "label_pt": "Gestão da Qualidade",
+      "year": "2019",
+      "logo": "/images/certifications/iso9001.svg"
+    },
+    {
+      "slug": "cert-02",
+      "code": "ISO 45001",
+      "label_pt": "Saúde e Segurança",
+      "year": "2019",
+      "logo": "/images/certifications/iso45001.svg"
+    },
+    {
+      "slug": "cert-03",
+      "code": "ABNT",
+      "label_pt": "Normas Técnicas",
+      "year": "2020",
+      "logo": "/images/certifications/abnt.png"
+    },
+    {
+      "slug": "cert-04",
+      "code": "JORC",
+      "label_pt": "Recursos Minerais",
+      "year": "2021"
+    },
+    {
+      "slug": "cert-05",
+      "code": "NI 43-101",
+      "label_pt": "Divulgação Mineral",
+      "year": "2021"
+    }
+  ],
+  "cert-badges": [
+    {
+      "slug": "selo-01",
+      "name": "ISO 9001"
+    },
+    {
+      "slug": "selo-02",
+      "name": "ISO 45001"
+    },
+    {
+      "slug": "selo-03",
+      "name": "ABNT"
+    },
+    {
+      "slug": "selo-04",
+      "name": "JORC"
+    },
+    {
+      "slug": "selo-05",
+      "name": "NI 43-101"
+    }
+  ],
+  "footer-links": [
+    {
+      "slug": "servico-01",
+      "group": "servicos",
+      "label_pt": "Geologia e Prospecção",
+      "label_en": "Geology & Prospecting",
+      "href": "/servicos/geologia-prospeccao"
+    },
+    {
+      "slug": "servico-02",
+      "group": "servicos",
+      "label_pt": "Geofísica Aplicada",
+      "label_en": "Applied Geophysics",
+      "href": "/servicos/geofisica-aplicada"
+    },
+    {
+      "slug": "servico-03",
+      "group": "servicos",
+      "label_pt": "Engenharia Geotécnica",
+      "label_en": "Geotechnical Engineering",
+      "href": "/servicos/engenharia-geotecnica"
+    },
+    {
+      "slug": "servico-04",
+      "group": "servicos",
+      "label_pt": "Topografia e Geodesia",
+      "label_en": "Topography & Geodesy",
+      "href": "/servicos/topografia-geodesia"
+    },
+    {
+      "slug": "servico-05",
+      "group": "servicos",
+      "label_pt": "Ambiente e Gestão",
+      "label_en": "Environment & Management",
+      "href": "/servicos/ambiente-gestao"
+    },
+    {
+      "slug": "servico-06",
+      "group": "servicos",
+      "label_pt": "Exploração de Águas",
+      "label_en": "Groundwater Exploration",
+      "href": "/servicos/aguas-subterraneas"
+    },
+    {
+      "slug": "servico-07",
+      "group": "servicos",
+      "label_pt": "Consultoria Mineira",
+      "label_en": "Mining Consultancy",
+      "href": "/servicos/consultoria-tramitacao"
+    },
+    {
+      "slug": "empresa-01",
+      "group": "empresa",
+      "label_pt": "Home",
+      "label_en": "Home",
+      "href": "/"
+    },
+    {
+      "slug": "empresa-02",
+      "group": "empresa",
+      "label_pt": "Sobre Nós",
+      "label_en": "About Us",
+      "href": "/sobre-nos"
+    },
+    {
+      "slug": "empresa-03",
+      "group": "empresa",
+      "label_pt": "Portfolio",
+      "label_en": "Portfolio",
+      "href": "/portfolio"
+    },
+    {
+      "slug": "empresa-04",
+      "group": "empresa",
+      "label_pt": "Galeria",
+      "label_en": "Gallery",
+      "href": "/galeria"
+    },
+    {
+      "slug": "empresa-05",
+      "group": "empresa",
+      "label_pt": "Blog & Conhecimento",
+      "label_en": "Blog & Knowledge",
+      "href": "/blog"
+    },
+    {
+      "slug": "empresa-06",
+      "group": "empresa",
+      "label_pt": "Recursos",
+      "label_en": "Resources",
+      "href": "/recursos"
+    },
+    {
+      "slug": "empresa-07",
+      "group": "empresa",
+      "label_pt": "Carreiras",
+      "label_en": "Careers",
+      "href": "/carreiras"
+    },
+    {
+      "slug": "empresa-08",
+      "group": "empresa",
+      "label_pt": "Contacto",
+      "label_en": "Contact",
+      "href": "/contacto"
+    }
+  ],
+  "contact-info": [
+    {
+      "slug": "contacto",
+      "phone": "+244 924 073 147",
+      "email": "geral@bchiwale.ao",
+      "whatsapp": "https://wa.me/244924073147",
+      "address": "Centralidade do Kilamba, Quarteirão Z, Prédio Z28, 4.º Andar, Luanda, Angola",
+      "address_short": "Kilamba, Quarteirão Z, Luanda",
+      "website": "bchiwale.ao",
+      "hours": "Segunda–Sexta, 08h00–17h00"
+    }
+  ],
+  "filters": [
+    {
+      "slug": "galeria-01",
+      "group": "galeria",
+      "label_pt": "Todos"
+    },
+    {
+      "slug": "galeria-02",
+      "group": "galeria",
+      "label_pt": "Campo"
+    },
+    {
+      "slug": "galeria-03",
+      "group": "galeria",
+      "label_pt": "Laboratório"
+    },
+    {
+      "slug": "galeria-04",
+      "group": "galeria",
+      "label_pt": "UAV"
+    },
+    {
+      "slug": "galeria-05",
+      "group": "galeria",
+      "label_pt": "Equipamentos"
+    },
+    {
+      "slug": "galeria-06",
+      "group": "galeria",
+      "label_pt": "Furos"
+    },
+    {
+      "slug": "blog-01",
+      "group": "blog",
+      "label_pt": "Todos"
+    },
+    {
+      "slug": "blog-02",
+      "group": "blog",
+      "label_pt": "Geologia"
+    },
+    {
+      "slug": "blog-03",
+      "group": "blog",
+      "label_pt": "Geofísica"
+    },
+    {
+      "slug": "blog-04",
+      "group": "blog",
+      "label_pt": "Geotecnia"
+    },
+    {
+      "slug": "blog-05",
+      "group": "blog",
+      "label_pt": "Topografia"
+    },
+    {
+      "slug": "blog-06",
+      "group": "blog",
+      "label_pt": "Legislação"
+    },
+    {
+      "slug": "blog-07",
+      "group": "blog",
+      "label_pt": "Sustentabilidade"
+    },
+    {
+      "slug": "blog-08",
+      "group": "blog",
+      "label_pt": "Notícias"
+    },
+    {
+      "slug": "portfolio-servico-01",
+      "group": "portfolio-servico",
+      "label_pt": "Todos"
+    },
+    {
+      "slug": "portfolio-servico-02",
+      "group": "portfolio-servico",
+      "label_pt": "Geologia"
+    },
+    {
+      "slug": "portfolio-servico-03",
+      "group": "portfolio-servico",
+      "label_pt": "Geofísica"
+    },
+    {
+      "slug": "portfolio-servico-04",
+      "group": "portfolio-servico",
+      "label_pt": "Geotecnia"
+    },
+    {
+      "slug": "portfolio-servico-05",
+      "group": "portfolio-servico",
+      "label_pt": "Topografia"
+    },
+    {
+      "slug": "portfolio-servico-06",
+      "group": "portfolio-servico",
+      "label_pt": "Ambiente"
+    },
+    {
+      "slug": "portfolio-servico-07",
+      "group": "portfolio-servico",
+      "label_pt": "Consultoria"
+    },
+    {
+      "slug": "portfolio-servico-08",
+      "group": "portfolio-servico",
+      "label_pt": "Águas Subterrâneas"
+    },
+    {
+      "slug": "portfolio-provincia-01",
+      "group": "portfolio-provincia",
+      "label_pt": "Todas"
+    },
+    {
+      "slug": "portfolio-provincia-02",
+      "group": "portfolio-provincia",
+      "label_pt": "Bengo"
+    },
+    {
+      "slug": "portfolio-provincia-03",
+      "group": "portfolio-provincia",
+      "label_pt": "Benguela"
+    },
+    {
+      "slug": "portfolio-provincia-04",
+      "group": "portfolio-provincia",
+      "label_pt": "Bié"
+    },
+    {
+      "slug": "portfolio-provincia-05",
+      "group": "portfolio-provincia",
+      "label_pt": "Cabinda"
+    },
+    {
+      "slug": "portfolio-provincia-06",
+      "group": "portfolio-provincia",
+      "label_pt": "Cuando"
+    },
+    {
+      "slug": "portfolio-provincia-07",
+      "group": "portfolio-provincia",
+      "label_pt": "Cuanza Norte"
+    },
+    {
+      "slug": "portfolio-provincia-08",
+      "group": "portfolio-provincia",
+      "label_pt": "Cuanza Sul"
+    },
+    {
+      "slug": "portfolio-provincia-09",
+      "group": "portfolio-provincia",
+      "label_pt": "Cubango"
+    },
+    {
+      "slug": "portfolio-provincia-10",
+      "group": "portfolio-provincia",
+      "label_pt": "Cunene"
+    },
+    {
+      "slug": "portfolio-provincia-11",
+      "group": "portfolio-provincia",
+      "label_pt": "Huambo"
+    },
+    {
+      "slug": "portfolio-provincia-12",
+      "group": "portfolio-provincia",
+      "label_pt": "Huíla"
+    },
+    {
+      "slug": "portfolio-provincia-13",
+      "group": "portfolio-provincia",
+      "label_pt": "Icolo e Bengo"
+    },
+    {
+      "slug": "portfolio-provincia-14",
+      "group": "portfolio-provincia",
+      "label_pt": "Luanda"
+    },
+    {
+      "slug": "portfolio-provincia-15",
+      "group": "portfolio-provincia",
+      "label_pt": "Lunda Norte"
+    },
+    {
+      "slug": "portfolio-provincia-16",
+      "group": "portfolio-provincia",
+      "label_pt": "Lunda Sul"
+    },
+    {
+      "slug": "portfolio-provincia-17",
+      "group": "portfolio-provincia",
+      "label_pt": "Malanje"
+    },
+    {
+      "slug": "portfolio-provincia-18",
+      "group": "portfolio-provincia",
+      "label_pt": "Moxico"
+    },
+    {
+      "slug": "portfolio-provincia-19",
+      "group": "portfolio-provincia",
+      "label_pt": "Moxico Leste"
+    },
+    {
+      "slug": "portfolio-provincia-20",
+      "group": "portfolio-provincia",
+      "label_pt": "Namibe"
+    },
+    {
+      "slug": "portfolio-provincia-21",
+      "group": "portfolio-provincia",
+      "label_pt": "Uíge"
+    },
+    {
+      "slug": "portfolio-provincia-22",
+      "group": "portfolio-provincia",
+      "label_pt": "Zaire"
+    },
+    {
+      "slug": "portfolio-periodo-01",
+      "group": "portfolio-periodo",
+      "label_pt": "Todos"
+    },
+    {
+      "slug": "portfolio-periodo-02",
+      "group": "portfolio-periodo",
+      "label_pt": "2024"
+    },
+    {
+      "slug": "portfolio-periodo-03",
+      "group": "portfolio-periodo",
+      "label_pt": "2023"
+    },
+    {
+      "slug": "portfolio-periodo-04",
+      "group": "portfolio-periodo",
+      "label_pt": "2022"
+    },
+    {
+      "slug": "vagas-departamento-01",
+      "group": "vagas-departamento",
+      "label_pt": "Todos"
+    },
+    {
+      "slug": "vagas-departamento-02",
+      "group": "vagas-departamento",
+      "label_pt": "Geologia"
+    },
+    {
+      "slug": "vagas-departamento-03",
+      "group": "vagas-departamento",
+      "label_pt": "Geofísica"
+    },
+    {
+      "slug": "vagas-departamento-04",
+      "group": "vagas-departamento",
+      "label_pt": "Geotecnia"
+    },
+    {
+      "slug": "vagas-departamento-05",
+      "group": "vagas-departamento",
+      "label_pt": "Topografia"
+    },
+    {
+      "slug": "vagas-departamento-06",
+      "group": "vagas-departamento",
+      "label_pt": "Ambiente"
+    },
+    {
+      "slug": "vagas-departamento-07",
+      "group": "vagas-departamento",
+      "label_pt": "Administração"
+    }
+  ],
+  "downloads": [
+    {
+      "slug": "download-01",
+      "type": "PDF",
+      "cat_pt": "Técnico",
+      "title_pt": "Guia de Prospecção Mineral em Angola",
+      "desc_pt": "Metodologias, normas JORC e enquadramento legal.",
+      "size": "2.4 MB",
+      "accent": "#00AEEF"
+    },
+    {
+      "slug": "download-02",
+      "type": "PDF",
+      "cat_pt": "Legislação",
+      "title_pt": "Resumo da Lei Mineira 31/11",
+      "desc_pt": "Principais artigos, tipos de títulos mineiros e prazos.",
+      "size": "1.1 MB",
+      "accent": "#F5C200"
+    },
+    {
+      "slug": "download-03",
+      "type": "XLSX",
+      "cat_pt": "Técnico",
+      "title_pt": "Template: Relatório de Recursos JORC",
+      "desc_pt": "Estrutura base para relatório de recursos JORC 2012.",
+      "size": "380 KB",
+      "accent": "#00AEEF"
+    },
+    {
+      "slug": "download-04",
+      "type": "PDF",
+      "cat_pt": "Técnico",
+      "title_pt": "Ficha Técnica: Levantamento ERT",
+      "desc_pt": "Parâmetros, equipamentos e metodologia dos levantamentos de resistividade.",
+      "size": "900 KB",
+      "accent": "#00AEEF"
+    },
+    {
+      "slug": "download-05",
+      "type": "PDF",
+      "cat_pt": "Legislação",
+      "title_pt": "Decreto 51/04 — EIA em Angola",
+      "desc_pt": "Texto integral do decreto regulamentador de estudos de impacto ambiental.",
+      "size": "1.8 MB",
+      "accent": "#F5C200"
+    },
+    {
+      "slug": "download-06",
+      "type": "DOCX",
+      "cat_pt": "Template",
+      "title_pt": "Modelo de Contrato de Serviços Geotécnicos",
+      "desc_pt": "Modelo base ajustável para contratos de investigação geotécnica.",
+      "size": "210 KB",
+      "accent": "#00AEEF"
+    }
+  ],
+  "tools": [
+    {
+      "slug": "ferramenta-01",
+      "title_pt": "Tabela Periódica Geoquímica",
+      "desc_pt": "Referência rápida para análise de elementos em amostras de solo e rocha.",
+      "icon": "⬡",
+      "href": "#ferramentas"
+    },
+    {
+      "slug": "ferramenta-02",
+      "title_pt": "Classificação de Solos (USCS/HRB)",
+      "desc_pt": "Classificação visual de solos segundo sistemas USCS e HRB para geotécnicos.",
+      "icon": "▦",
+      "href": "#ferramentas"
+    },
+    {
+      "slug": "ferramenta-03",
+      "title_pt": "Calculadora de Escala Topográfica",
+      "desc_pt": "Converta medidas de campo para escala cartográfica e vice-versa.",
+      "icon": "⊞",
+      "href": "#ferramentas"
+    },
+    {
+      "slug": "ferramenta-04",
+      "title_pt": "Conversor de Coordenadas UTM ↔ WGS84",
+      "desc_pt": "Converta coordenadas geográficas entre sistemas de referência comuns.",
+      "icon": "⊕",
+      "href": "#ferramentas"
+    }
+  ],
+  "site-media": [
+    {
+      "slug": "logo",
+      "name": "Logótipo",
+      "file": "/logo.png"
+    },
+    {
+      "slug": "icon",
+      "name": "Ícone / favicon",
+      "file": "/icone-chiwale.png"
+    },
+    {
+      "slug": "hero-sobre",
+      "name": "Cabeçalho — Sobre Nós",
+      "file": "/images/project-main.jpg"
+    },
+    {
+      "slug": "hero-servicos",
+      "name": "Cabeçalho — Serviços",
+      "file": "/images/geofisico.jpg"
+    },
+    {
+      "slug": "hero-portfolio",
+      "name": "Cabeçalho — Portfolio",
+      "file": "/images/caminion.jpg"
+    },
+    {
+      "slug": "hero-galeria",
+      "name": "Cabeçalho — Galeria",
+      "file": "/images/chiwale-section.jpg"
+    },
+    {
+      "slug": "hero-blog",
+      "name": "Cabeçalho — Blog",
+      "file": "/images/service1.jpg"
+    },
+    {
+      "slug": "hero-recursos",
+      "name": "Cabeçalho — Recursos",
+      "file": "/images/gallery4.jpg"
+    },
+    {
+      "slug": "hero-carreiras",
+      "name": "Cabeçalho — Carreiras",
+      "file": "/images/gallery7.jpg"
+    },
+    {
+      "slug": "hero-contacto",
+      "name": "Cabeçalho — Contacto",
+      "file": "/images/project2.jpg"
+    },
+    {
+      "slug": "hero-default",
+      "name": "Cabeçalho — outras páginas",
+      "file": "/images/mission.jpg"
+    },
+    {
+      "slug": "director-photo",
+      "name": "Retrato do Director-Geral",
+      "file": "/images/team/severino-escritorio.jpg"
+    },
+    {
+      "slug": "mega-servicos",
+      "name": "Menu — Serviços (imagem)",
+      "file": "/images/chiwale-section.jpg"
+    },
+    {
+      "slug": "mega-portfolio-1",
+      "name": "Menu — Portfolio (imagem 1)",
+      "file": "/images/project1.jpg"
+    },
+    {
+      "slug": "mega-portfolio-2",
+      "name": "Menu — Portfolio (imagem 2)",
+      "file": "/images/project2.jpg"
+    },
+    {
+      "slug": "mega-blog-1",
+      "name": "Menu — Blog (imagem 1)",
+      "file": "/images/service1.jpg"
+    },
+    {
+      "slug": "mega-blog-2",
+      "name": "Menu — Blog (imagem 2)",
+      "file": "/images/service-baner.jpg"
+    },
+    {
+      "slug": "about-video",
+      "name": "Vídeo da secção Sobre (Home)",
+      "file": "/about-video.mp4"
+    }
+  ],
   "services": [
     {
       "slug": "geologia-prospeccao",
@@ -1677,1008 +2614,6 @@
         "Organização rigorosa e capacidade de trabalho sob pressão",
         "Bom nível de inglês escrito"
       ]
-    }
-  ],
-  "settings": [
-    {
-      "slug": "nav_items",
-      "label": "Menu de Navegação",
-      "value_pt": [
-        {
-          "label": "Home",
-          "href": "/"
-        },
-        {
-          "label": "Sobre Nós",
-          "href": "/sobre-nos",
-          "dropdown": [
-            {
-              "label": "História & Marcos",
-              "href": "/sobre-nos#historia"
-            },
-            {
-              "label": "Missão, Visão e Valores",
-              "href": "/sobre-nos#missao"
-            },
-            {
-              "label": "Equipa de Liderança",
-              "href": "/sobre-nos#equipa"
-            },
-            {
-              "label": "Organograma",
-              "href": "/sobre-nos#organograma"
-            },
-            {
-              "label": "Certificações",
-              "href": "/sobre-nos#certificacoes"
-            },
-            {
-              "label": "Responsabilidade Social",
-              "href": "/sobre-nos#rse"
-            }
-          ]
-        },
-        {
-          "label": "Serviços",
-          "href": "/servicos",
-          "dropdown": [
-            {
-              "label": "Geologia e Prospecção Mineral",
-              "href": "/servicos/geologia-prospeccao"
-            },
-            {
-              "label": "Geofísica Aplicada",
-              "href": "/servicos/geofisica-aplicada"
-            },
-            {
-              "label": "Engenharia Geotécnica",
-              "href": "/servicos/engenharia-geotecnica"
-            },
-            {
-              "label": "Topografia e Geodesia",
-              "href": "/servicos/topografia-geodesia"
-            },
-            {
-              "label": "Ambiente e Gestão Territorial",
-              "href": "/servicos/ambiente-gestao"
-            },
-            {
-              "label": "Exploração de Águas Subterrâneas",
-              "href": "/servicos/aguas-subterraneas"
-            },
-            {
-              "label": "Consultoria, Tramitação e Acompanhamento",
-              "href": "/servicos/consultoria-tramitacao"
-            }
-          ]
-        },
-        {
-          "label": "Portfolio",
-          "href": "/portfolio",
-          "dropdown": [
-            {
-              "label": "Todos os Projectos",
-              "href": "/portfolio"
-            },
-            {
-              "label": "Por Serviço",
-              "href": "/portfolio?filter=servico"
-            },
-            {
-              "label": "Por Região / Província",
-              "href": "/portfolio?filter=provincia"
-            },
-            {
-              "label": "Por Período",
-              "href": "/portfolio?filter=periodo"
-            }
-          ]
-        },
-        {
-          "label": "Galeria",
-          "href": "/galeria"
-        },
-        {
-          "label": "Blog",
-          "href": "/blog",
-          "dropdown": [
-            {
-              "label": "Artigos Técnicos",
-              "href": "/blog?cat=tecnico"
-            },
-            {
-              "label": "Webinars",
-              "href": "/blog?cat=webinars"
-            },
-            {
-              "label": "Guias e Whitepapers",
-              "href": "/blog?cat=guias"
-            },
-            {
-              "label": "Notícias do Sector",
-              "href": "/blog?cat=noticias"
-            }
-          ]
-        },
-        {
-          "label": "Recursos",
-          "href": "/recursos"
-        },
-        {
-          "label": "Contacto",
-          "href": "/contacto"
-        }
-      ]
-    },
-    {
-      "slug": "stats",
-      "label": "Estatísticas (Faixa de Números)",
-      "value_pt": [
-        {
-          "value": 50,
-          "suffix": "+",
-          "label": "Projectos Concluídos",
-          "detail": "Em múltiplas províncias"
-        },
-        {
-          "value": 100,
-          "suffix": "+",
-          "label": "Profissionais",
-          "detail": "Equipa multidisciplinar"
-        },
-        {
-          "value": 8,
-          "suffix": "+",
-          "label": "Anos de Experiência",
-          "detail": "Desde 2017"
-        },
-        {
-          "value": 5,
-          "suffix": "",
-          "label": "Certificações",
-          "detail": "ISO 9001 · ISO 45001 · ABNT"
-        },
-        {
-          "value": 21,
-          "suffix": "",
-          "label": "Províncias",
-          "detail": "Cobertura nacional"
-        }
-      ],
-      "value_en": [
-        {
-          "value": 50,
-          "suffix": "+",
-          "label": "Completed Projects",
-          "detail": "Across multiple provinces"
-        },
-        {
-          "value": 100,
-          "suffix": "+",
-          "label": "Professionals",
-          "detail": "Multidisciplinary team"
-        },
-        {
-          "value": 8,
-          "suffix": "+",
-          "label": "Years of Experience",
-          "detail": "Since 2017"
-        },
-        {
-          "value": 5,
-          "suffix": "",
-          "label": "Certifications",
-          "detail": "ISO 9001 · ISO 45001 · ABNT"
-        },
-        {
-          "value": 21,
-          "suffix": "",
-          "label": "Provinces",
-          "detail": "National coverage"
-        }
-      ]
-    },
-    {
-      "slug": "contact",
-      "label": "Contacto",
-      "value_pt": {
-        "phone": "+244 924 073 147",
-        "email": "geral@bchiwale.ao",
-        "whatsapp": "https://wa.me/244924073147",
-        "address": "Centralidade do Kilamba, Quarteirão Z, Prédio Z28, 4.º Andar, Luanda, Angola",
-        "addressShort": "Kilamba, Quarteirão Z, Luanda",
-        "website": "bchiwale.ao",
-        "hours": "Segunda–Sexta, 08h00–17h00"
-      }
-    },
-    {
-      "slug": "hero_slides",
-      "label": "Slides do Banner Principal",
-      "value_pt": [
-        {
-          "id": 1,
-          "src": "/images/banner1.jpg",
-          "alt": "Paisagem geológica angolana",
-          "line1": "A terra fala.",
-          "line2": "Nós lemos.",
-          "primary": {
-            "label": "Os Nossos Serviços",
-            "href": "/servicos"
-          },
-          "secondary": {
-            "label": "Contacto",
-            "href": "/contacto"
-          }
-        },
-        {
-          "id": 2,
-          "src": "/images/banner2.jpg",
-          "alt": "Formação rochosa — Angola",
-          "line1": "Do subsolo à",
-          "line2": "superfície.",
-          "primary": {
-            "label": "Geologia & Geofísica",
-            "href": "/servicos"
-          },
-          "secondary": {
-            "label": "Ver Portfólio",
-            "href": "/portfolio"
-          }
-        },
-        {
-          "id": 3,
-          "src": "/images/banner3.jpg",
-          "alt": "Vista aérea — terreno angolano",
-          "line1": "Angola vista",
-          "line2": "de perto.",
-          "primary": {
-            "label": "Topografia & Geotecnia",
-            "href": "/servicos"
-          },
-          "secondary": {
-            "label": "Ver Portfólio",
-            "href": "/portfolio"
-          }
-        },
-        {
-          "id": 4,
-          "src": "/images/banner1.jpg",
-          "alt": "Território angolano",
-          "line1": "Rigor técnico.",
-          "line2": "Raízes locais.",
-          "primary": {
-            "label": "Sobre Nós",
-            "href": "/sobre"
-          },
-          "secondary": {
-            "label": "Contacto",
-            "href": "/contacto"
-          }
-        },
-        {
-          "id": 5,
-          "src": "/images/banner3.jpg",
-          "alt": "Levantamento de campo — Angola",
-          "line1": "50+ projectos.",
-          "line2": "21 províncias.",
-          "primary": {
-            "label": "Ver Portfólio",
-            "href": "/portfolio"
-          },
-          "secondary": {
-            "label": "Solicitar Proposta",
-            "href": "/contacto"
-          }
-        }
-      ],
-      "value_en": [
-        {
-          "id": 1,
-          "src": "/images/banner1.jpg",
-          "alt": "Angola geological landscape",
-          "line1": "The earth speaks.",
-          "line2": "We read it.",
-          "primary": {
-            "label": "Our Services",
-            "href": "/servicos"
-          },
-          "secondary": {
-            "label": "Contact",
-            "href": "/contacto"
-          }
-        },
-        {
-          "id": 2,
-          "src": "/images/banner2.jpg",
-          "alt": "Rock formation — Angola",
-          "line1": "From subsurface",
-          "line2": "to surface.",
-          "primary": {
-            "label": "Geology & Geophysics",
-            "href": "/servicos"
-          },
-          "secondary": {
-            "label": "View Portfolio",
-            "href": "/portfolio"
-          }
-        },
-        {
-          "id": 3,
-          "src": "/images/banner3.jpg",
-          "alt": "Aerial view — Angola terrain",
-          "line1": "Angola seen",
-          "line2": "up close.",
-          "primary": {
-            "label": "Topography & Geotechnics",
-            "href": "/servicos"
-          },
-          "secondary": {
-            "label": "View Portfolio",
-            "href": "/portfolio"
-          }
-        },
-        {
-          "id": 4,
-          "src": "/images/banner1.jpg",
-          "alt": "Angola territory",
-          "line1": "Technical precision.",
-          "line2": "Local roots.",
-          "primary": {
-            "label": "About Us",
-            "href": "/sobre-nos"
-          },
-          "secondary": {
-            "label": "Contact",
-            "href": "/contacto"
-          }
-        },
-        {
-          "id": 5,
-          "src": "/images/banner3.jpg",
-          "alt": "Field survey — Angola",
-          "line1": "50+ projects.",
-          "line2": "21 provinces.",
-          "primary": {
-            "label": "View Portfolio",
-            "href": "/portfolio"
-          },
-          "secondary": {
-            "label": "Request a Proposal",
-            "href": "/contacto"
-          }
-        }
-      ]
-    },
-    {
-      "slug": "timeline",
-      "label": "Linha do Tempo / História",
-      "value_pt": [
-        {
-          "year": "2017",
-          "text": "Constituição da B-CHIWALE — foco inicial em geologia exploratória e prospecção mineral.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2018",
-          "text": "Expansão para geofísica aplicada e topografia. Primeiros equipamentos GNSS de alta precisão adquiridos.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2019",
-          "text": "Certificações ISO 9001:2015 e ISO 45001:2018 obtidas. Primeiros contratos de grande dimensão.",
-          "badge": "✦ ISO",
-          "type": "milestone"
-        },
-        {
-          "year": "2020",
-          "text": "Software de modelagem 3D geológica e análise geotécnica avançada. Expansão significativa da equipa.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2021",
-          "text": "Projectos de referência em 3 províncias angolanas. Parcerias académicas estabelecidas com universidades.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2022",
-          "text": "Lançamento do serviço de Exploração de Águas Subterrâneas. Área de Ambiente expandida.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2023",
-          "text": "Consultoria completa de direitos mineiros junto do MIREMPET. Equipa ultrapassa 50 profissionais.",
-          "badge": "✦ 50+",
-          "type": "milestone"
-        },
-        {
-          "year": "2024",
-          "text": "Consolidação como empresa de referência nacional. Expansão para 21 províncias.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2025 →",
-          "text": "Expansão para mercados regionais africanos. Novo website lançado. A história continua.",
-          "badge": "ACTIVO",
-          "type": "active"
-        }
-      ],
-      "value_en": [
-        {
-          "year": "2017",
-          "text": "B-CHIWALE founded — initial focus on exploratory geology and mineral prospecting.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2018",
-          "text": "Expansion into applied geophysics and topography. First high-precision GNSS equipment acquired.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2019",
-          "text": "ISO 9001:2015 and ISO 45001:2018 certifications obtained. First large-scale contracts.",
-          "badge": "✦ ISO",
-          "type": "milestone"
-        },
-        {
-          "year": "2020",
-          "text": "3D geological modelling and advanced geotechnical analysis software introduced. Significant team expansion.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2021",
-          "text": "Reference projects across 3 Angolan provinces. Academic partnerships established with universities.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2022",
-          "text": "Launch of Groundwater Exploration service. Environmental division expanded.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2023",
-          "text": "Complete mining rights consultancy with MIREMPET. Team exceeds 50 professionals.",
-          "badge": "✦ 50+",
-          "type": "milestone"
-        },
-        {
-          "year": "2024",
-          "text": "Consolidation as national reference company. Expansion to 21 provinces.",
-          "badge": null,
-          "type": "normal"
-        },
-        {
-          "year": "2025 →",
-          "text": "Expansion into African regional markets. New website launched. The story continues.",
-          "badge": "ACTIVE",
-          "type": "active"
-        }
-      ]
-    },
-    {
-      "slug": "footer_services",
-      "label": "Rodapé — Serviços",
-      "value_pt": [
-        {
-          "label": "Geologia e Prospecção",
-          "href": "/servicos/geologia-prospeccao"
-        },
-        {
-          "label": "Geofísica Aplicada",
-          "href": "/servicos/geofisica-aplicada"
-        },
-        {
-          "label": "Engenharia Geotécnica",
-          "href": "/servicos/engenharia-geotecnica"
-        },
-        {
-          "label": "Topografia e Geodesia",
-          "href": "/servicos/topografia-geodesia"
-        },
-        {
-          "label": "Ambiente e Gestão",
-          "href": "/servicos/ambiente-gestao"
-        },
-        {
-          "label": "Exploração de Águas",
-          "href": "/servicos/aguas-subterraneas"
-        },
-        {
-          "label": "Consultoria Mineira",
-          "href": "/servicos/consultoria-tramitacao"
-        }
-      ],
-      "value_en": [
-        {
-          "label": "Geology & Prospecting",
-          "href": "/servicos/geologia-prospeccao"
-        },
-        {
-          "label": "Applied Geophysics",
-          "href": "/servicos/geofisica-aplicada"
-        },
-        {
-          "label": "Geotechnical Engineering",
-          "href": "/servicos/engenharia-geotecnica"
-        },
-        {
-          "label": "Topography & Geodesy",
-          "href": "/servicos/topografia-geodesia"
-        },
-        {
-          "label": "Environment & Management",
-          "href": "/servicos/ambiente-gestao"
-        },
-        {
-          "label": "Groundwater Exploration",
-          "href": "/servicos/aguas-subterraneas"
-        },
-        {
-          "label": "Mining Consultancy",
-          "href": "/servicos/consultoria-tramitacao"
-        }
-      ]
-    },
-    {
-      "slug": "footer_company",
-      "label": "Rodapé — Empresa",
-      "value_pt": [
-        {
-          "label": "Home",
-          "href": "/"
-        },
-        {
-          "label": "Sobre Nós",
-          "href": "/sobre-nos"
-        },
-        {
-          "label": "Portfolio",
-          "href": "/portfolio"
-        },
-        {
-          "label": "Galeria",
-          "href": "/galeria"
-        },
-        {
-          "label": "Blog & Conhecimento",
-          "href": "/blog"
-        },
-        {
-          "label": "Recursos",
-          "href": "/recursos"
-        },
-        {
-          "label": "Carreiras",
-          "href": "/carreiras"
-        },
-        {
-          "label": "Contacto",
-          "href": "/contacto"
-        }
-      ],
-      "value_en": [
-        {
-          "label": "Home",
-          "href": "/"
-        },
-        {
-          "label": "About Us",
-          "href": "/sobre-nos"
-        },
-        {
-          "label": "Portfolio",
-          "href": "/portfolio"
-        },
-        {
-          "label": "Gallery",
-          "href": "/galeria"
-        },
-        {
-          "label": "Blog & Knowledge",
-          "href": "/blog"
-        },
-        {
-          "label": "Resources",
-          "href": "/recursos"
-        },
-        {
-          "label": "Careers",
-          "href": "/carreiras"
-        },
-        {
-          "label": "Contact",
-          "href": "/contacto"
-        }
-      ]
-    },
-    {
-      "slug": "org_chart",
-      "label": "Organograma",
-      "value_pt": {
-        "cargo": "Presidente do Conselho de Administração",
-        "nome": "Severino Nambuengue Chiwale",
-        "iniciais": "SC",
-        "photo": "/images/team1.jpg",
-        "subordinados": [
-          {
-            "cargo": "Administradora Executiva — Área Administrativa e Financeira",
-            "nome": "Bernadeth de Nazaré",
-            "iniciais": "BN",
-            "photo": "/images/team/bernadeth-nazare.jpg",
-            "subordinados": [
-              {
-                "cargo": "Direcção de R.H",
-                "nome": null,
-                "subordinados": [
-                  {
-                    "cargo": "Coord. Pessoal",
-                    "nome": null,
-                    "subordinados": []
-                  },
-                  {
-                    "cargo": "Coord. Recrutamento",
-                    "nome": null,
-                    "subordinados": []
-                  }
-                ]
-              },
-              {
-                "cargo": "Direcção Administrativa e Financeira",
-                "nome": null,
-                "subordinados": [
-                  {
-                    "cargo": "Depart. Conta a Receber e a Pagar",
-                    "nome": null,
-                    "subordinados": []
-                  },
-                  {
-                    "cargo": "Direcção de Logística",
-                    "nome": null,
-                    "subordinados": []
-                  },
-                  {
-                    "cargo": "Depart. de Tesouraria",
-                    "nome": null,
-                    "subordinados": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "cargo": "Administradora Executiva — Área de Geociências",
-            "nome": "Samba Clotilde Franga Eduardo André",
-            "iniciais": "SA",
-            "photo": "/images/team/samba-clotilde.jpg",
-            "subordinados": [
-              {
-                "cargo": "Director para Área de Geociências",
-                "nome": "Gilberto Armando Viegas",
-                "iniciais": "GV",
-                "photo": "/images/team/gilberto-viegas.jpg",
-                "subordinados": []
-              },
-              {
-                "cargo": "Coordenador para Área de Geociências",
-                "nome": "Sebastião Malungo Miguel António",
-                "iniciais": "SM",
-                "photo": "/images/team/sebastiao-antonio.jpg",
-                "subordinados": []
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "slug": "mvv_cards",
-      "label": "Missão, Visão e Valores",
-      "value_pt": [
-        {
-          "label": "Missão",
-          "title": "Excelência Técnica",
-          "text": "Prestar serviços de excelência em geologia e engenharia geotécnica, transformando recursos minerais em progresso sustentável para Angola.",
-          "accent": "#00AEEF"
-        },
-        {
-          "label": "Visão",
-          "title": "Liderança Africana",
-          "text": "Ser a empresa de referência em consultoria geológica e mineração em África, reconhecida pela excelência técnica e compromisso com a sustentabilidade.",
-          "accent": "#F5C200"
-        },
-        {
-          "label": "Valores",
-          "title": "Princípios",
-          "text": "Excelência técnica · Inovação contínua · Sustentabilidade · Integridade · Responsabilidade social",
-          "accent": "#1A1A2E"
-        }
-      ],
-      "value_en": [
-        {
-          "label": "Mission",
-          "title": "Technical Excellence",
-          "text": "To deliver excellent services in geology and geotechnical engineering, transforming mineral resources into sustainable progress for Angola.",
-          "accent": "#00AEEF"
-        },
-        {
-          "label": "Vision",
-          "title": "African Leadership",
-          "text": "To be the reference company in geological consultancy and mining in Africa, recognised for technical excellence and commitment to sustainability.",
-          "accent": "#F5C200"
-        },
-        {
-          "label": "Values",
-          "title": "Principles",
-          "text": "Technical excellence · Continuous innovation · Sustainability · Integrity · Social responsibility",
-          "accent": "#1A1A2E"
-        }
-      ]
-    },
-    {
-      "slug": "certifications",
-      "label": "Certificações",
-      "value_pt": [
-        {
-          "code": "ISO 9001",
-          "label": "Gestão da Qualidade",
-          "year": "2019",
-          "logo": "/images/certifications/iso9001.svg"
-        },
-        {
-          "code": "ISO 45001",
-          "label": "Saúde e Segurança",
-          "year": "2019",
-          "logo": "/images/certifications/iso45001.svg"
-        },
-        {
-          "code": "ABNT",
-          "label": "Normas Técnicas",
-          "year": "2020",
-          "logo": "/images/certifications/abnt.png"
-        },
-        {
-          "code": "JORC",
-          "label": "Recursos Minerais",
-          "year": "2021",
-          "logo": null
-        },
-        {
-          "code": "NI 43-101",
-          "label": "Divulgação Mineral",
-          "year": "2021",
-          "logo": null
-        }
-      ]
-    },
-    {
-      "slug": "cert_badges",
-      "label": "Selos de Certificação",
-      "value_pt": [
-        "ISO 9001",
-        "ISO 45001",
-        "ABNT",
-        "JORC",
-        "NI 43-101"
-      ]
-    },
-    {
-      "slug": "gallery_categories",
-      "label": "Galeria — Categorias",
-      "value_pt": [
-        "Todos",
-        "Campo",
-        "Laboratório",
-        "UAV",
-        "Equipamentos",
-        "Furos"
-      ]
-    },
-    {
-      "slug": "blog_categories",
-      "label": "Blog — Categorias",
-      "value_pt": [
-        "Todos",
-        "Geologia",
-        "Geofísica",
-        "Geotecnia",
-        "Topografia",
-        "Legislação",
-        "Sustentabilidade",
-        "Notícias"
-      ]
-    },
-    {
-      "slug": "portfolio_service_filters",
-      "label": "Portfólio — Filtro de Serviço",
-      "value_pt": [
-        "Todos",
-        "Geologia",
-        "Geofísica",
-        "Geotecnia",
-        "Topografia",
-        "Ambiente",
-        "Consultoria",
-        "Águas Subterrâneas"
-      ]
-    },
-    {
-      "slug": "portfolio_province_filters",
-      "label": "Portfólio — Filtro de Província",
-      "value_pt": [
-        "Todas",
-        "Bengo",
-        "Benguela",
-        "Bié",
-        "Cabinda",
-        "Cuando",
-        "Cuanza Norte",
-        "Cuanza Sul",
-        "Cubango",
-        "Cunene",
-        "Huambo",
-        "Huíla",
-        "Icolo e Bengo",
-        "Luanda",
-        "Lunda Norte",
-        "Lunda Sul",
-        "Malanje",
-        "Moxico",
-        "Moxico Leste",
-        "Namibe",
-        "Uíge",
-        "Zaire"
-      ]
-    },
-    {
-      "slug": "portfolio_period_filters",
-      "label": "Portfólio — Filtro de Período",
-      "value_pt": [
-        "Todos",
-        "2024",
-        "2023",
-        "2022"
-      ]
-    },
-    {
-      "slug": "job_departments",
-      "label": "Vagas — Departamentos",
-      "value_pt": [
-        "Todos",
-        "Geologia",
-        "Geofísica",
-        "Geotecnia",
-        "Topografia",
-        "Ambiente",
-        "Administração"
-      ]
-    },
-    {
-      "slug": "downloads",
-      "label": "Recursos — Downloads",
-      "value_pt": [
-        {
-          "id": 1,
-          "type": "PDF",
-          "cat": "Técnico",
-          "title": "Guia de Prospecção Mineral em Angola",
-          "desc": "Metodologias, normas JORC e enquadramento legal.",
-          "size": "2.4 MB",
-          "accentColor": "#00AEEF"
-        },
-        {
-          "id": 2,
-          "type": "PDF",
-          "cat": "Legislação",
-          "title": "Resumo da Lei Mineira 31/11",
-          "desc": "Principais artigos, tipos de títulos mineiros e prazos.",
-          "size": "1.1 MB",
-          "accentColor": "#F5C200"
-        },
-        {
-          "id": 3,
-          "type": "XLSX",
-          "cat": "Técnico",
-          "title": "Template: Relatório de Recursos JORC",
-          "desc": "Estrutura base para relatório de recursos JORC 2012.",
-          "size": "380 KB",
-          "accentColor": "#00AEEF"
-        },
-        {
-          "id": 4,
-          "type": "PDF",
-          "cat": "Técnico",
-          "title": "Ficha Técnica: Levantamento ERT",
-          "desc": "Parâmetros, equipamentos e metodologia dos levantamentos de resistividade.",
-          "size": "900 KB",
-          "accentColor": "#00AEEF"
-        },
-        {
-          "id": 5,
-          "type": "PDF",
-          "cat": "Legislação",
-          "title": "Decreto 51/04 — EIA em Angola",
-          "desc": "Texto integral do decreto regulamentador de estudos de impacto ambiental.",
-          "size": "1.8 MB",
-          "accentColor": "#F5C200"
-        },
-        {
-          "id": 6,
-          "type": "DOCX",
-          "cat": "Template",
-          "title": "Modelo de Contrato de Serviços Geotécnicos",
-          "desc": "Modelo base ajustável para contratos de investigação geotécnica.",
-          "size": "210 KB",
-          "accentColor": "#00AEEF"
-        }
-      ]
-    },
-    {
-      "slug": "tools",
-      "label": "Recursos — Ferramentas",
-      "value_pt": [
-        {
-          "title": "Tabela Periódica Geoquímica",
-          "desc": "Referência rápida para análise de elementos em amostras de solo e rocha.",
-          "icon": "⬡",
-          "href": "#ferramentas"
-        },
-        {
-          "title": "Classificação de Solos (USCS/HRB)",
-          "desc": "Classificação visual de solos segundo sistemas USCS e HRB para geotécnicos.",
-          "icon": "▦",
-          "href": "#ferramentas"
-        },
-        {
-          "title": "Calculadora de Escala Topográfica",
-          "desc": "Converta medidas de campo para escala cartográfica e vice-versa.",
-          "icon": "⊞",
-          "href": "#ferramentas"
-        },
-        {
-          "title": "Conversor de Coordenadas UTM ↔ WGS84",
-          "desc": "Converta coordenadas geográficas entre sistemas de referência comuns.",
-          "icon": "⊕",
-          "href": "#ferramentas"
-        }
-      ]
-    },
-    {
-      "slug": "about_video",
-      "label": "Vídeo da Secção Sobre (Homepage)",
-      "value_pt": "/about-video.mp4"
-    },
-    {
-      "slug": "site_images",
-      "label": "Imagens do site (logo, banners das páginas…)",
-      "value_pt": {
-        "logo": "/logo.png",
-        "icon": "/icone-chiwale.png",
-        "hero_sobre": "/images/project-main.jpg",
-        "hero_servicos": "/images/geofisico.jpg",
-        "hero_portfolio": "/images/caminion.jpg",
-        "hero_galeria": "/images/chiwale-section.jpg",
-        "hero_blog": "/images/service1.jpg",
-        "hero_recursos": "/images/gallery4.jpg",
-        "hero_carreiras": "/images/gallery7.jpg",
-        "hero_contacto": "/images/project2.jpg",
-        "hero_default": "/images/mission.jpg",
-        "director_photo": "/images/team/severino-escritorio.jpg",
-        "mega_servicos": "/images/chiwale-section.jpg",
-        "mega_portfolio_1": "/images/project1.jpg",
-        "mega_portfolio_2": "/images/project2.jpg",
-        "mega_blog_1": "/images/service1.jpg",
-        "mega_blog_2": "/images/service-baner.jpg"
-      }
     }
   ],
   "ui-texts": [

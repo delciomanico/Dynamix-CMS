@@ -59,8 +59,9 @@ describe('seedSite (bchiwale)', () => {
     expect(new Set(uploaded).size).toBe(uploaded.length); // cada ficheiro só uma vez
     expect(st.put.mock.calls.some((c: any) => c[2] === 'video/mp4')).toBe(true);
     expect(by('team')[0].data.photo).toMatch(/^m\d+$/); // campo image → id
-    expect(by('settings').find((e: any) => e.slug === 'about-video').data.value_pt).toMatch(/^media:\/\/m\d+$/);
-    expect(by('settings').find((e: any) => e.slug === 'site-images').data.value_pt.logo).toMatch(/^media:\/\/m\d+$/);
+    expect(by('site-media').find((e: any) => e.slug === 'about-video').data.file).toMatch(/^m\d+$/); // vídeo (campo file)
+    expect(by('site-media').find((e: any) => e.slug === 'logo').data.file).toMatch(/^m\d+$/);
+    expect(by('hero-slides')[0].data.image).toMatch(/^m\d+$/);
     // nenhum caminho local ficou para trás
     expect(JSON.stringify(p.component.create.mock.calls)).not.toMatch(/"\/(images\/|logo|icone|about-video)/);
   });

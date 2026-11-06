@@ -10,8 +10,12 @@ export function ContentIndex() {
   const { data, loading } = useFetch<Component[]>(`/projects/${project.id}/components`);
   const [filter, setFilter] = useState('');
   if (loading) return <Spinner />;
+  // "Home · Números" → grupo "Home", título "Números"; sem " · " fica em "Conteúdo"
+  const groupOf = (n: string) => (n.includes(' · ') ? n.split(' · ')[0] : 'Conteúdo');
+  const shortName = (n: string) => (n.includes(' · ') ? n.split(' · ').slice(1).join(' · ') : n);
   const norm = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const shown = (data ?? []).filter((c) => !filter.trim() || norm(`${c.name} ${c.slug} ${c.description ?? ''}`).includes(norm(filter.trim())));
+  const groups = Object.entries(shown.reduce<Record<string, Component[]>>((acc, c) => { (acc[groupOf(c.name)] ??= []).push(c); return acc; }, {}));
   return (
     <>
       <PageHead title="Content" note="Escolhe um componente" />
@@ -23,15 +27,20 @@ export function ContentIndex() {
         <>
         {data.length > 6 && <input className="input mb-5 max-w-sm" type="search" placeholder="Pesquisar componentes…" value={filter} onChange={(e) => setFilter(e.target.value)} />}
         {!shown.length && <Empty title="Nenhum componente encontrado" hint="Tenta outra pesquisa." />}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {shown.map((c, i) => (
-            <Link key={c.id} to={c.id} className={`rounded-2xl border-[1.5px] border-ink shadow-[4px_5px_0_#1A2233] p-5 block hover:-translate-y-1 transition ${i % 3 === 0 ? 'bg-brand text-white' : i % 3 === 1 ? 'bg-white' : 'bg-brand/10'}`}>
-              <span className="mono text-[10px] uppercase tracking-wider opacity-60">{c.fields.length} campos</span>
-              <h3 className="font-extrabold text-xl mt-1">{c.name}</h3>
-              <p className="mono text-xs opacity-70 mt-4">{c._count?.entries ?? 0} conteúdos →</p>
-            </Link>
-          ))}
-        </div>
+        {groups.map(([g, list]) => (
+          <section key={g} className="mb-8">
+            {groups.length > 1 && <h2 className="mono text-xs uppercase tracking-widest text-muted mb-3">{g} <span className="opacity-60">· {list.length}</span></h2>}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {list.map((c, i) => (
+                <Link key={c.id} to={c.id} className={`rounded-2xl border-[1.5px] border-ink shadow-[4px_5px_0_#1A2233] p-5 block hover:-translate-y-1 transition ${i % 3 === 0 ? 'bg-brand text-white' : i % 3 === 1 ? 'bg-white' : 'bg-brand/10'}`}>
+                  <span className="mono text-[10px] uppercase tracking-wider opacity-60">{c.fields.length} campos</span>
+                  <h3 className="font-extrabold text-xl mt-1">{shortName(c.name)}</h3>
+                  <p className="mono text-xs opacity-70 mt-4">{c._count?.entries ?? 0} conteúdos →</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ))}
         </>
       )}
     </>

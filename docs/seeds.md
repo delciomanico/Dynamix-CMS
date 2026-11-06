@@ -20,11 +20,21 @@ Projeto `bchiwale` no workspace do admin, com 8 componentes e todo o conteúdo d
 | `testimonials` | testemunhos | `…/content/testimonials` |
 | `jobs` | vagas | `…/content/jobs` |
 | `ui-texts` | todos os textos fixos da interface (botões, títulos, rótulos, SEO) em PT/EN, ~450 entradas; campo `key` (ex. `nav.home`), `*palavra*` = destaque em itálico | `…/content/ui-texts` |
-| `settings` | menu, rodapé, estatísticas, contactos, banners… (slug = chave, com `_`→`-`) | `…/content/settings` |
+| `hero-slides` | Home · Banner principal (imagem, títulos, botões) | `…/content/hero-slides` |
+| `stats` | Home · Números | `…/content/stats` |
+| `timeline` | Sobre · História | `…/content/timeline` |
+| `mvv` | Sobre · Missão, Visão e Valores | `…/content/mvv` |
+| `org-chart` | Sobre · Organograma (cada cargo com `parent` = slug do superior) | `…/content/org-chart` |
+| `certifications`, `cert-badges` | Sobre · Certificações; Rodapé · Selos | `…/content/certifications` |
+| `footer-links` | Rodapé · Links (grupo `servicos` / `empresa`) | `…/content/footer-links` |
+| `contact-info` | Empresa · Contactos (1 entrada) | `…/content/contact-info` |
+| `filters` | Site · Filtros e categorias (galeria, blog, portfolio, vagas) | `…/content/filters` |
+| `downloads`, `tools` | Recursos · Downloads e Ferramentas | `…/content/downloads` |
+| `site-media` | Site · Imagens e vídeo (logo, favicon, cabeçalhos, retrato do DG, menus, vídeo; o slug é a chave) | `…/content/site-media` |
 
 Mais `GET /api/v1/public/bchiwale/components` (estrutura) e `…/content/{componente}/{slug}`.
 Campos bilingues são pares `*_pt` / `*_en`; estruturas aninhadas usam o tipo de campo `json`.
-**Imagens, vídeo e logos** (≈ 40 ficheiros, 29 MB em `apps/api/seed-assets/bchiwale/`) são carregados para a **Media Library** (MinIO) e servidos por `/api/v1/public/bchiwale/media/{id}` (com suporte a `Range`, necessário para o vídeo). Campos do tipo `image` guardam o id; em campos `json` (definições, galerias…) escreve-se `media://<id>` e a API pública converte em URL — o botão "Copiar media://" da Media Library dá a referência. O componente `settings` inclui `site_images` (logo, ícone, fundos dos cabeçalhos das páginas, retrato do DG) e `about_video`. O MinIO tem de estar acessível durante o seed (o serviço `migrate` depende dele).
+**Imagens, vídeo e logos** (≈ 40 ficheiros, 29 MB em `apps/api/seed-assets/bchiwale/`) são carregados para a **Media Library** (MinIO) e servidos por `/api/v1/public/bchiwale/media/{id}` (com suporte a `Range`, necessário para o vídeo). Campos do tipo `image` guardam o id; em campos `json` (galerias…) escreve-se `media://<id>` e a API pública converte em URL — o botão "Copiar media://" da Media Library dá a referência. O componente `site-media` (campo `file`) guarda o logo, o ícone, os fundos dos cabeçalhos das páginas, o retrato do DG, as imagens dos menus e o vídeo. O MinIO tem de estar acessível durante o seed (o serviço `migrate` depende dele).
 
 **Ordem:** a API pública só ordena por data, por isso o seed grava `publishedAt` crescente e o site pede `sort=publishedAt`.
 

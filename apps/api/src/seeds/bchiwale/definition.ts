@@ -73,17 +73,80 @@ const components: SeedComponent[] = [
       ...bi('description', 'Descrição', 'textarea'), ...bi('requirements', 'Requisitos', 'json'),
     ],
   },
+  // ── Um componente por secção do site ───────────────────────────────────────────────
   {
-    // Todos os textos fixos da interface (botões, títulos de secção, rótulos, SEO…). O site lê `key` e monta a árvore de textos.
-    slug: 'ui-texts', name: 'Textos do site', rows: rows['ui-texts'], slugOf: (r) => String(r.slug ?? ''),
-    description: 'Textos da interface em PT/EN. A chave (ex. nav.home) é usada pelo site; *palavra* marca destaque em itálico e \\n quebra de linha.',
-    fields: [f('key', 'Chave', 'text', true), f('value_pt', 'Texto (PT)', 'textarea', true), f('value_en', 'Texto (EN)', 'textarea')],
+    slug: 'hero-slides', name: 'Home · Banner principal', rows: rows['hero-slides'],
+    description: 'Slides do banner da página inicial (por ordem de publicação).',
+    fields: [
+      f('image', 'Imagem de fundo', 'image'), ...bi('alt', 'Descrição da imagem'),
+      ...bi('line1', 'Título — linha 1', 'text', true), ...bi('line2', 'Título — linha 2'),
+      ...bi('primary_label', 'Botão principal — texto'), f('primary_href', 'Botão principal — ligação'),
+      ...bi('secondary_label', 'Botão secundário — texto'), f('secondary_href', 'Botão secundário — ligação'),
+    ],
   },
   {
-    // Em campos json, referências a ficheiros da Media Library escrevem-se `media://<id>` (a API pública converte em URL).
-    slug: 'settings', name: 'Definições do site', rows: rows.settings,
-    description: 'Pares chave → valor (menu, rodapé, estatísticas, contactos, banners…). O slug é a chave.',
-    fields: [f('label', 'Descrição', 'text', true), f('value_pt', 'Valor (PT)', 'json', true), f('value_en', 'Valor (EN)', 'json')],
+    slug: 'stats', name: 'Home · Números', rows: rows.stats,
+    description: 'Faixa de números (contadores animados).',
+    fields: [f('value', 'Valor', 'number', true), f('suffix', 'Sufixo (+, %…)'), ...bi('label', 'Rótulo', 'text', true), ...bi('detail', 'Detalhe')],
+  },
+  {
+    slug: 'timeline', name: 'Sobre · História (linha do tempo)', rows: rows.timeline,
+    fields: [f('year', 'Ano', 'text', true), ...bi('text', 'Texto', 'textarea', true), ...bi('badge', 'Selo (ex. ACTIVO)'), f('type', 'Tipo (normal | active)')],
+  },
+  {
+    slug: 'mvv', name: 'Sobre · Missão, Visão e Valores', rows: rows.mvv,
+    fields: [...bi('label', 'Rótulo (Missão…)', 'text', true), ...bi('title', 'Título'), ...bi('text', 'Texto', 'textarea'), f('accent', 'Cor de destaque (#hex)')],
+  },
+  {
+    slug: 'org-chart', name: 'Sobre · Organograma', rows: rows['org-chart'],
+    description: 'Cada cargo é uma entrada; "Superior" é o slug do cargo acima (vazio = topo). A ordem de publicação é a ordem no organograma.',
+    fields: [f('cargo', 'Cargo', 'text', true), f('nome', 'Nome'), f('iniciais', 'Iniciais'), f('photo', 'Foto', 'image'), f('parent', 'Superior (slug)')],
+  },
+  {
+    slug: 'certifications', name: 'Sobre · Certificações', rows: rows.certifications,
+    fields: [f('code', 'Código (ISO 9001…)', 'text', true), ...bi('label', 'Descrição'), f('year', 'Ano'), f('logo', 'Logótipo', 'image')],
+  },
+  {
+    slug: 'cert-badges', name: 'Rodapé · Selos de certificação', rows: rows['cert-badges'],
+    fields: [f('name', 'Nome do selo', 'text', true)],
+  },
+  {
+    slug: 'footer-links', name: 'Rodapé · Links', rows: rows['footer-links'],
+    description: 'Grupo: "servicos" ou "empresa".',
+    fields: [f('group', 'Grupo (servicos | empresa)', 'text', true), ...bi('label', 'Texto', 'text', true), f('href', 'Ligação', 'text', true)],
+  },
+  {
+    slug: 'contact-info', name: 'Empresa · Contactos', rows: rows['contact-info'],
+    description: 'Uma única entrada: dados usados no rodapé, página de contacto, WhatsApp e CTA.',
+    fields: [
+      f('phone', 'Telefone'), f('email', 'Email'), f('whatsapp', 'WhatsApp (link wa.me)'), f('address', 'Morada'),
+      f('address_short', 'Morada curta'), f('website', 'Website'), f('hours', 'Horário'),
+    ],
+  },
+  {
+    slug: 'filters', name: 'Site · Filtros e categorias', rows: rows.filters,
+    description: 'Opções dos filtros do site. Grupos: galeria, blog, portfolio-servico, portfolio-provincia, portfolio-periodo, vagas-departamento. O 1.º item de cada grupo é o "Todos".',
+    fields: [f('group', 'Grupo', 'text', true), ...bi('label', 'Texto', 'text', true)],
+  },
+  {
+    slug: 'downloads', name: 'Recursos · Downloads', rows: rows.downloads,
+    fields: [...bi('title', 'Título', 'text', true), ...bi('desc', 'Descrição', 'textarea'), f('type', 'Tipo (PDF, XLSX…)'), ...bi('cat', 'Categoria'), f('size', 'Tamanho'), f('accent', 'Cor (#hex)')],
+  },
+  {
+    slug: 'tools', name: 'Recursos · Ferramentas', rows: rows.tools,
+    fields: [...bi('title', 'Título', 'text', true), ...bi('desc', 'Descrição', 'textarea'), f('icon', 'Ícone'), f('href', 'Ligação')],
+  },
+  {
+    // O slug de cada entrada é a chave usada pelo site (logo, icon, hero-*, director-photo, mega-*, about-video).
+    slug: 'site-media', name: 'Site · Imagens e vídeo', rows: rows['site-media'],
+    description: 'Logótipo, favicon, fundos dos cabeçalhos das páginas, retrato do DG, imagens dos menus e vídeo da secção Sobre. Não alterar o slug.',
+    fields: [f('name', 'Onde é usado', 'text', true), f('file', 'Ficheiro', 'file')],
+  },
+  {
+    // Todos os textos fixos da interface (botões, títulos de secção, rótulos, SEO…). O site lê `key` e monta a árvore de textos.
+    slug: 'ui-texts', name: 'Site · Textos da interface', rows: rows['ui-texts'], slugOf: (r) => String(r.slug ?? ''),
+    description: 'Textos da interface em PT/EN. A chave (ex. nav.home) é usada pelo site; *palavra* marca destaque em itálico e \\n quebra de linha.',
+    fields: [f('key', 'Chave', 'text', true), f('value_pt', 'Texto (PT)', 'textarea', true), f('value_en', 'Texto (EN)', 'textarea')],
   },
 ];
 
