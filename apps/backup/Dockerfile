@@ -1,4 +1,4 @@
-FROM node:24.22.1-alpine
+FROM node:26.12.1-alpine
 ARG APP_VERSION=dev
 ENV APP_VERSION=$APP_VERSION
 RUN apk add --no-cache postgresql16-client rclone tzdata tar
