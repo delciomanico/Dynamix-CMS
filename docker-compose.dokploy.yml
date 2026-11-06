@@ -99,6 +99,9 @@ services:
       PREDEPLOY_BACKUP: ${PREDEPLOY_BACKUP:-required}
 
   api:
+    networks:
+      default:
+        aliases: [dynamix-api]   # nome único: 'api' é ambíguo na rede partilhada do Dokploy
     build: { context: ./apps/api, args: { APP_VERSION: "${IMAGE_TAG:-dokploy}" } }
     restart: unless-stopped
     depends_on:

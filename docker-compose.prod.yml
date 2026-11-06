@@ -102,6 +102,9 @@ services:
       PREDEPLOY_BACKUP: ${PREDEPLOY_BACKUP:-required}
 
   api:
+    networks:
+      default:
+        aliases: [dynamix-api]   # nome único: 'api' é ambíguo na rede partilhada do Dokploy
     image: ${IMAGE_PREFIX:-ghcr.io/delciomanico/dynamix-cms}-api:${IMAGE_TAG:-latest}
     pull_policy: always
     restart: unless-stopped
