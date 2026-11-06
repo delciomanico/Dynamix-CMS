@@ -74,6 +74,12 @@ const components: SeedComponent[] = [
     ],
   },
   {
+    // Todos os textos fixos da interface (botões, títulos de secção, rótulos, SEO…). O site lê `key` e monta a árvore de textos.
+    slug: 'ui-texts', name: 'Textos do site', rows: rows['ui-texts'], slugOf: (r) => String(r.slug ?? ''),
+    description: 'Textos da interface em PT/EN. A chave (ex. nav.home) é usada pelo site; *palavra* marca destaque em itálico e \\n quebra de linha.',
+    fields: [f('key', 'Chave', 'text', true), f('value_pt', 'Texto (PT)', 'textarea', true), f('value_en', 'Texto (EN)', 'textarea')],
+  },
+  {
     // Em campos json, referências a ficheiros da Media Library escrevem-se `media://<id>` (a API pública converte em URL).
     slug: 'settings', name: 'Definições do site', rows: rows.settings,
     description: 'Pares chave → valor (menu, rodapé, estatísticas, contactos, banners…). O slug é a chave.',

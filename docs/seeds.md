@@ -19,6 +19,7 @@ Projeto `bchiwale` no workspace do admin, com 8 componentes e todo o conteúdo d
 | `gallery` | galeria | `…/content/gallery` |
 | `testimonials` | testemunhos | `…/content/testimonials` |
 | `jobs` | vagas | `…/content/jobs` |
+| `ui-texts` | todos os textos fixos da interface (botões, títulos, rótulos, SEO) em PT/EN, ~450 entradas; campo `key` (ex. `nav.home`), `*palavra*` = destaque em itálico | `…/content/ui-texts` |
 | `settings` | menu, rodapé, estatísticas, contactos, banners… (slug = chave, com `_`→`-`) | `…/content/settings` |
 
 Mais `GET /api/v1/public/bchiwale/components` (estrutura) e `…/content/{componente}/{slug}`.

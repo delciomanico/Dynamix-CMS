@@ -2672,8 +2672,2739 @@
         "hero_carreiras": "/images/gallery7.jpg",
         "hero_contacto": "/images/project2.jpg",
         "hero_default": "/images/mission.jpg",
-        "director_photo": "/images/team/severino-escritorio.jpg"
+        "director_photo": "/images/team/severino-escritorio.jpg",
+        "mega_servicos": "/images/chiwale-section.jpg",
+        "mega_portfolio_1": "/images/project1.jpg",
+        "mega_portfolio_2": "/images/project2.jpg",
+        "mega_blog_1": "/images/service1.jpg",
+        "mega_blog_2": "/images/service-baner.jpg"
       }
+    }
+  ],
+  "ui-texts": [
+    {
+      "slug": "nav-request-proposal",
+      "key": "nav.request_proposal",
+      "value_pt": "SOLICITAR PROPOSTA",
+      "value_en": "REQUEST PROPOSAL"
+    },
+    {
+      "slug": "nav-search-placeholder",
+      "key": "nav.search_placeholder",
+      "value_pt": "Pesquisar serviços, projectos, artigos, equipa…",
+      "value_en": "Search services, projects, articles, team…"
+    },
+    {
+      "slug": "nav-search-no-results",
+      "key": "nav.search_no_results",
+      "value_pt": "Sem resultados. Experimente outra pesquisa.",
+      "value_en": "No results. Try a different search."
+    },
+    {
+      "slug": "nav-search-popular",
+      "key": "nav.search_popular",
+      "value_pt": "Sugestões populares",
+      "value_en": "Popular suggestions"
+    },
+    {
+      "slug": "nav-search-type-pages",
+      "key": "nav.search_type_pages",
+      "value_pt": "PÁGINAS",
+      "value_en": "PAGES"
+    },
+    {
+      "slug": "nav-search-type-services",
+      "key": "nav.search_type_services",
+      "value_pt": "SERVIÇOS",
+      "value_en": "SERVICES"
+    },
+    {
+      "slug": "nav-search-type-portfolio",
+      "key": "nav.search_type_portfolio",
+      "value_pt": "PORTFOLIO",
+      "value_en": "PORTFOLIO"
+    },
+    {
+      "slug": "nav-search-type-blog",
+      "key": "nav.search_type_blog",
+      "value_pt": "BLOG",
+      "value_en": "BLOG"
+    },
+    {
+      "slug": "nav-search-type-team",
+      "key": "nav.search_type_team",
+      "value_pt": "EQUIPA",
+      "value_en": "TEAM"
+    },
+    {
+      "slug": "nav-search-icon-label",
+      "key": "nav.search_icon_label",
+      "value_pt": "Pesquisar",
+      "value_en": "Search"
+    },
+    {
+      "slug": "nav-search-label",
+      "key": "nav.search_label",
+      "value_pt": "Pesquisa",
+      "value_en": "Search"
+    },
+    {
+      "slug": "nav-search-hint",
+      "key": "nav.search_hint",
+      "value_pt": "Tente \"geologia\", \"ERT\", \"Luanda\" ou \"JORC\"",
+      "value_en": "Try \"geology\", \"ERT\", \"Luanda\" or \"JORC\""
+    },
+    {
+      "slug": "nav-search-no-query",
+      "key": "nav.search_no_query",
+      "value_pt": "Sem resultados para",
+      "value_en": "No results for"
+    },
+    {
+      "slug": "nav-nav-home",
+      "key": "nav.nav_home",
+      "value_pt": "Home",
+      "value_en": "Home"
+    },
+    {
+      "slug": "nav-nav-sobre",
+      "key": "nav.nav_sobre",
+      "value_pt": "Sobre Nós",
+      "value_en": "About Us"
+    },
+    {
+      "slug": "nav-nav-servicos",
+      "key": "nav.nav_servicos",
+      "value_pt": "Serviços",
+      "value_en": "Services"
+    },
+    {
+      "slug": "nav-nav-portfolio",
+      "key": "nav.nav_portfolio",
+      "value_pt": "Portfolio",
+      "value_en": "Portfolio"
+    },
+    {
+      "slug": "nav-nav-galeria",
+      "key": "nav.nav_galeria",
+      "value_pt": "Galeria",
+      "value_en": "Gallery"
+    },
+    {
+      "slug": "nav-nav-blog",
+      "key": "nav.nav_blog",
+      "value_pt": "Blog",
+      "value_en": "Blog"
+    },
+    {
+      "slug": "nav-nav-recursos",
+      "key": "nav.nav_recursos",
+      "value_pt": "Recursos",
+      "value_en": "Resources"
+    },
+    {
+      "slug": "nav-nav-contacto",
+      "key": "nav.nav_contacto",
+      "value_pt": "Contacto",
+      "value_en": "Contact"
+    },
+    {
+      "slug": "nav-popular-1",
+      "key": "nav.popular_1",
+      "value_pt": "Geologia e Prospecção",
+      "value_en": "Geology & Prospecting"
+    },
+    {
+      "slug": "nav-popular-2",
+      "key": "nav.popular_2",
+      "value_pt": "Geofísica Aplicada",
+      "value_en": "Applied Geophysics"
+    },
+    {
+      "slug": "nav-popular-3",
+      "key": "nav.popular_3",
+      "value_pt": "Engenharia Geotécnica",
+      "value_en": "Geotechnical Engineering"
+    },
+    {
+      "slug": "nav-popular-4",
+      "key": "nav.popular_4",
+      "value_pt": "Portfolio de Projectos",
+      "value_en": "Project Portfolio"
+    },
+    {
+      "slug": "nav-popular-5",
+      "key": "nav.popular_5",
+      "value_pt": "Solicitar Proposta",
+      "value_en": "Request Proposal"
+    },
+    {
+      "slug": "nav-mobile-close",
+      "key": "nav.mobile_close",
+      "value_pt": "Fechar menu",
+      "value_en": "Close menu"
+    },
+    {
+      "slug": "nav-mobile-open",
+      "key": "nav.mobile_open",
+      "value_pt": "Abrir menu",
+      "value_en": "Open menu"
+    },
+    {
+      "slug": "nav-mobile-contact-label",
+      "key": "nav.mobile_contact_label",
+      "value_pt": "Contacto Directo",
+      "value_en": "Direct Contact"
+    },
+    {
+      "slug": "nav-mega-sobre-title",
+      "key": "nav.mega_sobre_title",
+      "value_pt": "Sobre a B-CHIWALE",
+      "value_en": "About B-CHIWALE"
+    },
+    {
+      "slug": "nav-mega-sobre-tagline",
+      "key": "nav.mega_sobre_tagline",
+      "value_pt": "Empresa certificada de geociências e consultoria mineira, a operar em Angola desde 2017.",
+      "value_en": "Certified geoscience and mining consultancy company, operating in Angola since 2017."
+    },
+    {
+      "slug": "nav-mega-sobre-badge",
+      "key": "nav.mega_sobre_badge",
+      "value_pt": "B-CHIWALE",
+      "value_en": "B-CHIWALE"
+    },
+    {
+      "slug": "nav-mega-sobre-section-empresa",
+      "key": "nav.mega_sobre_section_empresa",
+      "value_pt": "A Empresa",
+      "value_en": "The Company"
+    },
+    {
+      "slug": "nav-mega-sobre-section-pessoas",
+      "key": "nav.mega_sobre_section_pessoas",
+      "value_pt": "Pessoas & Certificações",
+      "value_en": "People & Certifications"
+    },
+    {
+      "slug": "nav-mega-sobre-historia",
+      "key": "nav.mega_sobre_historia",
+      "value_pt": "História & Marcos",
+      "value_en": "History & Milestones"
+    },
+    {
+      "slug": "nav-mega-sobre-historia-desc",
+      "key": "nav.mega_sobre_historia_desc",
+      "value_pt": "Oito anos de crescimento contínuo",
+      "value_en": "Eight years of continuous growth"
+    },
+    {
+      "slug": "nav-mega-sobre-missao",
+      "key": "nav.mega_sobre_missao",
+      "value_pt": "Missão, Visão e Valores",
+      "value_en": "Mission, Vision & Values"
+    },
+    {
+      "slug": "nav-mega-sobre-missao-desc",
+      "key": "nav.mega_sobre_missao_desc",
+      "value_pt": "O que nos define e orienta",
+      "value_en": "What defines and guides us"
+    },
+    {
+      "slug": "nav-mega-sobre-organograma",
+      "key": "nav.mega_sobre_organograma",
+      "value_pt": "Organograma",
+      "value_en": "Org Chart"
+    },
+    {
+      "slug": "nav-mega-sobre-organograma-desc",
+      "key": "nav.mega_sobre_organograma_desc",
+      "value_pt": "Estrutura e direcções técnicas",
+      "value_en": "Structure and technical directorates"
+    },
+    {
+      "slug": "nav-mega-sobre-equipa",
+      "key": "nav.mega_sobre_equipa",
+      "value_pt": "Equipa de Liderança",
+      "value_en": "Leadership Team"
+    },
+    {
+      "slug": "nav-mega-sobre-equipa-desc",
+      "key": "nav.mega_sobre_equipa_desc",
+      "value_pt": "6 directores multidisciplinares",
+      "value_en": "6 multidisciplinary directors"
+    },
+    {
+      "slug": "nav-mega-sobre-certificacoes",
+      "key": "nav.mega_sobre_certificacoes",
+      "value_pt": "Certificações",
+      "value_en": "Certifications"
+    },
+    {
+      "slug": "nav-mega-sobre-certificacoes-desc",
+      "key": "nav.mega_sobre_certificacoes_desc",
+      "value_pt": "ISO 9001 · ISO 45001 · ABNT · JORC",
+      "value_en": "ISO 9001 · ISO 45001 · ABNT · JORC"
+    },
+    {
+      "slug": "nav-mega-sobre-rse",
+      "key": "nav.mega_sobre_rse",
+      "value_pt": "Responsabilidade Social",
+      "value_en": "Social Responsibility"
+    },
+    {
+      "slug": "nav-mega-sobre-rse-desc",
+      "key": "nav.mega_sobre_rse_desc",
+      "value_pt": "Compromisso com Angola e as comunidades",
+      "value_en": "Commitment to Angola and communities"
+    },
+    {
+      "slug": "nav-mega-sobre-ver-tudo",
+      "key": "nav.mega_sobre_ver_tudo",
+      "value_pt": "Ver tudo sobre nós",
+      "value_en": "Everything about us"
+    },
+    {
+      "slug": "nav-mega-sobre-quote",
+      "key": "nav.mega_sobre_quote",
+      "value_pt": "Angola precisa de empresas de geociências que combinem rigor técnico de classe mundial com conhecimento profundo do nosso território.",
+      "value_en": "Angola needs geoscience companies that combine world-class technical rigour with a deep knowledge of our territory."
+    },
+    {
+      "slug": "nav-mega-sobre-quote-author",
+      "key": "nav.mega_sobre_quote_author",
+      "value_pt": "B. Chiwale — Director-Geral & Fundador",
+      "value_en": "B. Chiwale — General Director & Founder"
+    },
+    {
+      "slug": "nav-mega-sobre-cta",
+      "key": "nav.mega_sobre_cta",
+      "value_pt": "Falar com a equipa",
+      "value_en": "Talk to the team"
+    },
+    {
+      "slug": "nav-mega-sobre-caption",
+      "key": "nav.mega_sobre_caption",
+      "value_pt": "Angola · Geociências desde 2017",
+      "value_en": "Angola · Geosciences since 2017"
+    },
+    {
+      "slug": "nav-mega-servicos-title",
+      "key": "nav.mega_servicos_title",
+      "value_pt": "Áreas de Serviço",
+      "value_en": "Service Areas"
+    },
+    {
+      "slug": "nav-mega-servicos-tagline",
+      "key": "nav.mega_servicos_tagline",
+      "value_pt": "Da prospecção mineral à tramitação de direitos mineiros — sete serviços de engenharia de subsolo.",
+      "value_en": "From mineral prospecting to mining rights processing — seven subsurface engineering services."
+    },
+    {
+      "slug": "nav-mega-servicos-badge",
+      "key": "nav.mega_servicos_badge",
+      "value_pt": "O QUE FAZEMOS",
+      "value_en": "WHAT WE DO"
+    },
+    {
+      "slug": "nav-mega-servicos-count",
+      "key": "nav.mega_servicos_count",
+      "value_pt": "7 Áreas de Actuação",
+      "value_en": "7 Service Areas"
+    },
+    {
+      "slug": "nav-mega-servicos-ver-todos",
+      "key": "nav.mega_servicos_ver_todos",
+      "value_pt": "Todos os serviços",
+      "value_en": "All services"
+    },
+    {
+      "slug": "nav-mega-servicos-field-caption",
+      "key": "nav.mega_servicos_field_caption",
+      "value_pt": "B-CHIWALE · Campo",
+      "value_en": "B-CHIWALE · Field"
+    },
+    {
+      "slug": "nav-mega-servicos-field-text",
+      "key": "nav.mega_servicos_field_text",
+      "value_pt": "Trabalho de campo com equipamentos de última geração",
+      "value_en": "Field work with state-of-the-art equipment"
+    },
+    {
+      "slug": "nav-mega-servicos-cta",
+      "key": "nav.mega_servicos_cta",
+      "value_pt": "SOLICITAR PROPOSTA",
+      "value_en": "REQUEST PROPOSAL"
+    },
+    {
+      "slug": "nav-mega-portfolio-title",
+      "key": "nav.mega_portfolio_title",
+      "value_pt": "Portfolio de Projectos",
+      "value_en": "Project Portfolio"
+    },
+    {
+      "slug": "nav-mega-portfolio-tagline",
+      "key": "nav.mega_portfolio_tagline",
+      "value_pt": "Mais de 50 projectos concluídos em 21 províncias angolanas.",
+      "value_en": "Over 50 completed projects across 21 Angolan provinces."
+    },
+    {
+      "slug": "nav-mega-portfolio-badge",
+      "key": "nav.mega_portfolio_badge",
+      "value_pt": "TRABALHO DE CAMPO",
+      "value_en": "FIELD WORK"
+    },
+    {
+      "slug": "nav-mega-portfolio-featured",
+      "key": "nav.mega_portfolio_featured",
+      "value_pt": "Projectos em Destaque",
+      "value_en": "Featured Projects"
+    },
+    {
+      "slug": "nav-mega-portfolio-ver-projecto",
+      "key": "nav.mega_portfolio_ver_projecto",
+      "value_pt": "Ver projecto →",
+      "value_en": "View project →"
+    },
+    {
+      "slug": "nav-mega-portfolio-ver-todos",
+      "key": "nav.mega_portfolio_ver_todos",
+      "value_pt": "Ver portfolio completo",
+      "value_en": "View full portfolio"
+    },
+    {
+      "slug": "nav-mega-portfolio-all",
+      "key": "nav.mega_portfolio_all",
+      "value_pt": "Todos os Projectos",
+      "value_en": "All Projects"
+    },
+    {
+      "slug": "nav-mega-portfolio-all-desc",
+      "key": "nav.mega_portfolio_all_desc",
+      "value_pt": "50+ projectos documentados",
+      "value_en": "50+ documented projects"
+    },
+    {
+      "slug": "nav-mega-portfolio-service",
+      "key": "nav.mega_portfolio_service",
+      "value_pt": "Por Serviço",
+      "value_en": "By Service"
+    },
+    {
+      "slug": "nav-mega-portfolio-service-desc",
+      "key": "nav.mega_portfolio_service_desc",
+      "value_pt": "Geologia, Geofísica, Geotecnia…",
+      "value_en": "Geology, Geophysics, Geotechnics…"
+    },
+    {
+      "slug": "nav-mega-portfolio-province",
+      "key": "nav.mega_portfolio_province",
+      "value_pt": "Por Região / Província",
+      "value_en": "By Region / Province"
+    },
+    {
+      "slug": "nav-mega-portfolio-province-desc",
+      "key": "nav.mega_portfolio_province_desc",
+      "value_pt": "Luanda, Malanje, Lunda Norte…",
+      "value_en": "Luanda, Malanje, Lunda Norte…"
+    },
+    {
+      "slug": "nav-mega-portfolio-period",
+      "key": "nav.mega_portfolio_period",
+      "value_pt": "Por Período",
+      "value_en": "By Period"
+    },
+    {
+      "slug": "nav-mega-portfolio-period-desc",
+      "key": "nav.mega_portfolio_period_desc",
+      "value_pt": "2017 – 2025",
+      "value_en": "2017 – 2025"
+    },
+    {
+      "slug": "nav-mega-portfolio-feat1-title",
+      "key": "nav.mega_portfolio_feat1_title",
+      "value_pt": "Prospecção Mineral — Bacia Sedimentar Norte",
+      "value_en": "Mineral Prospecting — Northern Sedimentary Basin"
+    },
+    {
+      "slug": "nav-mega-portfolio-feat1-service",
+      "key": "nav.mega_portfolio_feat1_service",
+      "value_pt": "Geologia",
+      "value_en": "Geology"
+    },
+    {
+      "slug": "nav-mega-portfolio-feat2-title",
+      "key": "nav.mega_portfolio_feat2_title",
+      "value_pt": "Levantamento ERT — Aquífero Regional",
+      "value_en": "ERT Survey — Regional Aquifer"
+    },
+    {
+      "slug": "nav-mega-portfolio-feat2-service",
+      "key": "nav.mega_portfolio_feat2_service",
+      "value_pt": "Geofísica",
+      "value_en": "Geophysics"
+    },
+    {
+      "slug": "nav-mega-blog-title",
+      "key": "nav.mega_blog_title",
+      "value_pt": "Blog & Conhecimento",
+      "value_en": "Blog & Knowledge"
+    },
+    {
+      "slug": "nav-mega-blog-tagline",
+      "key": "nav.mega_blog_tagline",
+      "value_pt": "Artigos técnicos, guias e análises do sector de geociências em Angola.",
+      "value_en": "Technical articles, guides and analyses of the geosciences sector in Angola."
+    },
+    {
+      "slug": "nav-mega-blog-badge",
+      "key": "nav.mega_blog_badge",
+      "value_pt": "CONHECIMENTO TÉCNICO",
+      "value_en": "TECHNICAL KNOWLEDGE"
+    },
+    {
+      "slug": "nav-mega-blog-recent",
+      "key": "nav.mega_blog_recent",
+      "value_pt": "Artigos Recentes",
+      "value_en": "Recent Articles"
+    },
+    {
+      "slug": "nav-mega-blog-ver-todos",
+      "key": "nav.mega_blog_ver_todos",
+      "value_pt": "Ver todos os artigos",
+      "value_en": "View all articles"
+    },
+    {
+      "slug": "nav-mega-blog-tecnico",
+      "key": "nav.mega_blog_tecnico",
+      "value_pt": "Artigos Técnicos",
+      "value_en": "Technical Articles"
+    },
+    {
+      "slug": "nav-mega-blog-tecnico-desc",
+      "key": "nav.mega_blog_tecnico_desc",
+      "value_pt": "Geologia · Geofísica · Geotecnia",
+      "value_en": "Geology · Geophysics · Geotechnics"
+    },
+    {
+      "slug": "nav-mega-blog-webinars",
+      "key": "nav.mega_blog_webinars",
+      "value_pt": "Webinars & Eventos",
+      "value_en": "Webinars & Events"
+    },
+    {
+      "slug": "nav-mega-blog-webinars-desc",
+      "key": "nav.mega_blog_webinars_desc",
+      "value_pt": "Formação e partilha de conhecimento",
+      "value_en": "Training and knowledge sharing"
+    },
+    {
+      "slug": "nav-mega-blog-guias",
+      "key": "nav.mega_blog_guias",
+      "value_pt": "Guias e Whitepapers",
+      "value_en": "Guides & Whitepapers"
+    },
+    {
+      "slug": "nav-mega-blog-guias-desc",
+      "key": "nav.mega_blog_guias_desc",
+      "value_pt": "Documentos de referência sectorial",
+      "value_en": "Sector reference documents"
+    },
+    {
+      "slug": "nav-mega-blog-noticias",
+      "key": "nav.mega_blog_noticias",
+      "value_pt": "Notícias do Sector",
+      "value_en": "Industry News"
+    },
+    {
+      "slug": "nav-mega-blog-noticias-desc",
+      "key": "nav.mega_blog_noticias_desc",
+      "value_pt": "Mineração e ambiente em Angola",
+      "value_en": "Mining and environment in Angola"
+    },
+    {
+      "slug": "nav-mega-blog-rec1-title",
+      "key": "nav.mega_blog_rec1_title",
+      "value_pt": "Como funciona a estimativa de recursos minerais segundo o JORC",
+      "value_en": "How mineral resource estimation works according to JORC"
+    },
+    {
+      "slug": "nav-mega-blog-rec1-date",
+      "key": "nav.mega_blog_rec1_date",
+      "value_pt": "Jun 2025",
+      "value_en": "Jun 2025"
+    },
+    {
+      "slug": "nav-mega-blog-rec2-title",
+      "key": "nav.mega_blog_rec2_title",
+      "value_pt": "Guia prático: Licença de Prospecção Mineira em Angola",
+      "value_en": "Practical guide: Mining Prospecting Licence in Angola"
+    },
+    {
+      "slug": "nav-mega-blog-rec2-date",
+      "key": "nav.mega_blog_rec2_date",
+      "value_pt": "Mai 2025",
+      "value_en": "May 2025"
+    },
+    {
+      "slug": "about-eyebrow",
+      "key": "about.eyebrow",
+      "value_pt": "QUEM SOMOS",
+      "value_en": "WHO WE ARE"
+    },
+    {
+      "slug": "about-quote",
+      "key": "about.quote",
+      "value_pt": "Angola precisa de empresas de geociências que combinem rigor técnico de classe mundial com conhecimento profundo do nosso território.",
+      "value_en": "Angola needs geoscience companies that combine world-class technical rigour with a deep knowledge of our territory."
+    },
+    {
+      "slug": "about-quote-author",
+      "key": "about.quote_author",
+      "value_pt": "Severino Chiwale — Director-Geral & Fundador",
+      "value_en": "Severino Chiwale — General Director & Founder"
+    },
+    {
+      "slug": "about-body1",
+      "key": "about.body1",
+      "value_pt": "A B-CHIWALE é uma empresa angolana constituída em 2017, com actuação em Geologia, Geofísica Aplicada, Engenharia Geotécnica, Topografia e Ambiente.",
+      "value_en": "B-CHIWALE is an Angolan company founded in 2017, operating in Geology, Applied Geophysics, Geotechnical Engineering, Topography and Environment."
+    },
+    {
+      "slug": "about-body2",
+      "key": "about.body2",
+      "value_pt": "Com uma equipa de mais de 100 profissionais qualificados e cobertura em 21 províncias angolanas, somos referência nacional em soluções de exploração e consultoria mineral.",
+      "value_en": "With a team of over 100 qualified professionals and coverage across 21 Angolan provinces, we are a national reference in mineral exploration and consultancy solutions."
+    },
+    {
+      "slug": "about-full-story",
+      "key": "about.full_story",
+      "value_pt": "A nossa história completa",
+      "value_en": "Our full story"
+    },
+    {
+      "slug": "about-play",
+      "key": "about.play",
+      "value_pt": "Reproduzir vídeo",
+      "value_en": "Play video"
+    },
+    {
+      "slug": "about-pause",
+      "key": "about.pause",
+      "value_pt": "Pausar vídeo",
+      "value_en": "Pause video"
+    },
+    {
+      "slug": "about-fullscreen",
+      "key": "about.fullscreen",
+      "value_pt": "Ecrã completo",
+      "value_en": "Full screen"
+    },
+    {
+      "slug": "about-exit-fullscreen",
+      "key": "about.exit_fullscreen",
+      "value_pt": "Sair de ecrã completo",
+      "value_en": "Exit full screen"
+    },
+    {
+      "slug": "stats-section-label",
+      "key": "stats.section_label",
+      "value_pt": "Indicadores de desempenho",
+      "value_en": "Performance indicators"
+    },
+    {
+      "slug": "services-eyebrow",
+      "key": "services.eyebrow",
+      "value_pt": "O QUE FAZEMOS",
+      "value_en": "WHAT WE DO"
+    },
+    {
+      "slug": "services-title-line1",
+      "key": "services.title_line1",
+      "value_pt": "Sete serviços,",
+      "value_en": "Seven services,"
+    },
+    {
+      "slug": "services-title-line2",
+      "key": "services.title_line2",
+      "value_pt": "do subsolo à",
+      "value_en": "from subsurface to"
+    },
+    {
+      "slug": "services-title-em",
+      "key": "services.title_em",
+      "value_pt": "licença.",
+      "value_en": "licence."
+    },
+    {
+      "slug": "services-view-all",
+      "key": "services.view_all",
+      "value_pt": "Ver todos os serviços em detalhe",
+      "value_en": "View all services in detail"
+    },
+    {
+      "slug": "services-list-label",
+      "key": "services.list_label",
+      "value_pt": "Lista de serviços",
+      "value_en": "Services list"
+    },
+    {
+      "slug": "services-row-suffix",
+      "key": "services.row_suffix",
+      "value_pt": "— saber mais",
+      "value_en": "— learn more"
+    },
+    {
+      "slug": "portfolio-eyebrow",
+      "key": "portfolio.eyebrow",
+      "value_pt": "Trabalho de campo",
+      "value_en": "Field work"
+    },
+    {
+      "slug": "portfolio-title-line1",
+      "key": "portfolio.title_line1",
+      "value_pt": "Projectos em",
+      "value_en": "Featured"
+    },
+    {
+      "slug": "portfolio-title-em",
+      "key": "portfolio.title_em",
+      "value_pt": "destaque.",
+      "value_en": "projects."
+    },
+    {
+      "slug": "portfolio-subtitle",
+      "key": "portfolio.subtitle",
+      "value_pt": "Uma selecção de casos de estudo representativos do nosso portfólio.",
+      "value_en": "A selection of representative case studies from our portfolio."
+    },
+    {
+      "slug": "portfolio-view-project",
+      "key": "portfolio.view_project",
+      "value_pt": "Ver projecto",
+      "value_en": "View project"
+    },
+    {
+      "slug": "portfolio-view-all",
+      "key": "portfolio.view_all",
+      "value_pt": "Ver portfolio completo",
+      "value_en": "View full portfolio"
+    },
+    {
+      "slug": "portfolio-grid-label",
+      "key": "portfolio.grid_label",
+      "value_pt": "Projectos em destaque",
+      "value_en": "Featured projects"
+    },
+    {
+      "slug": "blog-eyebrow",
+      "key": "blog.eyebrow",
+      "value_pt": "CONHECIMENTO TÉCNICO",
+      "value_en": "TECHNICAL KNOWLEDGE"
+    },
+    {
+      "slug": "blog-title-line1",
+      "key": "blog.title_line1",
+      "value_pt": "Artigos da",
+      "value_en": "Articles from"
+    },
+    {
+      "slug": "blog-title-line2",
+      "key": "blog.title_line2",
+      "value_pt": "nossa",
+      "value_en": "our"
+    },
+    {
+      "slug": "blog-title-em",
+      "key": "blog.title_em",
+      "value_pt": "equipa.",
+      "value_en": "team."
+    },
+    {
+      "slug": "blog-read-article",
+      "key": "blog.read_article",
+      "value_pt": "Ler artigo →",
+      "value_en": "Read article →"
+    },
+    {
+      "slug": "blog-view-all",
+      "key": "blog.view_all",
+      "value_pt": "Ver todos os artigos",
+      "value_en": "View all articles"
+    },
+    {
+      "slug": "blog-grid-label",
+      "key": "blog.grid_label",
+      "value_pt": "Artigos recentes",
+      "value_en": "Recent articles"
+    },
+    {
+      "slug": "blog-read-prefix",
+      "key": "blog.read_prefix",
+      "value_pt": "Ler artigo: ",
+      "value_en": "Read article: "
+    },
+    {
+      "slug": "testimonials-eyebrow",
+      "key": "testimonials.eyebrow",
+      "value_pt": "O QUE DIZEM OS CLIENTES",
+      "value_en": "WHAT CLIENTS SAY"
+    },
+    {
+      "slug": "testimonials-dot-label",
+      "key": "testimonials.dot_label",
+      "value_pt": "Ver testemunho",
+      "value_en": "View testimonial"
+    },
+    {
+      "slug": "testimonials-dots-label",
+      "key": "testimonials.dots_label",
+      "value_pt": "Testemunhos — indicadores",
+      "value_en": "Testimonials — indicators"
+    },
+    {
+      "slug": "cta-eyebrow",
+      "key": "cta.eyebrow",
+      "value_pt": "PRÓXIMO PASSO",
+      "value_en": "NEXT STEP"
+    },
+    {
+      "slug": "cta-title",
+      "key": "cta.title",
+      "value_pt": "O seu projecto começa com uma",
+      "value_en": "Your project begins with a"
+    },
+    {
+      "slug": "cta-title-em",
+      "key": "cta.title_em",
+      "value_pt": "conversa.",
+      "value_en": "conversation."
+    },
+    {
+      "slug": "cta-body",
+      "key": "cta.body",
+      "value_pt": "A nossa equipa técnica avalia o seu caso em 24 horas — seja para prospecção mineral, estudo geotécnico, levantamento topográfico ou licenciamento mineiro.",
+      "value_en": "Our technical team evaluates your case within 24 hours — for mineral prospecting, geotechnical study, topographic survey or mining licensing."
+    },
+    {
+      "slug": "cta-contact-link",
+      "key": "cta.contact_link",
+      "value_pt": "Falar com a nossa equipa",
+      "value_en": "Talk to our team"
+    },
+    {
+      "slug": "footer-brand-tagline",
+      "key": "footer.brand_tagline",
+      "value_pt": "Empresa Certificada de Prestação de Serviços no Sector Mineiro",
+      "value_en": "Certified Mining Sector Services Company"
+    },
+    {
+      "slug": "footer-brand-desc",
+      "key": "footer.brand_desc",
+      "value_pt": "Empresa angolana certificada, a operar desde 2017 em todo o território nacional e a expandir para África.",
+      "value_en": "Certified Angolan company, operating since 2017 across the national territory and expanding into Africa."
+    },
+    {
+      "slug": "footer-col-services",
+      "key": "footer.col_services",
+      "value_pt": "Serviços",
+      "value_en": "Services"
+    },
+    {
+      "slug": "footer-col-company",
+      "key": "footer.col_company",
+      "value_pt": "Empresa",
+      "value_en": "Company"
+    },
+    {
+      "slug": "footer-col-contact",
+      "key": "footer.col_contact",
+      "value_pt": "Contacto",
+      "value_en": "Contact"
+    },
+    {
+      "slug": "footer-copyright",
+      "key": "footer.copyright",
+      "value_pt": "© 2025 B-CHIWALE · Todos os direitos reservados",
+      "value_en": "© 2025 B-CHIWALE · All rights reserved"
+    },
+    {
+      "slug": "footer-privacy",
+      "key": "footer.privacy",
+      "value_pt": "Política de Privacidade",
+      "value_en": "Privacy Policy"
+    },
+    {
+      "slug": "footer-terms",
+      "key": "footer.terms",
+      "value_pt": "Termos de Uso",
+      "value_en": "Terms of Use"
+    },
+    {
+      "slug": "footer-sitemap",
+      "key": "footer.sitemap",
+      "value_pt": "Mapa do Site",
+      "value_en": "Site Map"
+    },
+    {
+      "slug": "footer-certifications-label",
+      "key": "footer.certifications_label",
+      "value_pt": "Certificações",
+      "value_en": "Certifications"
+    },
+    {
+      "slug": "footer-linkedin-label",
+      "key": "footer.linkedin_label",
+      "value_pt": "LinkedIn da B-CHIWALE (abre em nova aba)",
+      "value_en": "B-CHIWALE on LinkedIn (opens in new tab)"
+    },
+    {
+      "slug": "common-whatsapp-label",
+      "key": "common.whatsapp_label",
+      "value_pt": "Contactar B-CHIWALE via WhatsApp (abre em nova aba)",
+      "value_en": "Contact B-CHIWALE via WhatsApp (opens in a new tab)"
+    },
+    {
+      "slug": "common-back-home",
+      "key": "common.back_home",
+      "value_pt": "VOLTAR AO INÍCIO",
+      "value_en": "BACK TO HOME"
+    },
+    {
+      "slug": "common-contact-us",
+      "key": "common.contact_us",
+      "value_pt": "CONTACTAR-NOS",
+      "value_en": "CONTACT US"
+    },
+    {
+      "slug": "common-home",
+      "key": "common.home",
+      "value_pt": "Home",
+      "value_en": "Home"
+    },
+    {
+      "slug": "common-breadcrumb",
+      "key": "common.breadcrumb",
+      "value_pt": "Navegação estrutural",
+      "value_en": "Breadcrumb"
+    },
+    {
+      "slug": "notfound-title",
+      "key": "notfound.title",
+      "value_pt": "Página não encontrada.",
+      "value_en": "Page not found."
+    },
+    {
+      "slug": "notfound-subtitle",
+      "key": "notfound.subtitle",
+      "value_pt": "A página que procura não existe ou foi movida.",
+      "value_en": "The page you are looking for does not exist or has been moved."
+    },
+    {
+      "slug": "placeholder-eyebrow",
+      "key": "placeholder.eyebrow",
+      "value_pt": "EM CONSTRUÇÃO",
+      "value_en": "UNDER CONSTRUCTION"
+    },
+    {
+      "slug": "placeholder-title",
+      "key": "placeholder.title",
+      "value_pt": "Esta página está a ser preparada.",
+      "value_en": "This page is being prepared."
+    },
+    {
+      "slug": "placeholder-body",
+      "key": "placeholder.body",
+      "value_pt": "O conteúdo completo desta secção será publicado em breve. Entretanto, contacte-nos para qualquer questão.",
+      "value_en": "The full content of this section will be published soon. In the meantime, contact us with any question."
+    },
+    {
+      "slug": "newsletter-eyebrow",
+      "key": "newsletter.eyebrow",
+      "value_pt": "NEWSLETTER",
+      "value_en": "NEWSLETTER"
+    },
+    {
+      "slug": "newsletter-title",
+      "key": "newsletter.title",
+      "value_pt": "Insights técnicos directos\nno seu email.",
+      "value_en": "Technical insights delivered\nto your inbox."
+    },
+    {
+      "slug": "newsletter-body",
+      "key": "newsletter.body",
+      "value_pt": "Receba insights técnicos sobre geologia e mineração em Angola.\nArtigos, legislação e novidades do sector — directamente no seu email.",
+      "value_en": "Get technical insights on geology and mining in Angola.\nArticles, legislation and industry news — straight to your inbox."
+    },
+    {
+      "slug": "newsletter-done-title",
+      "key": "newsletter.done_title",
+      "value_pt": "Subscrito!",
+      "value_en": "Subscribed!"
+    },
+    {
+      "slug": "newsletter-done-body",
+      "key": "newsletter.done_body",
+      "value_pt": "Obrigado. Receberá os próximos insights directamente no seu email.",
+      "value_en": "Thank you. You will receive the next insights directly in your inbox."
+    },
+    {
+      "slug": "newsletter-form-label",
+      "key": "newsletter.form_label",
+      "value_pt": "Formulário de newsletter",
+      "value_en": "Newsletter form"
+    },
+    {
+      "slug": "newsletter-email-label",
+      "key": "newsletter.email_label",
+      "value_pt": "O seu endereço de email",
+      "value_en": "Your email address"
+    },
+    {
+      "slug": "newsletter-placeholder",
+      "key": "newsletter.placeholder",
+      "value_pt": "O seu melhor email...",
+      "value_en": "Your best email..."
+    },
+    {
+      "slug": "newsletter-submit",
+      "key": "newsletter.submit",
+      "value_pt": "SUBSCREVER",
+      "value_en": "SUBSCRIBE"
+    },
+    {
+      "slug": "newsletter-privacy",
+      "key": "newsletter.privacy",
+      "value_pt": "Sem spam. Cancele a qualquer momento. Respeitamos a sua privacidade.",
+      "value_en": "No spam. Cancel at any time. We respect your privacy."
+    },
+    {
+      "slug": "common-brand",
+      "key": "common.brand",
+      "value_pt": "B-CHIWALE",
+      "value_en": "B-CHIWALE"
+    },
+    {
+      "slug": "hero-label",
+      "key": "hero.label",
+      "value_pt": "Hero — B-CHIWALE Geociências",
+      "value_en": "Hero — B-CHIWALE Geosciences"
+    },
+    {
+      "slug": "hero-current-photo",
+      "key": "hero.current_photo",
+      "value_pt": "Foto actual",
+      "value_en": "Current photo"
+    },
+    {
+      "slug": "hero-photo",
+      "key": "hero.photo",
+      "value_pt": "Foto",
+      "value_en": "Photo"
+    },
+    {
+      "slug": "timeline-eyebrow",
+      "key": "timeline.eyebrow",
+      "value_pt": "A NOSSA HISTÓRIA",
+      "value_en": "OUR HISTORY"
+    },
+    {
+      "slug": "timeline-title",
+      "key": "timeline.title",
+      "value_pt": "Oito anos de camadas a *sedimentar.*",
+      "value_en": "Eight years of layers *settling.*"
+    },
+    {
+      "slug": "timeline-label",
+      "key": "timeline.label",
+      "value_pt": "Marcos históricos",
+      "value_en": "Historical milestones"
+    },
+    {
+      "slug": "footer-legal-label",
+      "key": "footer.legal_label",
+      "value_pt": "Links legais",
+      "value_en": "Legal links"
+    },
+    {
+      "slug": "nav-main-label",
+      "key": "nav.main_label",
+      "value_pt": "Navegação principal",
+      "value_en": "Main navigation"
+    },
+    {
+      "slug": "nav-home-label",
+      "key": "nav.home_label",
+      "value_pt": "B-CHIWALE — Página inicial",
+      "value_en": "B-CHIWALE — Home page"
+    },
+    {
+      "slug": "nav-mobile-menu-label",
+      "key": "nav.mobile_menu_label",
+      "value_pt": "Menu móvel",
+      "value_en": "Mobile menu"
+    },
+    {
+      "slug": "nav-lang-label",
+      "key": "nav.lang_label",
+      "value_pt": "Lang:",
+      "value_en": "Lang:"
+    },
+    {
+      "slug": "team-view-profile",
+      "key": "team.view_profile",
+      "value_pt": "Ver perfil →",
+      "value_en": "View profile →"
+    },
+    {
+      "slug": "team-eyebrow",
+      "key": "team.eyebrow",
+      "value_pt": "AS PESSOAS POR DETRÁS DO RIGOR",
+      "value_en": "THE PEOPLE BEHIND THE RIGOUR"
+    },
+    {
+      "slug": "team-title",
+      "key": "team.title",
+      "value_pt": "A nossa *equipa.*",
+      "value_en": "Our *team.*"
+    },
+    {
+      "slug": "team-linkedin-of",
+      "key": "team.linkedin_of",
+      "value_pt": "LinkedIn de",
+      "value_en": "LinkedIn of"
+    },
+    {
+      "slug": "team-label",
+      "key": "team.label",
+      "value_pt": "Equipa B-CHIWALE",
+      "value_en": "B-CHIWALE team"
+    },
+    {
+      "slug": "team-page",
+      "key": "team.page",
+      "value_pt": "Página",
+      "value_en": "Page"
+    },
+    {
+      "slug": "team-prev",
+      "key": "team.prev",
+      "value_pt": "Anterior",
+      "value_en": "Previous"
+    },
+    {
+      "slug": "team-next",
+      "key": "team.next",
+      "value_pt": "Seguinte",
+      "value_en": "Next"
+    },
+    {
+      "slug": "common-close",
+      "key": "common.close",
+      "value_pt": "Fechar",
+      "value_en": "Close"
+    },
+    {
+      "slug": "meta-default-title",
+      "key": "meta.default_title",
+      "value_pt": "Geologia, Geofísica e Engenharia Geotécnica em Angola",
+      "value_en": "Geology, Geophysics and Geotechnical Engineering in Angola"
+    },
+    {
+      "slug": "meta-site-url",
+      "key": "meta.site_url",
+      "value_pt": "https://bchiwale.ao",
+      "value_en": "https://bchiwale.ao"
+    },
+    {
+      "slug": "meta-sobre-title",
+      "key": "meta.sobre_title",
+      "value_pt": "Sobre Nós — História, Equipa e Certificações",
+      "value_en": "About Us — History, Team and Certifications"
+    },
+    {
+      "slug": "meta-sobre-description",
+      "key": "meta.sobre_description",
+      "value_pt": "Conheça a B-CHIWALE: fundada em 2017, certificada ISO 9001 e ISO 45001, com mais de 100 profissionais em geociências e 21 províncias de actuação em Angola.",
+      "value_en": "Meet B-CHIWALE: founded in 2017, ISO 9001 and ISO 45001 certified, with over 100 geoscience professionals across 21 provinces in Angola."
+    },
+    {
+      "slug": "sobre-breadcrumb",
+      "key": "sobre.breadcrumb",
+      "value_pt": "Sobre Nós",
+      "value_en": "About Us"
+    },
+    {
+      "slug": "sobre-hero-title",
+      "key": "sobre.hero_title",
+      "value_pt": "Sobre a *B-CHIWALE*",
+      "value_en": "About *B-CHIWALE*"
+    },
+    {
+      "slug": "sobre-hero-subtitle",
+      "key": "sobre.hero_subtitle",
+      "value_pt": "Oito anos a mapear o subsolo angolano com rigor técnico e compromisso com o progresso sustentável.",
+      "value_en": "Eight years mapping Angola's subsurface with technical rigour and a commitment to sustainable progress."
+    },
+    {
+      "slug": "sobre-dg-photo-alt",
+      "key": "sobre.dg_photo_alt",
+      "value_pt": "Severino Chiwale, Director-Geral e Fundador da B-CHIWALE",
+      "value_en": "Severino Chiwale, Managing Director and Founder of B-CHIWALE"
+    },
+    {
+      "slug": "sobre-dg-eyebrow",
+      "key": "sobre.dg_eyebrow",
+      "value_pt": "MENSAGEM DO DIRECTOR-GERAL",
+      "value_en": "MESSAGE FROM THE MANAGING DIRECTOR"
+    },
+    {
+      "slug": "sobre-dg-title",
+      "key": "sobre.dg_title",
+      "value_pt": "Angola merece *excelência.*",
+      "value_en": "Angola deserves *excellence.*"
+    },
+    {
+      "slug": "sobre-dg-quote1",
+      "key": "sobre.dg_quote1",
+      "value_pt": "Quando fundámos a B-CHIWALE em 2017, tínhamos uma convicção firme: Angola precisa de empresas de geociências que combinem rigor técnico de classe mundial com conhecimento profundo do nosso território. Oito anos depois, continuamos a trabalhar com essa mesma convicção — tendo contribuído para projectos em todas as 21 províncias angolanas.",
+      "value_en": "When we founded B-CHIWALE in 2017 we held a firm conviction: Angola needs geoscience companies that combine world-class technical rigour with deep knowledge of our territory. Eight years later we still work with that same conviction — having contributed to projects in all 21 Angolan provinces."
+    },
+    {
+      "slug": "sobre-dg-quote2",
+      "key": "sobre.dg_quote2",
+      "value_pt": "A nossa riqueza mineral é imensa. Falta cartografá-la, quantificá-la e transformá-la em progresso sustentável. É isso que a B-CHIWALE faz — todos os dias, em campo.",
+      "value_en": "Our mineral wealth is immense. It remains to be mapped, quantified and turned into sustainable progress. That is what B-CHIWALE does — every day, in the field."
+    },
+    {
+      "slug": "sobre-dg-author",
+      "key": "sobre.dg_author",
+      "value_pt": "— Severino Chiwale, Director-Geral & Fundador",
+      "value_en": "— Severino Chiwale, Managing Director & Founder"
+    },
+    {
+      "slug": "sobre-mvv-eyebrow",
+      "key": "sobre.mvv_eyebrow",
+      "value_pt": "MISSÃO, VISÃO E VALORES",
+      "value_en": "MISSION, VISION AND VALUES"
+    },
+    {
+      "slug": "sobre-mvv-title",
+      "key": "sobre.mvv_title",
+      "value_pt": "O que nos *define.*",
+      "value_en": "What *defines* us."
+    },
+    {
+      "slug": "sobre-numbers-label",
+      "key": "sobre.numbers_label",
+      "value_pt": "Em números",
+      "value_en": "In numbers"
+    },
+    {
+      "slug": "sobre-numbers-eyebrow",
+      "key": "sobre.numbers_eyebrow",
+      "value_pt": "EM NÚMEROS",
+      "value_en": "BY THE NUMBERS"
+    },
+    {
+      "slug": "sobre-numbers-title",
+      "key": "sobre.numbers_title",
+      "value_pt": "Resultados que *falam.*",
+      "value_en": "Results that *speak.*"
+    },
+    {
+      "slug": "sobre-org-eyebrow",
+      "key": "sobre.org_eyebrow",
+      "value_pt": "ESTRUTURA ORGANIZACIONAL",
+      "value_en": "ORGANISATIONAL STRUCTURE"
+    },
+    {
+      "slug": "sobre-org-title",
+      "key": "sobre.org_title",
+      "value_pt": "Organograma *Institucional*",
+      "value_en": "*Institutional* Organisation Chart"
+    },
+    {
+      "slug": "sobre-org-subtitle",
+      "key": "sobre.org_subtitle",
+      "value_pt": "Conselho de Administração B-CHIWALE · Cod. B.CH-001",
+      "value_en": "B-CHIWALE Board of Directors · Code B.CH-001"
+    },
+    {
+      "slug": "sobre-org-download-label",
+      "key": "sobre.org_download_label",
+      "value_pt": "Baixar organigrama como imagem PNG",
+      "value_en": "Download the organisation chart as a PNG image"
+    },
+    {
+      "slug": "sobre-org-saving",
+      "key": "sobre.org_saving",
+      "value_pt": "A guardar…",
+      "value_en": "Saving…"
+    },
+    {
+      "slug": "sobre-org-download",
+      "key": "sobre.org_download",
+      "value_pt": "Baixar PNG",
+      "value_en": "Download PNG"
+    },
+    {
+      "slug": "sobre-profile-of",
+      "key": "sobre.profile_of",
+      "value_pt": "Perfil de",
+      "value_en": "Profile of"
+    },
+    {
+      "slug": "sobre-years-exp",
+      "key": "sobre.years_exp",
+      "value_pt": "anos de experiência",
+      "value_en": "years of experience"
+    },
+    {
+      "slug": "sobre-education",
+      "key": "sobre.education",
+      "value_pt": "FORMAÇÃO",
+      "value_en": "EDUCATION"
+    },
+    {
+      "slug": "sobre-specialties",
+      "key": "sobre.specialties",
+      "value_pt": "ESPECIALIDADES",
+      "value_en": "SPECIALTIES"
+    },
+    {
+      "slug": "sobre-languages",
+      "key": "sobre.languages",
+      "value_pt": "IDIOMAS",
+      "value_en": "LANGUAGES"
+    },
+    {
+      "slug": "sobre-team-title",
+      "key": "sobre.team_title",
+      "value_pt": "A nossa *Equipa*",
+      "value_en": "Our *Team*"
+    },
+    {
+      "slug": "sobre-cert-eyebrow",
+      "key": "sobre.cert_eyebrow",
+      "value_pt": "QUALIDADE E CONFORMIDADE",
+      "value_en": "QUALITY AND COMPLIANCE"
+    },
+    {
+      "slug": "sobre-cert-title",
+      "key": "sobre.cert_title",
+      "value_pt": "As nossas *Certificações*",
+      "value_en": "Our *Certifications*"
+    },
+    {
+      "slug": "sobre-cert-label",
+      "key": "sobre.cert_label",
+      "value_pt": "Certificações em marquee",
+      "value_en": "Certifications marquee"
+    },
+    {
+      "slug": "sobre-logo-of",
+      "key": "sobre.logo_of",
+      "value_pt": "Logótipo",
+      "value_en": "Logo"
+    },
+    {
+      "slug": "sobre-next-eyebrow",
+      "key": "sobre.next_eyebrow",
+      "value_pt": "PRÓXIMO PASSO",
+      "value_en": "NEXT STEP"
+    },
+    {
+      "slug": "sobre-next-title",
+      "key": "sobre.next_title",
+      "value_pt": "Conheça os nossos *serviços.*",
+      "value_en": "Discover our *services.*"
+    },
+    {
+      "slug": "sobre-next-services",
+      "key": "sobre.next_services",
+      "value_pt": "Ver serviços",
+      "value_en": "View services"
+    },
+    {
+      "slug": "sobre-next-contact",
+      "key": "sobre.next_contact",
+      "value_pt": "Contactar-nos",
+      "value_en": "Contact us"
+    },
+    {
+      "slug": "meta-contacto-title",
+      "key": "meta.contacto_title",
+      "value_pt": "Contacto — Solicite uma Proposta",
+      "value_en": "Contact — Request a Proposal"
+    },
+    {
+      "slug": "meta-contacto-description",
+      "key": "meta.contacto_description",
+      "value_pt": "Contacte a B-CHIWALE para uma proposta de geologia, geofísica, geotecnia ou consultoria mineira. +244 924 073 147 · geral@bchiwale.ao · Luanda, Angola.",
+      "value_en": "Contact B-CHIWALE for a geology, geophysics, geotechnics or mining consulting proposal. +244 924 073 147 · geral@bchiwale.ao · Luanda, Angola."
+    },
+    {
+      "slug": "contacto-breadcrumb",
+      "key": "contacto.breadcrumb",
+      "value_pt": "Contacto",
+      "value_en": "Contact"
+    },
+    {
+      "slug": "contacto-email-subject",
+      "key": "contacto.email_subject",
+      "value_pt": "Nova mensagem de",
+      "value_en": "New message from"
+    },
+    {
+      "slug": "contacto-error-send",
+      "key": "contacto.error_send",
+      "value_pt": "Erro ao enviar.",
+      "value_en": "Failed to send."
+    },
+    {
+      "slug": "contacto-error-retry",
+      "key": "contacto.error_retry",
+      "value_pt": "Erro ao enviar. Tente novamente.",
+      "value_en": "Failed to send. Please try again."
+    },
+    {
+      "slug": "contacto-hero-title",
+      "key": "contacto.hero_title",
+      "value_pt": "Fale *connosco.*",
+      "value_en": "Talk to *us.*"
+    },
+    {
+      "slug": "contacto-hero-subtitle",
+      "key": "contacto.hero_subtitle",
+      "value_pt": "A nossa equipa responde em 24 horas úteis.",
+      "value_en": "Our team replies within 24 business hours."
+    },
+    {
+      "slug": "contacto-form-title",
+      "key": "contacto.form_title",
+      "value_pt": "Envie uma mensagem",
+      "value_en": "Send a message"
+    },
+    {
+      "slug": "contacto-success-title",
+      "key": "contacto.success_title",
+      "value_pt": "Mensagem enviada!",
+      "value_en": "Message sent!"
+    },
+    {
+      "slug": "contacto-success-body",
+      "key": "contacto.success_body",
+      "value_pt": "Obrigado pelo contacto. A nossa equipa entrará em contacto consigo em breve.",
+      "value_en": "Thank you for getting in touch. Our team will contact you shortly."
+    },
+    {
+      "slug": "contacto-send-another",
+      "key": "contacto.send_another",
+      "value_pt": "Enviar outra mensagem",
+      "value_en": "Send another message"
+    },
+    {
+      "slug": "contacto-form-label",
+      "key": "contacto.form_label",
+      "value_pt": "Formulário de contacto",
+      "value_en": "Contact form"
+    },
+    {
+      "slug": "contacto-name",
+      "key": "contacto.name",
+      "value_pt": "Nome completo *",
+      "value_en": "Full name *"
+    },
+    {
+      "slug": "contacto-name-ph",
+      "key": "contacto.name_ph",
+      "value_pt": "O seu nome",
+      "value_en": "Your name"
+    },
+    {
+      "slug": "contacto-email",
+      "key": "contacto.email",
+      "value_pt": "Email *",
+      "value_en": "Email *"
+    },
+    {
+      "slug": "contacto-email-ph",
+      "key": "contacto.email_ph",
+      "value_pt": "email@empresa.com",
+      "value_en": "email@company.com"
+    },
+    {
+      "slug": "contacto-phone",
+      "key": "contacto.phone",
+      "value_pt": "Telefone / WhatsApp",
+      "value_en": "Phone / WhatsApp"
+    },
+    {
+      "slug": "contacto-phone-ph",
+      "key": "contacto.phone_ph",
+      "value_pt": "+244 9XX XXX XXX",
+      "value_en": "+244 9XX XXX XXX"
+    },
+    {
+      "slug": "contacto-company",
+      "key": "contacto.company",
+      "value_pt": "Empresa",
+      "value_en": "Company"
+    },
+    {
+      "slug": "contacto-company-ph",
+      "key": "contacto.company_ph",
+      "value_pt": "Nome da empresa",
+      "value_en": "Company name"
+    },
+    {
+      "slug": "contacto-service",
+      "key": "contacto.service",
+      "value_pt": "Serviço de interesse",
+      "value_en": "Service of interest"
+    },
+    {
+      "slug": "contacto-service-ph",
+      "key": "contacto.service_ph",
+      "value_pt": "Seleccionar serviço...",
+      "value_en": "Select a service..."
+    },
+    {
+      "slug": "contacto-message",
+      "key": "contacto.message",
+      "value_pt": "Mensagem",
+      "value_en": "Message"
+    },
+    {
+      "slug": "contacto-message-ph",
+      "key": "contacto.message_ph",
+      "value_pt": "Descreva brevemente o seu projecto...",
+      "value_en": "Briefly describe your project..."
+    },
+    {
+      "slug": "contacto-sending",
+      "key": "contacto.sending",
+      "value_pt": "A ENVIAR...",
+      "value_en": "SENDING..."
+    },
+    {
+      "slug": "contacto-send",
+      "key": "contacto.send",
+      "value_pt": "ENVIAR MENSAGEM",
+      "value_en": "SEND MESSAGE"
+    },
+    {
+      "slug": "contacto-info-title",
+      "key": "contacto.info_title",
+      "value_pt": "Informações de contacto",
+      "value_en": "Contact information"
+    },
+    {
+      "slug": "contacto-address",
+      "key": "contacto.address",
+      "value_pt": "Morada",
+      "value_en": "Address"
+    },
+    {
+      "slug": "contacto-phone-label",
+      "key": "contacto.phone_label",
+      "value_pt": "Telefone",
+      "value_en": "Phone"
+    },
+    {
+      "slug": "contacto-email-label",
+      "key": "contacto.email_label",
+      "value_pt": "Email",
+      "value_en": "Email"
+    },
+    {
+      "slug": "contacto-hours",
+      "key": "contacto.hours",
+      "value_pt": "Horário",
+      "value_en": "Hours"
+    },
+    {
+      "slug": "contacto-whatsapp",
+      "key": "contacto.whatsapp",
+      "value_pt": "WhatsApp Directo",
+      "value_en": "Direct WhatsApp"
+    },
+    {
+      "slug": "common-close-caps",
+      "key": "common.close_caps",
+      "value_pt": "FECHAR",
+      "value_en": "CLOSE"
+    },
+    {
+      "slug": "meta-carreiras-title",
+      "key": "meta.carreiras_title",
+      "value_pt": "Carreiras — Vagas Abertas",
+      "value_en": "Careers — Open Positions"
+    },
+    {
+      "slug": "meta-carreiras-description",
+      "key": "meta.carreiras_description",
+      "value_pt": "Junte-se à B-CHIWALE: vagas abertas em geologia, geofísica, geotecnia, topografia e ambiente em Angola.",
+      "value_en": "Join B-CHIWALE: open positions in geology, geophysics, geotechnics, surveying and environment in Angola."
+    },
+    {
+      "slug": "carreiras-breadcrumb",
+      "key": "carreiras.breadcrumb",
+      "value_pt": "Carreiras",
+      "value_en": "Careers"
+    },
+    {
+      "slug": "carreiras-hide-req",
+      "key": "carreiras.hide_req",
+      "value_pt": "Ocultar requisitos",
+      "value_en": "Hide requirements"
+    },
+    {
+      "slug": "carreiras-show-req",
+      "key": "carreiras.show_req",
+      "value_pt": "Ver requisitos",
+      "value_en": "View requirements"
+    },
+    {
+      "slug": "carreiras-apply",
+      "key": "carreiras.apply",
+      "value_pt": "Candidatar-se",
+      "value_en": "Apply"
+    },
+    {
+      "slug": "carreiras-more-info",
+      "key": "carreiras.more_info",
+      "value_pt": "Mais informações",
+      "value_en": "More information"
+    },
+    {
+      "slug": "carreiras-application",
+      "key": "carreiras.application",
+      "value_pt": "Candidatura",
+      "value_en": "Application"
+    },
+    {
+      "slug": "carreiras-application-caps",
+      "key": "carreiras.application_caps",
+      "value_pt": "CANDIDATURA",
+      "value_en": "APPLICATION"
+    },
+    {
+      "slug": "carreiras-sent-title",
+      "key": "carreiras.sent_title",
+      "value_pt": "Candidatura enviada!",
+      "value_en": "Application sent!"
+    },
+    {
+      "slug": "carreiras-sent-body",
+      "key": "carreiras.sent_body",
+      "value_pt": "O nosso departamento de RH analisará o seu perfil e entrará em contacto.",
+      "value_en": "Our HR department will review your profile and get in touch."
+    },
+    {
+      "slug": "carreiras-name-ph",
+      "key": "carreiras.name_ph",
+      "value_pt": "O seu nome completo",
+      "value_en": "Your full name"
+    },
+    {
+      "slug": "carreiras-email-ph",
+      "key": "carreiras.email_ph",
+      "value_pt": "email@exemplo.ao",
+      "value_en": "email@example.ao"
+    },
+    {
+      "slug": "carreiras-linkedin",
+      "key": "carreiras.linkedin",
+      "value_pt": "LinkedIn / Portfólio",
+      "value_en": "LinkedIn / Portfolio"
+    },
+    {
+      "slug": "carreiras-linkedin-ph",
+      "key": "carreiras.linkedin_ph",
+      "value_pt": "https://linkedin.com/in/...",
+      "value_en": "https://linkedin.com/in/..."
+    },
+    {
+      "slug": "carreiras-cover",
+      "key": "carreiras.cover",
+      "value_pt": "Carta de motivação",
+      "value_en": "Cover letter"
+    },
+    {
+      "slug": "carreiras-cover-ph",
+      "key": "carreiras.cover_ph",
+      "value_pt": "Por que razão quer fazer parte da B-CHIWALE?",
+      "value_en": "Why do you want to be part of B-CHIWALE?"
+    },
+    {
+      "slug": "carreiras-hr-email",
+      "key": "carreiras.hr_email",
+      "value_pt": "rh@bchiwale.ao",
+      "value_en": "rh@bchiwale.ao"
+    },
+    {
+      "slug": "carreiras-cv-hint",
+      "key": "carreiras.cv_hint",
+      "value_pt": "Também pode enviar o seu CV para",
+      "value_en": "You can also send your CV to"
+    },
+    {
+      "slug": "carreiras-cv-hint-end",
+      "key": "carreiras.cv_hint_end",
+      "value_pt": "com o nome da vaga no assunto.",
+      "value_en": "with the job title in the subject line."
+    },
+    {
+      "slug": "carreiras-submit",
+      "key": "carreiras.submit",
+      "value_pt": "ENVIAR CANDIDATURA",
+      "value_en": "SUBMIT APPLICATION"
+    },
+    {
+      "slug": "carreiras-hero-title",
+      "key": "carreiras.hero_title",
+      "value_pt": "Faça parte da *B-CHIWALE*",
+      "value_en": "Be part of *B-CHIWALE*"
+    },
+    {
+      "slug": "carreiras-hero-subtitle",
+      "key": "carreiras.hero_subtitle",
+      "value_pt": "Junte-se a uma equipa de mais de 100 profissionais que estão a definir o futuro das geociências em Angola.",
+      "value_en": "Join a team of over 100 professionals shaping the future of geosciences in Angola."
+    },
+    {
+      "slug": "carreiras-stat-jobs",
+      "key": "carreiras.stat_jobs",
+      "value_pt": "Vagas abertas",
+      "value_en": "Open positions"
+    },
+    {
+      "slug": "carreiras-stat2-value",
+      "key": "carreiras.stat2_value",
+      "value_pt": "100+",
+      "value_en": "100+"
+    },
+    {
+      "slug": "carreiras-stat2-label",
+      "key": "carreiras.stat2_label",
+      "value_pt": "Profissionais",
+      "value_en": "Professionals"
+    },
+    {
+      "slug": "carreiras-stat3-value",
+      "key": "carreiras.stat3_value",
+      "value_pt": "8+",
+      "value_en": "8+"
+    },
+    {
+      "slug": "carreiras-stat3-label",
+      "key": "carreiras.stat3_label",
+      "value_pt": "Anos de crescimento",
+      "value_en": "Years of growth"
+    },
+    {
+      "slug": "carreiras-why-eyebrow",
+      "key": "carreiras.why_eyebrow",
+      "value_pt": "PORQUÊ TRABALHAR CONNOSCO",
+      "value_en": "WHY WORK WITH US"
+    },
+    {
+      "slug": "carreiras-why-title",
+      "key": "carreiras.why_title",
+      "value_pt": "Uma carreira com *impacto real*",
+      "value_en": "A career with *real impact*"
+    },
+    {
+      "slug": "carreiras-why1-title",
+      "key": "carreiras.why1_title",
+      "value_pt": "Projectos de Referência",
+      "value_en": "Flagship Projects"
+    },
+    {
+      "slug": "carreiras-why1-desc",
+      "key": "carreiras.why1_desc",
+      "value_pt": "Trabalhe em projectos de impacto nacional em 21 províncias angolanas.",
+      "value_en": "Work on nationally significant projects across 21 Angolan provinces."
+    },
+    {
+      "slug": "carreiras-why2-title",
+      "key": "carreiras.why2_title",
+      "value_pt": "Progressão Acelerada",
+      "value_en": "Fast Progression"
+    },
+    {
+      "slug": "carreiras-why2-desc",
+      "key": "carreiras.why2_desc",
+      "value_pt": "Planos de carreira claros com avaliações semestrais e promoções baseadas em mérito.",
+      "value_en": "Clear career paths with six-monthly reviews and merit-based promotions."
+    },
+    {
+      "slug": "carreiras-why3-title",
+      "key": "carreiras.why3_title",
+      "value_pt": "Formação Contínua",
+      "value_en": "Continuous Training"
+    },
+    {
+      "slug": "carreiras-why3-desc",
+      "key": "carreiras.why3_desc",
+      "value_pt": "Acesso a webinars, certificações e programas de formação técnica interna.",
+      "value_en": "Access to webinars, certifications and internal technical training programmes."
+    },
+    {
+      "slug": "carreiras-why4-title",
+      "key": "carreiras.why4_title",
+      "value_pt": "Equipa Multidisciplinar",
+      "value_en": "Multidisciplinary Team"
+    },
+    {
+      "slug": "carreiras-why4-desc",
+      "key": "carreiras.why4_desc",
+      "value_pt": "Colabore com geólogos, geofísicos, engenheiros e especialistas ambientais.",
+      "value_en": "Collaborate with geologists, geophysicists, engineers and environmental specialists."
+    },
+    {
+      "slug": "carreiras-jobs-eyebrow",
+      "key": "carreiras.jobs_eyebrow",
+      "value_pt": "OPORTUNIDADES",
+      "value_en": "OPPORTUNITIES"
+    },
+    {
+      "slug": "carreiras-jobs-title",
+      "key": "carreiras.jobs_title",
+      "value_pt": "Vagas *abertas*",
+      "value_en": "*Open* positions"
+    },
+    {
+      "slug": "carreiras-filter-label",
+      "key": "carreiras.filter_label",
+      "value_pt": "Filtrar por departamento",
+      "value_en": "Filter by department"
+    },
+    {
+      "slug": "carreiras-no-jobs",
+      "key": "carreiras.no_jobs",
+      "value_pt": "Não há vagas abertas neste departamento de momento.",
+      "value_en": "There are no open positions in this department at the moment."
+    },
+    {
+      "slug": "carreiras-spont-eyebrow",
+      "key": "carreiras.spont_eyebrow",
+      "value_pt": "CANDIDATURA ESPONTÂNEA",
+      "value_en": "SPONTANEOUS APPLICATION"
+    },
+    {
+      "slug": "carreiras-spont-title",
+      "key": "carreiras.spont_title",
+      "value_pt": "Não encontrou a vaga *certa?*",
+      "value_en": "Didn't find the *right* role?"
+    },
+    {
+      "slug": "carreiras-spont-body",
+      "key": "carreiras.spont_body",
+      "value_pt": "Envie o seu CV e carta de motivação para o nosso email de RH. Guardamos os perfis durante 12 meses e contactamo-lo quando surgir uma vaga adequada.",
+      "value_en": "Send your CV and cover letter to our HR email. We keep profiles for 12 months and contact you when a suitable role opens."
+    },
+    {
+      "slug": "carreiras-spont-subject",
+      "key": "carreiras.spont_subject",
+      "value_pt": "Candidatura Espontânea",
+      "value_en": "Spontaneous Application"
+    },
+    {
+      "slug": "carreiras-spont-cta",
+      "key": "carreiras.spont_cta",
+      "value_pt": "Enviar CV espontâneo",
+      "value_en": "Send a spontaneous CV"
+    },
+    {
+      "slug": "meta-servicos-title",
+      "key": "meta.servicos_title",
+      "value_pt": "Serviços de Geociências em Angola",
+      "value_en": "Geoscience Services in Angola"
+    },
+    {
+      "slug": "meta-servicos-description",
+      "key": "meta.servicos_description",
+      "value_pt": "Sete serviços integrados: Geologia e Prospecção Mineral, Geofísica Aplicada, Engenharia Geotécnica, Topografia, Ambiente, Águas Subterrâneas e Consultoria Mineira.",
+      "value_en": "Seven integrated services: Geology and Mineral Prospecting, Applied Geophysics, Geotechnical Engineering, Surveying, Environment, Groundwater and Mining Consulting."
+    },
+    {
+      "slug": "servicos-subtechniques",
+      "key": "servicos.subtechniques",
+      "value_pt": "Subtécnicas",
+      "value_en": "Sub-techniques"
+    },
+    {
+      "slug": "servicos-learn-more",
+      "key": "servicos.learn_more",
+      "value_pt": "Saber mais sobre",
+      "value_en": "Learn more about"
+    },
+    {
+      "slug": "servicos-view",
+      "key": "servicos.view",
+      "value_pt": "Ver serviço",
+      "value_en": "View service"
+    },
+    {
+      "slug": "servicos-breadcrumb",
+      "key": "servicos.breadcrumb",
+      "value_pt": "Serviços",
+      "value_en": "Services"
+    },
+    {
+      "slug": "servicos-hero-title",
+      "key": "servicos.hero_title",
+      "value_pt": "7 Áreas de *Especialização*",
+      "value_en": "7 Areas of *Expertise*"
+    },
+    {
+      "slug": "servicos-hero-subtitle",
+      "key": "servicos.hero_subtitle",
+      "value_pt": "Cobrimos todas as fases do ciclo de exploração e desenvolvimento de recursos naturais em Angola.",
+      "value_en": "We cover every phase of the exploration and natural-resource development cycle in Angola."
+    },
+    {
+      "slug": "servicos-eyebrow",
+      "key": "servicos.eyebrow",
+      "value_pt": "O QUE FAZEMOS",
+      "value_en": "WHAT WE DO"
+    },
+    {
+      "slug": "servicos-title",
+      "key": "servicos.title",
+      "value_pt": "Todos os nossos *serviços*",
+      "value_en": "All our *services*"
+    },
+    {
+      "slug": "servicos-subtitle",
+      "key": "servicos.subtitle",
+      "value_pt": "Seleccione uma área para conhecer metodologia, equipamentos e casos de estudo.",
+      "value_en": "Select an area to learn about methodology, equipment and case studies."
+    },
+    {
+      "slug": "servicos-cta-title",
+      "key": "servicos.cta_title",
+      "value_pt": "Pronto para começar o seu *projecto?*",
+      "value_en": "Ready to start your *project?*"
+    },
+    {
+      "slug": "servicos-cta-proposal",
+      "key": "servicos.cta_proposal",
+      "value_pt": "Solicitar proposta",
+      "value_en": "Request a proposal"
+    },
+    {
+      "slug": "servicos-cta-portfolio",
+      "key": "servicos.cta_portfolio",
+      "value_pt": "Ver portfolio",
+      "value_en": "View portfolio"
+    },
+    {
+      "slug": "servico-fallback-title",
+      "key": "servico.fallback_title",
+      "value_pt": "Serviço",
+      "value_en": "Service"
+    },
+    {
+      "slug": "servico-meta-suffix",
+      "key": "servico.meta_suffix",
+      "value_pt": "Empresa certificada B-CHIWALE — Angola.",
+      "value_en": "Certified company B-CHIWALE — Angola."
+    },
+    {
+      "slug": "servico-not-found",
+      "key": "servico.not_found",
+      "value_pt": "Serviço não encontrado.",
+      "value_en": "Service not found."
+    },
+    {
+      "slug": "servico-view-all",
+      "key": "servico.view_all",
+      "value_pt": "VER TODOS OS SERVIÇOS",
+      "value_en": "VIEW ALL SERVICES"
+    },
+    {
+      "slug": "servico-scope-eyebrow",
+      "key": "servico.scope_eyebrow",
+      "value_pt": "ÂMBITO DO SERVIÇO",
+      "value_en": "SCOPE OF SERVICE"
+    },
+    {
+      "slug": "servico-scope-title",
+      "key": "servico.scope_title",
+      "value_pt": "O que *abrangemos*",
+      "value_en": "What we *cover*"
+    },
+    {
+      "slug": "servico-norms-eyebrow",
+      "key": "servico.norms_eyebrow",
+      "value_pt": "NORMAS E PADRÕES",
+      "value_en": "STANDARDS AND NORMS"
+    },
+    {
+      "slug": "servico-norms-title",
+      "key": "servico.norms_title",
+      "value_pt": "Conformidade técnica",
+      "value_en": "Technical compliance"
+    },
+    {
+      "slug": "servico-method-eyebrow",
+      "key": "servico.method_eyebrow",
+      "value_pt": "COMO TRABALHAMOS",
+      "value_en": "HOW WE WORK"
+    },
+    {
+      "slug": "servico-method-title",
+      "key": "servico.method_title",
+      "value_pt": "Metodologia de *trabalho*",
+      "value_en": "Working *methodology*"
+    },
+    {
+      "slug": "servico-faq-eyebrow",
+      "key": "servico.faq_eyebrow",
+      "value_pt": "PERGUNTAS FREQUENTES",
+      "value_en": "FREQUENTLY ASKED QUESTIONS"
+    },
+    {
+      "slug": "servico-faq-title",
+      "key": "servico.faq_title",
+      "value_pt": "Dúvidas *comuns*",
+      "value_en": "*Common* questions"
+    },
+    {
+      "slug": "servico-cases-eyebrow",
+      "key": "servico.cases_eyebrow",
+      "value_pt": "VER NA PRÁTICA",
+      "value_en": "SEE IT IN PRACTICE"
+    },
+    {
+      "slug": "servico-cases-title",
+      "key": "servico.cases_title",
+      "value_pt": "Casos de estudo relacionados",
+      "value_en": "Related case studies"
+    },
+    {
+      "slug": "servico-cases-body",
+      "key": "servico.cases_body",
+      "value_pt": "Consulte projectos reais onde aplicámos este serviço — com resultados quantificados.",
+      "value_en": "Browse real projects where we applied this service — with quantified results."
+    },
+    {
+      "slug": "servico-cases-cta",
+      "key": "servico.cases_cta",
+      "value_pt": "VER PORTFOLIO",
+      "value_en": "VIEW PORTFOLIO"
+    },
+    {
+      "slug": "servico-request-eyebrow",
+      "key": "servico.request_eyebrow",
+      "value_pt": "SOLICITAR ESTE SERVIÇO",
+      "value_en": "REQUEST THIS SERVICE"
+    },
+    {
+      "slug": "servico-request-title",
+      "key": "servico.request_title",
+      "value_pt": "Fale com a nossa equipa",
+      "value_en": "Talk to our team"
+    },
+    {
+      "slug": "servico-request-body",
+      "key": "servico.request_body",
+      "value_pt": "Descreva o seu projecto e receba uma proposta técnica e financeira em 24–48 horas.",
+      "value_en": "Describe your project and receive a technical and financial proposal within 24–48 hours."
+    },
+    {
+      "slug": "servico-request-cta",
+      "key": "servico.request_cta",
+      "value_pt": "SOLICITAR PROPOSTA",
+      "value_en": "REQUEST A PROPOSAL"
+    },
+    {
+      "slug": "meta-home-description",
+      "key": "meta.home_description",
+      "value_pt": "Empresa angolana certificada de geociências: Geologia, Geofísica, Engenharia Geotécnica, Topografia e Consultoria Mineira desde 2017. ISO 9001 · ISO 45001 · JORC · 21 províncias.",
+      "value_en": "Certified Angolan geoscience company: Geology, Geophysics, Geotechnical Engineering, Surveying and Mining Consulting since 2017. ISO 9001 · ISO 45001 · JORC · 21 provinces."
+    },
+    {
+      "slug": "meta-portfolio-title",
+      "key": "meta.portfolio_title",
+      "value_pt": "Portfolio — Casos de Estudo",
+      "value_en": "Portfolio — Case Studies"
+    },
+    {
+      "slug": "meta-portfolio-description",
+      "key": "meta.portfolio_description",
+      "value_pt": "Mais de 50 projectos concluídos em 21 províncias angolanas: geologia, geofísica, geotecnia, topografia e ambiente.",
+      "value_en": "Over 50 completed projects across 21 Angolan provinces: geology, geophysics, geotechnics, surveying and environment."
+    },
+    {
+      "slug": "portfolio-page-view-detail",
+      "key": "portfolio_page.view_detail",
+      "value_pt": "Ver detalhe do projecto:",
+      "value_en": "View project details:"
+    },
+    {
+      "slug": "portfolio-page-view-project",
+      "key": "portfolio_page.view_project",
+      "value_pt": "Ver projecto",
+      "value_en": "View project"
+    },
+    {
+      "slug": "portfolio-page-breadcrumb",
+      "key": "portfolio_page.breadcrumb",
+      "value_pt": "Portfolio",
+      "value_en": "Portfolio"
+    },
+    {
+      "slug": "portfolio-page-hero-title",
+      "key": "portfolio_page.hero_title",
+      "value_pt": "Casos de *Estudo*",
+      "value_en": "Case *Studies*"
+    },
+    {
+      "slug": "portfolio-page-hero-subtitle",
+      "key": "portfolio_page.hero_subtitle",
+      "value_pt": "Mais de 50 projectos concluídos em 21 províncias angolanas. Uma selecção representativa do nosso trabalho.",
+      "value_en": "Over 50 projects completed across 21 Angolan provinces. A representative selection of our work."
+    },
+    {
+      "slug": "portfolio-page-stat1-value",
+      "key": "portfolio_page.stat1_value",
+      "value_pt": "50+",
+      "value_en": "50+"
+    },
+    {
+      "slug": "portfolio-page-stat1-label",
+      "key": "portfolio_page.stat1_label",
+      "value_pt": "Projectos",
+      "value_en": "Projects"
+    },
+    {
+      "slug": "portfolio-page-stat2-value",
+      "key": "portfolio_page.stat2_value",
+      "value_pt": "21",
+      "value_en": "21"
+    },
+    {
+      "slug": "portfolio-page-stat2-label",
+      "key": "portfolio_page.stat2_label",
+      "value_pt": "Províncias",
+      "value_en": "Provinces"
+    },
+    {
+      "slug": "portfolio-page-stat3-value",
+      "key": "portfolio_page.stat3_value",
+      "value_pt": "7",
+      "value_en": "7"
+    },
+    {
+      "slug": "portfolio-page-stat3-label",
+      "key": "portfolio_page.stat3_label",
+      "value_pt": "Serviços",
+      "value_en": "Services"
+    },
+    {
+      "slug": "portfolio-page-by-service",
+      "key": "portfolio_page.by_service",
+      "value_pt": "Por Serviço",
+      "value_en": "By Service"
+    },
+    {
+      "slug": "portfolio-page-by-province",
+      "key": "portfolio_page.by_province",
+      "value_pt": "Por Província",
+      "value_en": "By Province"
+    },
+    {
+      "slug": "portfolio-page-by-period",
+      "key": "portfolio_page.by_period",
+      "value_pt": "Por Período",
+      "value_en": "By Period"
+    },
+    {
+      "slug": "portfolio-page-clear-caps",
+      "key": "portfolio_page.clear_caps",
+      "value_pt": "LIMPAR FILTROS",
+      "value_en": "CLEAR FILTERS"
+    },
+    {
+      "slug": "portfolio-page-clear",
+      "key": "portfolio_page.clear",
+      "value_pt": "Limpar filtros ×",
+      "value_en": "Clear filters ×"
+    },
+    {
+      "slug": "portfolio-page-cta-title",
+      "key": "portfolio_page.cta_title",
+      "value_pt": "Tem um projecto *semelhante?*",
+      "value_en": "Have a *similar* project?"
+    },
+    {
+      "slug": "portfolio-page-cta-body",
+      "key": "portfolio_page.cta_body",
+      "value_pt": "Conte-nos os detalhes e receba uma proposta técnica personalizada.",
+      "value_en": "Tell us the details and receive a tailored technical proposal."
+    },
+    {
+      "slug": "portfolio-page-details-label",
+      "key": "portfolio_page.details_label",
+      "value_pt": "Detalhes do projecto",
+      "value_en": "Project details"
+    },
+    {
+      "slug": "portfolio-page-client",
+      "key": "portfolio_page.client",
+      "value_pt": "CLIENTE",
+      "value_en": "CLIENT"
+    },
+    {
+      "slug": "portfolio-page-year",
+      "key": "portfolio_page.year",
+      "value_pt": "ANO",
+      "value_en": "YEAR"
+    },
+    {
+      "slug": "portfolio-page-area",
+      "key": "portfolio_page.area",
+      "value_pt": "ÁREA",
+      "value_en": "AREA"
+    },
+    {
+      "slug": "portfolio-page-duration",
+      "key": "portfolio_page.duration",
+      "value_pt": "DURAÇÃO",
+      "value_en": "DURATION"
+    },
+    {
+      "slug": "portfolio-page-content-label",
+      "key": "portfolio_page.content_label",
+      "value_pt": "Conteúdo do projecto",
+      "value_en": "Project content"
+    },
+    {
+      "slug": "portfolio-page-challenge",
+      "key": "portfolio_page.challenge",
+      "value_pt": "O DESAFIO",
+      "value_en": "THE CHALLENGE"
+    },
+    {
+      "slug": "portfolio-page-approach",
+      "key": "portfolio_page.approach",
+      "value_pt": "A NOSSA ABORDAGEM",
+      "value_en": "OUR APPROACH"
+    },
+    {
+      "slug": "portfolio-page-results",
+      "key": "portfolio_page.results",
+      "value_pt": "RESULTADOS",
+      "value_en": "RESULTS"
+    },
+    {
+      "slug": "portfolio-page-cta-button",
+      "key": "portfolio_page.cta_button",
+      "value_pt": "SOLICITAR PROPOSTA →",
+      "value_en": "REQUEST A PROPOSAL →"
+    },
+    {
+      "slug": "portfolio-page-back",
+      "key": "portfolio_page.back",
+      "value_pt": "← Voltar ao portfolio",
+      "value_en": "← Back to portfolio"
+    },
+    {
+      "slug": "meta-blog-title",
+      "key": "meta.blog_title",
+      "value_pt": "Blog & Conhecimento Técnico",
+      "value_en": "Blog & Technical Knowledge"
+    },
+    {
+      "slug": "meta-blog-description",
+      "key": "meta.blog_description",
+      "value_pt": "Artigos técnicos, guias práticos e notícias do sector de geociências e mineração em Angola.",
+      "value_en": "Technical articles, practical guides and news from the geoscience and mining sector in Angola."
+    },
+    {
+      "slug": "blog-page-read-time",
+      "key": "blog_page.read_time",
+      "value_pt": "leitura",
+      "value_en": "read"
+    },
+    {
+      "slug": "blog-page-read-more",
+      "key": "blog_page.read_more",
+      "value_pt": "Ler mais",
+      "value_en": "Read more"
+    },
+    {
+      "slug": "blog-read-article-plain",
+      "key": "blog.read_article_plain",
+      "value_pt": "Ler artigo",
+      "value_en": "Read article"
+    },
+    {
+      "slug": "blog-page-breadcrumb",
+      "key": "blog_page.breadcrumb",
+      "value_pt": "Blog & Conhecimento",
+      "value_en": "Blog & Knowledge"
+    },
+    {
+      "slug": "blog-page-hero-title",
+      "key": "blog_page.hero_title",
+      "value_pt": "Conhecimento *Técnico*",
+      "value_en": "Technical *Knowledge*"
+    },
+    {
+      "slug": "blog-page-hero-subtitle",
+      "key": "blog_page.hero_subtitle",
+      "value_pt": "Artigos técnicos, guias práticos e notícias do sector geociências e mineração em Angola.",
+      "value_en": "Technical articles, practical guides and news from the geoscience and mining sector in Angola."
+    },
+    {
+      "slug": "blog-page-all-label",
+      "key": "blog_page.all_label",
+      "value_pt": "Todos os artigos",
+      "value_en": "All articles"
+    },
+    {
+      "slug": "blog-page-filter-label",
+      "key": "blog_page.filter_label",
+      "value_pt": "Filtrar por categoria",
+      "value_en": "Filter by category"
+    },
+    {
+      "slug": "blog-page-empty",
+      "key": "blog_page.empty",
+      "value_pt": "Nenhum artigo nesta categoria ainda.",
+      "value_en": "No articles in this category yet."
+    },
+    {
+      "slug": "blog-page-cta-eyebrow",
+      "key": "blog_page.cta_eyebrow",
+      "value_pt": "MANTENHA-SE ACTUALIZADO",
+      "value_en": "STAY UP TO DATE"
+    },
+    {
+      "slug": "blog-page-cta-title",
+      "key": "blog_page.cta_title",
+      "value_pt": "Novos artigos e *notícias do sector*",
+      "value_en": "New articles and *industry news*"
+    },
+    {
+      "slug": "blog-page-cta-body",
+      "key": "blog_page.cta_body",
+      "value_pt": "Subscreva para receber alertas sobre novos artigos técnicos, guias e actualizações regulatórias sobre mineração e geociências em Angola.",
+      "value_en": "Subscribe to receive alerts about new technical articles, guides and regulatory updates on mining and geosciences in Angola."
+    },
+    {
+      "slug": "blog-detail-breadcrumb",
+      "key": "blog_detail.breadcrumb",
+      "value_pt": "Blog",
+      "value_en": "Blog"
+    },
+    {
+      "slug": "blog-detail-author-label",
+      "key": "blog_detail.author_label",
+      "value_pt": "Sobre o autor",
+      "value_en": "About the author"
+    },
+    {
+      "slug": "blog-detail-author-role",
+      "key": "blog_detail.author_role",
+      "value_pt": "Equipa B-CHIWALE",
+      "value_en": "B-CHIWALE Team"
+    },
+    {
+      "slug": "blog-detail-author-bio",
+      "key": "blog_detail.author_bio",
+      "value_pt": "Produzido pela equipa técnica da B-CHIWALE — especialistas em geociências e engenharia mineral em Angola.",
+      "value_en": "Produced by the B-CHIWALE technical team — specialists in geosciences and mining engineering in Angola."
+    },
+    {
+      "slug": "blog-detail-related",
+      "key": "blog_detail.related",
+      "value_pt": "LEITURA RECOMENDADA",
+      "value_en": "RECOMMENDED READING"
+    },
+    {
+      "slug": "blog-detail-read",
+      "key": "blog_detail.read",
+      "value_pt": "Ler:",
+      "value_en": "Read:"
+    },
+    {
+      "slug": "blog-detail-cta-eyebrow",
+      "key": "blog_detail.cta_eyebrow",
+      "value_pt": "CONSULTORIA TÉCNICA",
+      "value_en": "TECHNICAL CONSULTING"
+    },
+    {
+      "slug": "blog-detail-cta-title",
+      "key": "blog_detail.cta_title",
+      "value_pt": "Precisa de consultoria *técnica?*",
+      "value_en": "Need *technical* consulting?"
+    },
+    {
+      "slug": "blog-detail-cta-button",
+      "key": "blog_detail.cta_button",
+      "value_pt": "FALE CONNOSCO →",
+      "value_en": "TALK TO US →"
+    },
+    {
+      "slug": "meta-galeria-title",
+      "key": "meta.galeria_title",
+      "value_pt": "Galeria de Campo",
+      "value_en": "Field Gallery"
+    },
+    {
+      "slug": "meta-galeria-description",
+      "key": "meta.galeria_description",
+      "value_pt": "Registos fotográficos de campanhas, equipamentos, trabalho laboratorial e operações da B-CHIWALE.",
+      "value_en": "Photographic records of B-CHIWALE campaigns, equipment, laboratory work and operations."
+    },
+    {
+      "slug": "galeria-view-detail",
+      "key": "galeria.view_detail",
+      "value_pt": "Ver detalhe:",
+      "value_en": "View detail:"
+    },
+    {
+      "slug": "galeria-close-label",
+      "key": "galeria.close_label",
+      "value_pt": "Fechar lightbox",
+      "value_en": "Close lightbox"
+    },
+    {
+      "slug": "galeria-close",
+      "key": "galeria.close",
+      "value_pt": "Fechar ×",
+      "value_en": "Close ×"
+    },
+    {
+      "slug": "galeria-breadcrumb",
+      "key": "galeria.breadcrumb",
+      "value_pt": "Galeria",
+      "value_en": "Gallery"
+    },
+    {
+      "slug": "galeria-hero-title",
+      "key": "galeria.hero_title",
+      "value_pt": "Galeria de *Campo*",
+      "value_en": "Field *Gallery*"
+    },
+    {
+      "slug": "galeria-hero-subtitle",
+      "key": "galeria.hero_subtitle",
+      "value_pt": "Registos fotográficos de campanhas, equipamentos, trabalho laboratorial e operações em curso.",
+      "value_en": "Photographic records of campaigns, equipment, laboratory work and ongoing operations."
+    },
+    {
+      "slug": "galeria-filters-label",
+      "key": "galeria.filters_label",
+      "value_pt": "Filtros de categoria",
+      "value_en": "Category filters"
+    },
+    {
+      "slug": "galeria-image",
+      "key": "galeria.image",
+      "value_pt": "imagem",
+      "value_en": "image"
+    },
+    {
+      "slug": "galeria-images",
+      "key": "galeria.images",
+      "value_pt": "imagens",
+      "value_en": "images"
+    },
+    {
+      "slug": "galeria-grid-label",
+      "key": "galeria.grid_label",
+      "value_pt": "Galeria de imagens",
+      "value_en": "Image gallery"
+    },
+    {
+      "slug": "galeria-empty",
+      "key": "galeria.empty",
+      "value_pt": "Nenhuma imagem nesta categoria.",
+      "value_en": "No images in this category."
+    },
+    {
+      "slug": "galeria-note",
+      "key": "galeria.note",
+      "value_pt": "As fotografias desta galeria serão actualizadas com material real das nossas campanhas e projectos. Para imagens específicas de um projecto, contacte-nos.",
+      "value_en": "The photos in this gallery will be updated with real material from our campaigns and projects. For project-specific images, contact us."
+    },
+    {
+      "slug": "galeria-contact",
+      "key": "galeria.contact",
+      "value_pt": "Contactar",
+      "value_en": "Contact"
+    },
+    {
+      "slug": "meta-recursos-title",
+      "key": "meta.recursos_title",
+      "value_pt": "Centro de Recursos",
+      "value_en": "Resource Centre"
+    },
+    {
+      "slug": "meta-recursos-description",
+      "key": "meta.recursos_description",
+      "value_pt": "Ferramentas e downloads técnicos para projectos de geociências.",
+      "value_en": "Technical tools and downloads for geoscience projects."
+    },
+    {
+      "slug": "recursos-breadcrumb",
+      "key": "recursos.breadcrumb",
+      "value_pt": "Recursos",
+      "value_en": "Resources"
+    },
+    {
+      "slug": "recursos-hero-title",
+      "key": "recursos.hero_title",
+      "value_pt": "Centro de *Recursos*",
+      "value_en": "Resource *Centre*"
+    },
+    {
+      "slug": "recursos-hero-subtitle",
+      "key": "recursos.hero_subtitle",
+      "value_pt": "Ferramentas e downloads técnicos para projectos de geociências.",
+      "value_en": "Technical tools and downloads for geoscience projects."
+    },
+    {
+      "slug": "recursos-sections-label",
+      "key": "recursos.sections_label",
+      "value_pt": "Secções desta página",
+      "value_en": "Sections of this page"
+    },
+    {
+      "slug": "recursos-downloads-eyebrow",
+      "key": "recursos.downloads_eyebrow",
+      "value_pt": "Centro de Downloads",
+      "value_en": "Download Centre"
+    },
+    {
+      "slug": "recursos-tools-eyebrow",
+      "key": "recursos.tools_eyebrow",
+      "value_pt": "Ferramentas Técnicas",
+      "value_en": "Technical Tools"
+    },
+    {
+      "slug": "recursos-downloads-title",
+      "key": "recursos.downloads_title",
+      "value_pt": "Documentos *técnicos*",
+      "value_en": "*Technical* documents"
+    },
+    {
+      "slug": "recursos-downloads-subtitle",
+      "key": "recursos.downloads_subtitle",
+      "value_pt": "Guias, templates e documentação regulatória de utilidade para projectos de geociências.",
+      "value_en": "Guides, templates and regulatory documentation useful for geoscience projects."
+    },
+    {
+      "slug": "recursos-request",
+      "key": "recursos.request",
+      "value_pt": "Solicitar",
+      "value_en": "Request"
+    },
+    {
+      "slug": "recursos-downloads-note",
+      "key": "recursos.downloads_note",
+      "value_pt": "Para aceder aos documentos, contacte a nossa equipa. Alguns ficheiros requerem autenticação.",
+      "value_en": "To access the documents, contact our team. Some files require authentication."
+    },
+    {
+      "slug": "recursos-tools-eyebrow-caps",
+      "key": "recursos.tools_eyebrow_caps",
+      "value_pt": "FERRAMENTAS TÉCNICAS",
+      "value_en": "TECHNICAL TOOLS"
+    },
+    {
+      "slug": "recursos-tools-title",
+      "key": "recursos.tools_title",
+      "value_pt": "Referências de *campo*",
+      "value_en": "*Field* references"
+    },
+    {
+      "slug": "recursos-tools-subtitle",
+      "key": "recursos.tools_subtitle",
+      "value_pt": "Recursos de referência rápida para técnicos e geólogos no terreno.",
+      "value_en": "Quick-reference resources for technicians and geologists in the field."
+    },
+    {
+      "slug": "recursos-request-access",
+      "key": "recursos.request_access",
+      "value_pt": "Solicitar acesso",
+      "value_en": "Request access"
+    },
+    {
+      "slug": "recursos-tools-note",
+      "key": "recursos.tools_note",
+      "value_pt": "As ferramentas interactivas estão em desenvolvimento. Para acesso antecipado, contacte-nos.",
+      "value_en": "The interactive tools are under development. For early access, contact us."
+    },
+    {
+      "slug": "recursos-cta-title",
+      "key": "recursos.cta_title",
+      "value_pt": "Não encontrou o que *procurava?*",
+      "value_en": "Didn't find what you *were looking for?*"
+    },
+    {
+      "slug": "recursos-cta-contact",
+      "key": "recursos.cta_contact",
+      "value_pt": "Contactar a equipa",
+      "value_en": "Contact the team"
+    },
+    {
+      "slug": "recursos-cta-articles",
+      "key": "recursos.cta_articles",
+      "value_pt": "Ver artigos técnicos",
+      "value_en": "View technical articles"
+    },
+    {
+      "slug": "nav-mega-servicos-image-alt",
+      "key": "nav.mega_servicos_image_alt",
+      "value_pt": "Geólogos B-CHIWALE em trabalho de campo",
+      "value_en": "B-CHIWALE geologists doing fieldwork"
+    },
+    {
+      "slug": "nav-search-group-pages",
+      "key": "nav.search_group_pages",
+      "value_pt": "Páginas",
+      "value_en": "Pages"
+    },
+    {
+      "slug": "nav-search-group-services",
+      "key": "nav.search_group_services",
+      "value_pt": "Serviços",
+      "value_en": "Services"
+    },
+    {
+      "slug": "nav-search-group-projects",
+      "key": "nav.search_group_projects",
+      "value_pt": "Projectos",
+      "value_en": "Projects"
+    },
+    {
+      "slug": "nav-search-group-articles",
+      "key": "nav.search_group_articles",
+      "value_pt": "Artigos",
+      "value_en": "Articles"
+    },
+    {
+      "slug": "nav-search-group-team",
+      "key": "nav.search_group_team",
+      "value_pt": "Equipa",
+      "value_en": "Team"
+    },
+    {
+      "slug": "nav-search-page-home",
+      "key": "nav.search_page_home",
+      "value_pt": "Home",
+      "value_en": "Home"
+    },
+    {
+      "slug": "nav-search-page-home-desc",
+      "key": "nav.search_page_home_desc",
+      "value_pt": "Página inicial",
+      "value_en": "Home page"
+    },
+    {
+      "slug": "nav-search-page-sobre",
+      "key": "nav.search_page_sobre",
+      "value_pt": "Sobre Nós",
+      "value_en": "About Us"
+    },
+    {
+      "slug": "nav-search-page-sobre-desc",
+      "key": "nav.search_page_sobre_desc",
+      "value_pt": "História, equipa e certificações",
+      "value_en": "History, team and certifications"
+    },
+    {
+      "slug": "nav-search-page-portfolio",
+      "key": "nav.search_page_portfolio",
+      "value_pt": "Portfolio",
+      "value_en": "Portfolio"
+    },
+    {
+      "slug": "nav-search-page-portfolio-desc",
+      "key": "nav.search_page_portfolio_desc",
+      "value_pt": "Mais de 50 projectos concluídos",
+      "value_en": "Over 50 completed projects"
+    },
+    {
+      "slug": "nav-search-page-blog",
+      "key": "nav.search_page_blog",
+      "value_pt": "Blog & Conhecimento",
+      "value_en": "Blog & Knowledge"
+    },
+    {
+      "slug": "nav-search-page-blog-desc",
+      "key": "nav.search_page_blog_desc",
+      "value_pt": "Artigos técnicos e guias",
+      "value_en": "Technical articles and guides"
+    },
+    {
+      "slug": "nav-search-page-galeria",
+      "key": "nav.search_page_galeria",
+      "value_pt": "Galeria",
+      "value_en": "Gallery"
+    },
+    {
+      "slug": "nav-search-page-galeria-desc",
+      "key": "nav.search_page_galeria_desc",
+      "value_pt": "Imagens de campo",
+      "value_en": "Field images"
+    },
+    {
+      "slug": "nav-search-page-recursos",
+      "key": "nav.search_page_recursos",
+      "value_pt": "Recursos",
+      "value_en": "Resources"
+    },
+    {
+      "slug": "nav-search-page-recursos-desc",
+      "key": "nav.search_page_recursos_desc",
+      "value_pt": "Downloads e documentos",
+      "value_en": "Downloads and documents"
+    },
+    {
+      "slug": "nav-search-page-contacto",
+      "key": "nav.search_page_contacto",
+      "value_pt": "Contacto",
+      "value_en": "Contact"
+    },
+    {
+      "slug": "nav-search-page-contacto-desc",
+      "key": "nav.search_page_contacto_desc",
+      "value_pt": "Fale connosco",
+      "value_en": "Talk to us"
+    },
+    {
+      "slug": "nav-search-page-carreiras",
+      "key": "nav.search_page_carreiras",
+      "value_pt": "Carreiras",
+      "value_en": "Careers"
+    },
+    {
+      "slug": "nav-search-page-carreiras-desc",
+      "key": "nav.search_page_carreiras_desc",
+      "value_pt": "Trabalhe connosco",
+      "value_en": "Work with us"
+    },
+    {
+      "slug": "services-learn-more",
+      "key": "services.learn_more",
+      "value_pt": "saber mais",
+      "value_en": "learn more"
+    },
+    {
+      "slug": "team-view-all",
+      "key": "team.view_all",
+      "value_pt": "Ver equipa completa",
+      "value_en": "View full team"
     }
   ]
 }
