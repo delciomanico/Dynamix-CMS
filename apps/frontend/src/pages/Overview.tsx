@@ -1,8 +1,51 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '../components/icons';
 import { Spinner } from '../components/ui';
 import { useFetch } from '../lib/hooks';
 import { useProject } from './ProjectLayout';
+
+
+const DEVICES: [string, string, string][] = [['Desktop', '100%', 'desktop'], ['Tablet', '768px', 'tablet'], ['Telemóvel', '390px', 'mobile']];
+
+function SitePreview({ url }: { url: string }) {
+  const [dev, setDev] = useState('100%');
+  const [nonce, setNonce] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <section className="sketch-card rounded-2xl p-4 sm:p-5">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div>
+          <p className="mono text-[11px] uppercase tracking-wider text-muted">Site online</p>
+          <h2 className="hand text-3xl font-semibold leading-tight">Preview do site</h2>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="inline-flex rounded-xl border-[1.5px] border-ink overflow-hidden">
+            {DEVICES.map(([l, w]) => (
+              <button key={l} type="button" onClick={() => setDev(w)}
+                className={`px-3 py-1.5 mono text-[11px] uppercase tracking-wider ${dev === w ? 'bg-brand text-white' : 'bg-white hover:bg-brand/10'}`}>{l}</button>
+            ))}
+          </div>
+          <button type="button" onClick={() => { setLoaded(false); setNonce((n) => n + 1); }} className="btn-secondary btn-sm">Recarregar</button>
+          <a href={url} target="_blank" rel="noreferrer" className="btn-secondary btn-sm">Abrir ↗</a>
+        </div>
+      </div>
+      <div className="rounded-xl border-[1.5px] border-ink bg-white p-2 sm:p-3">
+        <div className="flex items-center gap-1.5 px-1 pb-2">
+          <i className="w-2.5 h-2.5 rounded-full bg-ink/20" /><i className="w-2.5 h-2.5 rounded-full bg-ink/20" /><i className="w-2.5 h-2.5 rounded-full bg-ink/20" />
+          <span className="mono text-[11px] text-muted truncate ml-2">{url}</span>
+        </div>
+        <div className="bg-paper rounded-lg overflow-auto flex justify-center relative" style={{ height: '70vh', minHeight: 420 }}>
+          {!loaded && <div className="absolute inset-0 flex items-center justify-center mono text-xs text-muted">a carregar…</div>}
+          <iframe key={nonce} src={url} title="Preview do site" onLoad={() => setLoaded(true)}
+            className="h-full bg-white border-0 transition-all" style={{ width: dev, maxWidth: '100%' }}
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups" />
+        </div>
+      </div>
+      <p className="mono text-[11px] text-muted mt-2">Se a pré-visualização ficar em branco, o site bloqueia ser mostrado dentro de outra página (X-Frame-Options/CSP) — usa «Abrir».</p>
+    </section>
+  );
+}
 
 export default function Overview() {
   const { project } = useProject();
@@ -20,6 +63,8 @@ export default function Overview() {
   ];
   return (
     <div className="space-y-10">
+      {project.frontendUrl && <SitePreview url={project.frontendUrl} />}
+
       <section className="grid lg:grid-cols-[1.3fr_1fr] gap-5">
         <div className="sketch-card rounded-2xl p-5 sm:p-6">
           <div className="flex items-end justify-between">
