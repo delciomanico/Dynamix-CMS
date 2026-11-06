@@ -20,7 +20,7 @@
     "@nestjs/jwt": "^11",
     "@nestjs/passport": "^11",
     "@nestjs/platform-express": "^11",
-    "@nestjs/swagger": "^11",
+    "@nestjs/swagger": "^12",
     "@nestjs/throttler": "^6",
     "@prisma/client": "^6",
     "bcryptjs": "^3",
