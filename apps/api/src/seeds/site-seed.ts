@@ -8,11 +8,13 @@
  *  - componente existe         → só acrescenta campos novos em falta; o conteúdo NUNCA é reescrito
  *                                (edições feitas no dashboard sobrevivem a novos deploys);
  *  - componente não existe     → cria componente + campos + entradas publicadas (numa transação).
- * O dono é o ADMIN_EMAIL (precisa de já existir — corre depois de seedAdmin).
+ * O dono é um utilizador dedicado do site (ex. gerab@bchiwale.ao, criado com SEED_<KEY>_OWNER_PASSWORD) ou,
+ * se o site não definir dono, o ADMIN_EMAIL (que precisa de já existir — corre depois de seedAdmin).
  *
  * Env: SEED_SITES (lista separada por vírgulas; defeito "bchiwale"; "none" desativa),
  *      SEED_BCHIWALE_ORIGINS (domínios autorizados no CORS, ex. https://bchiwale.com), SEED_BCHIWALE_URL.
  */
+import * as bcrypt from 'bcryptjs';
 import { PrismaClient } from '@prisma/client';
 import { ConfigService } from '@nestjs/config';
 import { readFile } from 'fs/promises';
@@ -44,16 +46,38 @@ export const SITE_SEEDS: Record<string, SiteSeed> = { [bchiwaleSeed.project]: bc
 
 export interface SiteSeedResult { project: string; status: 'skipped' | 'created' | 'updated' | 'unchanged'; components: string[] }
 
-export async function seedSite(prisma: PrismaClient, site: SiteSeed, env: NodeJS.ProcessEnv = process.env, storage?: AssetStore): Promise<SiteSeedResult> {
-  const email = env.ADMIN_EMAIL?.trim().toLowerCase();
-  const owner = email && (await prisma.user.findUnique({ where: { email }, include: { workspaces: { orderBy: { createdAt: 'asc' }, take: 1 } } }));
-  if (!owner) return { project: site.project, status: 'skipped', components: [] };
+/**
+ * Dono do projeto: utilizador dedicado (SEED_<KEY>_OWNER_EMAIL, defeito `site.owner.email`) — criado com
+ * SEED_<KEY>_OWNER_PASSWORD (≥ 12 caracteres) se não existir; nunca altera a password de um existente.
+ * Sem dono configurado, usa o ADMIN_EMAIL (se existir).
+ */
+async function resolveOwner(prisma: PrismaClient, site: SiteSeed, key: string, env: NodeJS.ProcessEnv) {
+  const withWs = { workspaces: { orderBy: { createdAt: 'asc' as const }, take: 1 } };
+  const email = (env[`SEED_${key}_OWNER_EMAIL`] || site.owner?.email)?.trim().toLowerCase();
+  if (!email) {
+    const admin = env.ADMIN_EMAIL?.trim().toLowerCase();
+    return admin ? prisma.user.findUnique({ where: { email: admin }, include: withWs }) : null;
+  }
+  const existing = await prisma.user.findUnique({ where: { email }, include: withWs });
+  if (existing) return existing;
+  const password = env[`SEED_${key}_OWNER_PASSWORD`];
+  if (!password) throw new Error(`[seed] defina SEED_${key}_OWNER_PASSWORD (≥ 12 caracteres) para criar o utilizador ${email}`);
+  if (password.length < 12) throw new Error(`SEED_${key}_OWNER_PASSWORD deve ter pelo menos 12 caracteres`);
+  const name = site.owner?.name ?? email;
+  return prisma.user.create({
+    data: { name, email, role: 'USER', passwordHash: await bcrypt.hash(password, 12), workspaces: { create: { name: `${name} — Workspace` } } },
+    include: withWs,
+  });
+}
 
+export async function seedSite(prisma: PrismaClient, site: SiteSeed, env: NodeJS.ProcessEnv = process.env, storage?: AssetStore): Promise<SiteSeedResult> {
+  const key = site.project.toUpperCase().replace(/[^A-Z0-9]/g, '_');
   let created = false;
   let project = await prisma.project.findUnique({ where: { slug: site.project } });
   if (!project) {
+    const owner = await resolveOwner(prisma, site, key, env);
+    if (!owner) return { project: site.project, status: 'skipped', components: [] };
     const workspace = owner.workspaces[0] ?? (await prisma.workspace.create({ data: { name: `${owner.name} — Workspace`, ownerId: owner.id } }));
-    const key = site.project.toUpperCase().replace(/[^A-Z0-9]/g, '_');
     project = await prisma.project.create({
       data: {
         workspaceId: workspace.id, name: site.name, slug: site.project, description: site.description,

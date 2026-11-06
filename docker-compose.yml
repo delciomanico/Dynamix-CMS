@@ -70,6 +70,8 @@ services:
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
       GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
       SEED_SITES: ${SEED_SITES:-bchiwale}
+      SEED_BCHIWALE_OWNER_EMAIL: ${SEED_BCHIWALE_OWNER_EMAIL:-}
+      SEED_BCHIWALE_OWNER_PASSWORD: ${SEED_BCHIWALE_OWNER_PASSWORD:-dev-bchiwale-123456} # só desenvolvimento
       BACKUP_URL: http://backup:8081
       BACKUP_TOKEN: ${BACKUP_TOKEN:-dev-backup-token-change-me}
       APP_VERSION: dev

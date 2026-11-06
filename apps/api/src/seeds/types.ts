@@ -23,6 +23,8 @@ export interface SiteSeed {
   name: string;
   description?: string;
   components: SeedComponent[];
+  /** Dono dedicado do projeto (utilizador normal + workspace próprio). Sem isto, o dono é o ADMIN_EMAIL. */
+  owner?: { email: string; name: string };
   /** Pasta (em apps/api/seed-assets) com os ficheiros referenciados por caminho (/images/x.jpg) nas linhas. */
   assetsDir?: string;
 }

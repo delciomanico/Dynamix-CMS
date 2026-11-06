@@ -25,10 +25,31 @@ function mk({ user = owner as any, project = null as any, components = {} as Rec
 }
 
 describe('seedSite (bchiwale)', () => {
-  it('ignora se o admin não existe', async () => {
+  it('sem dono dedicado, ignora se o admin não existe', async () => {
     const p = mk({ user: null });
-    expect((await seedSite(p, bchiwaleSeed, env, storage())).status).toBe('skipped');
+    expect((await seedSite(p, { ...bchiwaleSeed, owner: undefined }, env, storage())).status).toBe('skipped');
     expect(p.project.create).not.toHaveBeenCalled();
+  });
+
+  it('cria o utilizador dedicado (USER) e o projeto no workspace dele', async () => {
+    const p = mk({ user: null });
+    p.user.create = jest.fn().mockResolvedValue({ id: 'u9', name: 'Bchiwale', workspaces: [{ id: 'w9' }] });
+    await seedSite(p, bchiwaleSeed, { ...env, SEED_BCHIWALE_OWNER_PASSWORD: 'uma-password-longa-1' } as any, storage());
+    const data = p.user.create.mock.calls[0][0].data;
+    expect(data).toMatchObject({ email: 'gerab@bchiwale.ao', role: 'USER' });
+    expect(data.passwordHash).toMatch(/^\$2[aby]\$/);
+    expect(p.project.create.mock.calls[0][0].data.workspaceId).toBe('w9');
+  });
+
+  it('dono dedicado inexistente sem password (ou curta) → erro claro', async () => {
+    await expect(seedSite(mk({ user: null }), bchiwaleSeed, env, storage())).rejects.toThrow(/SEED_BCHIWALE_OWNER_PASSWORD/);
+    await expect(seedSite(mk({ user: null }), bchiwaleSeed, { ...env, SEED_BCHIWALE_OWNER_PASSWORD: 'curta' } as any, storage())).rejects.toThrow(/12 caracteres/);
+  });
+
+  it('dono existente não é alterado e projeto existente não exige password', async () => {
+    const p = mk({ project: { id: 'p1' } });
+    await seedSite(p, bchiwaleSeed, env, storage());
+    expect(p.user.findUnique).not.toHaveBeenCalled();
   });
 
   it('numa BD nova cria projeto, todos os componentes e entradas publicadas válidas', async () => {
