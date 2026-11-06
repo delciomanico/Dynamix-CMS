@@ -1,6 +1,6 @@
 # Referência da API
 
-Base: `http://localhost:3001/api/v1` · Swagger interativo: `/docs`.
+Base: `http://localhost:3001/api/v1` · Swagger interativo: `/docs` (só em desenvolvimento; desativado quando `NODE_ENV=production`).
 
 ## Paginação
 

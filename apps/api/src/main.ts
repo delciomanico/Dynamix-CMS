@@ -30,14 +30,18 @@ async function bootstrap() {
       .catch(() => cb(null, { ...base, origin: false }));
   });
 
-  const doc = SwaggerModule.createDocument(
-    app,
-    new DocumentBuilder().setTitle('Dynamix-CMS API').setVersion('0.1').addBearerAuth().build(),
-  );
-  SwaggerModule.setup('docs', app, doc);
+  // Swagger só fora de produção (não expõe o mapa da API em produção).
+  const docsEnabled = process.env.NODE_ENV !== 'production';
+  if (docsEnabled) {
+    const doc = SwaggerModule.createDocument(
+      app,
+      new DocumentBuilder().setTitle('Dynamix-CMS API').setVersion('0.1').addBearerAuth().build(),
+    );
+    SwaggerModule.setup('docs', app, doc);
+  }
 
   const port = Number(process.env.PORT ?? 3001);
   await app.listen(port);
-  console.log(`API:  http://localhost:${port}/api/v1\nDocs: http://localhost:${port}/docs`);
+  console.log(`API:  http://localhost:${port}/api/v1${docsEnabled ? `\nDocs: http://localhost:${port}/docs` : ""}`);
 }
 bootstrap();

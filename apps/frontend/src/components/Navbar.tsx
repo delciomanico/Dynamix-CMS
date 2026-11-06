@@ -13,7 +13,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-muted">
           <Link to="/#how-it-works" className="hover:text-ink transition">How it works</Link>
           <NavLink to="/team" className={({ isActive }) => `hover:text-ink transition ${isActive ? 'text-ink' : ''}`}>Team</NavLink>
-          <a href="/docs-api" className="hover:text-ink transition" onClick={(e) => { e.preventDefault(); window.open(API_URL.replace('/api/v1', '/docs'), '_blank'); }}>Documentation</a>
+          {import.meta.env.DEV && <a href="/docs-api" className="hover:text-ink transition" onClick={(e) => { e.preventDefault(); window.open(API_URL.replace('/api/v1', '/docs'), '_blank'); }}>Documentation</a>}
           <a href={GITHUB} target="_blank" rel="noopener noreferrer" className="hover:text-ink transition">GitHub ↗</a>
         </div>
         <div className="flex items-center gap-3">
@@ -29,7 +29,7 @@ export function Navbar() {
           <div className="px-6 py-5 flex flex-col gap-5 text-sm font-semibold">
             <Link to="/#how-it-works" onClick={close}>How it works</Link>
             <Link to="/team" onClick={close}>Team</Link>
-            <a href={API_URL.replace('/api/v1', '/docs')} target="_blank" rel="noopener noreferrer">Documentation</a>
+            {import.meta.env.DEV && <a href={API_URL.replace('/api/v1', '/docs')} target="_blank" rel="noopener noreferrer">Documentation</a>}
             <a href={GITHUB} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             <Link to="/login" onClick={close} className="border-t border-black/10 pt-4">Entrar</Link>
           </div>

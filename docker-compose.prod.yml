@@ -1,6 +1,6 @@
 # Produção / Dokploy — usa IMAGENS IMUTÁVEIS construídas e testadas pelo CI (ver docs/updates.md).
 # Sem portas no host: o Traefik do Dokploy encaminha o domínio para `frontend:80`, que serve o site
-# e faz proxy de /api e /docs. Variáveis obrigatórias: ver .env.production.example
+# e faz proxy de /api (o Swagger /docs só existe em desenvolvimento). Variáveis obrigatórias: ver .env.production.example
 # Build no próprio servidor (sem registry): docker compose -f docker-compose.prod.yml -f docker-compose.build.yml up -d --build
 name: dynamix-cms
 

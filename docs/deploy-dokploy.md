@@ -1,6 +1,6 @@
 # Deploy no Dokploy
 
-Usa `docker-compose.prod.yml`: imagens pré-construídas pelo CI (ver [Atualizações](./updates.md)), sem portas no host (o Traefik do Dokploy encaminha o domínio). O serviço `frontend` (nginx) serve o site e faz proxy de `/api` e `/docs` para a API, por isso **um único domínio** serve tudo e não há CORS entre origens.
+Usa `docker-compose.prod.yml`: imagens pré-construídas pelo CI (ver [Atualizações](./updates.md)), sem portas no host (o Traefik do Dokploy encaminha o domínio). O serviço `frontend` (nginx) serve o site e faz proxy de `/api` para a API (o Swagger `/docs` está desativado em produção), por isso **um único domínio** serve tudo e não há CORS entre origens.
 
 ## Caminho simples (recomendado): build no servidor
 
