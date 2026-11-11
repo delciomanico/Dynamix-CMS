@@ -1,4 +1,4 @@
-FROM node:24.22.1-bookworm-slim AS build
+FROM node:26.13.0-bookworm-slim AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
