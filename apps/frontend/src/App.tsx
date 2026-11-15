@@ -5,6 +5,12 @@ import Admin from './pages/Admin';
 import { AdminOnly, Protected } from './pages/AppLayout';
 import { ComponentBuilder, ComponentList } from './pages/Components';
 import { ContentIndex, ContentList } from './pages/Content';
+import Blogs from './pages/Blogs';
+import BlogManage from './pages/BlogManage';
+import PostEditor from './pages/PostEditor';
+import Blog from './pages/Blog';
+import BlogsDirectory from './pages/BlogsDirectory';
+import BlogPost from './pages/BlogPost';
 import Integration from './pages/Integration';
 import Landing from './pages/Landing';
 import MediaLibrary from './pages/MediaLibrary';
@@ -19,12 +25,20 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/team" element={<Team />} />
+      <Route path="/blog" element={<BlogsDirectory />} />
+      <Route path="/blog/:slug" element={<Navigate to="/b/dynamix" replace />} />
+      <Route path="/b/:project" element={<Blog />} />
+      <Route path="/b/:project/:slug" element={<BlogPost />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/auth/callback" element={<AuthCallback />} />
 
       <Route path="/app" element={<Protected />}>
         <Route index element={<Projects />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="blogs/:pid" element={<BlogManage />} />
+        <Route path="blogs/:pid/new" element={<PostEditor />} />
+        <Route path="blogs/:pid/post/:eid" element={<PostEditor />} />
         <Route path="account" element={<Account />} />
         <Route path="admin" element={<AdminOnly><Admin /></AdminOnly>} />
         <Route path="p/:pid" element={<ProjectLayout />}>

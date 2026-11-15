@@ -31,6 +31,17 @@ export function resolveMediaRefs(value: unknown, toUrl: (id: string) => string):
   return value;
 }
 
+/** `filter[campo]=valor` — o Express 5 não aninha a query, por isso aceita-se a chave plana e também o objeto `filter`. */
+export function readFilters(query: Record<string, any>): Record<string, string> {
+  const out: Record<string, string> = {};
+  if (query.filter && typeof query.filter === 'object') for (const [k, v] of Object.entries(query.filter)) if (typeof v === 'string') out[k] = v;
+  for (const [key, v] of Object.entries(query)) {
+    const m = /^filter\[([^\]]+)\]$/.exec(key);
+    if (m && typeof v === 'string') out[m[1]] = v;
+  }
+  return out;
+}
+
 function coerce(v: string): string | number | boolean {
   if (v === 'true') return true;
   if (v === 'false') return false;
@@ -49,6 +60,14 @@ export class PublicApiController {
     const p = await this.prisma.project.findUnique({ where: { slug } });
     if (!p) throw new NotFoundException('Projeto não encontrado');
     return p;
+  }
+
+  /** Dados públicos do projeto (nome/descrição/tipo) — usado, por ex., no cabeçalho de um blog. */
+  @Get()
+  @Header('Cache-Control', CACHE)
+  async info(@Param('project') slug: string) {
+    const p = await this.project(slug);
+    return { data: { name: p.name, slug: p.slug, description: p.description, kind: p.kind, theme: p.theme ?? null } };
   }
 
   @Get('components')
@@ -89,7 +108,7 @@ export class PublicApiController {
     const and: Prisma.ContentEntryWhereInput[] = [];
 
     // filter[campo]=valor — apenas campos definidos no componente
-    const filters = (query.filter ?? {}) as Record<string, string>;
+    const filters = readFilters(query);
     for (const [k, v] of Object.entries(filters)) {
       if (comp.fields.some((f) => f.key === k) && typeof v === 'string') {
         and.push({ data: { path: [k], equals: coerce(v) } });

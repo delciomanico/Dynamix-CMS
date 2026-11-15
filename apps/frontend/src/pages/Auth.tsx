@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { GoogleIcon, Logo } from '../components/Logo';
 import { API_URL } from '../lib/api';
+import { useSeo } from '../lib/seo';
 import { useAuth } from '../lib/auth';
 
 function Shell({ title, note, children }: { title: string; note: string; children: React.ReactNode }) {
@@ -10,7 +11,7 @@ function Shell({ title, note, children }: { title: string; note: string; childre
       <div className="max-w-7xl w-full mx-auto px-5 sm:px-8 h-[82px] flex items-center"><Logo /></div>
       <div className="flex-1 flex items-center justify-center px-5 pb-16">
         <div className="sketch-card rounded-2xl p-7 sm:p-9 w-full max-w-md">
-          <h1 className="text-3xl font-extrabold tracking-tight">{title}</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
           <p className="hand text-2xl text-muted mb-6">{note}</p>
           {children}
         </div>
@@ -20,6 +21,7 @@ function Shell({ title, note, children }: { title: string; note: string; childre
 }
 
 function AuthForm({ mode }: { mode: 'login' | 'register' }) {
+  useSeo({ title: mode === 'login' ? 'Entrar' : 'Criar conta', description: 'Acede ao Dynamix-CMS.', noindex: true });
   const { user, login, register } = useAuth();
   const nav = useNavigate();
   const [f, setF] = useState({ name: '', email: '', password: '' });
@@ -48,7 +50,7 @@ function AuthForm({ mode }: { mode: 'login' | 'register' }) {
       </form>
       <a href={`${API_URL}/auth/google`} className="btn-secondary w-full mt-4"><GoogleIcon /> Continuar com Google</a>
       <p className="text-sm text-muted mt-6 text-center">
-        {isLogin ? <>Sem conta? <Link to="/register" className="font-bold text-ink underline">Criar conta</Link></> : <>Já tens conta? <Link to="/login" className="font-bold text-ink underline">Entrar</Link></>}
+        {isLogin ? <>Sem conta? <Link to="/register" className="font-medium text-ink underline">Criar conta</Link></> : <>Já tens conta? <Link to="/login" className="font-medium text-ink underline">Entrar</Link></>}
       </p>
     </Shell>
   );

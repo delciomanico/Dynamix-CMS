@@ -55,7 +55,7 @@ export function ${name}List() {
 
   return (
     <>
-      <PageHead title="Integration Guide" note="Liga o teu website existente ao Dynamix-CMS">
+      <PageHead title="Guia de integração" note="Liga o teu website existente ao Dynamix-CMS">
         <select className="input sm:!w-auto" value={c.slug} onChange={(e) => setSel(e.target.value)}>{data!.map((x) => <option key={x.id} value={x.slug}>{x.name}</option>)}</select>
       </PageHead>
 
@@ -63,7 +63,7 @@ export function ${name}List() {
         <div className="space-y-6 min-w-0">
           <section>
             <h2 className="hand text-3xl font-semibold mb-2">Endpoint</h2>
-            <div className="rough-border bg-white p-3 flex items-center gap-2"><span className="mono text-[10px] font-bold bg-brand text-white px-2 py-1 rounded">GET</span><span className="mono text-xs break-all">{url}</span></div>
+            <div className="rough-border bg-white p-3 flex items-center gap-2"><span className="mono text-[10px] font-medium bg-brand text-white px-2 py-1 rounded">GET</span><span className="mono text-xs break-all">{url}</span></div>
             <p className="text-xs text-muted mt-2">Query: <span className="mono">page, limit (≤100), sort (-publishedAt), q, filter[campo]=valor</span> · Detalhe: <span className="mono">/{c.slug}/{'{slug}'}</span></p>
           </section>
           <section>
@@ -71,7 +71,7 @@ export function ${name}List() {
             <div className="flex gap-2 mb-3">{(['js', 'react', 'curl'] as const).map((t) => <button key={t} onClick={() => setTab(t)} className={`btn-sm btn ${tab === t ? 'bg-brand text-white' : 'bg-white'}`}>{t === 'js' ? 'JavaScript' : t === 'react' ? 'React' : 'cURL'}</button>)}</div>
             <CodeBlock code={snippets[tab]} />
           </section>
-          <p className="text-sm text-muted">Só conteúdos <b>publicados</b> aparecem aqui.{import.meta.env.DEV && <> Documentação completa: <a className="underline font-bold text-ink" target="_blank" rel="noreferrer" href={API_URL.replace('/api/v1', '/docs')}>Swagger ↗</a></>}</p>
+          <p className="text-sm text-muted">Só conteúdos <b>publicados</b> aparecem aqui.{import.meta.env.DEV && <> Documentação completa: <a className="underline font-medium text-ink" target="_blank" rel="noreferrer" href={API_URL.replace('/api/v1', '/docs')}>Swagger ↗</a></>}</p>
         </div>
         <section className="min-w-0">
           <h2 className="hand text-3xl font-semibold mb-2">Resposta ao vivo</h2>

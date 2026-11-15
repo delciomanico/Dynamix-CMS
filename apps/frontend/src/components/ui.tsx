@@ -8,7 +8,7 @@ export function ErrorBox({ msg }: { msg: string }) {
 
 export function Empty({ title, hint, children }: { title: string; hint?: string; children?: ReactNode }) {
   return (
-    <div className="border-[1.5px] border-dashed border-ink/40 rounded-2xl py-14 px-6 text-center bg-white/50">
+    <div className="border border-dashed border-ink/20 rounded-2xl py-14 px-6 text-center bg-white/50">
       <p className="hand text-3xl font-semibold">{title}</p>
       {hint && <p className="text-sm text-muted mt-1 mb-5">{hint}</p>}
       {children}
@@ -18,9 +18,9 @@ export function Empty({ title, hint, children }: { title: string; hint?: string;
 
 export function PageHead({ title, note, children }: { title: string; note?: string; children?: ReactNode }) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-7">
+    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
       <div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight break-words">{title}</h1>
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight break-words">{title}</h1>
         {note && <p className="hand text-xl sm:text-2xl text-muted leading-none mt-1">{note}</p>}
       </div>
       <div className="flex flex-wrap gap-3">{children}</div>
@@ -33,7 +33,7 @@ export function Modal({ title, onClose, children }: { title: string; onClose: ()
     <div className="fixed inset-0 z-50 bg-ink/40 flex items-end sm:items-center justify-center sm:p-4 overflow-y-auto" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div className="sketch-card rounded-t-3xl sm:rounded-2xl w-full max-w-xl p-5 sm:p-7 sm:my-8 max-h-[92vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-xl font-extrabold">{title}</h2>
+          <h2 className="text-xl font-semibold">{title}</h2>
           <button onClick={onClose} className="text-2xl leading-none text-muted hover:text-ink" aria-label="Fechar">×</button>
         </div>
         {children}

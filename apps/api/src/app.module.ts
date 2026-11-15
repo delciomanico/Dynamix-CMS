@@ -13,6 +13,8 @@ import { MediaController } from './media/media.controller';
 import { PrismaModule } from './prisma/prisma.service';
 import { ProjectsController } from './projects/projects.controller';
 import { PublicApiController } from './public-api/public-api.controller';
+import { BlogsController } from './public-api/blogs.controller';
+import { SeoController } from './public-api/seo.controller';
 import { StorageModule } from './storage/storage.service';
 
 @Module({
@@ -21,7 +23,7 @@ import { StorageModule } from './storage/storage.service';
     ThrottlerModule.forRoot([{ ttl: 60_000, limit: 300 }]),
     PrismaModule, StorageModule, AccessModule, AuthModule,
   ],
-  controllers: [HealthController, AdminController, BackupsController, ProjectsController, ComponentsController, ContentsController, MediaController, PublicApiController],
+  controllers: [HealthController, AdminController, BackupsController, ProjectsController, ComponentsController, ContentsController, MediaController, PublicApiController, BlogsController, SeoController],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
 })
 export class AppModule {}

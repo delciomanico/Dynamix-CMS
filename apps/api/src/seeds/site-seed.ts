@@ -3,11 +3,10 @@
  * componentes (estrutura) e o conteúdo inicial publicado, ficando logo disponíveis os endpoints
  * `/api/v1/public/{project}/...`.
  *
- * Idempotente e não destrutivo (corre em cada deploy):
- *  - projeto existe            → não é tocado;
- *  - componente existe         → só acrescenta campos novos em falta; o conteúdo NUNCA é reescrito
- *                                (edições feitas no dashboard sobrevivem a novos deploys);
- *  - componente não existe     → cria componente + campos + entradas publicadas (numa transação).
+ * Corre uma única vez por site (em cada deploy é seguro): se o projeto já existe (ex. `bchiwale`),
+ * o seed NÃO corre — nada é criado nem alterado (nem sequer se liga ao armazenamento).
+ * Só numa instalação nova cria o projeto + componentes + campos + conteúdo inicial publicado.
+ * Novos componentes/campos de versões futuras não são acrescentados a projetos existentes.
  * O dono é um utilizador dedicado do site (ex. geral@bchiwale.ao, criado com SEED_<KEY>_OWNER_PASSWORD) ou,
  * se o site não definir dono, o ADMIN_EMAIL (que precisa de já existir — corre depois de seedAdmin).
  *
@@ -74,6 +73,7 @@ export async function seedSite(prisma: PrismaClient, site: SiteSeed, env: NodeJS
   const key = site.project.toUpperCase().replace(/[^A-Z0-9]/g, '_');
   let created = false;
   let project = await prisma.project.findUnique({ where: { slug: site.project } });
+  if (project) return { project: site.project, status: 'unchanged', components: [] }; // já existe → o seed não corre
   if (!project) {
     const owner = await resolveOwner(prisma, site, key, env);
     if (!owner) return { project: site.project, status: 'skipped', components: [] };
@@ -166,8 +166,10 @@ export async function seedSite(prisma: PrismaClient, site: SiteSeed, env: NodeJS
 export async function seedSites(prisma: PrismaClient, env: NodeJS.ProcessEnv = process.env, store?: AssetStore) {
   const wanted = (env.SEED_SITES ?? 'bchiwale').split(',').map((s) => s.trim()).filter((s) => s && s !== 'none');
   const results: SiteSeedResult[] = [];
+  // Só liga ao armazenamento (e cria o bucket) se existir algum site ainda por semear.
+  const pending = (await Promise.all(wanted.map(async (n) => (SITE_SEEDS[n] && !(await prisma.project.findUnique({ where: { slug: SITE_SEEDS[n].project } })) ? n : null)))).filter(Boolean);
   let storage: AssetStore | undefined = store;
-  if (wanted.length && !storage) {
+  if (pending.length && !storage) {
     const real = new StorageService({ get: (k: string, d?: string) => env[k] ?? d } as unknown as ConfigService);
     await real.onModuleInit(); // garante o bucket
     storage = real;

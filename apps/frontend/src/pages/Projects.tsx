@@ -6,7 +6,7 @@ import { api, Project } from '../lib/api';
 import { useAuth } from '../lib/auth';
 import { useFetch } from '../lib/hooks';
 
-const tones = ['bg-brand text-white', 'bg-white', 'bg-brand/10'];
+const tones = ['bg-white', 'bg-white', 'bg-brand/5'];
 
 export default function Projects() {
   const { user } = useAuth();
@@ -26,15 +26,15 @@ export default function Projects() {
   };
 
   if (ws.loading || projects.loading) return <Spinner />;
-  const list = projects.data ?? [];
+  const list = (projects.data ?? []).filter((p) => p.kind !== 'BLOG');
   return (
     <>
-      <section className="relative overflow-hidden rounded-3xl border-[1.5px] border-ink bg-white shadow-[4px_5px_0_#1A2233] p-6 sm:p-8 mb-10">
+      <section className="relative overflow-hidden rounded-3xl border border-ink/15 bg-white shadow-soft p-6 sm:p-8 mb-10">
         <div className="absolute inset-0 paper-grid opacity-60" />
         <div className="relative flex flex-wrap items-center justify-between gap-5">
           <div>
             <p className="hand text-3xl text-brandLight leading-none">Olá, {user!.name.split(' ')[0]}!</p>
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-1">Os teus websites</h1>
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mt-1">Os teus websites</h1>
             <p className="text-sm text-muted mt-2">{list.length ? `${list.length} projeto${list.length > 1 ? 's' : ''} em ${ws.data?.[0]?.name}` : 'Cria o primeiro projeto para começar.'}</p>
           </div>
           <button className="btn-primary !px-5 !py-3" onClick={() => setOpen(true)}><Icon name="plus" className="w-4 h-4" /> Novo projeto</button>
@@ -42,20 +42,20 @@ export default function Projects() {
       </section>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <button onClick={() => setOpen(true)} className="min-h-[170px] rounded-2xl border-[1.5px] border-dashed border-ink/50 flex flex-col items-center justify-center gap-2 text-muted hover:text-ink hover:border-ink hover:bg-brand/5 transition">
-          <span className="w-12 h-12 rounded-full border-[1.5px] border-current flex items-center justify-center"><Icon name="plus" className="w-6 h-6" /></span>
+        <button onClick={() => setOpen(true)} className="min-h-[170px] rounded-2xl border border-dashed border-ink/50 flex flex-col items-center justify-center gap-2 text-muted hover:text-ink hover:border-ink/15 hover:bg-brand/5 transition">
+          <span className="w-12 h-12 rounded-full border border-current flex items-center justify-center"><Icon name="plus" className="w-6 h-6" /></span>
           <span className="hand text-2xl font-semibold">Novo website</span>
         </button>
         {list.map((p, i) => {
-          const dark = i % 3 === 0;
+          const dark = false;
           return (
             <Link key={p.id} to={`/app/p/${p.id}`}
-              className={`group min-h-[170px] rounded-2xl border-[1.5px] border-ink shadow-[4px_5px_0_#1A2233] p-5 flex flex-col hover:-translate-y-1 transition ${tones[i % 3]}`}>
+              className={`group min-h-[170px] rounded-2xl border border-ink/15 shadow-soft p-5 flex flex-col hover:-translate-y-1 transition ${tones[i % 3]}`}>
               <div className="flex items-start justify-between">
-                <span className={`w-11 h-11 rounded-xl border-[1.5px] border-ink flex items-center justify-center ${dark ? 'bg-white text-brand' : 'bg-brand text-white'}`}><Icon name="box" /></span>
+                <span className={`w-11 h-11 rounded-xl border border-ink/15 flex items-center justify-center bg-brand/10 text-brand`}><Icon name="box" /></span>
                 <Icon name="arrow" className="w-5 h-5 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition" />
               </div>
-              <h3 className="font-extrabold text-xl mt-auto pt-6 break-words">{p.name}</h3>
+              <h3 className="font-semibold text-xl mt-auto pt-6 break-words">{p.name}</h3>
               <p className={`mono text-xs ${dark ? 'text-white/70' : 'text-muted'}`}>/{p.slug}</p>
               {p.description && <p className={`text-sm mt-2 line-clamp-2 ${dark ? 'text-white/75' : 'text-muted'}`}>{p.description}</p>}
             </Link>

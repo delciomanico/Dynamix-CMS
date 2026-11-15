@@ -4,6 +4,7 @@ import { Icon } from '../components/icons';
 import { Logo } from '../components/Logo';
 import { Spinner } from '../components/ui';
 import { useAuth } from '../lib/auth';
+import { useSeo } from '../lib/seo';
 
 export function Protected() {
   const { user, loading } = useAuth();
@@ -13,13 +14,13 @@ export function Protected() {
 }
 
 const sections: [string, string, string][] = [
-  ['', 'Overview', 'home'], ['components', 'Components', 'box'], ['content', 'Content', 'edit'],
-  ['media', 'Media', 'image'], ['integration', 'Integration', 'plug'], ['settings', 'Settings', 'gear'],
+  ['', 'Visão geral', 'home'], ['components', 'Componentes', 'box'], ['content', 'Conteúdos', 'edit'],
+  ['media', 'Média', 'image'], ['integration', 'Integração', 'plug'], ['settings', 'Definições', 'gear'],
 ];
 
 const item = (active: boolean) =>
-  `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-bold transition border-[1.5px] ${
-    active ? 'bg-brand text-white border-ink shadow-[2px_3px_0_#1A2233]' : 'border-transparent text-muted hover:text-ink hover:bg-brand/10'}`;
+  `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition border ${
+    active ? 'bg-brand/10 text-brand border-transparent' : 'border-transparent text-muted hover:text-ink hover:bg-brand/10'}`;
 
 function SidebarBody({ pid }: { pid?: string }) {
   const { user, logout } = useAuth();
@@ -27,8 +28,9 @@ function SidebarBody({ pid }: { pid?: string }) {
     <div className="flex flex-col h-full">
       <div className="px-2 pt-1 pb-6"><Logo to="/app" /></div>
       <nav className="flex-1 space-y-1 overflow-y-auto">
-        <p className="mono text-[10px] uppercase tracking-widest text-muted px-3.5 mb-2">Workspace</p>
+        <p className="mono text-[10px] uppercase tracking-widest text-muted px-3.5 mb-2">Área de trabalho</p>
         <NavLink to="/app" end className={({ isActive }) => item(isActive)}><Icon name="folder" /> Projetos</NavLink>
+        <NavLink to="/app/blogs" className={({ isActive }) => item(isActive)}><Icon name="edit" /> Blogs</NavLink>
         <NavLink to="/app/account" className={({ isActive }) => item(isActive)}><Icon name="gear" /> Conta</NavLink>
         {user!.role === 'ADMIN' && (
           <>
@@ -48,11 +50,11 @@ function SidebarBody({ pid }: { pid?: string }) {
         )}
       </nav>
       <div className="mt-4 rough-border bg-white p-3 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-brand text-white font-extrabold flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-brand text-white font-semibold flex items-center justify-center shrink-0">
           {user!.name.split(' ').slice(0, 2).map((p) => p[0]).join('').toUpperCase()}
         </div>
         <div className="min-w-0 flex-1">
-          <div className="text-sm font-bold truncate">{user!.name}</div>
+          <div className="text-sm font-medium truncate">{user!.name}</div>
           <div className="text-[11px] text-muted truncate">{user!.email}</div>
         </div>
         <button onClick={logout} title="Sair" aria-label="Sair" className="p-2 rounded-lg hover:bg-brand/10"><Icon name="logout" /></button>
@@ -62,6 +64,7 @@ function SidebarBody({ pid }: { pid?: string }) {
 }
 
 function AppShell() {
+  useSeo({ title: 'Painel', noindex: true });
   const pid = useMatch('/app/p/:pid/*')?.params.pid;
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
@@ -84,24 +87,24 @@ function AppShell() {
       {open && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
-          <div className="relative w-[82%] max-w-xs bg-paper p-4 border-r-[1.5px] border-ink">
+          <div className="relative w-[82%] max-w-xs bg-paper p-4 border-r border-ink/15">
             <button onClick={() => setOpen(false)} aria-label="Fechar" className="absolute top-4 right-3 p-2"><Icon name="close" /></button>
             <SidebarBody pid={pid} />
           </div>
         </div>
       )}
 
-      <main className="min-w-0 px-4 sm:px-8 py-6 lg:py-10 pb-28 lg:pb-12">
+      <main className="min-w-0 px-5 sm:px-10 py-8 lg:py-14 pb-28 lg:pb-16">
         <div className="max-w-5xl mx-auto"><Outlet /></div>
       </main>
 
       {pid && (
-        <nav className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t-[1.5px] border-ink grid grid-cols-5 pb-[env(safe-area-inset-bottom)]">
+        <nav className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-ink/15 grid grid-cols-5 pb-[env(safe-area-inset-bottom)]">
           {bottom.map(([to, label, icon]) => (
             <NavLink key={to} to={`/app/p/${pid}/${to}`} end={to === ''}
-              className={({ isActive }) => `flex flex-col items-center gap-0.5 py-2 text-[10px] font-bold ${isActive ? 'text-brand' : 'text-muted'}`}>
+              className={({ isActive }) => `flex flex-col items-center gap-0.5 py-2 text-[10px] font-medium ${isActive ? 'text-brand' : 'text-muted'}`}>
               {({ isActive }) => (<>
-                <span className={`px-3 py-1 rounded-full ${isActive ? 'bg-brand text-white' : ''}`}><Icon name={icon} className="w-5 h-5" /></span>
+                <span className={`px-3 py-1 rounded-full ${isActive ? 'bg-brand/10 text-brand' : ''}`}><Icon name={icon} className="w-5 h-5" /></span>
                 {label}
               </>)}
             </NavLink>

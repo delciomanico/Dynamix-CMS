@@ -29,7 +29,7 @@ export default function Account() {
     <>
       <PageHead title="Conta" note={user?.email} />
       <form onSubmit={submit} className="sketch-card rounded-2xl p-5 max-w-md space-y-4">
-        <h2 className="font-extrabold text-lg">Alterar password</h2>
+        <h2 className="font-semibold text-lg">Alterar password</h2>
         <div><label className="label">Password atual</label><input className="input" type="password" autoComplete="current-password" required value={cur} onChange={(e) => setCur(e.target.value)} /></div>
         <div><label className="label">Nova password (mín. {min})</label><input className="input" type="password" autoComplete="new-password" required minLength={min} value={next} onChange={(e) => setNext(e.target.value)} /></div>
         <div><label className="label">Repetir nova password</label><input className="input" type="password" autoComplete="new-password" required value={again} onChange={(e) => setAgain(e.target.value)} /></div>

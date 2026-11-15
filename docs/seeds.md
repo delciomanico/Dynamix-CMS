@@ -40,7 +40,7 @@ Campos bilingues são pares `*_pt` / `*_en`; estruturas aninhadas usam o tipo de
 
 ## Garantias
 
-- **Idempotente e não destrutivo.** Projeto existente não é tocado; componente existente só ganha campos novos em falta; o **conteúdo nunca é reescrito** (edições no dashboard sobrevivem a novos deploys). Só se semeia o conteúdo de um componente quando o componente é criado nessa execução.
+- **Corre uma única vez.** Se o projeto (`bchiwale`) **já existe**, o seed não corre: nada é criado nem alterado, e nem sequer se liga ao MinIO. Só numa instalação nova cria projeto, componentes, campos e conteúdo. Novos componentes/campos de versões futuras **não** são acrescentados a um projeto existente (o conteúdo e as edições no dashboard nunca são tocados).
 - Precisa de `ADMIN_EMAIL` definido (o admin é o dono do projeto). Sem ele, o seed de sites é ignorado.
 - **Dono:** o projeto é criado no workspace de um utilizador dedicado, `geral@bchiwale.ao` (conta normal, não admin), criado no 1.º deploy com `SEED_BCHIWALE_OWNER_PASSWORD` (≥ 12 caracteres, obrigatória nessa altura; `SEED_BCHIWALE_OWNER_EMAIL` muda o email). Se o utilizador já existe, nunca se altera a password. O admin (`ADMIN_EMAIL`) continua a gerir a plataforma em Administração.
 - Variáveis: `SEED_BCHIWALE_ORIGINS` (CORS da API pública, separado por vírgulas; vazio = qualquer origem) e `SEED_BCHIWALE_URL`.

@@ -23,7 +23,7 @@ export function Logo({ to = '/' }: { to?: string }) {
   return (
     <Link to={to} className="flex items-center gap-2.5">
       <LogoMark />
-      <span className="text-xl font-extrabold tracking-tight">
+      <span className="text-xl font-semibold tracking-tight">
         Dynamix<span className="text-brandLight">.</span>
         <span className="font-medium text-gray-400">CMS</span>
       </span>
