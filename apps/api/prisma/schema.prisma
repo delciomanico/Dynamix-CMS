@@ -50,6 +50,10 @@ model Project {
   description    String?
   frontendUrl    String?
   allowedOrigins String[]       @default([])
+  /// SITE (website com componentes) | BLOG (blog com artigos)
+  kind           String         @default("SITE")
+  /// Aparência pública do blog: { layout, palette, font } (ver common/blog.ts)
+  theme          Json?
   components     Component[]
   media          MediaAsset[]
   createdAt      DateTime       @default(now())

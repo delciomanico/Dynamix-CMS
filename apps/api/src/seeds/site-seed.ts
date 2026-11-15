@@ -11,7 +11,7 @@
  * O dono é um utilizador dedicado do site (ex. geral@bchiwale.ao, criado com SEED_<KEY>_OWNER_PASSWORD) ou,
  * se o site não definir dono, o ADMIN_EMAIL (que precisa de já existir — corre depois de seedAdmin).
  *
- * Env: SEED_SITES (lista separada por vírgulas; defeito "bchiwale"; "none" desativa),
+ * Env: SEED_SITES (lista separada por vírgulas; defeito "bchiwale"; "dynamix" semeia o blog do próprio Dynamix; "none" desativa),
  *      SEED_BCHIWALE_ORIGINS (domínios autorizados no CORS, ex. https://bchiwale.com), SEED_BCHIWALE_URL.
  */
 import * as bcrypt from 'bcryptjs';
@@ -23,6 +23,7 @@ import { StorageService } from '../storage/storage.service';
 import { slugify } from '../common/slug';
 import { validateEntryData } from '../common/field-types';
 import { bchiwaleSeed } from './bchiwale/definition';
+import { dynamixSeed } from './dynamix/definition';
 import type { SiteSeed } from './types';
 
 export interface AssetStore { put(key: string, body: Buffer, contentType: string): Promise<void> }
@@ -42,7 +43,7 @@ async function mapStrings(v: unknown, fn: (s: string) => Promise<string>): Promi
   return v;
 }
 
-export const SITE_SEEDS: Record<string, SiteSeed> = { [bchiwaleSeed.project]: bchiwaleSeed };
+export const SITE_SEEDS: Record<string, SiteSeed> = { [bchiwaleSeed.project]: bchiwaleSeed, [dynamixSeed.project]: dynamixSeed };
 
 export interface SiteSeedResult { project: string; status: 'skipped' | 'created' | 'updated' | 'unchanged'; components: string[] }
 
@@ -80,7 +81,7 @@ export async function seedSite(prisma: PrismaClient, site: SiteSeed, env: NodeJS
     const workspace = owner.workspaces[0] ?? (await prisma.workspace.create({ data: { name: `${owner.name} — Workspace`, ownerId: owner.id } }));
     project = await prisma.project.create({
       data: {
-        workspaceId: workspace.id, name: site.name, slug: site.project, description: site.description,
+        workspaceId: workspace.id, name: site.name, slug: site.project, description: site.description, kind: site.kind ?? 'SITE',
         frontendUrl: env[`SEED_${key}_URL`] || null,
         allowedOrigins: (env[`SEED_${key}_ORIGINS`] ?? '').split(',').map((s) => s.trim()).filter(Boolean),
       },

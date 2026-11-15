@@ -72,7 +72,7 @@ services:
       ADMIN_NAME: ${ADMIN_NAME:-Administrador}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
       GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
-      SEED_SITES: ${SEED_SITES:-bchiwale}
+      SEED_SITES: ${SEED_SITES:-bchiwale,dynamix}
       SEED_BCHIWALE_OWNER_EMAIL: ${SEED_BCHIWALE_OWNER_EMAIL:-}
       SEED_BCHIWALE_OWNER_PASSWORD: ${SEED_BCHIWALE_OWNER_PASSWORD:-dev-bchiwale-123456} # só desenvolvimento
       BACKUP_URL: http://backup:8081

@@ -1,5 +1,5 @@
 import { NotFoundException } from '@nestjs/common';
-import { PublicApiController } from './public-api.controller';
+import { PublicApiController, readFilters } from './public-api.controller';
 
 function setup() {
   const prisma: any = {
@@ -83,4 +83,12 @@ describe('resolveMediaRefs', () => {
     expect(resolveMediaRefs('media://v', url)).toBe('U/v');
   });
   it('não mexe em strings que apenas contêm media://', () => expect(resolveMediaRefs('ver media://x', url)).toBe('ver media://x'));
+});
+
+describe('readFilters', () => {
+  it('aceita a chave plana do Express 5 e o objeto aninhado', () => {
+    expect(readFilters({ 'filter[category]': 'Guias', 'filter[x]': 'y', page: '1' })).toEqual({ category: 'Guias', x: 'y' });
+    expect(readFilters({ filter: { category: 'Guias' } })).toEqual({ category: 'Guias' });
+    expect(readFilters({})).toEqual({});
+  });
 });
