@@ -23,8 +23,6 @@ export interface SiteSeed {
   name: string;
   description?: string;
   components: SeedComponent[];
-  /** Tipo do projeto (defeito SITE). BLOG aparece em «Blogs» no dashboard. */
-  kind?: 'SITE' | 'BLOG';
   /** Dono dedicado do projeto (utilizador normal + workspace próprio). Sem isto, o dono é o ADMIN_EMAIL. */
   owner?: { email: string; name: string };
   /** Pasta (em apps/api/seed-assets) com os ficheiros referenciados por caminho (/images/x.jpg) nas linhas. */

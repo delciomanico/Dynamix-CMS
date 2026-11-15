@@ -87,25 +87,16 @@ describe('seedSite (bchiwale)', () => {
     expect(JSON.stringify(p.component.create.mock.calls)).not.toMatch(/"\/(images\/|logo|icone|about-video)/);
   });
 
-  it('é idempotente: componentes existentes não são reescritos', async () => {
-    const existing = Object.fromEntries(bchiwaleSeed.components.map((c) => [c.slug, { id: c.slug, fields: c.fields.map((f) => ({ key: f.key })) }]));
-    const p = mk({ project: { id: 'p1' }, components: existing });
-    expect((await seedSite(p, bchiwaleSeed, env, storage())).status).toBe('unchanged');
+  it('se o projeto já existe, o seed não corre (nada é criado nem alterado)', async () => {
+    const p = mk({ project: { id: 'p1' }, components: {} });
+    const st = storage();
+    expect(await seedSite(p, bchiwaleSeed, env, st)).toEqual({ project: 'bchiwale', status: 'unchanged', components: [] });
+    expect(p.user.findUnique).not.toHaveBeenCalled();
     expect(p.project.create).not.toHaveBeenCalled();
     expect(p.component.create).not.toHaveBeenCalled();
     expect(p.componentField.createMany).not.toHaveBeenCalled();
     expect(p.mediaAsset.create).not.toHaveBeenCalled();
-  });
-
-  it('acrescenta apenas campos em falta, sem tocar no conteúdo', async () => {
-    const svc = bchiwaleSeed.components[0];
-    const existing = { [svc.slug]: { id: 'c1', fields: svc.fields.slice(1).map((f) => ({ key: f.key })) } };
-    const rest = Object.fromEntries(bchiwaleSeed.components.slice(1).map((c) => [c.slug, { id: c.slug, fields: c.fields.map((f) => ({ key: f.key })) }]));
-    const p = mk({ project: { id: 'p1' }, components: { ...existing, ...rest } });
-    const r = await seedSite(p, bchiwaleSeed, env, storage());
-    expect(r).toMatchObject({ status: 'updated', components: [svc.slug] });
-    expect(p.componentField.createMany.mock.calls[0][0].data.map((d: any) => d.key)).toEqual([svc.fields[0].key]);
-    expect(p.component.create).not.toHaveBeenCalled();
+    expect(st.put).not.toHaveBeenCalled();
   });
 });
 
@@ -113,6 +104,13 @@ describe('seedSites', () => {
   it('SEED_SITES=none desativa', async () => {
     expect(await seedSites(mk(), { ...env, SEED_SITES: 'none' }, storage())).toEqual([]);
   });
+  it('bchiwale já existente: seedSites não corre o seed nem liga ao armazenamento', async () => {
+    const p = mk({ project: { id: 'p1' } });
+    const r = await seedSites(p, { ...env, S3_ENDPOINT: 'http://127.0.0.1:1' } as NodeJS.ProcessEnv); // sem store injetado: falharia ao ligar
+    expect(r).toEqual([{ project: 'bchiwale', status: 'unchanged', components: [] }]);
+    expect(p.project.create).not.toHaveBeenCalled();
+  });
+
   it('por defeito semeia o bchiwale', async () => {
     expect(Object.keys(SITE_SEEDS)).toContain('bchiwale');
     expect((await seedSites(mk(), env, storage()))[0].project).toBe('bchiwale');

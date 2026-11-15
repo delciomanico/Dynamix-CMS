@@ -49,8 +49,8 @@ CORS por projeto (Settings → domínios autorizados; vazio = qualquer origem). 
 
 ## Seeds de sites
 
-No arranque (`predeploy`) o Dynamix cria, de forma idempotente, o admin e os sites listados em `SEED_SITES`
-(defeito `bchiwale`): projeto + componentes + conteúdo publicado, com os endpoints públicos prontos.
+No arranque (`predeploy`) o Dynamix cria o admin e os sites listados em `SEED_SITES` (defeito `bchiwale`): projeto + componentes +
+conteúdo publicado, com os endpoints públicos prontos. Se o projeto já existir, o seed desse site não corre.
 Ver [`docs/seeds.md`](./docs/seeds.md).
 
 ## Âmbito do MVP

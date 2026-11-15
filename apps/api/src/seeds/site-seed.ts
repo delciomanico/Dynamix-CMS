@@ -3,15 +3,14 @@
  * componentes (estrutura) e o conteúdo inicial publicado, ficando logo disponíveis os endpoints
  * `/api/v1/public/{project}/...`.
  *
- * Idempotente e não destrutivo (corre em cada deploy):
- *  - projeto existe            → não é tocado;
- *  - componente existe         → só acrescenta campos novos em falta; o conteúdo NUNCA é reescrito
- *                                (edições feitas no dashboard sobrevivem a novos deploys);
- *  - componente não existe     → cria componente + campos + entradas publicadas (numa transação).
+ * Corre uma única vez por site (em cada deploy é seguro): se o projeto já existe (ex. `bchiwale`),
+ * o seed NÃO corre — nada é criado nem alterado (nem sequer se liga ao armazenamento).
+ * Só numa instalação nova cria o projeto + componentes + campos + conteúdo inicial publicado.
+ * Novos componentes/campos de versões futuras não são acrescentados a projetos existentes.
  * O dono é um utilizador dedicado do site (ex. geral@bchiwale.ao, criado com SEED_<KEY>_OWNER_PASSWORD) ou,
  * se o site não definir dono, o ADMIN_EMAIL (que precisa de já existir — corre depois de seedAdmin).
  *
- * Env: SEED_SITES (lista separada por vírgulas; defeito "bchiwale"; "dynamix" semeia o blog do próprio Dynamix; "none" desativa),
+ * Env: SEED_SITES (lista separada por vírgulas; defeito "bchiwale"; "none" desativa),
  *      SEED_BCHIWALE_ORIGINS (domínios autorizados no CORS, ex. https://bchiwale.com), SEED_BCHIWALE_URL.
  */
 import * as bcrypt from 'bcryptjs';
@@ -23,7 +22,6 @@ import { StorageService } from '../storage/storage.service';
 import { slugify } from '../common/slug';
 import { validateEntryData } from '../common/field-types';
 import { bchiwaleSeed } from './bchiwale/definition';
-import { dynamixSeed } from './dynamix/definition';
 import type { SiteSeed } from './types';
 
 export interface AssetStore { put(key: string, body: Buffer, contentType: string): Promise<void> }
@@ -43,7 +41,7 @@ async function mapStrings(v: unknown, fn: (s: string) => Promise<string>): Promi
   return v;
 }
 
-export const SITE_SEEDS: Record<string, SiteSeed> = { [bchiwaleSeed.project]: bchiwaleSeed, [dynamixSeed.project]: dynamixSeed };
+export const SITE_SEEDS: Record<string, SiteSeed> = { [bchiwaleSeed.project]: bchiwaleSeed };
 
 export interface SiteSeedResult { project: string; status: 'skipped' | 'created' | 'updated' | 'unchanged'; components: string[] }
 
@@ -75,13 +73,14 @@ export async function seedSite(prisma: PrismaClient, site: SiteSeed, env: NodeJS
   const key = site.project.toUpperCase().replace(/[^A-Z0-9]/g, '_');
   let created = false;
   let project = await prisma.project.findUnique({ where: { slug: site.project } });
+  if (project) return { project: site.project, status: 'unchanged', components: [] }; // já existe → o seed não corre
   if (!project) {
     const owner = await resolveOwner(prisma, site, key, env);
     if (!owner) return { project: site.project, status: 'skipped', components: [] };
     const workspace = owner.workspaces[0] ?? (await prisma.workspace.create({ data: { name: `${owner.name} — Workspace`, ownerId: owner.id } }));
     project = await prisma.project.create({
       data: {
-        workspaceId: workspace.id, name: site.name, slug: site.project, description: site.description, kind: site.kind ?? 'SITE',
+        workspaceId: workspace.id, name: site.name, slug: site.project, description: site.description,
         frontendUrl: env[`SEED_${key}_URL`] || null,
         allowedOrigins: (env[`SEED_${key}_ORIGINS`] ?? '').split(',').map((s) => s.trim()).filter(Boolean),
       },
@@ -167,8 +166,10 @@ export async function seedSite(prisma: PrismaClient, site: SiteSeed, env: NodeJS
 export async function seedSites(prisma: PrismaClient, env: NodeJS.ProcessEnv = process.env, store?: AssetStore) {
   const wanted = (env.SEED_SITES ?? 'bchiwale').split(',').map((s) => s.trim()).filter((s) => s && s !== 'none');
   const results: SiteSeedResult[] = [];
+  // Só liga ao armazenamento (e cria o bucket) se existir algum site ainda por semear.
+  const pending = (await Promise.all(wanted.map(async (n) => (SITE_SEEDS[n] && !(await prisma.project.findUnique({ where: { slug: SITE_SEEDS[n].project } })) ? n : null)))).filter(Boolean);
   let storage: AssetStore | undefined = store;
-  if (wanted.length && !storage) {
+  if (pending.length && !storage) {
     const real = new StorageService({ get: (k: string, d?: string) => env[k] ?? d } as unknown as ConfigService);
     await real.onModuleInit(); // garante o bucket
     storage = real;
