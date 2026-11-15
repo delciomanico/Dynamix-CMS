@@ -18,7 +18,7 @@ export function ContentIndex() {
   const groups = Object.entries(shown.reduce<Record<string, Component[]>>((acc, c) => { (acc[groupOf(c.name)] ??= []).push(c); return acc; }, {}));
   return (
     <>
-      <PageHead title="Content" note="Escolhe um componente" />
+      <PageHead title="Conteúdos" note="Escolhe um componente" />
       {!data?.length ? (
         <Empty title="Primeiro, cria um componente" hint="Os conteúdos são criados a partir da estrutura de um componente.">
           <Link to={`/app/p/${project.id}/components/new`} className="btn-primary">Criar componente</Link>
@@ -32,9 +32,9 @@ export function ContentIndex() {
             {groups.length > 1 && <h2 className="mono text-xs uppercase tracking-widest text-muted mb-3">{g} <span className="opacity-60">· {list.length}</span></h2>}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {list.map((c, i) => (
-                <Link key={c.id} to={c.id} className={`rounded-2xl border-[1.5px] border-ink shadow-[4px_5px_0_#1A2233] p-5 block hover:-translate-y-1 transition ${i % 3 === 0 ? 'bg-brand text-white' : i % 3 === 1 ? 'bg-white' : 'bg-brand/10'}`}>
+                <Link key={c.id} to={c.id} className={`rounded-2xl border border-ink/15 shadow-soft p-5 block hover:-translate-y-1 transition ${i % 3 === 2 ? 'bg-brand/5' : 'bg-white'}`}>
                   <span className="mono text-[10px] uppercase tracking-wider opacity-60">{c.fields.length} campos</span>
-                  <h3 className="font-extrabold text-xl mt-1">{shortName(c.name)}</h3>
+                  <h3 className="font-semibold text-xl mt-1">{shortName(c.name)}</h3>
                   <p className="mono text-xs opacity-70 mt-4">{c._count?.entries ?? 0} conteúdos →</p>
                 </Link>
               ))}
@@ -140,7 +140,7 @@ export function ContentList() {
         <div className="flex flex-wrap gap-2 mb-5" role="group" aria-label="Filtrar por secção">
           {[{ section: '', count: sections.data!.reduce((n, x) => n + x.count, 0) }, ...sections.data!].map((x) => (
             <button key={x.section || 'all'} type="button" onClick={() => { setSection(x.section); setPage(1); }}
-              className={`mono text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border-[1.5px] border-ink ${section === x.section ? 'bg-ink text-white' : 'bg-white hover:bg-brand/20'}`}>
+              className={`mono text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border border-ink/15 ${section === x.section ? 'bg-ink text-white' : 'bg-white hover:bg-brand/20'}`}>
               {x.section || 'Todas'} <span className="opacity-60">{x.count}</span>
             </button>
           ))}
@@ -153,7 +153,7 @@ export function ContentList() {
             <div key={e.id} className="p-4 flex flex-wrap items-center gap-x-4 gap-y-3">
               {thumb(e) ? <img src={thumb(e)!} className="w-12 h-12 rounded-lg object-cover border border-ink/30" /> : <div className="w-12 h-12 rounded-lg bg-brand/40 border border-ink/30" />}
               <div className="flex-1 min-w-[140px] basis-[160px]">
-                <div className="font-bold">{String(title(e))}</div>
+                <div className="font-medium">{String(title(e))}</div>
                 <div className="mono text-xs text-muted">{e.slug}</div>
                 {preview(e) && <div className="text-xs text-muted mt-0.5 line-clamp-1">{preview(e)}</div>}
               </div>

@@ -10,7 +10,7 @@ function Stat({ label, value, note, small }: { label: string; value: string | nu
   return (
     <div className="sketch-card rounded-2xl p-4 min-w-0">
       <p className="mono text-[10px] uppercase tracking-wider text-muted">{label}</p>
-      <p className={`${small ? 'text-lg sm:text-xl' : 'text-3xl'} font-extrabold tracking-tight mt-1 break-words`}>{value}</p>
+      <p className={`${small ? 'text-lg sm:text-xl' : 'text-3xl'} font-semibold tracking-tight mt-1 break-words`}>{value}</p>
       {note && <p className="text-xs text-muted mt-1">{note}</p>}
     </div>
   );
@@ -31,7 +31,7 @@ function UsersTable() {
   return (
     <section>
       <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-        <h2 className="text-xl font-extrabold">Utilizadores</h2>
+        <h2 className="text-xl font-semibold">Utilizadores</h2>
         <Search onChange={(s) => { setQ(s); setPage(1); }} />
       </div>
       {error && <ErrorBox msg={error} />}
@@ -41,8 +41,8 @@ function UsersTable() {
           <tbody className="divide-y divide-ink/10">
             {data?.data.map((u) => (
               <tr key={u.id}>
-                <td className="p-3 font-bold">{u.name}</td><td className="px-3 break-all">{u.email}</td>
-                <td className="px-3"><span className={`mono text-xs ${u.role === 'ADMIN' ? 'text-brand font-bold' : ''}`}>{u.role}</span></td>
+                <td className="p-3 font-medium">{u.name}</td><td className="px-3 break-all">{u.email}</td>
+                <td className="px-3"><span className={`mono text-xs ${u.role === 'ADMIN' ? 'text-brand font-medium' : ''}`}>{u.role}</span></td>
                 <td className="px-3 text-muted hidden sm:table-cell">{u.google ? 'Google' : 'Email'}</td><td className="px-3 text-muted hidden sm:table-cell">{fmtDate(u.createdAt)}</td>
               </tr>
             ))}
@@ -61,7 +61,7 @@ function ProjectsTable() {
   return (
     <section>
       <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-        <h2 className="text-xl font-extrabold">Projetos</h2>
+        <h2 className="text-xl font-semibold">Projetos</h2>
         <Search onChange={(s) => { setQ(s); setPage(1); }} />
       </div>
       {error && <ErrorBox msg={error} />}
@@ -71,7 +71,7 @@ function ProjectsTable() {
           <tbody className="divide-y divide-ink/10">
             {data?.data.map((p) => (
               <tr key={p.id}>
-                <td className="p-3 font-bold">{p.name}</td><td className="px-3 mono text-xs hidden sm:table-cell">{p.slug}</td><td className="px-3 break-all">{p.owner}</td>
+                <td className="p-3 font-medium">{p.name}</td><td className="px-3 mono text-xs hidden sm:table-cell">{p.slug}</td><td className="px-3 break-all">{p.owner}</td>
                 <td className="px-3">{p._count.components}</td><td className="px-3 hidden sm:table-cell">{p._count.media}</td><td className="px-3 text-muted hidden sm:table-cell">{fmtDate(p.createdAt)}</td>
               </tr>
             ))}
@@ -102,14 +102,14 @@ function BackupsPanel() {
   if (error) return <ErrorBox msg={error} />;
   if (!data) return <Spinner />;
   if (!data.enabled) return (
-    <section><h2 className="text-xl font-extrabold mb-3">Backups</h2>
+    <section><h2 className="text-xl font-semibold mb-3">Backups</h2>
       <p className="text-sm text-muted">Serviço de backups não configurado (defina BACKUP_URL e BACKUP_TOKEN na API).</p></section>
   );
   const last = data.lastRun;
   return (
     <section>
       <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-        <h2 className="text-xl font-extrabold">Backups <span className="mono text-xs text-muted font-normal">Postgres + MinIO</span></h2>
+        <h2 className="text-xl font-semibold">Backups <span className="mono text-xs text-muted font-normal">Postgres + MinIO</span></h2>
         <button className="btn-primary btn-sm" disabled={busy || running} onClick={() => act(() => api('/admin/backups/run', { method: 'POST' }))}>
           {running ? 'A executar…' : 'Fazer backup agora'}
         </button>
@@ -130,12 +130,12 @@ function BackupsPanel() {
             {data.backups?.map((b) => (
               <tr key={b.id}>
                 <td className="p-3 mono text-xs hidden sm:table-cell">{b.id}</td>
-                <td className="px-3 py-3">{fmtDateTime(b.createdAt)}{b.offsite === 'error' && <span className="sm:hidden block text-xs text-red-700 font-bold">offsite falhou</span>}</td>
+                <td className="px-3 py-3">{fmtDateTime(b.createdAt)}{b.offsite === 'error' && <span className="sm:hidden block text-xs text-red-700 font-medium">offsite falhou</span>}</td>
                 <td className="px-3" title={b.label}>{b.trigger}</td>
                 <td className="px-3 hidden sm:table-cell">{fmtSize(b.dbBytes)}</td><td className="px-3 hidden sm:table-cell">{fmtSize(b.mediaBytes)}</td>
                 <td className="px-3 sm:hidden">{fmtSize(b.dbBytes + b.mediaBytes)}</td>
-                <td className={`px-3 hidden sm:table-cell ${b.offsite === 'error' ? 'text-red-700 font-bold' : 'text-muted'}`}>{b.offsite}</td>
-                <td className="pr-3 text-right"><button className="text-xs text-red-700 font-bold" disabled={busy}
+                <td className={`px-3 hidden sm:table-cell ${b.offsite === 'error' ? 'text-red-700 font-medium' : 'text-muted'}`}>{b.offsite}</td>
+                <td className="pr-3 text-right"><button className="text-xs text-red-700 font-medium" disabled={busy}
                   onClick={() => confirm(`Eliminar o backup ${b.id}?`) && act(() => api(`/admin/backups/${b.id}`, { method: 'DELETE' }))}>Eliminar</button></td>
               </tr>
             ))}
@@ -164,7 +164,7 @@ function SignupsChart({ data }: { data: { day: string; count: number }[] }) {
   return (
     <section className="sketch-card rounded-2xl p-4 min-w-0">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-3">
-        <h2 className="font-extrabold whitespace-nowrap">Registos — últimos 30 dias</h2>
+        <h2 className="font-semibold whitespace-nowrap">Registos — últimos 30 dias</h2>
         <span className="mono text-xs text-muted">{total} no total · máx. {max}/dia</span>
       </div>
       <div className="flex items-end gap-[3px] h-28 border-b border-ink/30" role="img" aria-label={`${total} registos nos últimos 30 dias`}>
@@ -199,7 +199,7 @@ export default function Admin() {
       <div className="grid lg:grid-cols-2 gap-6">
         <SignupsChart data={data.signupsLast30d} />
         <section className="sketch-card rounded-2xl p-4 min-w-0">
-          <h2 className="font-extrabold mb-3">Projetos com mais conteúdo</h2>
+          <h2 className="font-semibold mb-3">Projetos com mais conteúdo</h2>
           <ol className="space-y-2 text-sm">
             {data.topProjects.map((p) => (
               <li key={p.id} className="flex justify-between"><span><b>{p.name}</b> <span className="mono text-xs text-muted">{p.slug}</span></span><span className="mono">{p.entries}</span></li>

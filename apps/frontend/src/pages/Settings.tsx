@@ -24,7 +24,7 @@ export default function Settings() {
 
   return (
     <div className="max-w-2xl">
-      <PageHead title="Settings" note="Configuração do projeto" />
+      <PageHead title="Definições" note="Configuração do projeto" />
       <form onSubmit={save} className="sketch-card rounded-2xl p-6 space-y-4">
         <div><label className="label">Nome</label><input className="input" required value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} /></div>
         <div><label className="label">Descrição</label><textarea className="input" rows={2} value={f.description} onChange={(e) => setF({ ...f, description: e.target.value })} /></div>
@@ -33,10 +33,10 @@ export default function Settings() {
           <textarea className="input mono" rows={3} placeholder="https://meusite.com" value={f.origins} onChange={(e) => setF({ ...f, origins: e.target.value })} />
           <p className="text-xs text-muted mt-1">Vazio = a API pública aceita qualquer origem. CORS não substitui autenticação; só conteúdos publicados são expostos.</p></div>
         {err && <ErrorBox msg={err} />}
-        <div className="flex items-center gap-4"><button className="btn-primary">Guardar</button>{msg && <span className="text-sm font-bold">{msg}</span>}</div>
+        <div className="flex items-center gap-4"><button className="btn-primary">Guardar</button>{msg && <span className="text-sm font-medium">{msg}</span>}</div>
       </form>
       <div className="rough-border bg-white p-6 mt-8">
-        <h3 className="font-extrabold">Zona de perigo</h3>
+        <h3 className="font-semibold">Zona de perigo</h3>
         <p className="text-sm text-muted mb-3">Elimina o projeto, componentes, conteúdos e ficheiros.</p>
         <button className="btn-danger" onClick={del}>Eliminar projeto</button>
       </div>

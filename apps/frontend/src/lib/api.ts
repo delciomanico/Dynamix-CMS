@@ -31,7 +31,7 @@ export async function api<T = any>(path: string, opts: { method?: string; body?:
   return json as T;
 }
 
-export interface Project { id: string; name: string; slug: string; description?: string; frontendUrl?: string; allowedOrigins: string[] }
+export interface Project { id: string; name: string; slug: string; description?: string; frontendUrl?: string; allowedOrigins: string[]; kind?: 'SITE' | 'BLOG'; theme?: import('./theme').BlogTheme | null }
 export interface Field { id?: string; key: string; label: string; type: string; required: boolean; options: string[] }
 export interface Component { id: string; name: string; slug: string; description?: string; fields: Field[]; _count?: { entries: number } }
 export interface Entry { id: string; slug: string; data: Record<string, any>; status: 'DRAFT' | 'PUBLISHED' | 'ARCHIVED'; updatedAt: string; publishedAt?: string }

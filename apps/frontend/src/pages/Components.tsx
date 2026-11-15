@@ -14,7 +14,7 @@ export function ComponentList() {
   };
   return (
     <>
-      <PageHead title="Components" note="Estruturas de conteúdo do teu website">
+      <PageHead title="Componentes" note="Estruturas de conteúdo do teu website">
         <Link to="new" className="btn-primary">+ Novo componente</Link>
       </PageHead>
       {!data?.length ? (
@@ -27,7 +27,7 @@ export function ComponentList() {
             <div key={c.id} className="sketch-card rounded-2xl p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <h3 className="font-extrabold text-lg">{c.name}</h3>
+                  <h3 className="font-semibold text-lg">{c.name}</h3>
                   <p className="mono text-xs text-muted">{c.slug} · {c._count?.entries ?? 0} conteúdos</p>
                 </div>
                 <div className="flex gap-2">
@@ -107,7 +107,7 @@ export function ComponentBuilder() {
               <div><label className="label">Tipo</label>
                 <select className="input" value={f.type} onChange={(e) => upd(i, { type: e.target.value })}>{FIELD_TYPES.map((t) => <option key={t}>{t}</option>)}</select></div>
               <div className="flex flex-wrap items-center gap-1 min-[460px]:col-span-2 lg:col-span-1">
-                <label className="flex items-center gap-1.5 text-xs font-bold mr-2"><input type="checkbox" checked={f.required} onChange={(e) => upd(i, { required: e.target.checked })} /> obrig.</label>
+                <label className="flex items-center gap-1.5 text-xs font-medium mr-2"><input type="checkbox" checked={f.required} onChange={(e) => upd(i, { required: e.target.checked })} /> obrig.</label>
                 <button type="button" className="btn-secondary btn-sm" onClick={() => move(i, -1)}>↑</button>
                 <button type="button" className="btn-secondary btn-sm" onClick={() => move(i, 1)}>↓</button>
                 <button type="button" className="btn-danger btn-sm" onClick={() => setFields(fields.filter((_, j) => j !== i))}>×</button>

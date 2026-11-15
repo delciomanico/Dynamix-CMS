@@ -20,7 +20,7 @@ function SitePreview({ url }: { url: string }) {
           <h2 className="hand text-3xl font-semibold leading-tight">Preview do site</h2>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex rounded-xl border-[1.5px] border-ink overflow-hidden">
+          <div className="inline-flex rounded-xl border border-ink/15 overflow-hidden">
             {DEVICES.map(([l, w]) => (
               <button key={l} type="button" onClick={() => setDev(w)}
                 className={`px-3 py-1.5 mono text-[11px] uppercase tracking-wider ${dev === w ? 'bg-brand text-white' : 'bg-white hover:bg-brand/10'}`}>{l}</button>
@@ -30,7 +30,7 @@ function SitePreview({ url }: { url: string }) {
           <a href={url} target="_blank" rel="noreferrer" className="btn-secondary btn-sm">Abrir ↗</a>
         </div>
       </div>
-      <div className="rounded-xl border-[1.5px] border-ink bg-white p-2 sm:p-3">
+      <div className="rounded-xl border border-ink/15 bg-white p-2 sm:p-3">
         <div className="flex items-center gap-1.5 px-1 pb-2">
           <i className="w-2.5 h-2.5 rounded-full bg-ink/20" /><i className="w-2.5 h-2.5 rounded-full bg-ink/20" /><i className="w-2.5 h-2.5 rounded-full bg-ink/20" />
           <span className="mono text-[11px] text-muted truncate ml-2">{url}</span>
@@ -70,11 +70,11 @@ export default function Overview() {
           <div className="flex items-end justify-between">
             <div>
               <p className="mono text-[11px] uppercase tracking-wider text-muted">Estado dos conteúdos</p>
-              <p className="text-4xl sm:text-5xl font-extrabold tracking-tight mt-1">{s.published}<span className="text-xl text-muted font-bold"> / {s.entries} publicados</span></p>
+              <p className="text-4xl sm:text-5xl font-semibold tracking-tight mt-1">{s.published}<span className="text-xl text-muted font-medium"> / {s.entries} publicados</span></p>
             </div>
-            <span className="hand text-2xl text-brandLight hidden sm:block">live on the API</span>
+            <span className="hand text-2xl text-brandLight hidden sm:block">ao vivo na API</span>
           </div>
-          <div className="mt-5 h-4 rounded-full border-[1.5px] border-ink overflow-hidden flex bg-paper">
+          <div className="mt-5 h-4 rounded-full border border-ink/15 overflow-hidden flex bg-paper">
             <div className="bg-brand" style={{ width: `${(s.published / total) * 100}%` }} />
             <div className="bg-brandLight/50" style={{ width: `${(s.draft / total) * 100}%` }} />
             <div className="bg-ink/20" style={{ width: `${(s.archived / total) * 100}%` }} />
@@ -88,9 +88,9 @@ export default function Overview() {
         <div className="grid grid-cols-3 lg:grid-cols-1 gap-3">
           {stats.map(([l, v, icon, to], i) => (
             <Link key={l} to={`/app/p/${project.id}/${to}`}
-              className={`rounded-2xl border-[1.5px] border-ink p-3 sm:p-4 flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4 hover:-translate-y-0.5 transition ${i === 0 ? 'bg-brand/10' : 'bg-white'}`}>
+              className={`rounded-2xl border border-ink/15 p-3 sm:p-4 flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4 hover:-translate-y-0.5 transition ${'bg-white'}`}>
               <span className="w-9 h-9 rounded-lg bg-brand text-white flex items-center justify-center shrink-0"><Icon name={icon} className="w-5 h-5" /></span>
-              <span className="lg:flex-1"><span className="block text-2xl font-extrabold leading-none">{v}</span><span className="mono text-[10px] uppercase tracking-wider text-muted">{l}</span></span>
+              <span className="lg:flex-1"><span className="block text-2xl font-semibold leading-none">{v}</span><span className="mono text-[10px] uppercase tracking-wider text-muted">{l}</span></span>
               <Icon name="arrow" className="w-4 h-4 text-muted hidden lg:block" />
             </Link>
           ))}
@@ -102,11 +102,11 @@ export default function Overview() {
         <div className="grid md:grid-cols-3 gap-5">
           {steps.map(([n, t, d, to, icon], i) => (
             <Link key={n} to={`/app/p/${project.id}/${to}`}
-              className={`rough-border p-5 hover:-translate-y-1 transition block relative overflow-hidden ${i === 1 ? 'bg-brand text-white' : 'bg-white'}`}>
-              <span className={`absolute -right-2 -top-4 text-8xl font-extrabold ${i === 1 ? 'text-white/10' : 'text-brand/10'}`}>{n}</span>
-              <span className={`relative w-10 h-10 rounded-xl border-[1.5px] border-ink flex items-center justify-center mb-4 ${i === 1 ? 'bg-white text-brand' : 'bg-brand text-white'}`}><Icon name={icon} /></span>
-              <div className="relative font-extrabold">{t}</div>
-              <div className={`relative text-sm mt-1 ${i === 1 ? 'text-white/75' : 'text-muted'}`}>{d}</div>
+              className={`rough-border p-5 hover:-translate-y-1 transition block relative overflow-hidden ${'bg-white'}`}>
+              <span className={`absolute -right-2 -top-4 text-8xl font-semibold ${'text-brand/10'}`}>{n}</span>
+              <span className={`relative w-10 h-10 rounded-xl border border-ink/15 flex items-center justify-center mb-4 ${'bg-brand/10 text-brand'}`}><Icon name={icon} /></span>
+              <div className="relative font-semibold">{t}</div>
+              <div className={`relative text-sm mt-1 ${'text-muted'}`}>{d}</div>
             </Link>
           ))}
         </div>
