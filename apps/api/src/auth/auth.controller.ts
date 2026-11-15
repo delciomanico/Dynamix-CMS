@@ -1,7 +1,7 @@
-import { Body, Controller, Get, Post, Req, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Patch, Post, Req, Res, UseGuards } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { IsEmail, IsString, MinLength } from 'class-validator';
+import { IsEmail, IsString, MaxLength, MinLength } from 'class-validator';
 import { Throttle } from '@nestjs/throttler';
 import { AuthService } from './auth.service';
 import { CurrentUser, GoogleGuard, JwtAuthGuard } from './auth.guards';
@@ -14,6 +14,17 @@ class RegisterDto {
 class ChangePasswordDto {
   @IsString() currentPassword: string;
   @IsString() @MinLength(8) newPassword: string;
+}
+class UpdateProfileDto {
+  @IsString() @MinLength(2) @MaxLength(80) name: string;
+}
+class ChangeEmailDto {
+  @IsEmail() newEmail: string;
+  /** Password atual (ou, em contas só-Google, o email atual). */
+  @IsString() confirm: string;
+}
+class DeleteAccountDto {
+  @IsString() confirm: string;
 }
 class LoginDto {
   @IsEmail() email: string;
@@ -50,6 +61,36 @@ export class AuthController {
   @Get('me')
   me(@CurrentUser() u: { id: string }) {
     return this.auth.me(u.id);
+  }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Patch('profile')
+  updateProfile(@CurrentUser() u: { id: string }, @Body() d: UpdateProfileDto) {
+    return this.auth.updateProfile(u.id, d.name);
+  }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Throttle({ default: { limit: 5, ttl: 60_000 } })
+  @Post('change-email')
+  changeEmail(@CurrentUser() u: { id: string }, @Body() d: ChangeEmailDto) {
+    return this.auth.changeEmail(u.id, d.newEmail, d.confirm);
+  }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Post('logout-others')
+  logoutOthers(@CurrentUser() u: { id: string }) {
+    return this.auth.logoutOthers(u.id);
+  }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Throttle({ default: { limit: 3, ttl: 60_000 } })
+  @Delete('account')
+  deleteAccount(@CurrentUser() u: { id: string }, @Body() d: DeleteAccountDto) {
+    return this.auth.deleteAccount(u.id, d.confirm);
   }
 
   @Get('google')

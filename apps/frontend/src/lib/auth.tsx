@@ -1,12 +1,13 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from 'react';
 import { api, token } from './api';
 
-interface User { id: string; email: string; name: string; role: 'USER' | 'ADMIN' }
+export interface User { id: string; email: string; name: string; role: 'USER' | 'ADMIN'; createdAt?: string; hasPassword?: boolean; google?: boolean; websites?: number; blogs?: number }
 interface AuthCtx {
   user: User | null; loading: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (name: string, email: string, password: string) => Promise<void>;
   setToken: (t: string) => Promise<void>;
+  reload: () => Promise<void>;
   logout: () => void;
 }
 const Ctx = createContext<AuthCtx>(null!);
@@ -28,6 +29,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       login: async (email, password) => finish(await api('/auth/login', { body: { email, password } })),
       register: async (name, email, password) => finish(await api('/auth/register', { body: { name, email, password } })),
       setToken: async (t) => { token.set(t); await load(); },
+      reload: load,
       logout: () => { token.clear(); setUser(null); },
     }}>
       {children}
